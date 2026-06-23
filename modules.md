@@ -42,8 +42,8 @@ description: 17 модулей платформы «Опора» — от Вит
       Подключайтесь как партнёр, разработчик или бренд.
     </p>
     <div class="cta-actions">
-      <a href="/contacts/" class="btn btn-teal btn-lg">Связаться с нами</a>
-      <a href="/demo/" class="btn btn-outline-light btn-lg">Демо</a>
+      <a href="{{ '/contacts/' | relative_url }}" class="btn btn-teal btn-lg">Связаться с нами</a>
+      <a href="{{ '/demo/' | relative_url }}" class="btn btn-outline-light btn-lg">Демо</a>
     </div>
   </div>
 </section>

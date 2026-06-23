@@ -138,7 +138,7 @@ description: Финансовая модель платформы «Опора»
       в основном репозитории проекта.
     </p>
     <div class="cta-actions">
-      <a href="/contacts/" class="btn btn-teal btn-lg">Обсудить участие</a>
+      <a href="{{ '/contacts/' | relative_url }}" class="btn btn-teal btn-lg">Обсудить участие</a>
       <a href="https://github.com/AlexanderNarbaev/opora" class="btn btn-outline-light btn-lg" target="_blank" rel="noopener">
         Исходный код на GitHub
       </a>

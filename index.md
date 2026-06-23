@@ -15,8 +15,8 @@ description: «Опора» — национальная цифровая эко
         Мы не заменяем НСПК и МСП.РФ — мы даём им слой доверия и глубокой кооперации.
       </p>
       <div class="hero-actions">
-        <a href="/modules/" class="btn btn-teal btn-lg">Модули платформы</a>
-        <a href="/demo/" class="btn btn-outline-light btn-lg">Как это работает</a>
+        <a href="{{ '/modules/' | relative_url }}" class="btn btn-teal btn-lg">Модули платформы</a>
+        <a href="{{ '/demo/' | relative_url }}" class="btn btn-outline-light btn-lg">Как это работает</a>
       </div>
     </div>
 
@@ -118,7 +118,7 @@ description: «Опора» — национальная цифровая эко
     </div>
 
     <div style="text-align: center; margin-top: 2rem;">
-      <a href="/modules/" class="btn btn-outline">
+      <a href="{{ '/modules/' | relative_url }}" class="btn btn-outline">
         Все 17 модулей →
       </a>
     </div>
@@ -154,7 +154,7 @@ description: «Опора» — национальная цифровая эко
     </div>
 
     <div style="text-align: center; margin-top: 1rem;">
-      <a href="/investors/" class="btn btn-outline">
+      <a href="{{ '/investors/' | relative_url }}" class="btn btn-outline">
         Подробнее для инвесторов →
       </a>
     </div>
@@ -222,8 +222,8 @@ description: «Опора» — национальная цифровая эко
       представитель МСП, мы открыты к диалогу и сотрудничеству.
     </p>
     <div class="cta-actions">
-      <a href="/contacts/" class="btn btn-teal btn-lg">Связаться с нами</a>
-      <a href="/demo/" class="btn btn-outline-light btn-lg">Посмотреть демо</a>
+      <a href="{{ '/contacts/' | relative_url }}" class="btn btn-teal btn-lg">Связаться с нами</a>
+      <a href="{{ '/demo/' | relative_url }}" class="btn btn-outline-light btn-lg">Посмотреть демо</a>
     </div>
   </div>
 </section>

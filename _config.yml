@@ -6,8 +6,9 @@ description: >
   AI-кооперация, биржа креаторов, аналитика, право, финансы и экспорт.
   Национальная инфраструктура для роста российского бизнеса.
 
-baseurl: ""
+baseurl: "/opora-landing"
 url: "https://alexandernarbaev.github.io"
+permalink: pretty
 repository: AlexanderNarbaev/opora-landing
 
 # Язык и локаль
