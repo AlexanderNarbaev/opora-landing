@@ -1,0 +1,52 @@
+# _config.yml — Национальная цифровая экосистема «Опора»
+title: Опора
+tagline: Национальная цифровая экосистема роста отечественных брендов
+description: >
+  «Опора» — это 17 модулей на едином технологическом ядре: каталог верифицированных брендов,
+  AI-кооперация, биржа креаторов, аналитика, право, финансы и экспорт.
+  Национальная инфраструктура для роста российского бизнеса.
+
+baseurl: ""
+url: "https://alexandernarbaev.github.io"
+repository: AlexanderNarbaev/opora-landing
+
+# Язык и локаль
+lang: ru-RU
+timezone: Europe/Moscow
+
+# GitHub Pages настройки
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Sass
+sass:
+  sass_dir: _sass
+  style: compressed
+  sourcemap: never
+
+# Исключения
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor/
+  - .gitignore
+  - .github/
+
+# Страницы по умолчанию
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+      lang: ru
+
+# Коллекции (не используются, но оставлено для расширяемости)
+collections: {}
+
+# Плагины (GitHub Pages safe)
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag

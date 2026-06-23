@@ -1,0 +1,81 @@
+# _data/scenarios.yml — 8 сценариев финмодели
+
+- id: A
+  name: Базовый (реалистичный)
+  npv: 4.5 млрд ₽
+  irr: 32%
+  payback: 4.2 года
+  multiplier: 1.7×
+  probability: 35%
+  description: Все решения приняты в срок, санкции на текущем уровне.
+  class: ""
+
+- id: B
+  name: Регуляторный ступор
+  npv: 1.8 млрд ₽
+  irr: 18%
+  payback: 6.5 лет
+  multiplier: 1.2×
+  probability: 20%
+  description: Поправки в НК зависли, ЭПР не включён.
+  class: ""
+
+- id: C
+  name: Санкционный удар
+  npv: 0.8 млрд ₽
+  irr: 14%
+  payback: 8.0 лет
+  multiplier: 1.0×
+  probability: 15%
+  description: Оборудование недоступно, расчёты затруднены.
+  class: ""
+
+- id: D
+  name: Прорывной
+  npv: 8.5 млрд ₽
+  irr: 45%
+  payback: 3.0 года
+  multiplier: 2.3×
+  probability: 8%
+  description: Решения приняты досрочно, стандарт верификации в ЕАЭС.
+  class: highlight
+
+- id: E
+  name: Стагнация спроса
+  npv: 1.2 млрд ₽
+  irr: 14%
+  payback: 7.0 лет
+  multiplier: 1.0×
+  probability: 12%
+  description: Рецессия, доходы падают, проникновение медленнее.
+  class: ""
+
+- id: F
+  name: Кадровый коллапс
+  npv: −0.5 млрд ₽
+  irr: 8%
+  payback: ">10 лет"
+  multiplier: 0.7×
+  probability: 5%
+  description: Невозможность нанять ключевых специалистов, зарплаты +40%.
+  class: negative
+
+- id: G
+  name: Кризисный
+  npv: −1.2 млрд ₽
+  irr: "<5%"
+  payback: не окупается
+  multiplier: 0.5×
+  probability: 3%
+  description: Все негативные факторы одновременно.
+  class: negative
+
+- id: H
+  name: Международный прорыв
+  npv: 15.0 млрд ₽
+  irr: "60%+"
+  payback: 2.0 года
+  multiplier: 3.0×
+  probability: 2%
+  description: Платформа становится наднациональной (БРИКС+).
+  class: highlight

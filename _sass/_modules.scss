@@ -1,0 +1,69 @@
+// _modules.scss — Сетка модулей
+
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+
+  @media (max-width: $bp-lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $bp-sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.module-card {
+  background: $color-white;
+  border-radius: $card-radius;
+  box-shadow: $card-shadow;
+  padding: 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-top: 3px solid transparent;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: $card-shadow-hover;
+  }
+
+  .module-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+
+  h3 {
+    font-size: $fs-h3;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: $fs-caption;
+    color: $color-text-secondary;
+    line-height: 1.5;
+    margin: 0;
+  }
+}
+
+// Цветовые маркеры модулей (из брендбука)
+.module-vitrina     { border-top-color: #233370; .module-icon { background: rgba(#233370, 0.1); color: #233370; } }
+.module-cooperation { border-top-color: #2EC4B6; .module-icon { background: rgba(#2EC4B6, 0.1); color: #2EC4B6; } }
+.module-creators    { border-top-color: #4CAF76; .module-icon { background: rgba(#4CAF76, 0.1); color: #4CAF76; } }
+.module-analytics   { border-top-color: #667085; .module-icon { background: rgba(#667085, 0.1); color: #667085; } }
+.module-legal       { border-top-color: #C62828; .module-icon { background: rgba(#C62828, 0.1); color: #C62828; } }
+.module-finance     { border-top-color: #F9A825; .module-icon { background: rgba(#F9A825, 0.1); color: #F9A825; } }
+.module-sandbox     { border-top-color: #D7CCC8; .module-icon { background: rgba(#D7CCC8, 0.2); color: #8D6E63; } }
+.module-chains      { border-top-color: #78909C; .module-icon { background: rgba(#78909C, 0.1); color: #78909C; } }
+.module-personnel   { border-top-color: #7E57C2; .module-icon { background: rgba(#7E57C2, 0.1); color: #7E57C2; } }
+.module-regions     { border-top-color: #FF8A65; .module-icon { background: rgba(#FF8A65, 0.1); color: #FF8A65; } }
+.module-export      { border-top-color: #1565C0; .module-icon { background: rgba(#1565C0, 0.1); color: #1565C0; } }

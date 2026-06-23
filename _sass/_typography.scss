@@ -1,0 +1,85 @@
+// _typography.scss — Типографика
+
+body {
+  font-family: $font-primary;
+  font-size: $fs-body;
+  font-weight: $fw-regular;
+  line-height: $lh-body;
+  color: $color-text-primary;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, .h1 {
+  font-size: $fs-h1;
+  font-weight: $fw-bold;
+  line-height: $lh-h1;
+  color: $color-deep-blue;
+  margin: 0 0 1rem;
+
+  @media (max-width: $bp-md) {
+    font-size: $fs-h1-m;
+  }
+}
+
+h2, .h2 {
+  font-size: $fs-h2;
+  font-weight: $fw-semibold;
+  line-height: $lh-h2;
+  color: $color-deep-blue;
+  margin: 0 0 0.75rem;
+
+  @media (max-width: $bp-md) {
+    font-size: $fs-h2-m;
+  }
+}
+
+h3, .h3 {
+  font-size: $fs-h3;
+  font-weight: $fw-semibold;
+  line-height: $lh-h3;
+  margin: 0 0 0.5rem;
+
+  @media (max-width: $bp-md) {
+    font-size: $fs-h3-m;
+  }
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+.text-secondary {
+  color: $color-text-secondary;
+}
+
+.text-accent {
+  color: $color-teal;
+}
+
+.text-success {
+  color: $color-green;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: $color-text-secondary;
+  font-size: 1.125rem;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+}
+
+a {
+  color: $color-teal;
+  text-decoration: none;
+  transition: color 0.2s;
+
+  &:hover {
+    color: darken($color-teal, 10%);
+  }
+}

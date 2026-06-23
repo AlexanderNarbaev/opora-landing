@@ -1,0 +1,98 @@
+// _layout.scss — Сетка и общие стили
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: $color-white;
+}
+
+.container {
+  width: 100%;
+  max-width: $container-max;
+  margin: 0 auto;
+  padding: 0 $padding-desktop;
+
+  @media (max-width: $bp-md) {
+    padding: 0 $padding-mobile;
+  }
+}
+
+.section {
+  padding: $section-padding;
+
+  @media (max-width: $bp-md) {
+    padding: 3rem 0;
+  }
+}
+
+.section-dark {
+  background-color: $color-deep-blue;
+  color: $color-white;
+
+  h1, h2, h3 {
+    color: $color-white;
+  }
+
+  .text-secondary {
+    color: rgba($color-white, 0.7);
+  }
+}
+
+.section-gray {
+  background-color: $color-card-bg;
+}
+
+// ── Сетка 12 колонок ──────────────────────────────────────
+.grid {
+  display: grid;
+  gap: $gutter;
+
+  @media (max-width: $bp-md) {
+    gap: 1rem;
+  }
+}
+
+.grid-2 {
+  @extend .grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  @media (max-width: $bp-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid-3 {
+  @extend .grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  @media (max-width: $bp-lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $bp-sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid-4 {
+  @extend .grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  @media (max-width: $bp-lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $bp-sm) {
+    grid-template-columns: 1fr;
+  }
+}

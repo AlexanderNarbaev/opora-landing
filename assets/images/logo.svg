@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 40" width="160" height="40">
+  <!-- Знак-щит со стрелкой -->
+  <g transform="translate(4, 4)">
+    <path d="M16 0 L32 8 L32 18 C32 26 24 32 16 35 C8 32 0 26 0 18 L0 8 Z"
+          fill="#233370" stroke="none"/>
+    <!-- Внутренняя стрелка -->
+    <polygon points="16,6 26,16 20,16 20,26 12,26 12,16 6,16"
+             fill="none" stroke="#2EC4B6" stroke-width="1.5" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Текст «ОПОРА» -->
+  <text x="44" y="27" font-family="'Inter', 'PT Sans', sans-serif" font-weight="700"
+        font-size="22" fill="#233370" letter-spacing="2">ОПОРА</text>
+</svg>

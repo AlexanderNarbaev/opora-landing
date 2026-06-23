@@ -1,0 +1,233 @@
+// _components.scss — Кнопки, карточки, навигация
+
+// ── Кнопки ─────────────────────────────────────────────
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: $btn-height;
+  padding: 0 1.5rem;
+  border: none;
+  border-radius: $btn-radius;
+  font-family: $font-primary;
+  font-size: $fs-body;
+  font-weight: $fw-semibold;
+  cursor: pointer;
+  transition: $btn-transition;
+  text-decoration: none;
+  white-space: nowrap;
+
+  @media (max-width: $bp-md) {
+    height: $btn-height-m;
+    padding: 0 1.25rem;
+    font-size: $fs-caption;
+  }
+}
+
+.btn-primary {
+  background-color: $color-deep-blue;
+  color: $color-white;
+
+  &:hover {
+    background-color: lighten($color-deep-blue, 8%);
+    color: $color-white;
+  }
+}
+
+.btn-teal {
+  background-color: $color-teal;
+  color: $color-white;
+
+  &:hover {
+    background-color: darken($color-teal, 8%);
+    color: $color-white;
+  }
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: $color-deep-blue;
+  border: 2px solid $color-deep-blue;
+
+  &:hover {
+    background-color: $color-deep-blue;
+    color: $color-white;
+  }
+}
+
+.btn-outline-light {
+  background-color: transparent;
+  color: $color-white;
+  border: 2px solid rgba($color-white, 0.4);
+
+  &:hover {
+    background-color: rgba($color-white, 0.15);
+    border-color: $color-white;
+    color: $color-white;
+  }
+}
+
+.btn-lg {
+  height: 3.5rem;
+  padding: 0 2rem;
+  font-size: 1.125rem;
+}
+
+// ── Карточки ───────────────────────────────────────────
+.card {
+  background: $color-white;
+  border-radius: $card-radius;
+  box-shadow: $card-shadow;
+  padding: 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $card-shadow-hover;
+  }
+
+  @media (max-width: $bp-md) {
+    border-radius: $card-radius-m;
+    padding: 1.25rem;
+  }
+}
+
+// ── Хедер ──────────────────────────────────────────────
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba($color-white, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba($color-warm-gray, 0.3);
+  transition: background 0.3s;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+
+    @media (max-width: $bp-md) {
+      height: 3.5rem;
+    }
+  }
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+
+  img, svg {
+    height: 2rem;
+    width: auto;
+  }
+
+  .logo-text {
+    font-size: 1.25rem;
+    font-weight: $fw-bold;
+    color: $color-deep-blue;
+  }
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  @media (max-width: $bp-lg) {
+    display: none;  // Скрываем на мобильных (можно добавить бургер)
+  }
+
+  a {
+    color: $color-text-secondary;
+    font-size: $fs-caption;
+    font-weight: $fw-medium;
+    transition: color 0.2s;
+
+    &:hover {
+      color: $color-deep-blue;
+    }
+  }
+}
+
+// ── Футер ──────────────────────────────────────────────
+.site-footer {
+  background: $color-deep-blue;
+  color: rgba($color-white, 0.7);
+  padding: 3rem 0 2rem;
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+
+    @media (max-width: $bp-md) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: $bp-sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  h4 {
+    color: $color-white;
+    font-size: $fs-caption;
+    font-weight: $fw-semibold;
+    margin: 0 0 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  a {
+    color: rgba($color-white, 0.6);
+    font-size: $fs-caption;
+    display: block;
+    margin-bottom: 0.5rem;
+
+    &:hover {
+      color: $color-teal;
+    }
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba($color-white, 0.1);
+    padding-top: 1.5rem;
+    font-size: 0.8125rem;
+    text-align: center;
+  }
+}
+
+// ── Бейджи ─────────────────────────────────────────────
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: $fw-semibold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-gold   { background: #F9A825; color: #fff; }
+.badge-silver { background: #90A4AE; color: #fff; }
+.badge-bronze { background: #A1887F; color: #fff; }
+
+// ── Тени и эффекты ────────────────────────────────────
+.gradient-text {
+  background: $gradient-brand;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-bg {
+  background: $gradient-brand;
+}

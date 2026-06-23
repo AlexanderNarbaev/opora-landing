@@ -1,0 +1,20 @@
+<header class="site-header" role="banner">
+  <div class="container">
+    <a href="{{ '/' | relative_url }}" class="site-logo" aria-label="Опора — на главную">
+      <img src="{{ '/assets/images/logo.svg' | relative_url }}" alt="Опора" width="32" height="32">
+      <span class="logo-text">ОПОРА</span>
+    </a>
+
+    <nav class="site-nav" role="navigation" aria-label="Основная навигация">
+      {% for item in site.data.navigation %}
+        <a href="{{ item.url | relative_url }}" {% if page.url == item.url %}class="active"{% endif %}>
+          {{ item.title }}
+        </a>
+      {% endfor %}
+    </nav>
+
+    <a href="/demo/" class="btn btn-primary" style="height: 2.5rem; padding: 0 1.25rem; font-size: 0.875rem;">
+      Демо
+    </a>
+  </div>
+</header>

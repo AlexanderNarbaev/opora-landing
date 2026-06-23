@@ -1,0 +1,72 @@
+// _variables.scss — Цветовая палитра и токены бренда «Опора»
+
+// ── Цвета (из брендбука v1.0) ──────────────────────────────
+$color-deep-blue:   #233370;  // Глубокий синий — акценты, заголовки, логотип
+$color-teal:        #2EC4B6;  // Бирюзовый — интерактивные элементы, иконки
+$color-green:       #4CAF76;  // Зелёный — успех, баллы лояльности, акции
+$color-warm-gray:   #C8CDD2;  // Тёплый серый — фоны, разделители
+$color-card-bg:     #F2F4F7;  // Серый — фон карточек
+$color-white:       #FFFFFF;  // Белый — основной фон
+
+// ── Текст ──────────────────────────────────────────────────
+$color-text-primary:    #1A1A1A;  // Основной текст
+$color-text-secondary:  #667085;  // Второстепенный текст
+
+// ── Градиент ───────────────────────────────────────────────
+$gradient-brand: linear-gradient(135deg, $color-deep-blue 0%, $color-teal 100%);
+$gradient-hero:  linear-gradient(135deg, rgba($color-deep-blue, 0.92) 0%, rgba($color-teal, 0.85) 100%);
+
+// ── Типографика ────────────────────────────────────────────
+$font-primary:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-secondary:  'PT Sans', $font-primary;
+
+// Размеры (из брендбука)
+$fs-h1:       2.25rem;   // 36px
+$fs-h1-m:     1.75rem;   // 28px mobile
+$fs-h2:       1.75rem;   // 28px
+$fs-h2-m:     1.375rem;  // 22px mobile
+$fs-h3:       1.25rem;   // 20px
+$fs-h3-m:     1.125rem;  // 18px mobile
+$fs-body:     1rem;      // 16px
+$fs-caption:  0.875rem;  // 14px
+
+// Межстрочный
+$lh-h1:    1.2;
+$lh-h2:    1.3;
+$lh-h3:    1.3;
+$lh-body:  1.5;
+$lh-caption: 1.4;
+
+// Насыщенность
+$fw-regular:  400;
+$fw-semibold: 600;
+$fw-bold:     700;
+
+// ── Отступы и сетка ──────────────────────────────────────
+$grid-columns:     12;
+$gutter:           1.5rem;   // 24px
+$padding-mobile:   1rem;     // 16px
+$padding-desktop:  2rem;     // 32px
+$section-padding:  5rem 0;
+
+// ── Карточки ──────────────────────────────────────────────
+$card-radius:      0.75rem;  // 12px
+$card-radius-m:    0.5rem;   // 8px mobile
+$card-shadow:      0 2px 8px rgba($color-deep-blue, 0.08);
+$card-shadow-hover: 0 4px 16px rgba($color-deep-blue, 0.14);
+
+// ── Кнопки ────────────────────────────────────────────────
+$btn-height:       3rem;     // 48px
+$btn-height-m:     2.75rem;  // 44px mobile
+$btn-radius:       0.5rem;   // 8px
+$btn-transition:   all 0.2s ease;
+
+// ── Брейкпоинты ───────────────────────────────────────────
+$bp-sm:  640px;
+$bp-md:  768px;
+$bp-lg:  1024px;
+$bp-xl:  1280px;
+$bp-xxl: 1536px;
+
+// ── Максимальная ширина контейнера ─────────────────────
+$container-max: 1200px;

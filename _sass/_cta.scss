@@ -1,0 +1,154 @@
+// _cta.scss — Призыв к действию
+
+.cta {
+  position: relative;
+  background: $gradient-brand;
+  text-align: center;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba($color-teal, 0.2) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  h2 {
+    color: $color-white;
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+
+    @media (max-width: $bp-md) {
+      font-size: 1.75rem;
+    }
+  }
+
+  .cta-text {
+    font-size: 1.125rem;
+    color: rgba($color-white, 0.85);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+
+  .cta-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+// ── Страница контактов ─────────────────────────────────
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+
+  @media (max-width: $bp-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-info {
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+
+    .contact-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      background: rgba($color-teal, 0.1);
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+
+      svg {
+        width: 1.25rem;
+        height: 1.25rem;
+        color: $color-teal;
+      }
+    }
+
+    h4 {
+      margin: 0 0 0.25rem;
+      font-size: $fs-caption;
+      font-weight: $fw-semibold;
+      color: $color-deep-blue;
+    }
+
+    p, a {
+      font-size: $fs-caption;
+      color: $color-text-secondary;
+      margin: 0;
+    }
+  }
+}
+
+// ── Страница модулей ───────────────────────────────────
+.module-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 4rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid $color-warm-gray;
+
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  @media (max-width: $bp-md) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .module-detail-icon {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+
+    svg {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+
+  h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .module-features {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+
+    li {
+      padding: 0.5rem 0;
+      font-size: $fs-caption;
+      color: $color-text-secondary;
+      border-bottom: 1px solid rgba($color-warm-gray, 0.4);
+
+      &::before {
+        content: '→ ';
+        color: $color-teal;
+      }
+    }
+  }
+}

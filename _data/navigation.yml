@@ -1,0 +1,11 @@
+# _data/navigation.yml — Навигация
+- title: Главная
+  url: /
+- title: Модули
+  url: /modules/
+- title: Инвесторам
+  url: /investors/
+- title: Демо
+  url: /demo/
+- title: Контакты
+  url: /contacts/
