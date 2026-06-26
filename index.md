@@ -8,15 +8,16 @@ description: «Опора» — национальная цифровая эко
 <section class="hero">
   <div class="container">
     <div class="hero-content">
-      <h1>Национальная цифровая экосистема роста отечественных брендов</h1>
+      <h1>Национальная платформа доверия, роста и кооперации российских брендов</h1>
       <p class="hero-subtitle">
         «Опора» — это 17 модулей на едином технологическом ядре: каталог верифицированных брендов,
         AI-кооперация, биржа креаторов, аналитика, право, финансы и экспорт.
-        Мы не заменяем НСПК и МСП.РФ — мы даём им слой доверия и глубокой кооперации.
+        Не маркетплейс — инфраструктура, связывающая государство, бизнес и граждан в единый контур доверия и выгоды.
       </p>
       <div class="hero-actions">
-        <a href="{{ '/modules/' | relative_url }}" class="btn btn-teal btn-lg">Модули платформы</a>
-        <a href="{{ '/demo/' | relative_url }}" class="btn btn-outline-light btn-lg">Как это работает</a>
+        <a href="{{ '/investors/' | relative_url }}" class="btn btn-teal btn-lg">Инвесторам</a>
+        <a href="{{ '/gr-strategy/' | relative_url }}" class="btn btn-outline-light btn-lg">Государству</a>
+        <a href="{{ '/needs/' | relative_url }}" class="btn btn-outline-light btn-lg">Партнёрам</a>
       </div>
     </div>
 
@@ -26,16 +27,16 @@ description: «Опора» — национальная цифровая эко
         <div class="stat-label">субъектов МСП в РФ</div>
       </div>
       <div class="hero-stat">
-        <div class="stat-value">55%</div>
-        <div class="stat-label">доля отечественных товаров (цель)</div>
-      </div>
-      <div class="hero-stat">
         <div class="stat-value">17</div>
         <div class="stat-label">модулей платформы</div>
       </div>
       <div class="hero-stat">
         <div class="stat-value">4,5 млрд ₽</div>
         <div class="stat-label">NPV (базовый сценарий)</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-value">ТОП-100</div>
+        <div class="stat-label">СИНВ-2024</div>
       </div>
     </div>
   </div>
@@ -46,8 +47,7 @@ description: «Опора» — национальная цифровая эко
   <div class="container">
     <h2 class="section-title">Почему «Опора» нужна сейчас</h2>
     <p class="section-subtitle">
-      Три разрыва, которые тормозят рост российского бизнеса и снижают
-      доверие граждан к отечественным товарам.
+      Три разрыва, которые тормозят рост российского бизнеса и снижают доверие граждан к отечественным товарам.
     </p>
 
     <div class="problem-grid">
@@ -62,12 +62,12 @@ description: «Опора» — национальная цифровая эко
           <li>
             <strong>Кризис доверия к «отечественности».</strong>
             Нет единой системы верификации. Граждане хотят поддерживать «своё»,
-            но не знают, кому верить.
+            но не знают, кому верить. 79% отказываются от программ лояльности из-за сложных условий.
           </li>
           <li>
             <strong>Разобщённость бизнеса.</strong> 57% предприятий
             не могут найти альтернативных поставщиков внутри страны.
-            Поиск партнёра занимает 6–8 месяцев.
+            Поиск партнёра занимает 6–8 месяцев. До 30% мощностей простаивает.
           </li>
         </ul>
       </div>
@@ -83,12 +83,12 @@ description: «Опора» — национальная цифровая эко
           <li>
             <strong>AI-кооперация</strong> — автоматический подбор партнёров
             по 50+ параметрам, артельные кластеры под крупные заказы,
-            смарт-контракты на блокчейне.
+            смарт-контракты на блокчейне Hyperledger Fabric.
           </li>
           <li>
             <strong>17 модулей на едином ядре</strong> — от биржи креаторов
             до экспортного «единого окна». Платформа интегрируется
-            с существующими госсервисами через открытый API.
+            с существующими госсервисами через открытое API. Архитектурный ориентир — ONDC (Индия).
           </li>
         </ul>
       </div>
@@ -125,8 +125,49 @@ description: «Опора» — национальная цифровая эко
   </div>
 </section>
 
+<!-- ── ИНТЕЛЛЕКТУАЛЬНЫЙ ВКЛАД ── -->
+<section class="section section-gray" id="ip">
+  <div class="container">
+    <h2 class="section-title">Интеллектуальный вклад основателя</h2>
+    <p class="section-subtitle">
+      3 года проработки. 400+ файлов документации и прототипов кода. Оценка методом замещения — 500+ млн руб.
+    </p>
+
+    <div class="ip-block">
+      <div class="ip-block__header">
+        <div class="ip-block__icon">💎</div>
+        <div>
+          <div class="ip-block__number">500+ млн руб.</div>
+          <div class="ip-block__subtitle">оценка методом замещения</div>
+        </div>
+      </div>
+      <div class="ip-block__body">
+        400+ файлов технической документации и прототипов кода.
+        Архитектура 17 модулей, API-контракты (OpenAPI 3.0), C4-диаграммы,
+        финансовая модель (8 сценариев), юридический пакет (поправки в НК РФ, ЭПР, Устав АО).
+        Проект прошёл 5 независимых экспертиз, ТОП-100 СИНВ-2024.
+        Весь IP передаётся в АО «НП Опора» безвозмездно как вклад основателя.
+      </div>
+      <div class="ip-block__grid">
+        <div class="ip-block__stat">
+          <div class="ip-block__stat-value">400+</div>
+          <div class="ip-block__stat-label">файлов документации</div>
+        </div>
+        <div class="ip-block__stat">
+          <div class="ip-block__stat-value">205</div>
+          <div class="ip-block__stat-label">Java-файлов прототипов</div>
+        </div>
+        <div class="ip-block__stat">
+          <div class="ip-block__stat-value">8</div>
+          <div class="ip-block__stat-label">сценариев финмодели</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ── ФИНАНСЫ ── -->
-<section class="section section-gray" id="financials">
+<section class="section" id="financials">
   <div class="container">
     <h2 class="section-title">Финансовая модель</h2>
     <p class="section-subtitle">
@@ -162,7 +203,7 @@ description: «Опора» — национальная цифровая эко
 </section>
 
 <!-- ── ROADMAP ── -->
-<section class="section" id="roadmap">
+<section class="section section-gray" id="roadmap">
   <div class="container">
     <h2 class="section-title">Дорожная карта</h2>
     <p class="section-subtitle">
@@ -192,7 +233,7 @@ description: «Опора» — национальная цифровая эко
 </section>
 
 <!-- ── КОМАНДА ── -->
-<section class="section section-gray" id="team">
+<section class="section" id="team">
   <div class="container">
     <h2 class="section-title">Команда</h2>
     <p class="section-subtitle">
@@ -218,12 +259,39 @@ description: «Опора» — национальная цифровая эко
   <div class="container">
     <h2>Присоединяйтесь к «Опоре»</h2>
     <p class="cta-text">
-      Если вы — государственный институт, частный инвестор, технологический партнёр или
-      представитель МСП, мы открыты к диалогу и сотрудничеству.
+      Выберите свой трек — и мы покажем, как платформа работает именно для вас.
     </p>
-    <div class="cta-actions">
-      <a href="{{ '/contacts/' | relative_url }}" class="btn btn-teal btn-lg">Связаться с нами</a>
-      <a href="{{ '/demo/' | relative_url }}" class="btn btn-outline-light btn-lg">Посмотреть демо</a>
+
+    <div class="cta-grid">
+      <div class="cta-card">
+        <div class="cta-card__icon">📈</div>
+        <h3 class="cta-card__title">Инвесторам</h3>
+        <p class="cta-card__desc">
+          Финмодель v4.0, 8 сценариев, NPV 4,5 млрд руб., IRR 32%.
+          Интеллектуальный вклад 500+ млн руб. Гарантии: Набсовет, buyback, SPO.
+        </p>
+        <a href="{{ '/investors/' | relative_url }}" class="btn btn-teal">Инвесторам →</a>
+      </div>
+
+      <div class="cta-card">
+        <div class="cta-card__icon">🏛️</div>
+        <h3 class="cta-card__title">Государству</h3>
+        <p class="cta-card__desc">
+          Бюджетный мультипликатор 1,7×. 200 000 рабочих мест.
+          Обеление самозанятых. ROI для государства 1:3–1:5.
+        </p>
+        <a href="{{ '/gr-strategy/' | relative_url }}" class="btn btn-teal">GR-стратегия →</a>
+      </div>
+
+      <div class="cta-card">
+        <div class="cta-card__icon">🤝</div>
+        <h3 class="cta-card__title">Партнёрам</h3>
+        <p class="cta-card__desc">
+          Вакансии: GR-директор, CFO, CISO, AI Lead.
+          Финансирование по траншам. Доступ к API. Партнёрства.
+        </p>
+        <a href="{{ '/needs/' | relative_url }}" class="btn btn-teal">Потребности →</a>
+      </div>
     </div>
   </div>
 </section>
