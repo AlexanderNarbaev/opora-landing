@@ -1,0 +1,108 @@
+// _new-components.scss — Новые компоненты лендинга «Опора»
+// Зависимость: _variables.scss
+
+// ═══ 1. audience-tabs — три вкладки ═══
+.audience-tabs {
+  display: flex; flex-direction: column; gap: 0;
+  &__nav {
+    display: flex; border-bottom: 2px solid $color-warm-gray; overflow-x: auto;
+    input[type="radio"] { position: absolute; opacity: 0; pointer-events: none; }
+  }
+  &__label {
+    flex: 1; padding: 14px 24px; font-weight: 600; color: $color-warm-gray;
+    text-align: center; cursor: pointer; position: relative; white-space: nowrap;
+    transition: color 0.25s ease;
+    &::after {
+      content: ''; position: absolute; bottom: -2px; left: 50%;
+      transform: translateX(-50%); width: 0; height: 3px;
+      background: $color-teal; border-radius: 3px 3px 0 0; transition: width 0.3s ease;
+    }
+    &:hover { color: lighten($color-teal, 10%); }
+  }
+  @media (max-width: 767px) {
+    &__nav { flex-direction: column; border-bottom: none; border-left: 3px solid $color-warm-gray; }
+    &__label { text-align: left; padding: 12px 20px; border-bottom: 1px solid rgba($color-warm-gray, 0.3); }
+  }
+}
+
+// ═══ 2. ip-block — интеллектуальный вклад ═══
+.ip-block {
+  position: relative; background: linear-gradient(135deg, rgba($color-deep-blue, 0.04), rgba($color-teal, 0.06));
+  border-radius: 16px; padding: 36px 32px; overflow: hidden;
+  &::before {
+    content: ''; position: absolute; inset: 0; border-radius: 16px; padding: 2px;
+    background: linear-gradient(135deg, $color-teal, $color-deep-blue);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+  }
+  &__header { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 20px; }
+  &__icon { font-size: 2.4rem; flex-shrink: 0; width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, rgba($color-teal, 0.15), rgba($color-deep-blue, 0.1)); border-radius: 12px; }
+  &__number { font-size: 2.6rem; font-weight: 800; color: $color-deep-blue; line-height: 1.1; }
+  &__subtitle { font-size: 0.9rem; font-weight: 500; color: $color-teal; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+  &__body { font-size: 1rem; line-height: 1.6; color: rgba($color-deep-blue, 0.75); max-width: 520px; }
+  @media (max-width: 639px) { padding: 24px 20px; &__number { font-size: 2rem; } &__icon { width: 44px; height: 44px; font-size: 1.8rem; } }
+}
+
+// ═══ 3. needs-grid ═══
+.needs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; @media (max-width: 1023px) { grid-template-columns: repeat(2, 1fr); } @media (max-width: 639px) { grid-template-columns: 1fr; } }
+.needs-card {
+  background: #fff; border-radius: 12px; padding: 24px; border-left: 4px solid transparent;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: box-shadow 0.25s ease, transform 0.25s ease;
+  &:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.1); transform: translateY(-2px); }
+  &--people { border-left-color: $color-teal; }
+  &--money { border-left-color: $color-green; }
+  &--infra { border-left-color: $color-deep-blue; }
+  &--partnership { border-left-color: $color-warm-gray; }
+  &__title { font-size: 1.1rem; font-weight: 700; color: $color-deep-blue; margin-bottom: 8px; }
+  &__desc { font-size: 0.9rem; line-height: 1.55; color: rgba($color-deep-blue, 0.7); }
+}
+
+// ═══ 4. expertise-quote ═══
+.expertise-quote {
+  position: relative; padding: 28px 28px 28px 48px; margin: 24px 0;
+  border-left: 4px solid $color-teal; background: rgba($color-teal, 0.04);
+  border-radius: 0 10px 10px 0;
+  &::before { content: '«'; position: absolute; top: 8px; left: 10px; font-family: Georgia, serif; font-size: 3.2rem; line-height: 1; color: $color-teal; opacity: 0.5; }
+  &__text { font-size: 1.05rem; line-height: 1.7; color: rgba($color-deep-blue, 0.85); font-style: italic; }
+  &__author { margin-top: 14px; font-size: 0.85rem; font-weight: 600; color: $color-teal; }
+  @media (max-width: 639px) { padding: 20px 20px 20px 38px; &::before { font-size: 2.4rem; } &__text { font-size: 0.95rem; } }
+}
+
+// ═══ 5. roadmap-regulatory ═══
+.roadmap-regulatory {
+  position: relative; padding-left: 36px;
+  &::before { content: ''; position: absolute; top: 8px; bottom: 8px; left: 11px; width: 2px; background: $color-warm-gray; }
+}
+.roadmap-item {
+  position: relative; padding-bottom: 32px;
+  &:last-child { padding-bottom: 0; }
+  &::before { content: ''; position: absolute; top: 6px; left: -36px; width: 12px; height: 12px; border-radius: 50%; border: 2px solid $color-warm-gray; background: #fff; z-index: 1; }
+  &--done::before { background: $color-green; border-color: $color-green; box-shadow: 0 0 0 4px rgba($color-green, 0.2); }
+  &--in-progress::before { background: $color-teal; border-color: $color-teal; box-shadow: 0 0 0 4px rgba($color-teal, 0.2); }
+  &__date { font-size: 0.75rem; font-weight: 700; color: $color-warm-gray; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 4px; }
+  &__title { font-size: 1rem; font-weight: 700; color: $color-deep-blue; margin-bottom: 4px; }
+  &__desc { font-size: 0.88rem; line-height: 1.5; color: rgba($color-deep-blue, 0.65); }
+  &__status { display: inline-block; margin-top: 8px; padding: 3px 10px; font-size: 0.72rem; font-weight: 700; border-radius: 5px; text-transform: uppercase; }
+}
+
+// ═══ 6. dual-table ═══
+.dual-table {
+  width: 100%; border-collapse: separate; border-spacing: 0; border-radius: 12px;
+  overflow: hidden; box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  th, td { padding: 14px 20px; font-size: 0.92rem; text-align: left; }
+  thead th { font-weight: 700; font-size: 0.85rem; text-transform: uppercase; padding: 16px 20px; }
+  &__col-yes { background: rgba($color-green, 0.08); thead & { background: rgba($color-green, 0.15); } }
+  &__col-no { background: rgba($color-warm-gray, 0.10); thead & { background: rgba($color-warm-gray, 0.20); } }
+  tbody tr { border-bottom: 1px solid rgba($color-warm-gray, 0.25); &:last-child { border-bottom: none; } }
+}
+
+// ═══ 7. cta-grid ═══
+.cta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; @media (max-width: 767px) { grid-template-columns: 1fr; } }
+.cta-card {
+  background: #fff; border-radius: 16px; padding: 32px 28px; text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: transform 0.25s ease, box-shadow 0.25s ease;
+  &:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
+  &__icon { font-size: 2.5rem; margin-bottom: 16px; }
+  &__title { font-size: 1.25rem; font-weight: 700; color: $color-deep-blue; margin-bottom: 12px; }
+  &__desc { font-size: 0.92rem; line-height: 1.6; color: $color-text-secondary; margin-bottom: 20px; }
+}
