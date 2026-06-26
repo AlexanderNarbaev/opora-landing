@@ -32,7 +32,7 @@ description: Независимая экспертная валидация пр
   </div>
   <div class="expertise-quote__author">
     Эксперт #5204065665
-    <span class="expertise-quote__rating">3 / 3</span>
+<span class="expertise-quote__rating">3 / 3</span>
   </div>
 </div>
 
@@ -42,7 +42,7 @@ description: Независимая экспертная валидация пр
   </div>
   <div class="expertise-quote__author">
     Эксперт #2858126741
-    <span class="expertise-quote__rating">3 / 3</span>
+<span class="expertise-quote__rating">3 / 3</span>
   </div>
 </div>
 
@@ -77,25 +77,25 @@ description: Независимая экспертная валидация пр
 
 <div class="ip-block" style="margin-top: 32px;">
   <div class="ip-block__header">
-    <div class="ip-block__icon">📊</div>
-    <div>
+<div class="ip-block__icon">📊</div>
+<div>
       <div class="ip-block__number">224+</div>
       <div class="ip-block__subtitle">идей проанализировано</div>
-    </div>
+</div>
   </div>
   <div class="ip-block__grid">
-    <div class="ip-block__stat">
+<div class="ip-block__stat">
       <div class="ip-block__stat-value">5</div>
       <div class="ip-block__stat-label">экспертных заключений на «Опору»</div>
-    </div>
-    <div class="ip-block__stat">
+</div>
+<div class="ip-block__stat">
       <div class="ip-block__stat-value">488</div>
       <div class="ip-block__stat-label">рейтинг эксперта</div>
-    </div>
-    <div class="ip-block__stat">
+</div>
+<div class="ip-block__stat">
       <div class="ip-block__stat-value">~80%</div>
       <div class="ip-block__stat-label">идей на СИНВ — не цифровое предпринимательство</div>
-    </div>
+</div>
   </div>
   <div class="ip-block__body" style="margin-top: 16px;">
     Последняя цифра подтверждает уникальность ниши: «Опора» — один из немногих инфраструктурных технологических проектов на платформе среди тысяч социальных и локальных инициатив.

@@ -260,5 +260,3 @@ alexander.narbayev@yandex.ru · +7 999 452-33-98 · Москва, Зеленог
 <a href="https://github.com/AlexanderNarbaev/opora" target="_blank" rel="noopener" class="btn btn-outline">Перейти в репозиторий</a>
 </div>
 </div>
-
-</div>
