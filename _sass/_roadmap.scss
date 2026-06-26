@@ -2,6 +2,7 @@
 
 .roadmap {
   position: relative;
+  padding: 1.5rem 0;
 
   &::before {
     content: '';
@@ -22,7 +23,7 @@
 .roadmap-item {
   position: relative;
   display: flex;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
   padding-left: calc(50% + 2rem);
 
   &:nth-child(even) {
@@ -79,7 +80,7 @@
   background: $color-white;
   border-radius: $card-radius;
   box-shadow: $card-shadow;
-  padding: 1.5rem;
+  padding: 1.75rem;
 
   .roadmap-phase {
     display: inline-block;
@@ -91,7 +92,7 @@
     font-weight: $fw-semibold;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
   }
 
   .roadmap-year {

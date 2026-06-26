@@ -36,23 +36,26 @@
 }
 
 .btn-teal {
-  background-color: $color-teal;
-  color: $color-white;
+  background-color: transparent;
+  color: $color-deep-blue;
+  border: 2px solid $color-teal;
 
   &:hover {
-    background-color: darken($color-teal, 8%);
+    background-color: $color-teal;
     color: $color-white;
+    border-color: $color-teal;
   }
 }
 
 .btn-outline {
   background-color: transparent;
   color: $color-deep-blue;
-  border: 2px solid $color-deep-blue;
+  border: 2px solid $color-warm-gray;
 
   &:hover {
     background-color: $color-deep-blue;
     color: $color-white;
+    border-color: $color-deep-blue;
   }
 }
 
@@ -266,17 +269,6 @@
   @media (min-width: ($bp-lg + 1px)) {
     display: none !important;
   }
-}
-
-.nav-demo-btn {
-  height: 2.5rem;
-  padding: 0 1.25rem;
-  font-size: 0.875rem;
-
-  @media (max-width: $bp-lg) {
-    display: none;
-  }
-}
 
 // ── Бейджи ─────────────────────────────────────────────
 .badge {

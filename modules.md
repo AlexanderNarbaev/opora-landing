@@ -43,7 +43,7 @@ description: 17 модулей платформы «Опора» — от Вит
     </p>
     <div class="cta-actions">
       <a href="{{ '/contacts/' | relative_url }}" class="btn btn-teal btn-lg">Связаться с нами</a>
-      <a href="{{ '/demo/' | relative_url }}" class="btn btn-outline-light btn-lg">Демо</a>
+      <a href="{{ '/' | relative_url }}#how-it-works" class="btn btn-outline-light btn-lg">Как работает</a>
     </div>
   </div>
 </section>
