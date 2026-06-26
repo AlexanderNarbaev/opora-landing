@@ -5,16 +5,26 @@
 
   <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
   <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="author" content="Александр Нарбаев">
+  <meta name="keywords" content="Опора, национальная платформа, МСП, отечественные бренды, верификация, кешбэк, AI-кооперация, блокчейн, цифровой рубль, ЦФА, Hyperledger Fabric, Quarkus, СИНВ, АСИ">
 
   <!-- Open Graph -->
   <meta property="og:title" content="{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}">
-  <meta property="og:description" content="{{ site.description }}">
+  <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:url" content="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
   <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/assets/images/logo.svg">
+  <meta property="og:locale" content="ru_RU">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}">
+  <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/favicon.svg' | relative_url }}">
+  <link rel="apple-touch-icon" href="{{ '/assets/images/favicon.svg' | relative_url }}">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">

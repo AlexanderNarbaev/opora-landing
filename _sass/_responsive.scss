@@ -10,6 +10,12 @@
   .site-nav {
     display: none;
   }
+
+  .site-header {
+    .container {
+      height: 3.5rem;
+    }
+  }
 }
 
 @media (max-width: $bp-md) {
@@ -42,6 +48,21 @@
 
   .section-subtitle {
     font-size: 1rem;
+  }
+
+  // CTA grid → 1 column
+  .cta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  // IP block
+  .ip-block__grid {
+    grid-template-columns: 1fr;
+  }
+
+  // Needs grid
+  .needs-grid {
+    grid-template-columns: 1fr;
   }
 }
 
