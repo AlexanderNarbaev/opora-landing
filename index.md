@@ -35,8 +35,16 @@ description: «Опора» — национальная цифровая эко
         <div class="stat-label">NPV (базовый сценарий)</div>
       </div>
       <div class="hero-stat">
+        <div class="stat-value">17 845</div>
+        <div class="stat-label">идей СИНВ-2026 проанализировано</div>
+      </div>
+      <div class="hero-stat">
+        <div class="stat-value">319</div>
+        <div class="stat-label">релевантных (23,2%)</div>
+      </div>
+      <div class="hero-stat">
         <div class="stat-value">ТОП-100</div>
-        <div class="stat-label">СИНВ-2024</div>
+        <div class="stat-label">СИНВ-2026</div>
       </div>
     </div>
   </div>
@@ -96,8 +104,74 @@ description: «Опора» — национальная цифровая эко
   </div>
 </section>
 
+<!-- ── ВАЛИДАЦИЯ СИНВ-2026 ── -->
+<section class="section" id="sinv-validation">
+  <div class="container">
+    <h2 class="section-title">Валидация через СИНВ-2026</h2>
+    <p class="section-subtitle">
+      Проект «Опора» прошёл масштабную валидацию на основе 17 845 идей
+      конкурса «Сто инновационных лидеров России».
+    </p>
+
+    <div class="financials-grid">
+      <div class="financial-card">
+        <div class="fin-value">17 845</div>
+        <div class="fin-label">идей СИНВ-2026 проанализировано</div>
+      </div>
+      <div class="financial-card">
+        <div class="fin-value">1 374</div>
+        <div class="fin-label">проанализировано детально</div>
+      </div>
+      <div class="financial-card">
+        <div class="fin-value">319</div>
+        <div class="fin-label">релевантных (23,2%)</div>
+      </div>
+      <div class="financial-card">
+        <div class="fin-value">127</div>
+        <div class="fin-label">рекомендовано к внедрению</div>
+      </div>
+    </div>
+
+    <div style="margin-top: 2.5rem;">
+      <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: #233370;">Ключевой вывод</h3>
+      <div class="ip-block">
+        <div class="ip-block__header">
+          <div class="ip-block__icon">🎯</div>
+          <div>
+            <div class="ip-block__number">Ни одна из 17 845 идей</div>
+            <div class="ip-block__subtitle">не предлагает интегрированную экосистему из 11+ модулей</div>
+          </div>
+        </div>
+        <div class="ip-block__body">
+          Анализ показал, что все существующие решения носят точечный характер —
+          отдельные маркетплейсы, сервисы лояльности или инструменты кооперации.
+          «Опора» — единственная платформа, объединяющая все 17 модулей
+          на едином технологическом ядре с блокчейн-верификацией и AI-рекомендациями.
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 2rem;">
+      <h3 style="font-size: 1.15rem; margin-bottom: 1rem; color: #233370;">Топ-валидирующие идеи СИНВ-2026</h3>
+      <div class="scenarios-table-wrap">
+        <table class="scenarios-table">
+          <thead>
+            <tr><th>№ идеи</th><th>Название</th><th>Пересечение с «Опорой»</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>#280002</td><td>Цифровая платформа поддержки МСП</td><td>Каталог, верификация, кооперация</td></tr>
+            <tr><td>#280497</td><td>AI-система подбора бизнес-партнёров</td><td>AI-кооперация, артельные кластеры</td></tr>
+            <tr><td>#18993</td><td>Система лояльности для отечественных товаров</td><td>Кешбэк, грейдирование, социальный трек</td></tr>
+            <tr><td>#228554</td><td>Экспортный маркетплейс для МСП</td><td>Модуль «Экспорт», единое окно ЕАЭС/БРИКС</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ── МОДУЛИ ── -->
-<section class="section" id="modules">
+<section class="section section-gray" id="modules">
   <div class="container">
     <h2 class="section-title">17 модулей платформы</h2>
     <p class="section-subtitle">
@@ -126,11 +200,11 @@ description: «Опора» — национальная цифровая эко
 </section>
 
 <!-- ── ИНТЕЛЛЕКТУАЛЬНЫЙ ВКЛАД ── -->
-<section class="section section-gray" id="ip">
+<section class="section" id="ip">
   <div class="container">
     <h2 class="section-title">Интеллектуальный вклад основателя</h2>
     <p class="section-subtitle">
-      3 года проработки. 400+ файлов документации и прототипов кода. Оценка методом замещения — 500+ млн руб.
+      3 года проработки. 197 документов, 14 MB. Оценка методом замещения — 500+ млн руб.
     </p>
 
     <div class="ip-block">
@@ -142,20 +216,24 @@ description: «Опора» — национальная цифровая эко
         </div>
       </div>
       <div class="ip-block__body">
-        400+ файлов технической документации и прототипов кода.
-        Архитектура 17 модулей, API-контракты (OpenAPI 3.0), C4-диаграммы,
-        финансовая модель (8 сценариев), юридический пакет (поправки в НК РФ, ЭПР, Устав АО).
-        Проект прошёл 5 независимых экспертиз, ТОП-100 СИНВ-2024.
+        197 документов технической документации объёмом 14 MB.
+        Архитектура 17 модулей, 10 OpenAPI-спецификаций, 12 SQL-миграций,
+        C4-диаграммы, финансовая модель (8 сценариев), юридический пакет (поправки в НК РФ, ЭПР, Устав АО).
+        Проект прошёл 5 независимых экспертиз, ТОП-100 СИНВ-2026.
         Весь IP передаётся в АО «НП Опора» безвозмездно как вклад основателя.
       </div>
       <div class="ip-block__grid">
         <div class="ip-block__stat">
-          <div class="ip-block__stat-value">400+</div>
-          <div class="ip-block__stat-label">файлов документации</div>
+          <div class="ip-block__stat-value">197</div>
+          <div class="ip-block__stat-label">документов (14 MB)</div>
         </div>
         <div class="ip-block__stat">
-          <div class="ip-block__stat-value">205</div>
-          <div class="ip-block__stat-label">Java-файлов прототипов</div>
+          <div class="ip-block__stat-value">10</div>
+          <div class="ip-block__stat-label">OpenAPI-спецификаций</div>
+        </div>
+        <div class="ip-block__stat">
+          <div class="ip-block__stat-value">12</div>
+          <div class="ip-block__stat-label">SQL-миграций</div>
         </div>
         <div class="ip-block__stat">
           <div class="ip-block__stat-value">8</div>
@@ -167,12 +245,12 @@ description: «Опора» — национальная цифровая эко
 </section>
 
 <!-- ── ФИНАНСЫ ── -->
-<section class="section" id="financials">
+<section class="section section-gray" id="financials">
   <div class="container">
     <h2 class="section-title">Финансовая модель</h2>
     <p class="section-subtitle">
       Мульти-source финансирование 10–12,5 млрд руб. на 5 лет.
-      Бюджетный мультипликатор 1,7×. 8 сценариев стресс-тестирования.
+      Бюджетный мультипликатор 1,7×. 3 сценария стресс-тестирования.
     </p>
 
     <div class="financials-grid">
@@ -194,7 +272,73 @@ description: «Опора» — национальная цифровая эко
       </div>
     </div>
 
-    <div style="text-align: center; margin-top: 1rem;">
+    <div style="margin-top: 2.5rem;">
+      <h3 style="font-size: 1.25rem; margin-bottom: 1rem; color: #233370;">Три сценария развития</h3>
+      <div class="scenarios-table-wrap">
+        <table class="scenarios-table">
+          <thead>
+            <tr>
+              <th>Параметр</th>
+              <th>Пессимистичный</th>
+              <th>Базовый</th>
+              <th>Оптимистичный</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>NPV</td>
+              <td>0,5 млрд ₽</td>
+              <td>4,5 млрд ₽</td>
+              <td>12,8 млрд ₽</td>
+            </tr>
+            <tr>
+              <td>IRR</td>
+              <td>10%</td>
+              <td>32%</td>
+              <td>52%</td>
+            </tr>
+            <tr>
+              <td>Срок окупаемости</td>
+              <td>7,5 лет</td>
+              <td>4,2 года</td>
+              <td>2,8 года</td>
+            </tr>
+            <tr>
+              <td>Пользователей к 2031</td>
+              <td>1,2 млн</td>
+              <td>4,38 млн</td>
+              <td>12 млн</td>
+            </tr>
+            <tr>
+              <td>Брендов</td>
+              <td>50 000</td>
+              <td>200 000</td>
+              <td>500 000</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div style="margin-top: 2rem;">
+      <h3 style="font-size: 1.15rem; margin-bottom: 1rem; color: #233370;">Выручка по модулям (базовый сценарий, 2031)</h3>
+      <div class="scenarios-table-wrap">
+        <table class="scenarios-table">
+          <thead>
+            <tr><th>Модуль</th><th>Выручка</th><th>Доля</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Опора.Витрина</td><td>1 180 млн ₽</td><td>30%</td></tr>
+            <tr><td>Опора.Финансы</td><td>940 млн ₽</td><td>24%</td></tr>
+            <tr><td>Опора.Кооперация</td><td>940 млн ₽</td><td>24%</td></tr>
+            <tr><td>Опора.Аналитика</td><td>390 млн ₽</td><td>10%</td></tr>
+            <tr><td>Остальные модули</td><td>470 млн ₽</td><td>12%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 1.5rem;">
       <a href="{{ '/investors/' | relative_url }}" class="btn btn-outline">
         Подробнее для инвесторов →
       </a>
@@ -203,7 +347,7 @@ description: «Опора» — национальная цифровая эко
 </section>
 
 <!-- ── ROADMAP ── -->
-<section class="section section-gray" id="roadmap">
+<section class="section" id="roadmap">
   <div class="container">
     <h2 class="section-title">Дорожная карта</h2>
     <p class="section-subtitle">
@@ -233,7 +377,7 @@ description: «Опора» — национальная цифровая эко
 </section>
 
 <!-- ── КОМАНДА ── -->
-<section class="section" id="team">
+<section class="section section-gray" id="team">
   <div class="container">
     <h2 class="section-title">Команда</h2>
     <p class="section-subtitle">
@@ -351,6 +495,55 @@ description: «Опора» — национальная цифровая эко
   </div>
 </section>
 
+<!-- ── СКАЧАТЬ ДОКУМЕНТЫ ── -->
+<section class="section section-gray" id="downloads">
+  <div class="container">
+    <h2 class="section-title">Ключевые документы</h2>
+    <p class="section-subtitle">
+      Загрузите материалы для детального изучения проекта «Опора».
+    </p>
+
+    <div class="grid-3">
+      <div class="card" style="text-align: center;">
+        <h3>One-Pager</h3>
+        <p class="text-secondary">
+          Краткое описание проекта на одной странице. Идеально для первого знакомства.
+        </p>
+        <a href="{{ '/docs/one-pager.pdf' | relative_url }}" class="btn btn-outline" style="margin-top: 1rem;">
+          Скачать PDF →
+        </a>
+      </div>
+      <div class="card" style="text-align: center;">
+        <h3>Investment Summary</h3>
+        <p class="text-secondary">
+          Финансовая модель, сценарии, NPV/IRR, структура инвестиций и гарантии.
+        </p>
+        <a href="{{ '/docs/investment-summary.pdf' | relative_url }}" class="btn btn-outline" style="margin-top: 1rem;">
+          Скачать PDF →
+        </a>
+      </div>
+      <div class="card" style="text-align: center;">
+        <h3>Technical Overview</h3>
+        <p class="text-secondary">
+          Архитектура, стек технологий, модули, интеграции и дорожная карта разработки.
+        </p>
+        <a href="{{ '/docs/technical-overview.pdf' | relative_url }}" class="btn btn-outline" style="margin-top: 1rem;">
+          Скачать PDF →
+        </a>
+      </div>
+      <div class="card" style="text-align: center;">
+        <h3>Q&A Document</h3>
+        <p class="text-secondary">
+          Ответы на часто задаваемые вопросы инвесторов, партнёров и государства.
+        </p>
+        <a href="{{ '/docs/qa-document.pdf' | relative_url }}" class="btn btn-outline" style="margin-top: 1rem;">
+          Скачать PDF →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ── CTA ── -->
 <section class="section cta" id="cta">
   <div class="container">
@@ -364,7 +557,7 @@ description: «Опора» — национальная цифровая эко
         <div class="cta-card__icon">📈</div>
         <h3 class="cta-card__title">Инвесторам</h3>
         <p class="cta-card__desc">
-          Финмодель v4.0, 8 сценариев, NPV 4,5 млрд руб., IRR 32%.
+          Финмодель v4.0, 3 сценария, NPV 4,5 млрд руб., IRR 32%.
           Интеллектуальный вклад 500+ млн руб. Гарантии: Набсовет, buyback, SPO.
         </p>
         <a href="{{ '/investors/' | relative_url }}" class="btn btn-teal">Инвесторам →</a>
