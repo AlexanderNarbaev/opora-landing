@@ -1,50 +1,56 @@
 ---
 layout: default
 title: Главная
-description: «Опора» — национальная цифровая экосистема роста отечественных брендов. 17 модулей, AI-кооперация, блокчейн-верификация, кешбэк до 7%.
+description: «Опора» — национальная цифровая экосистема верификации и B2B-кооперации российских брендов. Верификация через ГИСП/Честный знак/ФНС, AI-подбор поставщиков, кешбэк до 7%.
 ---
 
 <!-- ── HERO ── -->
 <section class="hero">
   <div class="container">
     <div class="hero-content">
-      <h1>Национальная платформа доверия, роста и кооперации российских брендов</h1>
+      <h1>Национальная платформа верификации и B2B-кооперации российских брендов</h1>
       <p class="hero-subtitle">
-        «Опора» — это 17 модулей на едином технологическом ядре: каталог верифицированных брендов,
-        AI-кооперация, биржа креаторов, аналитика, право, финансы и экспорт.
-        Не маркетплейс — инфраструктура, связывающая государство, бизнес и граждан в единый контур доверия и выгоды.
+        «Опора» — это <strong>3 ядра ценности</strong>: верификация отечественности,
+        AI-кооперация поставщиков и программа лояльности.
+        Не маркетплейс — инфраструктура доверия для 6,8 млн МСП и 146 млн граждан.
       </p>
+      <div class="hero-highlight">
+        <div class="hero-highlight-item">
+          <span class="hero-highlight-icon">🔍</span>
+          <span><strong>Поиск поставщика с 6 месяцев до 2 недель</strong></span>
+        </div>
+        <div class="hero-highlight-item">
+          <span class="hero-highlight-icon">📊</span>
+          <span><strong>57% предприятий не могут найти поставщиков</strong> — мы решаем эту проблему</span>
+        </div>
+      </div>
       <div class="hero-actions">
         <a href="{{ '/investors/' | relative_url }}" class="btn btn-teal btn-lg">Инвесторам</a>
         <a href="{{ '/gr-strategy/' | relative_url }}" class="btn btn-outline-light btn-lg">Государству</a>
-        <a href="{{ '/needs/' | relative_url }}" class="btn btn-outline-light btn-lg">Партнёрам</a>
+        <a href="{{ '/needs/' | relative_url }}" class="btn btn-outline-light btn-lg">Бизнесу</a>
       </div>
     </div>
 
     <div class="hero-stats">
       <div class="hero-stat">
+        <div class="stat-value">146 млн</div>
+        <div class="stat-label">потребителей (TAM)</div>
+      </div>
+      <div class="hero-stat">
         <div class="stat-value">6,8 млн</div>
-        <div class="stat-label">субъектов МСП в РФ</div>
+        <div class="stat-label">субъектов МСП (SAM)</div>
       </div>
       <div class="hero-stat">
-        <div class="stat-value">17</div>
-        <div class="stat-label">модулей платформы</div>
+        <div class="stat-value">500K</div>
+        <div class="stat-label">брендов в первый год (SOM)</div>
       </div>
       <div class="hero-stat">
-        <div class="stat-value">4,5 млрд ₽</div>
-        <div class="stat-label">NPV (базовый сценарий)</div>
+        <div class="stat-value">7,2×</div>
+        <div class="stat-label">LTV/CAC</div>
       </div>
       <div class="hero-stat">
-        <div class="stat-value">17 845</div>
-        <div class="stat-label">идей СИНВ-2026 проанализировано</div>
-      </div>
-      <div class="hero-stat">
-        <div class="stat-value">319</div>
-        <div class="stat-label">релевантных (23,2%)</div>
-      </div>
-      <div class="hero-stat">
-        <div class="stat-value">ТОП-100</div>
-        <div class="stat-label">СИНВ-2026</div>
+        <div class="stat-value">6 мес</div>
+        <div class="stat-label">Time-to-MVP</div>
       </div>
     </div>
   </div>
@@ -81,31 +87,129 @@ description: «Опора» — национальная цифровая эко
       </div>
 
       <div>
-        <h3>Решение</h3>
+        <h3>Решение: 3 ядра ценности</h3>
         <ul class="solution-list">
           <li>
-            <strong>Каталог с грейдированием</strong> «Золото/Серебро/Бронза»
-            и кешбэком до 7% — прозрачный критерий «отечественности»,
-            подтверждённый ГИСП, «Честным знаком» и ФНС.
+            <strong>1. Верификация</strong> — проверка через ГИСП, «Честный знак» и ФНС.
+            Грейдирование «Золото/Серебро/Бронза». Прозрачный критерий «отечественности».
           </li>
           <li>
-            <strong>AI-кооперация</strong> — автоматический подбор партнёров
-            по 50+ параметрам, артельные кластеры под крупные заказы,
+            <strong>2. B2B Кооперация</strong> — AI-подбор партнёров по 50+ параметрам,
+            артельные кластеры под крупные заказы,
             смарт-контракты на блокчейне Hyperledger Fabric.
           </li>
           <li>
-            <strong>17 модулей на едином ядре</strong> — от биржи креаторов
-            до экспортного «единого окна». Платформа интегрируется
-            с существующими госсервисами через открытое API. Архитектурный ориентир — ONDC (Индия).
+            <strong>3. Лояльность</strong> — кешбэк до 7% баллами,
+            социальный трек (образование, медицина, спорт),
+            интеграция с госсервисами через открытое API.
           </li>
         </ul>
+        <div class="roadmap-note">
+          <strong>+14 модулей</strong> в roadmap: аналитика, финансы, экспорт, право, креаторы и др.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── СЕГМЕНТНЫЙ ПЕРЕКЛЮЧАТЕЛЬ ── -->
+<section class="section" id="segments">
+  <div class="container">
+    <h2 class="section-title">«Опора» для каждого</h2>
+    <p class="section-subtitle">
+      Одна платформа — три перспективы: инвестор, государство, бизнес.
+    </p>
+
+    <div class="segment-tabs">
+      <button class="segment-tab active" data-segment="investors">Инвесторам</button>
+      <button class="segment-tab" data-segment="government">Государству</button>
+      <button class="segment-tab" data-segment="business">Бизнесу</button>
+    </div>
+
+    <div class="segment-content">
+      <div class="segment-panel active" id="segment-investors">
+        <div class="grid-3">
+          <div class="card">
+            <h3>Unit-экономика</h3>
+            <p class="text-secondary">
+              LTV/CAC = 7,2×. Безубыточность к году 4.
+              NPV 4,5 млрд руб. IRR 32%.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Де-рискинг</h3>
+            <p class="text-secondary">
+              Архитектурный и GR-ландшафт готов.
+              Time-to-MVP 6 месяцев. Точки интеграции найдены.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Гарантии</h3>
+            <p class="text-secondary">
+              Наблюдательный совет. Buyback-опцион.
+              Бюджетный мультипликатор 1,7×.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="segment-panel" id="segment-government">
+        <div class="grid-3">
+          <div class="card">
+            <h3>Импортозамещение</h3>
+            <p class="text-secondary">
+              Прозрачный мониторинг локализации.
+              Доля российских товаров — от 35% до 55%.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Обеление самозанятых</h3>
+            <p class="text-secondary">
+              Интеграция с «Мой налог». Автоматические чеки.
+              8+ млн самозанятых без официального дохода.
+            </p>
+          </div>
+          <div class="card">
+            <h3>ROI для государства</h3>
+            <p class="text-secondary">
+              Бюджетный мультипликатор 1,7×.
+              200 000 рабочих мест. ROI 1:3–1:5.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="segment-panel" id="segment-business">
+        <div class="grid-3">
+          <div class="card">
+            <h3>Верификация бренда</h3>
+            <p class="text-secondary">
+              Знак качества «Золото/Серебро/Бронза».
+              Доступ к аудитории 146 млн граждан.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Поиск поставщиков</h3>
+            <p class="text-secondary">
+              AI-подбор за 2 недели вместо 6 месяцев.
+              Артельные кластеры для крупных заказов.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Кешбэк и лояльность</h3>
+            <p class="text-secondary">
+              Кешбэк до 7%. Социальный трек.
+              Программа лояльности без сложных условий.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ── ВАЛИДАЦИЯ СИНВ-2026 ── -->
-<section class="section" id="sinv-validation">
+<section class="section section-gray" id="sinv-validation">
   <div class="container">
     <h2 class="section-title">Валидация через СИНВ-2026</h2>
     <p class="section-subtitle">
@@ -139,14 +243,14 @@ description: «Опора» — национальная цифровая эко
           <div class="ip-block__icon">🎯</div>
           <div>
             <div class="ip-block__number">Ни одна из 17 845 идей</div>
-            <div class="ip-block__subtitle">не предлагает интегрированную экосистему из 11+ модулей</div>
+            <div class="ip-block__subtitle">не предлагает интегрированную экосистему верификации + кооперации</div>
           </div>
         </div>
         <div class="ip-block__body">
           Анализ показал, что все существующие решения носят точечный характер —
           отдельные маркетплейсы, сервисы лояльности или инструменты кооперации.
-          «Опора» — единственная платформа, объединяющая все 17 модулей
-          на едином технологическом ядре с блокчейн-верификацией и AI-рекомендациями.
+          «Опора» — единственная платформа, объединяющая верификацию, B2B-кооперацию
+          и лояльность на едином технологическом ядре.
         </div>
       </div>
     </div>
@@ -171,12 +275,12 @@ description: «Опора» — национальная цифровая эко
 </section>
 
 <!-- ── МОДУЛИ ── -->
-<section class="section section-gray" id="modules">
+<section class="section" id="modules">
   <div class="container">
-    <h2 class="section-title">17 модулей платформы</h2>
+    <h2 class="section-title">3 ядра + 14 модулей roadmap</h2>
     <p class="section-subtitle">
-      11 бизнес-модулей + 6 инфраструктурных сервисов.
-      Каждый модуль закрывает конкретную потребность бизнеса и гражданина.
+      MVP: 3 модуля, закрывающие ключевые потребности.
+      Остальные 14 модулей — расширение после валидации.
     </p>
 
     <div class="modules-grid">
@@ -200,44 +304,45 @@ description: «Опора» — национальная цифровая эко
 </section>
 
 <!-- ── ИНТЕЛЛЕКТУАЛЬНЫЙ ВКЛАД ── -->
-<section class="section" id="ip">
+<section class="section section-gray" id="ip">
   <div class="container">
-    <h2 class="section-title">Интеллектуальный вклад основателя</h2>
+    <h2 class="section-title">De-risked execution</h2>
     <p class="section-subtitle">
-      3 года проработки. 197 документов, 14 MB. Оценка методом замещения — 500+ млн руб.
+      Time-to-MVP 6 месяцев. Архитектурный и GR-ландшафт готов.
+      Точки интеграции с госсистемами найдены.
     </p>
 
     <div class="ip-block">
       <div class="ip-block__header">
-        <div class="ip-block__icon">💎</div>
+        <div class="ip-block__icon">🚀</div>
         <div>
-          <div class="ip-block__number">500+ млн руб.</div>
-          <div class="ip-block__subtitle">оценка методом замещения</div>
+          <div class="ip-block__number">Time-to-MVP: 6 месяцев</div>
+          <div class="ip-block__subtitle">де-рискинг через подготовленную архитектуру</div>
         </div>
       </div>
       <div class="ip-block__body">
-        197 документов технической документации объёмом 14 MB.
-        Архитектура 17 модулей, 10 OpenAPI-спецификаций, 12 SQL-миграций,
+        3 года проработки: архитектура 17 модулей, 10 OpenAPI-спецификаций,
         C4-диаграммы, финансовая модель (8 сценариев), юридический пакет (поправки в НК РФ, ЭПР, Устав АО).
-        Проект прошёл 5 независимых экспертиз, ТОП-100 СИНВ-2026.
+        Проект прошёл 5 независимых экспертиз.
+        GR-ландшафт готов: точки интеграции с ЕСИА, ГИСП, «Честным знаком», ФНС, ОФД определены.
         Весь IP передаётся в АО «НП Опора» безвозмездно как вклад основателя.
       </div>
       <div class="ip-block__grid">
-        <div class="ip-block__stat">
-          <div class="ip-block__stat-value">197</div>
-          <div class="ip-block__stat-label">документов (14 MB)</div>
-        </div>
         <div class="ip-block__stat">
           <div class="ip-block__stat-value">10</div>
           <div class="ip-block__stat-label">OpenAPI-спецификаций</div>
         </div>
         <div class="ip-block__stat">
-          <div class="ip-block__stat-value">12</div>
-          <div class="ip-block__stat-label">SQL-миграций</div>
-        </div>
-        <div class="ip-block__stat">
           <div class="ip-block__stat-value">8</div>
           <div class="ip-block__stat-label">сценариев финмодели</div>
+        </div>
+        <div class="ip-block__stat">
+          <div class="ip-block__stat-value">5</div>
+          <div class="ip-block__stat-label">независимых экспертиз</div>
+        </div>
+        <div class="ip-block__stat">
+          <div class="ip-block__stat-value">6</div>
+          <div class="ip-block__stat-label">интеграций с госсистемами</div>
         </div>
       </div>
     </div>
@@ -245,15 +350,19 @@ description: «Опора» — национальная цифровая эко
 </section>
 
 <!-- ── ФИНАНСЫ ── -->
-<section class="section section-gray" id="financials">
+<section class="section" id="financials">
   <div class="container">
     <h2 class="section-title">Финансовая модель</h2>
     <p class="section-subtitle">
-      Мульти-source финансирование 10–12,5 млрд руб. на 5 лет.
-      Бюджетный мультипликатор 1,7×. 3 сценария стресс-тестирования.
+      Unit-экономика: LTV/CAC = 7,2×. Безубыточность к году 4.
+      3 сценария стресс-тестирования.
     </p>
 
     <div class="financials-grid">
+      <div class="financial-card">
+        <div class="fin-value">7,2×</div>
+        <div class="fin-label">LTV/CAC</div>
+      </div>
       <div class="financial-card">
         <div class="fin-value">4,5 млрд ₽</div>
         <div class="fin-label">NPV (базовый сценарий)</div>
@@ -263,12 +372,8 @@ description: «Опора» — национальная цифровая эко
         <div class="fin-label">IRR</div>
       </div>
       <div class="financial-card">
-        <div class="fin-value">4,2 года</div>
-        <div class="fin-label">Срок окупаемости</div>
-      </div>
-      <div class="financial-card">
-        <div class="fin-value">1,7×</div>
-        <div class="fin-label">Бюджетный мультипликатор</div>
+        <div class="fin-value">Год 4</div>
+        <div class="fin-label">Безубыточность</div>
       </div>
     </div>
 
@@ -320,24 +425,6 @@ description: «Опора» — национальная цифровая эко
       </div>
     </div>
 
-    <div style="margin-top: 2rem;">
-      <h3 style="font-size: 1.15rem; margin-bottom: 1rem; color: #233370;">Выручка по модулям (базовый сценарий, 2031)</h3>
-      <div class="scenarios-table-wrap">
-        <table class="scenarios-table">
-          <thead>
-            <tr><th>Модуль</th><th>Выручка</th><th>Доля</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Опора.Витрина</td><td>1 180 млн ₽</td><td>30%</td></tr>
-            <tr><td>Опора.Финансы</td><td>940 млн ₽</td><td>24%</td></tr>
-            <tr><td>Опора.Кооперация</td><td>940 млн ₽</td><td>24%</td></tr>
-            <tr><td>Опора.Аналитика</td><td>390 млн ₽</td><td>10%</td></tr>
-            <tr><td>Остальные модули</td><td>470 млн ₽</td><td>12%</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
     <div style="text-align: center; margin-top: 1.5rem;">
       <a href="{{ '/investors/' | relative_url }}" class="btn btn-outline">
         Подробнее для инвесторов →
@@ -347,7 +434,7 @@ description: «Опора» — национальная цифровая эко
 </section>
 
 <!-- ── ROADMAP ── -->
-<section class="section" id="roadmap">
+<section class="section section-gray" id="roadmap">
   <div class="container">
     <h2 class="section-title">Дорожная карта</h2>
     <p class="section-subtitle">
@@ -377,13 +464,44 @@ description: «Опора» — национальная цифровая эко
 </section>
 
 <!-- ── КОМАНДА ── -->
-<section class="section section-gray" id="team">
+<section class="section" id="team">
   <div class="container">
     <h2 class="section-title">Команда</h2>
     <p class="section-subtitle">
-      Волна 1 — Ядро. 9–12 ключевых специалистов.
-      Старт найма: июль 2026.
+      Архитектура и GR-стратегия готовы.
+      Идёт формирование ядра команды.
     </p>
+
+    <div class="team-status">
+      <div class="team-status-item">
+        <div class="team-status-icon">✅</div>
+        <div>
+          <strong>Архитектура готова</strong>
+          <p>17 модулей, C4-диаграммы, OpenAPI-спецификации</p>
+        </div>
+      </div>
+      <div class="team-status-item">
+        <div class="team-status-icon">✅</div>
+        <div>
+          <strong>GR-стратегия готова</strong>
+          <p>Поправки в НК РФ, ЭПР, Устав АО, бюджетный мультипликатор</p>
+        </div>
+      </div>
+      <div class="team-status-item">
+        <div class="team-status-icon">🔄</div>
+        <div>
+          <strong>Идёт формирование ядра</strong>
+          <p>Волна 1: 9–12 ключевых специалистов. Старт найма: июль 2026</p>
+        </div>
+      </div>
+      <div class="team-status-item">
+        <div class="team-status-icon">🔍</div>
+        <div>
+          <strong>Ищем операционного партнёра (CEO/GR)</strong>
+          <p>Опционы 5% УК, вестинг 2+3 года</p>
+        </div>
+      </div>
+    </div>
 
     <div class="team-grid">
       {% for person in site.data.team %}
@@ -399,7 +517,7 @@ description: «Опора» — национальная цифровая эко
 </section>
 
 <!-- ── КАК ЭТО РАБОТАЕТ ── -->
-<section class="section" id="how-it-works">
+<section class="section section-gray" id="how-it-works">
   <div class="container">
     <h2 class="section-title">Как работает «Опора»</h2>
     <p class="section-subtitle">
@@ -443,7 +561,7 @@ description: «Опора» — национальная цифровая эко
         </p>
       </div>
       <div class="card">
-        <h3>Поиск партнёров</h3>
+        <h3>Поиск партнёров за 2 недели</h3>
         <p class="text-secondary">
           AI-подбор производственных партнёров по 50+ параметрам. Артельные кластеры для крупных заказов. Смарт-контракты на блокчейне.
         </p>
@@ -472,25 +590,99 @@ description: «Опора» — национальная цифровая эко
       </div>
     </div>
 
-    <h2 style="font-size: 1.35rem; margin: 3rem 0 1.25rem; color: #233370;">Технологический стек</h2>
-    <div class="scenarios-table-wrap">
-      <table class="scenarios-table">
-        <thead>
-          <tr><th>Компонент</th><th>Технология</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Бэкенд</td><td>Java 25, Quarkus 3.36, Gradle 9.5.1 (Kotlin DSL)</td></tr>
-          <tr><td>Фронтенд</td><td>Apache Wicket 10.9.0, React 18</td></tr>
-          <tr><td>Базы данных</td><td>PostgreSQL 17, MongoDB 8.3, Redis 8.6.3</td></tr>
-          <tr><td>События</td><td>Apache Kafka 4.2.0, Apicurio Registry 3.2.x (Avro)</td></tr>
-          <tr><td>Блокчейн</td><td>Hyperledger Fabric + КриптоПро HLF patch</td></tr>
-          <tr><td>API</td><td>REST, gRPC 1.81.0, OpenAPI 3.0</td></tr>
-          <tr><td>Аутентификация</td><td>Keycloak 24, ЕСИА (OAuth 2.0/OIDC)</td></tr>
-          <tr><td>Безопасность</td><td>Класс К2 (ФСТЭК № 117), КриптоПро CSP 5.0</td></tr>
-          <tr><td>AI</td><td>YandexGPT, CatBoost, TFT, XGBoost, RuBERT</td></tr>
-          <tr><td>Деплой</td><td>Docker Compose, Kubernetes (minikube), GitHub Actions</td></tr>
-        </tbody>
-      </table>
+    <h2 style="font-size: 1.35rem; margin: 3rem 0 1.25rem; color: #233370;">Техническая архитектура</h2>
+    <div class="tech-summary">
+      <p>
+        <strong>Событийная микросервисная архитектура.</strong>
+        ФСТЭК К2. AI-матчинг.
+      </p>
+      <a href="{{ '/docs/technical-overview.pdf' | relative_url }}" class="btn btn-outline" style="margin-top: 1rem;">
+        Технические детали → PDF
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="section" id="faq">
+  <div class="container">
+    <h2 class="section-title">Часто задаваемые вопросы</h2>
+    <p class="section-subtitle">
+      Ответы на ключевые вопросы инвесторов, партнёров и государства.
+    </p>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Почему не Ozon/Wildberries?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Мы не конкурент маркетплейсам — мы <strong>инфраструктура</strong>.
+            «Опора» — это национальный слой доверия: верификация отечественности,
+            B2B-кооперация поставщиков и программа лояльности.
+            Маркетплейсы могут быть каналами сбыта для брендов из «Опоры».
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Почему 17 модулей?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            <strong>MVP = 3 модуля</strong>: верификация, B2B-кооперация, лояльность.
+            Остальные 14 модулей — roadmap расширения после валидации ядра.
+            Каждый модуль закрывает конкретную потребность и монетизируется отдельно.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Где команда?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            <strong>Ищем операционного партнёра (CEO/GR)</strong>.
+            Архитектура и GR-стратегия готовы. Идёт формирование ядра команды.
+            Опционы 5% УК, вестинг 2+3 года. Старт найма: июль 2026.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Какая unit-экономика?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            <strong>LTV/CAC = 7,2×</strong>. Безубыточность к году 4.
+            NPV 4,5 млрд руб. (базовый сценарий). IRR 32%.
+            Бюджетный мультипликатор 1,7×.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Какие гарантии для инвесторов?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>
+            Наблюдательный совет с государственным участием.
+            Buyback-опцион после выхода на безубыточность.
+            «Золотая акция» для стратегических решений.
+            5 независимых экспертиз проекта.
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -557,8 +749,8 @@ description: «Опора» — национальная цифровая эко
         <div class="cta-card__icon">📈</div>
         <h3 class="cta-card__title">Инвесторам</h3>
         <p class="cta-card__desc">
-          Финмодель v4.0, 3 сценария, NPV 4,5 млрд руб., IRR 32%.
-          Интеллектуальный вклад 500+ млн руб. Гарантии: Набсовет, buyback, SPO.
+          Unit-экономика LTV/CAC = 7,2×. NPV 4,5 млрд руб. IRR 32%.
+          Time-to-MVP 6 месяцев. Гарантии: Набсовет, buyback, SPO.
         </p>
         <a href="{{ '/investors/' | relative_url }}" class="btn btn-teal">Инвесторам →</a>
       </div>
@@ -577,11 +769,191 @@ description: «Опора» — национальная цифровая эко
         <div class="cta-card__icon">🤝</div>
         <h3 class="cta-card__title">Партнёрам</h3>
         <p class="cta-card__desc">
-          Вакансии: GR-директор, CFO, CISO, AI Lead.
-          Финансирование по траншам. Доступ к API. Партнёрства.
+          Ищем операционного партнёра (CEO/GR).
+          Опционы 5% УК, вестинг 2+3 года. Формирование ядра команды.
         </p>
         <a href="{{ '/needs/' | relative_url }}" class="btn btn-teal">Потребности →</a>
       </div>
     </div>
   </div>
 </section>
+
+<!-- ── SEGMENT SWITCHER SCRIPT ── -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const tabs = document.querySelectorAll('.segment-tab');
+  const panels = document.querySelectorAll('.segment-panel');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      const segment = this.dataset.segment;
+
+      // Update active tab
+      tabs.forEach(t => t.classList.remove('active'));
+      this.classList.add('active');
+
+      // Update active panel
+      panels.forEach(p => p.classList.remove('active'));
+      document.getElementById('segment-' + segment).classList.add('active');
+    });
+  });
+
+  // FAQ toggle
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    question.addEventListener('click', function() {
+      item.classList.toggle('active');
+      const toggle = this.querySelector('.faq-toggle');
+      toggle.textContent = item.classList.contains('active') ? '−' : '+';
+    });
+  });
+});
+</script>
+
+<!-- ── ADDITIONAL STYLES ── -->
+<style>
+  /* Hero highlights */
+  .hero-highlight {
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .hero-highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(255,255,255,0.1);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+  }
+  .hero-highlight-icon {
+    font-size: 1.25rem;
+  }
+
+  /* Segment tabs */
+  .segment-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .segment-tab {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #233370;
+    background: transparent;
+    color: #233370;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  .segment-tab.active {
+    background: #233370;
+    color: white;
+  }
+  .segment-tab:hover {
+    background: #233370;
+    color: white;
+  }
+  .segment-panel {
+    display: none;
+  }
+  .segment-panel.active {
+    display: block;
+  }
+
+  /* Team status */
+  .team-status {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .team-status-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .team-status-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  /* Tech summary */
+  .tech-summary {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .tech-summary p {
+    font-size: 1.25rem;
+    color: #233370;
+    margin: 0;
+  }
+
+  /* FAQ */
+  .faq-list {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .faq-item {
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+  }
+  .faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    background: white;
+    transition: background 0.3s ease;
+  }
+  .faq-question:hover {
+    background: #f5f5f5;
+  }
+  .faq-question h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #233370;
+  }
+  .faq-toggle {
+    font-size: 1.5rem;
+    color: #233370;
+    font-weight: bold;
+  }
+  .faq-answer {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+  }
+  .faq-item.active .faq-answer {
+    max-height: 500px;
+    padding: 0 1.5rem 1.5rem;
+  }
+  .faq-answer p {
+    color: #555;
+    line-height: 1.6;
+  }
+
+  /* Roadmap note */
+  .roadmap-note {
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    background: rgba(35, 51, 112, 0.05);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #233370;
+  }
+</style>
