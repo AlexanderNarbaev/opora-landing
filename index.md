@@ -56,8 +56,8 @@ description: «Опора» — национальная цифровая эко
 
     <!-- Статус разработки (14.07.2026) -->
     <div class="hero-dev-status">
-      <div class="dev-stat"><strong>26/33 P0</strong> выполнено</div>
-      <div class="dev-stat"><strong>69%</strong> готовность (↑23 п.п.)</div>
+      <div class="dev-stat"><strong>27/33 P0</strong> выполнено</div>
+      <div class="dev-stat"><strong>70%</strong> готовность (↑24 п.п.)</div>
       <div class="dev-stat"><strong>94</strong> Vitest-теста</div>
       <div class="dev-stat"><strong>DDD</strong> export-service</div>
       <div class="dev-stat">CSP + audit ✅</div>
