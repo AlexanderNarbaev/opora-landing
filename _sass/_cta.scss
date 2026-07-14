@@ -134,6 +134,22 @@
     margin-bottom: 0.5rem;
   }
 
+  .module-status {
+    display: inline-block;
+    margin-left: 0.5rem;
+    padding: 0.15rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    vertical-align: middle;
+
+    &--ready { background: #2EC4B6; color: #fff; }
+    &--build { background: #F9A825; color: #1A1A1A; }
+    &--stub  { background: #E8EAF0; color: #667085; }
+  }
+
   .module-features {
     list-style: none;
     padding: 0;

@@ -20,7 +20,9 @@ description: 17 модулей платформы «Опора» — от Вит
         </div>
       </div>
       <div class="module-detail-info">
-        <h2>{{ module.name }}</h2>
+        <h2>{{ module.name }}
+          <span class="module-status module-status--{{ module.status | downcase }}">{{ module.status }}</span>
+        </h2>
         <p class="text-secondary">{{ module.description }}</p>
         <ul class="module-features">
           {% for feature in module.features %}

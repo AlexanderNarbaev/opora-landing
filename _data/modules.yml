@@ -5,6 +5,7 @@
   icon: shield
   color: "#233370"
   color_class: module-vitrina
+  status: STUB
   description: >
     Каталог верифицированных российских брендов с трёхуровневым грейдированием
     «Золото / Серебро / Бронза», кешбэком до 7%, социальным треком и инструментами
@@ -20,6 +21,7 @@
   icon: gears
   color: "#2EC4B6"
   color_class: module-cooperation
+  status: STUB
   description: >
     AI-подбор производственных партнёров по 50+ параметрам, артельные кластеры
     для выполнения крупных заказов, B2B-тендеры и смарт-контракты.
@@ -34,6 +36,7 @@
   icon: brush
   color: "#4CAF76"
   color_class: module-creators
+  status: STUB
   description: >
     Маркетплейс для самозанятых: дизайнеры, копирайтеры, маркетологи, видеографы.
     Нулевая комиссия на старте, интеграция с «Мой налог».
@@ -48,6 +51,7 @@
   icon: chart
   color: "#667085"
   color_class: module-analytics
+  status: STUB
   description: >
     Встроенная CRM/CDP-система: портрет покупателя, прогноз спроса, сегментация.
     Data Monetization — пассивный доход гражданам за обезличенные данные.
@@ -62,6 +66,7 @@
   icon: scales
   color: "#C62828"
   color_class: module-legal
+  status: STUB
   description: >
     Арбитраж, патентный маркетплейс, типовые смарт-контракты с NDA.
     Франчайзинг-маркетплейс со стандартным мораторием на конкуренцию.
@@ -76,6 +81,7 @@
   icon: coin
   color: "#F9A825"
   color_class: module-finance
+  status: BUILD
   description: >
     Краудфандинг 2.0: токены участия, интеграция с ЦФА-платформами,
     привлечение инвестиций в проекты МСП от частных лиц до венчурных фондов.
@@ -90,6 +96,7 @@
   icon: sprout
   color: "#D7CCC8"
   color_class: module-sandbox
+  status: STUB
   description: >
     Среда для самозанятых и микробизнеса: нулевая комиссия,
     прямая интеграция с «Мой налог», автоматические чеки и налоги.
@@ -104,6 +111,7 @@
   icon: link
   color: "#78909C"
   color_class: module-chains
+  status: BUILD
   description: >
     B2B-закупки, блокчейн-прослеживаемость товаров от сырья до прилавка,
     AI-ранжирование поставщиков для крупных тендеров.
@@ -118,6 +126,7 @@
   icon: people
   color: "#7E57C2"
   color_class: module-personnel
+  status: BUILD
   description: >
     Платформа для найма и верификации компетенций,
     интеграция с вузами, колледжами и образовательными платформами.
@@ -132,6 +141,7 @@
   icon: map
   color: "#FF8A65"
   color_class: module-regions
+  status: BUILD
   description: >
     Геотаргетированная поддержка моногородов, приграничных территорий
     и новых регионов. Региональная дифференциация кешбэка.
@@ -146,6 +156,7 @@
   icon: globe
   color: "#1565C0"
   color_class: module-export
+  status: BUILD
   description: >
     «Единое окно» для выхода на рынки ЕАЭС и БРИКС: предэкспортная подготовка,
     мультивалютные аккредитивы, интеграция с BRICS Bridge и BRICS Pay.
