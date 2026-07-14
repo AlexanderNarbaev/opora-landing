@@ -56,10 +56,10 @@ description: «Опора» — национальная цифровая эко
 
     <!-- Статус разработки (14.07.2026) -->
     <div class="hero-dev-status">
-      <div class="dev-stat"><strong>24/33 P0</strong> выполнено</div>
-      <div class="dev-stat"><strong>67%</strong> готовность (↑21 п.п.)</div>
+      <div class="dev-stat"><strong>25/33 P0</strong> выполнено</div>
+      <div class="dev-stat"><strong>68%</strong> готовность (↑22 п.п.)</div>
       <div class="dev-stat"><strong>94</strong> Vitest-теста</div>
-      <div class="dev-stat"><strong>11</strong> Storybook-компонентов</div>
+      <div class="dev-stat"><strong>DDD</strong> export-service</div>
       <div class="dev-stat">CSP + audit ✅</div>
       <div class="dev-stat"><a href="https://github.com/AlexanderNarbaev/opora" style="color:#2EC4B6">Репозиторий →</a></div>
     </div>
