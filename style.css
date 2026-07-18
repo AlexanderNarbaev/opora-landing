@@ -630,7 +630,7 @@ img { max-width: 100%; display: block; }
 }
 
 .module-card--expandable::after {
-    content: 'Подробнее';
+    content: 'Подробнее ▾';
     display: block;
     font-size: 0.72rem;
     font-weight: 600;
@@ -638,15 +638,21 @@ img { max-width: 100%; display: block; }
     margin-top: 12px;
     padding-top: 10px;
     border-top: 1px solid var(--gray-mid);
+    transition: color var(--transition);
+}
+
+.module-card--expandable:hover::after {
+    color: var(--green);
 }
 
 .module-card--expanded {
     border-color: var(--teal) !important;
     box-shadow: var(--shadow-md);
+    background: var(--white);
 }
 
 .module-card--expanded::after {
-    content: 'Свернуть';
+    content: 'Свернуть ▴';
 }
 
 .module-card__expand {
@@ -661,6 +667,185 @@ img { max-width: 100%; display: block; }
     display: block;
 }
 
+/* ==========================================================================
+   Flow diagram inside module cards
+   ========================================================================== */
+
+.module-card__flow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+    margin: 14px 0 12px;
+    line-height: 1.5;
+}
+
+.flow-step {
+    display: inline-block;
+    padding: 3px 8px;
+    background: linear-gradient(135deg, var(--blue), var(--blue-light));
+    color: var(--white);
+    border-radius: 4px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    white-space: nowrap;
+    letter-spacing: 0.01em;
+    transition: all var(--transition);
+}
+
+.module-card:hover .flow-step {
+    background: linear-gradient(135deg, var(--teal), var(--green));
+}
+
+.flow-arrow {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--teal);
+    margin: 0 1px;
+    flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Key metrics inside module cards
+   ========================================================================== */
+
+.module-card__metrics {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.module-metric {
+    flex: 1;
+    min-width: 70px;
+    padding: 8px 10px;
+    background: rgba(46, 196, 182, 0.08);
+    border-radius: 6px;
+    text-align: center;
+    border: 1px solid rgba(46, 196, 182, 0.15);
+    transition: all var(--transition);
+}
+
+.module-card:hover .module-metric {
+    border-color: rgba(46, 196, 182, 0.3);
+    background: rgba(46, 196, 182, 0.12);
+}
+
+.module-metric--accent {
+    background: linear-gradient(135deg, rgba(46, 196, 182, 0.15), rgba(76, 175, 118, 0.15));
+    border-color: var(--teal);
+}
+
+.module-metric__value {
+    display: block;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--blue);
+    line-height: 1.1;
+    margin-bottom: 2px;
+}
+
+.module-metric__label {
+    display: block;
+    font-size: 0.65rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    text-transform: lowercase;
+}
+
+/* ==========================================================================
+   Connections to other modules
+   ========================================================================== */
+
+.module-card__connections {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 4px;
+}
+
+.module-connection {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 3px 8px;
+    background: rgba(35, 51, 112, 0.04);
+    border: 1px solid rgba(35, 51, 112, 0.08);
+    border-radius: 12px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    transition: all var(--transition);
+    cursor: default;
+}
+
+.module-card:hover .module-connection {
+    background: rgba(35, 51, 112, 0.06);
+    border-color: var(--blue);
+    color: var(--blue);
+}
+
+/* ==========================================================================
+   Expandable details (description, features, tech stack, integrations)
+   ========================================================================== */
+
+.module-card__details {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.module-card__details-desc {
+    font-size: 0.84rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    margin-bottom: 16px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--gray-mid);
+}
+
+.module-card__details-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.module-card__details-col strong {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--blue);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 8px;
+}
+
+.module-card__details-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.module-card__details-col ul li {
+    position: relative;
+    padding-left: 14px;
+    font-size: 0.76rem;
+    color: var(--text-secondary);
+    margin-bottom: 5px;
+    line-height: 1.55;
+}
+
+.module-card__details-col ul li::before {
+    content: '\2192';
+    position: absolute;
+    left: 0;
+    color: var(--teal);
+    font-weight: 600;
+    font-size: 0.75rem;
+}
+
+/* Legacy expand-section for backwards compat */
 .module-card__expand-section {
     margin-bottom: 14px;
 }
@@ -2112,6 +2297,13 @@ img { max-width: 100%; display: block; }
     }
 }
 
+@media (max-width: 1024px) {
+    .module-card__details-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+}
+
 @media (max-width: 768px) {
     main {
         padding-top: 56px;
@@ -2194,6 +2386,32 @@ img { max-width: 100%; display: block; }
     .solution__group-title {
         font-size: 1rem;
         margin: 32px 0 16px;
+    }
+
+    .module-card__metrics {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .module-metric {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 6px 10px;
+        text-align: left;
+    }
+
+    .module-metric__value {
+        margin-bottom: 0;
+        font-size: 0.95rem;
+    }
+
+    .module-metric__label {
+        font-size: 0.68rem;
+    }
+
+    .module-card__connections {
+        gap: 4px;
     }
 
     .metrics__grid {
