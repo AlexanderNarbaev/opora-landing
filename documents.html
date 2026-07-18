@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Документы проекта Опора — скачать One-Pager, Инвестиционный меморандум, Технический обзор и другие материалы.">
+    <meta name="keywords" content="Опора, документы, One-Pager, инвестиционный меморандум, технический обзор, МСП, СИНВ-2026">
+    <meta name="theme-color" content="#233370">
+    <meta name="author" content="АО «НП «Опора»">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://opora.digital/documents.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Документы — Опора">
+    <meta property="og:description" content="Документы проекта Опора — скачать One-Pager, Инвестиционный меморандум, Технический обзор и другие материалы.">
+    <meta property="og:url" content="https://opora.digital/documents.html">
+    <meta property="og:image" content="https://opora.digital/assets/og-image.png">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:site_name" content="Опора">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Документы — Опора">
+    <meta name="twitter:description" content="Документы проекта Опора — скачать One-Pager, Инвестиционный меморандум, Технический обзор и другие материалы.">
+    <meta name="twitter:image" content="https://opora.digital/assets/og-image.png">
+
+    <title>Документы — Опора</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Structured Data: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://opora.digital/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Документы",
+          "item": "https://opora.digital/documents.html"
+        }
+      ]
+    }
+    </script>
+    <style>
+        /* Documents page specific styles */
+        .docs-page {
+            padding: 120px 0 100px;
+            min-height: 100vh;
+        }
+
+        .docs-page__header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .docs-page__badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--teal);
+            background: rgba(46, 196, 182, 0.1);
+            margin-bottom: 16px;
+        }
+
+        .docs-page__title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--blue);
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .docs-page__subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        /* Category sections */
+        .docs-category {
+            margin-bottom: 48px;
+        }
+
+        .docs-category__title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--blue);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--teal);
+            display: inline-block;
+        }
+
+        /* Document cards */
+        .docs-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        .doc-item {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 28px 32px;
+            border: 1px solid var(--gray-mid);
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            transition: all var(--transition);
+        }
+
+        .doc-item:hover {
+            border-color: var(--teal);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .doc-item__icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--blue), var(--blue-light));
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.05em;
+            flex-shrink: 0;
+        }
+
+        .doc-item__icon--teal {
+            background: linear-gradient(135deg, var(--teal), var(--green));
+            color: var(--white);
+        }
+
+        .doc-item__content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .doc-item__title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--blue);
+            margin-bottom: 4px;
+        }
+
+        .doc-item__desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .doc-item__meta {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .doc-item__tag {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            background: rgba(46, 196, 182, 0.1);
+            color: var(--teal);
+        }
+
+        .doc-item__tag--blue {
+            background: rgba(35, 51, 112, 0.08);
+            color: var(--blue);
+        }
+
+        .doc-item__actions {
+            display: flex;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .doc-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 20px;
+            border-radius: var(--radius-sm);
+            font-family: var(--font);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all var(--transition);
+            text-decoration: none;
+        }
+
+        .doc-btn--pdf {
+            background: var(--blue);
+            color: var(--white);
+        }
+
+        .doc-btn--pdf:hover {
+            background: var(--blue-light);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .doc-btn--pdf svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .doc-btn--html {
+            background: transparent;
+            color: var(--blue);
+            border: 1.5px solid var(--gray-mid);
+        }
+
+        .doc-btn--html:hover {
+            border-color: var(--blue);
+            background: rgba(35, 51, 112, 0.04);
+        }
+
+        /* Info banner */
+        .docs-info {
+            background: linear-gradient(135deg, rgba(46, 196, 182, 0.06), rgba(76, 175, 118, 0.06));
+            border: 1px solid rgba(46, 196, 182, 0.2);
+            border-radius: var(--radius);
+            padding: 20px 28px;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .docs-info__icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .docs-info__text {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .docs-info__text strong {
+            color: var(--blue);
+        }
+
+        /* Stats bar */
+        .docs-stats {
+            display: flex;
+            gap: 32px;
+            justify-content: center;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+        }
+
+        .docs-stat {
+            text-align: center;
+        }
+
+        .docs-stat__number {
+            display: block;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--blue);
+            line-height: 1.1;
+        }
+
+        .docs-stat__label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .docs-page {
+                padding: 100px 0 60px;
+            }
+
+            .docs-page__title {
+                font-size: 1.75rem;
+            }
+
+            .doc-item {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 24px;
+                gap: 16px;
+            }
+
+            .doc-item__actions {
+                width: 100%;
+            }
+
+            .doc-btn {
+                flex: 1;
+                justify-content: center;
+            }
+
+            .docs-stats {
+                gap: 20px;
+            }
+
+            .docs-stat__number {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .doc-item__actions {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="nav" id="nav">
+    <div class="nav__container">
+        <a href="index.html" class="nav__logo">
+            <span class="nav__logo-icon">&#9670;</span>
+            <span class="nav__logo-text">ОПОРА</span>
+        </a>
+        <button class="nav__toggle" id="navToggle" aria-label="Меню" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav__links" id="navLinks">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="index.html#problems">Проблема</a></li>
+            <li><a href="index.html#solution">Решение</a></li>
+            <li><a href="index.html#metrics">Метрики</a></li>
+            <li><a href="index.html#tech">Технологии</a></li>
+            <li><a href="index.html#roadmap">Дорожная карта</a></li>
+            <li><a href="documents.html" style="color: var(--blue);">Документы</a></li>
+            <li><a href="index.html#contact" class="nav__cta">Связаться</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Documents Page -->
+<section class="docs-page">
+    <div class="container">
+        <div class="docs-page__header">
+            <div class="docs-page__badge">Документы проекта</div>
+            <h1 class="docs-page__title">Материалы для скачивания</h1>
+            <p class="docs-page__subtitle">
+                Полная документация проекта «Опора»: от краткого описания до глубокого технического анализа.
+                Все документы актуальны на июль 2026 года.
+            </p>
+        </div>
+
+        <!-- Stats -->
+        <div class="docs-stats">
+            <div class="docs-stat">
+                <span class="docs-stat__number">5</span>
+                <span class="docs-stat__label">документов</span>
+            </div>
+            <div class="docs-stat">
+                <span class="docs-stat__number">20</span>
+                <span class="docs-stat__label">сервисов</span>
+            </div>
+            <div class="docs-stat">
+                <span class="docs-stat__number">17 845</span>
+                <span class="docs-stat__label">идей проанализировано</span>
+            </div>
+            <div class="docs-stat">
+                <span class="docs-stat__number">10–12,5</span>
+                <span class="docs-stat__label">млрд ₽ бюджет</span>
+            </div>
+        </div>
+
+        <!-- Info banner -->
+        <div class="docs-info">
+            <span class="docs-info__icon">📄</span>
+            <div class="docs-info__text">
+                <strong>PDF-версии</strong> документов генерируются автоматически из markdown-источников.
+                Для генерации запустите <code>scripts/generate-pdf.py</code> или <code>scripts/build-landing.sh</code>.
+                HTML-версии доступны всегда.
+            </div>
+        </div>
+
+        <!-- Presentation category -->
+        <div class="docs-category">
+            <h2 class="docs-category__title">Презентация</h2>
+            <div class="docs-list">
+                <div class="doc-item">
+                    <div class="doc-item__icon doc-item__icon--teal">1P</div>
+                    <div class="doc-item__content">
+                        <h3 class="doc-item__title">One-Pager</h3>
+                        <p class="doc-item__desc">
+                            Краткое описание проекта: миссия, проблема, решение, ключевые метрики,
+                            технологический стек, команда и контакты. Идеально для первого знакомства.
+                        </p>
+                        <div class="doc-item__meta">
+                            <span class="doc-item__tag">~2 страницы</span>
+                            <span class="doc-item__tag doc-item__tag--blue">Markdown</span>
+                        </div>
+                    </div>
+                    <div class="doc-item__actions">
+                    <a href="pdfs/one-pager.html" class="doc-btn doc-btn--pdf" download aria-label="Скачать One-Pager">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Скачать
+                    </a>
+                    <a href="pdfs/one-pager.html" class="doc-btn doc-btn--html" aria-label="Открыть One-Pager в формате HTML">HTML</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Investments category -->
+        <div class="docs-category">
+            <h2 class="docs-category__title">Инвестиции</h2>
+            <div class="docs-list">
+                <div class="doc-item">
+                    <div class="doc-item__icon">IM</div>
+                    <div class="doc-item__content">
+                        <h3 class="doc-item__title">Инвестиционный меморандум</h3>
+                        <p class="doc-item__desc">
+                            Полная финансовая модель, бизнес-модель с 8 потоками дохода, анализ рисков,
+                            сценарный анализ (8 сценариев), структура собственности и запрос к инвесторам.
+                        </p>
+                        <div class="doc-item__meta">
+                            <span class="doc-item__tag">~12 страниц</span>
+                            <span class="doc-item__tag doc-item__tag--blue">Конфиденциально</span>
+                        </div>
+                    </div>
+                    <div class="doc-item__actions">
+                        <a href="pdfs/investor-memo.html" class="doc-btn doc-btn--pdf" download aria-label="Скачать Инвестиционный меморандум">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Скачать
+                    </a>
+                    <a href="pdfs/investor-memo.html" class="doc-btn doc-btn--html" aria-label="Открыть Инвестиционный меморандум в формате HTML">HTML</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Technical category -->
+        <div class="docs-category">
+            <h2 class="docs-category__title">Технические</h2>
+            <div class="docs-list">
+                <div class="doc-item">
+                    <div class="doc-item__icon">TO</div>
+                    <div class="doc-item__content">
+                        <h3 class="doc-item__title">Технический обзор</h3>
+                        <p class="doc-item__desc">
+                            Архитектурные принципы, полный стек технологий, декомпозиция 20 сервисов,
+                            модель данных, архитектура безопасности (К2, STRIDE), стратегия развёртывания.
+                        </p>
+                        <div class="doc-item__meta">
+                            <span class="doc-item__tag">~15 страниц</span>
+                            <span class="doc-item__tag doc-item__tag--blue">C4, OpenAPI</span>
+                        </div>
+                    </div>
+                    <div class="doc-item__actions">
+                        <a href="pdfs/technical-overview.html" class="doc-btn doc-btn--pdf" download aria-label="Скачать Технический обзор">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            Скачать
+                        </a>
+                        <a href="pdfs/technical-overview.html" class="doc-btn doc-btn--html" aria-label="Открыть Технический обзор в формате HTML">HTML</a>
+                    </div>
+                </div>
+
+                <div class="doc-item">
+                    <div class="doc-item__icon">MG</div>
+                    <div class="doc-item__content">
+                        <h3 class="doc-item__title">Руководство по модулям</h3>
+                        <p class="doc-item__desc">
+                            Полное описание 20 сервисов платформы: назначение, ключевые функции,
+                            API-эндпоинты, целевые пользователи, статус реализации.
+                        </p>
+                        <div class="doc-item__meta">
+                            <span class="doc-item__tag">~25 страниц</span>
+                            <span class="doc-item__tag doc-item__tag--blue">API Reference</span>
+                        </div>
+                    </div>
+                    <div class="doc-item__actions">
+                        <a href="pdfs/modules-guide.html" class="doc-btn doc-btn--pdf" download aria-label="Скачать Руководство по модулям">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            Скачать
+                        </a>
+                        <a href="pdfs/modules-guide.html" class="doc-btn doc-btn--html" aria-label="Открыть Руководство по модулям в формате HTML">HTML</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Research category -->
+        <div class="docs-category">
+            <h2 class="docs-category__title">Исследования</h2>
+            <div class="docs-list">
+                <div class="doc-item">
+                    <div class="doc-item__icon doc-item__icon--teal">SA</div>
+                    <div class="doc-item__content">
+                        <h3 class="doc-item__title">Анализ СИНВ-2026</h3>
+                        <p class="doc-item__desc">
+                            Валидация проекта через анализ 17 845 идей форума «Сильные идеи для нового времени»:
+                            319 идей-синергистов, ТОП-10 партнёров, план интеграции по фазам.
+                        </p>
+                        <div class="doc-item__meta">
+                            <span class="doc-item__tag">~15 страниц</span>
+                            <span class="doc-item__tag doc-item__tag--blue">17 845 идей</span>
+                        </div>
+                    </div>
+                    <div class="doc-item__actions">
+                        <a href="pdfs/sinv-analysis.html" class="doc-btn doc-btn--pdf" download aria-label="Скачать Анализ СИНВ-2026">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            Скачать
+                        </a>
+                        <a href="pdfs/sinv-analysis.html" class="doc-btn doc-btn--html" aria-label="Открыть Анализ СИНВ-2026 в формате HTML">HTML</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back to main -->
+        <div style="text-align: center; margin-top: 48px;">
+            <a href="index.html" class="btn btn--outline">← Вернуться на главную</a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer__inner">
+            <div class="footer__brand">
+                <span class="nav__logo-icon">&#9670;</span>
+                <span class="nav__logo-text">ОПОРА</span>
+                <p class="footer__tagline">Национальная цифровая экосистема роста отечественных брендов</p>
+            </div>
+            <div class="footer__links">
+                <div class="footer__col">
+                    <h4 class="footer__heading">Модули</h4>
+                    <ul>
+                        <li><a href="index.html#solution">Витрина</a></li>
+                        <li><a href="index.html#solution">Кооперация</a></li>
+                        <li><a href="index.html#solution">Креаторы</a></li>
+                        <li><a href="index.html#solution">Экспорт</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__heading">Проект</h4>
+                    <ul>
+                        <li><a href="index.html#roadmap">Дорожная карта</a></li>
+                        <li><a href="index.html#metrics">Метрики</a></li>
+                        <li><a href="index.html#tech">Технологии</a></li>
+                        <li><a href="documents.html">Документы</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__heading">Инфраструктура</h4>
+                    <ul>
+                        <li>Java 25 + Quarkus 3.36</li>
+                        <li>React 18 + TypeScript</li>
+                        <li>PostgreSQL 17 + MongoDB 8.3</li>
+                        <li>Kafka 4.2 + gRPC 1.81</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2026 АО «НП «Опора». Все права защищены.</p>
+            <p class="footer__disclaimer">Проект находится на стадии предзапуска (Фаза 0). Информация носит ознакомительный характер.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

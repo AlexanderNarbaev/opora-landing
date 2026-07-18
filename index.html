@@ -1,1248 +1,1181 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Опора — Национальная цифровая платформа для МСП</title>
-<meta name="description" content="Национальная инфраструктура верификации и B2B-кооперации для 6,8 млн предприятий МСП. LTV/CAC 7.2×, NPV 4,5 млрд руб.">
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{
---navy:#1b2658;--navy-light:#243068;--navy-dark:#111a3d;
---teal:#2EC4B6;--teal-dark:#1fa89c;--teal-light:#5dd9ce;
---gold:#f4b942;--silver:#c0c0c0;--bronze:#cd7f32;
---red:#e74c3c;--green:#27ae60;
---text:#e8eaf0;--text-muted:#9da5b8;--text-dark:#1a1a2e;
---bg-dark:#0d1229;--bg-card:rgba(27,38,88,.65);--bg-card-hover:rgba(36,48,104,.85);
---border:rgba(46,196,182,.18);--glow:rgba(46,196,182,.12);
---radius:16px;--radius-sm:10px;
---font:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
---transition:all .3s cubic-bezier(.4,0,.2,1);
-}
-html{scroll-behavior:smooth;font-size:16px}
-body{font-family:var(--font);background:var(--bg-dark);color:var(--text);line-height:1.7;overflow-x:hidden}
-a{color:var(--teal);text-decoration:none;transition:var(--transition)}
-a:hover{color:var(--teal-light)}
-img{max-width:100%;display:block}
-.container{max-width:1200px;margin:0 auto;padding:0 24px}
-h1,h2,h3,h4{font-weight:700;line-height:1.25;color:#fff}
-h1{font-size:clamp(2rem,5vw,3.4rem)}
-h2{font-size:clamp(1.6rem,3.5vw,2.6rem)}
-h3{font-size:clamp(1.1rem,2vw,1.4rem)}
-h4{font-size:1.05rem}
-.section{padding:100px 0}
-.section-label{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:12px;background:var(--glow);padding:4px 14px;border-radius:20px;border:1px solid var(--border)}
-.section-title{margin-bottom:16px}
-.section-desc{color:var(--text-muted);max-width:720px;font-size:1.05rem;margin-bottom:48px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:var(--radius-sm);font-weight:600;font-size:.95rem;cursor:pointer;border:none;transition:var(--transition);font-family:var(--font)}
-.btn-primary{background:var(--teal);color:var(--navy-dark)}
-.btn-primary:hover{background:var(--teal-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(46,196,182,.3)}
-.btn-outline{background:transparent;color:var(--teal);border:2px solid var(--teal)}
-.btn-outline:hover{background:var(--teal);color:var(--navy-dark);transform:translateY(-2px)}
-.btn-gold{background:linear-gradient(135deg,var(--gold),#e6a520);color:var(--navy-dark)}
-.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(244,185,66,.3)}
-.btn-gov{background:linear-gradient(135deg,#3498db,#2980b9);color:#fff}
-.btn-gov:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(52,152,219,.3)}
-.badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase}
-.badge-gold{background:rgba(244,185,66,.15);color:var(--gold);border:1px solid rgba(244,185,66,.3)}
-.badge-teal{background:rgba(46,196,182,.1);color:var(--teal);border:1px solid var(--border)}
-.badge-blue{background:rgba(52,152,219,.1);color:#3498db;border:1px solid rgba(52,152,219,.25)}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Платформа для малого и среднего бизнеса России. Верификация брендов, B2B-кооперация, маркетплейс креаторов.">
+    <meta name="keywords" content="МСП, малый бизнес, средний бизнес, верификация, B2B, кооперация, Россия, цифровая экосистема, отечественные бренды, маркетплейс">
+    <meta name="theme-color" content="#233370">
+    <meta name="author" content="АО «НП «Опора»">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="ru">
 
-/* ── NAV ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(13,18,41,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:var(--transition)}
-nav .container{display:flex;align-items:center;justify-content:space-between;height:64px}
-.nav-logo{font-size:1.3rem;font-weight:800;color:#fff;display:flex;align-items:center;gap:10px}
-.nav-logo span{color:var(--teal)}
-.nav-links{display:flex;gap:28px;list-style:none}
-.nav-links a{color:var(--text-muted);font-size:.85rem;font-weight:500;transition:var(--transition)}
-.nav-links a:hover{color:#fff}
-.nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
-.nav-burger span{display:block;width:24px;height:2px;background:#fff;transition:var(--transition)}
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://opora.digital/">
 
-/* ── SEGMENT SWITCHER (top-level) ── */
-.segment-bar{position:fixed;top:64px;left:0;right:0;z-index:999;background:rgba(13,18,41,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
-.segment-tabs{display:flex;justify-content:center;gap:4px;padding:10px 24px}
-.segment-tab{padding:10px 32px;border-radius:var(--radius-sm);font-size:.88rem;font-weight:600;background:transparent;color:var(--text-muted);border:1px solid var(--border);cursor:pointer;transition:var(--transition);font-family:var(--font);position:relative}
-.segment-tab:hover{color:#fff;border-color:rgba(46,196,182,.35)}
-.segment-tab.active{background:var(--teal);color:var(--navy-dark);border-color:var(--teal)}
-.segment-tab[data-segment="government"].active{background:#3498db;color:#fff;border-color:#3498db}
-.segment-tab[data-segment="business"].active{background:var(--gold);color:var(--navy-dark);border-color:var(--gold)}
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Опора — национальная цифровая экосистема для МСП">
+    <meta property="og:description" content="Платформа для малого и среднего бизнеса России. Верификация брендов, B2B-кооперация, маркетплейс креаторов.">
+    <meta property="og:url" content="https://opora.digital/">
+    <meta property="og:image" content="https://opora.digital/assets/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Опора — национальная цифровая экосистема для МСП">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:site_name" content="Опора">
 
-/* ── SEGMENT CONTENT ── */
-.segment-content{display:none}
-.segment-content.active{display:block}
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Опора — национальная цифровая экосистема для МСП">
+    <meta name="twitter:description" content="Платформа для малого и среднего бизнеса России. Верификация брендов, B2B-кооперация, маркетплейс креаторов.">
+    <meta name="twitter:image" content="https://opora.digital/assets/og-image.png">
+    <meta name="twitter:image:alt" content="Опора — национальная цифровая экосистема для МСП">
 
-/* ── HERO ── */
-.hero{min-height:100vh;display:flex;align-items:center;padding-top:140px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:-50%;right:-20%;width:800px;height:800px;background:radial-gradient(circle,rgba(46,196,182,.08) 0%,transparent 70%);pointer-events:none}
-.hero::after{content:'';position:absolute;bottom:-30%;left:-15%;width:600px;height:600px;background:radial-gradient(circle,rgba(244,185,66,.05) 0%,transparent 70%);pointer-events:none}
-.hero-content{position:relative;z-index:2;max-width:800px}
-.hero-badge{margin-bottom:24px}
-.hero h1{margin-bottom:20px}
-.hero h1 em{font-style:normal;color:var(--teal)}
-.hero h1 .em-gov{font-style:normal;color:#3498db}
-.hero h1 .em-gold{font-style:normal;color:var(--gold)}
-.hero-sub{font-size:1.15rem;color:var(--text-muted);margin-bottom:40px;max-width:620px}
-.hero-highlight{font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:12px;max-width:620px}
-.hero-highlight em{font-style:normal;color:var(--gold)}
-.hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:56px}
-.hero-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:24px;max-width:700px}
-.metric{padding:20px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);text-align:center}
-.metric-value{font-size:1.8rem;font-weight:800;color:var(--teal);display:block}
-.metric-value.gov{color:#3498db}
-.metric-value.gold{color:var(--gold)}
-.metric-label{font-size:.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-top:4px}
+    <title>Опора — национальная цифровая экосистема для МСП</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 
-/* ── CARDS ── */
-.problem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-bottom:48px}
-.problem-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;position:relative;overflow:hidden;transition:var(--transition)}
-.problem-card:hover{border-color:rgba(46,196,182,.35);transform:translateY(-4px)}
-.problem-card .icon{font-size:2.2rem;margin-bottom:16px;display:block}
-.problem-card h3{margin-bottom:12px;font-size:1.15rem}
-.problem-card p{color:var(--text-muted);font-size:.92rem}
-.problem-card .stat{font-size:2rem;font-weight:800;color:var(--red);display:block;margin-bottom:8px}
-.problem-banner{background:linear-gradient(135deg,var(--navy-light),var(--navy));border:1px solid var(--border);border-radius:var(--radius);padding:40px;text-align:center}
-.problem-banner h3{font-size:1.4rem;margin-bottom:12px}
-.problem-banner p{color:var(--text-muted);max-width:600px;margin:0 auto}
-.market-tiers{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-top:28px}
-.market-tier{text-align:center}
-.market-tier .tier-value{font-size:2rem;font-weight:800;color:var(--teal);display:block}
-.market-tier .tier-label{font-size:.85rem;color:var(--text-muted);margin-top:4px}
-.market-tier .tier-desc{font-size:.75rem;color:var(--text-muted);opacity:.7;margin-top:2px}
+    <!-- Structured Data: Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Опора",
+      "legalName": "АО «НП «Опора»",
+      "url": "https://opora.digital",
+      "logo": "https://opora.digital/assets/logo.png",
+      "description": "Национальная цифровая экосистема для малого и среднего бизнеса России. Верификация брендов, B2B-кооперация, маркетплейс креаторов.",
+      "foundingDate": "2026-07",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "RU",
+        "addressLocality": "Москва"
+      },
+      "sameAs": [
+        "https://github.com/alexandr-narbaev/opora",
+        "https://gitverse.ru/alexandr-narbaev/opora"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "email": "contact@opora.digital",
+        "availableLanguage": "Russian"
+      }
+    }
+    </script>
 
-/* ── SOLUTION ── */
-.solution-header{text-align:center;margin-bottom:56px}
-.solution-header .section-desc{margin:16px auto 0}
-.solution-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:28px}
-.solution-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;transition:var(--transition);position:relative}
-.solution-card:hover{border-color:var(--teal);transform:translateY(-4px);box-shadow:0 12px 40px rgba(46,196,182,.1)}
-.solution-card .card-icon{font-size:2rem;margin-bottom:14px;display:block}
-.solution-card h3{margin-bottom:10px;color:#fff}
-.solution-card p{color:var(--text-muted);font-size:.9rem;margin-bottom:14px}
-.solution-card .card-tag{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.7rem;font-weight:600;background:rgba(46,196,182,.1);color:var(--teal);border:1px solid var(--border)}
-.solution-card .card-integrations{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
-.solution-card .card-integrations span{padding:3px 10px;border-radius:8px;font-size:.7rem;background:rgba(244,185,66,.08);color:var(--gold);border:1px solid rgba(244,185,66,.15)}
+    <!-- Structured Data: WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Опора",
+      "url": "https://opora.digital",
+      "description": "Национальная цифровая экосистема для МСП России",
+      "inLanguage": "ru",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Опора"
+      }
+    }
+    </script>
 
-/* ── STEPS ── */
-.steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;margin-top:40px}
-.step-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:center;position:relative;transition:var(--transition)}
-.step-card:hover{transform:translateY(-4px);border-color:var(--teal)}
-.step-num{font-size:2.6rem;font-weight:800;color:var(--teal);display:block;margin-bottom:8px;opacity:.5}
-.step-card h3{font-size:1.1rem;margin-bottom:10px}
-.step-card p{color:var(--text-muted);font-size:.88rem}
-
-/* ── USER STORIES ── */
-.stories-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:40px}
-.story-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:var(--transition)}
-.story-card:hover{border-color:var(--gold);transform:translateY(-3px)}
-.story-card .story-icon{font-size:2rem;margin-bottom:12px;display:block}
-.story-card h4{font-size:1rem;margin-bottom:8px;color:var(--gold)}
-.story-card p{color:var(--text-muted);font-size:.88rem}
-.story-card .story-before{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);margin-top:12px;font-size:.85rem}
-.story-card .story-before span:first-child{color:var(--text-muted)}
-.story-card .story-before span:last-child{color:var(--red);font-weight:600}
-.story-card .story-after{display:flex;justify-content:space-between;padding:10px 0;font-size:.85rem}
-.story-card .story-after span:first-child{color:var(--text-muted)}
-.story-card .story-after span:last-child{color:var(--green);font-weight:600}
-
-/* ── INTEGRATIONS ── */
-.integrations-grid{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:32px}
-.integration-badge{display:flex;align-items:center;gap:8px;padding:10px 20px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);font-size:.88rem;font-weight:600;color:#fff;transition:var(--transition)}
-.integration-badge:hover{border-color:var(--teal);transform:translateY(-2px)}
-.integration-badge .ib-icon{font-size:1.2rem}
-
-/* ── FINANCIAL ── */
-.fin-scenarios{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-bottom:56px}
-.fin-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:center;position:relative;overflow:hidden}
-.fin-card.pessimistic{border-top:3px solid var(--red)}
-.fin-card.base{border-top:3px solid var(--teal)}
-.fin-card.optimistic{border-top:3px solid var(--gold)}
-.fin-card .fin-tag{font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
-.fin-card.pessimistic .fin-tag{color:var(--red)}
-.fin-card.base .fin-tag{color:var(--teal)}
-.fin-card.optimistic .fin-tag{color:var(--gold)}
-.fin-card .fin-value{font-size:2.6rem;font-weight:800;color:#fff;margin-bottom:4px}
-.fin-card .fin-label{font-size:.85rem;color:var(--text-muted);margin-bottom:20px}
-.fin-card .fin-list{list-style:none;text-align:left;display:flex;flex-direction:column;gap:10px}
-.fin-card .fin-list li{font-size:.88rem;color:var(--text-muted);display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border)}
-.fin-card .fin-list li strong{color:#fff}
-.fin-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
-.fin-kpi{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:24px;text-align:center}
-.fin-kpi .fk-value{font-size:1.8rem;font-weight:800;color:var(--teal);display:block}
-.fin-kpi .fk-label{font-size:.8rem;color:var(--text-muted);margin-top:6px}
-
-/* ── MARKET VALIDATION ── */
-.sinv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-bottom:40px}
-.sinv-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;text-align:center;transition:var(--transition)}
-.sinv-card:hover{transform:translateY(-3px);border-color:var(--teal)}
-.sinv-card .sv-num{font-size:2.4rem;font-weight:800;color:var(--teal);display:block;margin-bottom:6px}
-.sinv-card .sv-label{font-size:.85rem;color:var(--text-muted)}
-.sinv-examples{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
-.sinv-example{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:24px}
-.sinv-example h4{font-size:.95rem;margin-bottom:6px;color:var(--teal)}
-.sinv-example p{font-size:.85rem;color:var(--text-muted)}
-.sinv-example .se-module{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.68rem;font-weight:600;background:rgba(244,185,66,.1);color:var(--gold);border:1px solid rgba(244,185,66,.2);margin-top:10px}
-
-/* ── TIMELINE ── */
-.timeline{position:relative;max-width:800px;margin:0 auto}
-.timeline::before{content:'';position:absolute;left:24px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--teal),var(--gold))}
-.tl-item{position:relative;padding-left:64px;margin-bottom:40px}
-.tl-item::before{content:'';position:absolute;left:16px;top:6px;width:18px;height:18px;border-radius:50%;border:3px solid var(--teal);background:var(--bg-dark)}
-.tl-item.active::before{background:var(--teal);box-shadow:0 0 12px rgba(46,196,182,.4)}
-.tl-item .tl-phase{font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:6px}
-.tl-item h3{font-size:1.15rem;margin-bottom:6px}
-.tl-item .tl-dates{font-size:.85rem;color:var(--gold);margin-bottom:8px;font-weight:600}
-.tl-item p{font-size:.88rem;color:var(--text-muted);margin-bottom:10px}
-.tl-item .tl-kpis{display:flex;gap:12px;flex-wrap:wrap}
-.tl-item .tl-kpi{padding:4px 12px;border-radius:8px;font-size:.75rem;background:rgba(46,196,182,.08);color:var(--text-muted);border:1px solid var(--border)}
-
-/* ── TEAM ── */
-.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.team-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px;text-align:center;transition:var(--transition)}
-.team-card:hover{border-color:var(--teal);transform:translateY(-3px)}
-.team-card .tc-icon{font-size:2rem;margin-bottom:12px;display:block}
-.team-card h4{font-size:1rem;margin-bottom:4px}
-.team-card .tc-role{font-size:.78rem;color:var(--teal);font-weight:600;margin-bottom:10px}
-.team-card p{font-size:.82rem;color:var(--text-muted)}
-.team-status{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;text-align:center;max-width:700px;margin:0 auto 40px}
-.team-status h3{margin-bottom:12px;color:var(--gold)}
-.team-status p{color:var(--text-muted);margin-bottom:16px}
-.team-status .team-perks{display:flex;justify-content:center;gap:24px;flex-wrap:wrap}
-.team-status .team-perk{display:flex;align-items:center;gap:8px;font-size:.88rem;color:var(--text-muted)}
-.team-status .team-perk span{font-size:1.2rem}
-
-/* ── FAQ ── */
-.faq-list{max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
-.faq-item{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;transition:var(--transition)}
-.faq-item.open{border-color:rgba(46,196,182,.35)}
-.faq-q{padding:20px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:.95rem;color:#fff;user-select:none;transition:var(--transition)}
-.faq-q:hover{color:var(--teal)}
-.faq-q .faq-arrow{font-size:1.2rem;transition:transform .3s ease;color:var(--teal)}
-.faq-item.open .faq-arrow{transform:rotate(180deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s ease}
-.faq-item.open .faq-a{max-height:500px;padding:0 24px 20px}
-.faq-a p{font-size:.9rem;color:var(--text-muted);line-height:1.7}
-
-/* ── DOWNLOADS ── */
-.downloads-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.dl-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;display:flex;align-items:flex-start;gap:16px;transition:var(--transition);cursor:pointer}
-.dl-card:hover{border-color:var(--teal);transform:translateY(-3px);box-shadow:0 8px 32px rgba(46,196,182,.08)}
-.dl-card .dl-icon{width:48px;height:48px;border-radius:12px;background:rgba(231,76,60,.1);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;color:var(--red)}
-.dl-card h4{font-size:.95rem;margin-bottom:4px}
-.dl-card p{font-size:.82rem;color:var(--text-muted)}
-.dl-card .dl-size{font-size:.72rem;color:var(--teal);margin-top:6px;font-weight:600}
-
-/* ── CONTACT ── */
-.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px}
-.contact-info{display:flex;flex-direction:column;gap:20px}
-.ci-item{display:flex;gap:14px;align-items:flex-start}
-.ci-item .ci-icon{width:44px;height:44px;border-radius:12px;background:rgba(46,196,182,.1);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
-.ci-item h4{font-size:.95rem;margin-bottom:2px}
-.ci-item p{font-size:.88rem;color:var(--text-muted)}
-.contact-form{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px}
-.contact-form h3{margin-bottom:20px}
-.form-group{margin-bottom:16px}
-.form-group label{display:block;font-size:.82rem;font-weight:600;margin-bottom:6px;color:var(--text-muted)}
-.form-group input,.form-group textarea,.form-group select{width:100%;padding:12px 16px;border-radius:var(--radius-sm);border:1px solid var(--border);background:rgba(13,18,41,.6);color:#fff;font-family:var(--font);font-size:.9rem;transition:var(--transition)}
-.form-group input:focus,.form-group textarea:focus,.form-group select:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(46,196,182,.1)}
-.form-group textarea{min-height:100px;resize:vertical}
-.form-group select option{background:var(--navy)}
-
-/* ── FOOTER ── */
-footer{padding:48px 0 24px;border-top:1px solid var(--border)}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
-.footer-brand p{font-size:.85rem;color:var(--text-muted);margin-top:12px;max-width:300px}
-.footer-col h4{font-size:.82rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--teal);margin-bottom:14px}
-.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
-.footer-col a{font-size:.85rem;color:var(--text-muted)}
-.footer-col a:hover{color:#fff}
-.footer-bottom{text-align:center;padding-top:24px;border-top:1px solid var(--border);font-size:.8rem;color:var(--text-muted)}
-
-/* ── COUNTER ANIMATION ── */
-.count-up{display:inline-block}
-
-/* ── SCROLL REVEAL ── */
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
-
-/* ── RESPONSIVE ── */
-@media(max-width:768px){
-.section{padding:64px 0}
-.hero{padding-top:160px}
-.nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:rgba(13,18,41,.98);flex-direction:column;padding:24px;gap:16px;border-bottom:1px solid var(--border)}
-.nav-links.open{display:flex}
-.nav-burger{display:flex}
-.hero-metrics{grid-template-columns:repeat(2,1fr)}
-.footer-grid{grid-template-columns:1fr 1fr;gap:24px}
-.solution-grid{grid-template-columns:1fr}
-.fin-scenarios{grid-template-columns:1fr}
-.timeline::before{left:16px}
-.tl-item{padding-left:48px}
-.tl-item::before{left:8px;width:16px;height:16px}
-.segment-tabs{flex-wrap:wrap}
-.segment-tab{flex:1;min-width:100px;text-align:center;padding:10px 16px;font-size:.82rem}
-.market-tiers{gap:24px}
-.steps-grid{grid-template-columns:1fr}
-.stories-grid{grid-template-columns:1fr}
-}
-@media(max-width:480px){
-.hero-actions{flex-direction:column}
-.hero-actions .btn{width:100%;justify-content:center}
-.hero-metrics{grid-template-columns:1fr}
-.footer-grid{grid-template-columns:1fr}
-.contact-grid{grid-template-columns:1fr}
-}
-</style>
+    <!-- Structured Data: BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://opora.digital/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Документы",
+          "item": "https://opora.digital/documents.html"
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
 
-<!-- ═══════════════ NAVIGATION ═══════════════ -->
-<nav>
-<div class="container">
-<a href="#hero" class="nav-logo"><span>◆</span> ОПОРА</a>
-<ul class="nav-links" id="navLinks">
-<li><a href="#problem">Проблема</a></li>
-<li><a href="#solution">Решение</a></li>
-<li><a href="#finance">Финансы</a></li>
-<li><a href="#timeline">Roadmap</a></li>
-<li><a href="#faq">FAQ</a></li>
-<li><a href="#contact" class="btn btn-primary" style="padding:8px 20px;font-size:.82rem">Связаться</a></li>
-</ul>
-<div class="nav-burger" id="navBurger" onclick="document.getElementById('navLinks').classList.toggle('open')">
-<span></span><span></span><span></span>
-</div>
-</div>
+<a href="#main-content" class="skip-link">Перейти к содержимому</a>
+
+<!-- Navigation -->
+<nav class="nav" id="nav">
+    <div class="nav__container">
+        <a href="#hero" class="nav__logo">
+            <span class="nav__logo-icon">&#9670;</span>
+            <span class="nav__logo-text">ОПОРА</span>
+        </a>
+        <button class="nav__toggle" id="navToggle" aria-label="Меню" aria-expanded="false" aria-controls="navLinks">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav__links" id="navLinks">
+            <li><a href="#problems">Проблема</a></li>
+            <li><a href="#solution">Решение</a></li>
+            <li><a href="#prototype">Прототип</a></li>
+            <li><a href="#metrics">Метрики</a></li>
+            <li><a href="#team">Команда</a></li>
+            <li><a href="#tech">Технологии</a></li>
+            <li><a href="#roadmap">Дорожная карта</a></li>
+            <li><a href="#risks">Риски</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#docs">Документы</a></li>
+            <li><a href="#contact" class="nav__cta">Связаться</a></li>
+        </ul>
+    </div>
 </nav>
 
-<!-- ═══════════════ SEGMENT SWITCHER (fixed) ═══════════════ -->
-<div class="segment-bar">
-<div class="segment-tabs" id="segmentTabs">
-<button class="segment-tab active" data-segment="investors">Инвесторам</button>
-<button class="segment-tab" data-segment="government">Государству</button>
-<button class="segment-tab" data-segment="business">Бизнесу</button>
-</div>
-</div>
+<!-- Main Content -->
+<main id="main-content" tabindex="-1">
 
-<!-- ╔══════════════════════════════════════════╗ -->
-<!-- ║     SEGMENT 1: ИНВЕСТОРАМ                ║ -->
-<!-- ╚══════════════════════════════════════════╝ -->
-<div class="segment-content active" id="seg-investors">
-
-<!-- HERO — Investors -->
+<!-- Hero -->
 <section class="hero" id="hero">
-<div class="container">
-<div class="hero-content">
-<div class="hero-badge"><span class="badge badge-teal">Инфраструктурный стартап · Pre-seed</span></div>
-<h1>Национальная B2B/B2C инфраструктура с <em>LTV/CAC = 7.2×</em></h1>
-<p class="hero-highlight">Три ключевых модуля: <em>верификация, кооперация, лояльность</em></p>
-<p class="hero-sub">Рынок из 6,8 млн предприятий МСП без единой платформы доверия. De-risked execution: архитектура, финансовая модель и GR-стратегия готовы. Time-to-MVP — 6 месяцев.</p>
-<div class="hero-actions">
-<a href="#solution" class="btn btn-primary">Модель и рынок →</a>
-<a href="#finance" class="btn btn-outline">Финансовые сценарии</a>
-<a href="#downloads" class="btn btn-gold">Скачать Investment Summary</a>
-</div>
-<div class="hero-metrics">
-<div class="metric">
-<span class="metric-value count-up" data-target="4.5" data-suffix=" млрд" data-decimals="1">0</span>
-<span class="metric-label">NPV, руб.</span>
-</div>
-<div class="metric">
-<span class="metric-value count-up" data-target="32" data-suffix="%">0</span>
-<span class="metric-label">IRR</span>
-</div>
-<div class="metric">
-<span class="metric-value">7.2×</span>
-<span class="metric-label">LTV / CAC</span>
-</div>
-<div class="metric">
-<span class="metric-value count-up" data-target="6" data-suffix=" мес.">0</span>
-<span class="metric-label">Time-to-MVP</span>
-</div>
-</div>
-</div>
-</div>
+    <div class="hero__bg">
+        <div class="hero__grid"></div>
+    </div>
+    <div class="hero__container">
+        <div class="hero__badge">Национальный проект</div>
+        <h1 class="hero__title">
+            Опора — национальная<br>
+            цифровая экосистема<br>
+            <span class="hero__title-accent">для МСП</span>
+        </h1>
+        <p class="hero__subtitle">
+            Единая платформа, которая решает три системные проблемы МСП: невидимость брендов, кризис доверия
+            к «сделано в России» и отсутствие B2B-кооперации. 20 интегрированных сервисов —
+            от верификации и кешбэка до 7% через блокчейн-прослеживаемость и выход на рынки БРИКС.
+            Бюджетный мультипликатор 1,7×: каждый рубль господдержки возвращает 1,7 рубля в экономику.
+        </p>
+        <div class="hero__actions">
+            <a href="#solution" class="btn btn--primary" aria-label="Перейти к описанию решения">Узнать больше</a>
+            <a href="#docs" class="btn btn--outline" aria-label="Перейти к скачиванию документов">Скачать документы</a>
+        </div>
+        <div class="hero__stats">
+            <div class="hero__stat">
+                <span class="hero__stat-number counter" data-target="20">20</span>
+                <span class="hero__stat-label">сервисов</span>
+            </div>
+            <div class="hero__stat">
+                <span class="hero__stat-number counter" data-target="4.38" data-suffix=" млн">4,38 млн</span>
+                <span class="hero__stat-label">пользователей к 2031</span>
+            </div>
+            <div class="hero__stat">
+                <span class="hero__stat-number counter" data-target="250" data-suffix="+">250+</span>
+                <span class="hero__stat-label">млрд руб. капитализация</span>
+            </div>
+        </div>
+    </div>
 </section>
 
-<!-- PROBLEM — Investors -->
-<section class="section" id="problem">
-<div class="container">
-<span class="section-label">Рынок</span>
-<h2 class="section-title">Необеспеченный спрос на платформу доверия</h2>
-<p class="section-desc">6,8 млн предприятий МСП — 40% рабочей силы страны. Ни одна платформа не решает проблему верификации и B2B-кооперации одновременно.</p>
-
-<div class="problem-grid">
-<div class="problem-card reveal">
-<span class="stat">57%</span>
-<h3>Не могут найти поставщиков</h3>
-<p>Промышленные предприятия не могут найти альтернативных поставщиков внутри страны. 30% мощностей МСП простаивает.</p>
-</div>
-<div class="problem-card reveal">
-<span class="stat">80%</span>
-<h3>Малых брендов невидимы</h3>
-<p>Нет бюджета на маркетинг. Граждане хотят поддерживать «своё», но не знают, кому верить.</p>
-</div>
-<div class="problem-card reveal">
-<span class="stat">450 млрд ₽</span>
-<h3>Рынок лояльности</h3>
-<p>79% россиян отказываются от программ лояльности при сложных условиях. Простая модель с кешбэком до 7% решает проблему.</p>
-</div>
-</div>
-
-<div class="problem-banner reveal">
-<h3>TAM / SAM / SOM</h3>
-<p>Адресный рынок на основе данных Росстата, ФНС и отраслевых исследований.</p>
-<div class="market-tiers">
-<div class="market-tier">
-<span class="tier-value count-up" data-target="146" data-suffix=" млн">0</span>
-<span class="tier-label">TAM</span>
-<span class="tier-desc">Все потребители РФ</span>
-</div>
-<div class="market-tier">
-<span class="tier-value count-up" data-target="6.8" data-suffix=" млн" data-decimals="1">0</span>
-<span class="tier-label">SAM</span>
-<span class="tier-desc">Предприятия МСП</span>
-</div>
-<div class="market-tier">
-<span class="tier-value count-up" data-target="500" data-suffix=" тыс.">0</span>
-<span class="tier-label">SOM</span>
-<span class="tier-desc">Первый год пилота</span>
-</div>
-</div>
-</div>
-</div>
+<!-- Problems -->
+<section class="problems" id="problems">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Проблема</span>
+            <h2 class="section-title">Три системные проблемы рынка МСП</h2>
+            <p class="section-desc">6,3 млн субъектов МСП — это 40% ВВП России. Но 85% из них не имеют доступа к цифровым каналам сбыта. Рынок, который теряет триллионы рублей из-за трёх барьеров.</p>
+        </div>
+        <div class="problems__grid">
+            <div class="problem-card">
+                <div class="problem-card__icon">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="22" stroke="#233370" stroke-width="2" stroke-dasharray="4 4"/><path d="M16 32L24 16L32 32" stroke="#233370" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="19" y1="27" x2="29" y2="27" stroke="#233370" stroke-width="2" stroke-linecap="round"/></svg>
+                </div>
+                <h3 class="problem-card__title">Невидимость малых брендов</h3>
+                <p class="problem-card__text">
+                    Рынок монополизирован крупными федеральными сетями. Малые производители качественной продукции
+                    не имеют доступа к каналам сбыта и маркетинговым инструментам. Их товары остаются невидимыми
+                    для миллионов потенциальных покупателей.
+                </p>
+                <div class="problem-card__stat">
+                    <span class="problem-card__stat-num">&lt;5%</span>
+                    <span class="problem-card__stat-text">полки ритейла заняты МСП-брендами</span>
+                </div>
+            </div>
+            <div class="problem-card">
+                <div class="problem-card__icon">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="22" stroke="#2EC4B6" stroke-width="2" stroke-dasharray="4 4"/><path d="M24 14V26L30 30" stroke="#2EC4B6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="24" r="3" fill="#2EC4B6"/></svg>
+                </div>
+                <h3 class="problem-card__title">Кризис доверия к «отечественности»</h3>
+                <p class="problem-card__text">
+                    Отсутствует единая система верификации происхождения товаров. Гринвошинг подрывает доверие
+                    потребителей к маркировке «сделано в России». Честные производители страдают от недоверия,
+                    а недобросовестные — процветают.
+                </p>
+                <div class="problem-card__stat">
+                    <span class="problem-card__stat-num">67%</span>
+                    <span class="problem-card__stat-text">потребителей не доверяют маркировке</span>
+                </div>
+            </div>
+            <div class="problem-card">
+                <div class="problem-card__icon">
+                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="22" stroke="#4CAF76" stroke-width="2" stroke-dasharray="4 4"/><circle cx="18" cy="20" r="4" stroke="#4CAF76" stroke-width="2"/><circle cx="30" cy="20" r="4" stroke="#4CAF76" stroke-width="2"/><circle cx="24" cy="32" r="4" stroke="#4CAF76" stroke-width="2"/><line x1="21" y1="23" x2="22" y2="29" stroke="#4CAF76" stroke-width="1.5"/><line x1="27" y1="23" x2="26" y2="29" stroke="#4CAF76" stroke-width="1.5"/></svg>
+                </div>
+                <h3 class="problem-card__title">Разобщённость бизнеса</h3>
+                <p class="problem-card__text">
+                    Нет единой платформы для B2B-кооперации. Малые предприятия не могут объединять ресурсы,
+                    совместно закупать сырьё, делиться логистикой. Каждый работает в изоляции, теряя
+                    эффект масштаба.
+                </p>
+                <div class="problem-card__stat">
+                    <span class="problem-card__stat-num">85%</span>
+                    <span class="problem-card__stat-text">МСП не имеют цифровых каналов B2B-сбыта</span>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<!-- SOLUTION — Investors -->
-<section class="section" id="solution" style="background:linear-gradient(180deg,transparent,rgba(27,38,88,.3),transparent)">
-<div class="container">
-<div class="solution-header">
-<span class="section-label">Unit-экономика</span>
-<h2 class="section-title">Три модели монетизации</h2>
-<p class="section-desc">Каждый модуль MVP генерирует выручку независимо. Комиссия 0,8%, ARPU 72 руб./мес.</p>
-</div>
+<!-- Solution -->
+<section class="solution" id="solution">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Решение</span>
+            <h2 class="section-title">20 сервисов — три слоя экосистемы</h2>
+            <p class="section-desc">Бизнес-модули для участников, инфраструктурные сервисы для надёжности, AI/ML для интеллекта</p>
+        </div>
 
-<div class="solution-grid">
-<div class="solution-card reveal">
-<span class="card-icon">✅</span>
-<h3>Верификация</h3>
-<p>Грейдирование брендов: Золото (≥80% локализации), Серебро (≥50%), Бронза (≥30%). Потребитель видит степень «отечественности». Кешбэк до 7% привлекает трафик.</p>
-<span class="card-tag">Монетизация: комиссия 0,8%</span>
-</div>
-<div class="solution-card reveal">
-<span class="card-icon">🏭</span>
-<h3>B2B-кооперация</h3>
-<p>AI-подбор партнёров по 50+ параметрам. Срок поиска поставщика — от 6 месяцев до 2 недель. Артельные кластеры для совместных закупок.</p>
-<span class="card-tag">Монетизация: подписка + транзакции</span>
-</div>
-<div class="solution-card reveal">
-<span class="card-icon">🎯</span>
-<h3>Лояльность</h3>
-<p>Кешбэк до 7% за покупку отечественных товаров. Социальный трек: баллы на образование и медицину. Простая программа без сложных условий.</p>
-<span class="card-tag">Монетизация: ARPU 72 руб./мес</span>
-</div>
-</div>
-</div>
+        <!-- Core Business Modules -->
+        <h3 class="solution__group-title">Бизнес-модули — для брендов, партнёров и потребителей</h3>
+        <div class="solution__grid">
+            <div class="module-card module-card--accent">
+                <div class="module-card__status">P0 MVP</div>
+                <h3 class="module-card__title">Опора.Витрина</h3>
+                <p class="module-card__text">Каталог верифицированных брендов с грейдированием (Золото/Серебро/Бронза), кешбэком до 7% и социальным трекингом. Для: покупатели, бренды.</p>
+            </div>
+            <div class="module-card module-card--accent">
+                <div class="module-card__status">P0 MVP</div>
+                <h3 class="module-card__title">Опора.Кооперация</h3>
+                <p class="module-card__text">AI-подбор партнёров, артельные кластеры, совместные закупки, смарт-контракты. Для: производственные МСП, поставщики.</p>
+            </div>
+            <div class="module-card module-card--accent">
+                <div class="module-card__status">P0 MVP</div>
+                <h3 class="module-card__title">Опора.Креаторы</h3>
+                <p class="module-card__text">Маркетплейс для самозанятых: дизайн, копирайтинг, маркетинг. 0% комиссия. Для: фрилансеры, самозанятые, креативные агентства.</p>
+            </div>
+            <div class="module-card">
+                <h3 class="module-card__title">Опора.Аналитика</h3>
+                <p class="module-card__text">CRM/CDP для брендов, прогноз спроса (Temporal Fusion Transformer), монетизация обезличенных данных, A/B-тестирование. Для: бренды, маркетологи.</p>
+            </div>
+            <div class="module-card">
+                <h3 class="module-card__title">Опора.Право</h3>
+                <p class="module-card__text">Онлайн-арбитраж, патентный маркетплейс, типовые смарт-контракты с NDA, AI-анализ договоров. Для: юристы, предприниматели.</p>
+            </div>
+            <div class="module-card">
+                <h3 class="module-card__title">Опора.Финансы</h3>
+                <p class="module-card__text">Краудфандинг 2.0, токены участия в капитале, интеграция с ЦФА через платформу ЦБ. Для: стартапы, частные инвесторы.</p>
+            </div>
+            <div class="module-card">
+                <h3 class="module-card__title">Опора.Песочница</h3>
+                <p class="module-card__text">Нулевая комиссия для самозанятых, авторегистрация через «Мой налог», обучающие курсы. Для: самозанятые, микробизнес.</p>
+            </div>
+            <div class="module-card">
+                <h3 class="module-card__title">Опора.Цепочки</h3>
+                <p class="module-card__text">B2B-закупки, блокчейн-прослеживаемость (Hyperledger Fabric + КриптоПро), совместная логистика. Для: производители, ритейл.</p>
+            </div>
+            <div class="module-card">
+                <h3 class="module-card__title">Опора.Кадры</h3>
+                <p class="module-card__text">Верификация компетенций через блокчейн, интеграция с вузами, программы переподготовки. Для: HR, соискатели, вузы.</p>
+            </div>
+            <div class="module-card">
+                <h3 class="module-card__title">Опора.Регионы</h3>
+                <p class="module-card__text">Геотаргетинг под специфику моногородов, преференции для удалённых территорий, региональные витрины. Для: администрации, локальные бренды.</p>
+            </div>
+            <div class="module-card">
+                <h3 class="module-card__title">Опора.Экспорт</h3>
+                <p class="module-card__text">Выход на рынки ЕАЭС и БРИКС, регуляторный навигатор, таможенное сопровождение, BRICS Bridge. Для: экспортёры.</p>
+            </div>
+            <div class="module-card">
+                <h3 class="module-card__title">Опора.Лояльность</h3>
+                <p class="module-card__text">Балльная система, кешбэк до 7%, персональные AI-предложения, грейдирование брендов (Золото/Серебро/Бронза). Для: потребители, бренды.</p>
+            </div>
+            <div class="module-card">
+                <h3 class="module-card__title">Опора.Платежи</h3>
+                <p class="module-card__text">Платёжная инфраструктура: СБП, ЦФА, цифровой рубль, маркированные платежи, спецсчёт лояльности. Для: все участники экосистемы.</p>
+            </div>
+        </div>
+
+        <!-- Infrastructure Services -->
+        <h3 class="solution__group-title">Инфраструктурные сервисы — фундамент платформы</h3>
+        <div class="solution__grid solution__grid--infra">
+            <div class="module-card module-card--infra">
+                <h3 class="module-card__title">Auth Service</h3>
+                <p class="module-card__text">Keycloak + мок ЕСИА. Единая точка аутентификации через госсистемы по OAuth 2.0/OIDC. Класс защиты К2 (ФСТЭК №117).</p>
+            </div>
+            <div class="module-card module-card--infra">
+                <h3 class="module-card__title">API Gateway</h3>
+                <p class="module-card__text">Единый шлюз, BFF-паттерн, rate limiting, распределённая трассировка запросов. Изоляция внутренних сервисов.</p>
+            </div>
+            <div class="module-card module-card--infra">
+                <h3 class="module-card__title">AI Service</h3>
+                <p class="module-card__text">YandexGPT + Kandinsky для контента, CatBoost для рекомендаций, RuBERT для модерации, TFT для прогнозов спроса.</p>
+            </div>
+            <div class="module-card module-card--infra">
+                <h3 class="module-card__title">Mock Service</h3>
+                <p class="module-card__text">8 моков внешних сервисов (ФНС, ОФД, СБП, ЦБ, ГИС, Честный знак, ЕСИА, Мой налог) для полного цикла разработки.</p>
+            </div>
+            <div class="module-card module-card--infra">
+                <h3 class="module-card__title">Admin Service</h3>
+                <p class="module-card__text">Администрирование, мониторинг, управление пользователями, контентом и модерацией.</p>
+            </div>
+            <div class="module-card module-card--infra">
+                <h3 class="module-card__title">BFF Service</h3>
+                <p class="module-card__text">Backend-for-Frontend: агрегация данных, персонализация лент, оптимизация под клиентские устройства.</p>
+            </div>
+            <div class="module-card module-card--infra">
+                <h3 class="module-card__title">LK Service (React SPA)</h3>
+                <p class="module-card__text">Личный кабинет на React 18: 6 ролей, 40+ маршрутов, TypeScript, Vite, компонентная библиотека.</p>
+            </div>
+        </div>
+    </div>
 </section>
 
-<!-- FINANCIAL — Investors -->
-<section class="section" id="finance">
-<div class="container">
-<span class="section-label">Финансовая модель v4.0</span>
-<h2 class="section-title">Три сценария — от стресс-теста до прорыва</h2>
-<p class="section-desc">Взвешенный NPV — 3,42 млрд руб. Даже пессимистичный сценарий жизнеспособен благодаря статусу национальной инфраструктуры.</p>
-
-<div class="fin-scenarios">
-<div class="fin-card pessimistic reveal">
-<div class="fin-tag">Пессимистичный · 20%</div>
-<div class="fin-value">0,5 млрд ₽</div>
-<div class="fin-label">NPV</div>
-<ul class="fin-list">
-<li><span>Выручка, год 5</span><strong>2,87 млрд ₽</strong></li>
-<li><span>IRR</span><strong>10%</strong></li>
-<li><span>Окупаемость</span><strong>7,5 лет</strong></li>
-<li><span>Пользователи</span><strong>1,75 млн</strong></li>
-</ul>
-</div>
-<div class="fin-card base reveal">
-<div class="fin-tag">Базовый · 35%</div>
-<div class="fin-value">4,5 млрд ₽</div>
-<div class="fin-label">NPV</div>
-<ul class="fin-list">
-<li><span>Выручка, год 5</span><strong>6,04 млрд ₽</strong></li>
-<li><span>IRR</span><strong>32%</strong></li>
-<li><span>Окупаемость</span><strong>4,2 года</strong></li>
-<li><span>Пользователи</span><strong>4,38 млн</strong></li>
-</ul>
-</div>
-<div class="fin-card optimistic reveal">
-<div class="fin-tag">Оптимистичный · 15%</div>
-<div class="fin-value">12,8 млрд ₽</div>
-<div class="fin-label">NPV</div>
-<ul class="fin-list">
-<li><span>Выручка, год 5</span><strong>11,48 млрд ₽</strong></li>
-<li><span>IRR</span><strong>52%</strong></li>
-<li><span>Окупаемость</span><strong>2,8 года</strong></li>
-<li><span>Пользователи</span><strong>8,76 млн</strong></li>
-</ul>
-</div>
-</div>
-
-<h3 style="text-align:center;margin-bottom:28px;color:var(--teal)">Ключевые метрики</h3>
-<div class="fin-kpis">
-<div class="fin-kpi reveal">
-<span class="fk-value">7.2×</span>
-<span class="fk-label">LTV / CAC</span>
-</div>
-<div class="fin-kpi reveal">
-<span class="fk-value count-up" data-target="4" data-suffix=" года">0</span>
-<span class="fk-label">Безубыточность</span>
-</div>
-<div class="fin-kpi reveal">
-<span class="fk-value">0,8%</span>
-<span class="fk-label">Комиссия</span>
-</div>
-<div class="fin-kpi reveal">
-<span class="fk-value">72 ₽</span>
-<span class="fk-label">ARPU / мес</span>
-</div>
-</div>
-</div>
+<!-- Prototype -->
+<section class="prototype" id="prototype">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Прототип</span>
+            <h2 class="section-title">Рабочий прототип платформы</h2>
+            <p class="section-desc">20 микросервисов компилируются и собраны в Docker Compose. React SPA личного кабинета — готов к демо.</p>
+        </div>
+        <div class="prototype__inner">
+            <div class="prototype__preview">
+                <div class="prototype__browser">
+                    <div class="prototype__browser-bar">
+                        <span class="prototype__browser-dot"></span>
+                        <span class="prototype__browser-dot"></span>
+                        <span class="prototype__browser-dot"></span>
+                        <span class="prototype__browser-url">lk.opora.digital</span>
+                    </div>
+                    <div class="prototype__browser-body">
+                        <div class="prototype__mock-sidebar">
+                            <div class="prototype__mock-logo">ОПОРА</div>
+                            <div class="prototype__mock-nav-item prototype__mock-nav-item--active"></div>
+                            <div class="prototype__mock-nav-item"></div>
+                            <div class="prototype__mock-nav-item"></div>
+                            <div class="prototype__mock-nav-item"></div>
+                            <div class="prototype__mock-nav-item"></div>
+                        </div>
+                        <div class="prototype__mock-content">
+                            <div class="prototype__mock-header"></div>
+                            <div class="prototype__mock-cards">
+                                <div class="prototype__mock-card"></div>
+                                <div class="prototype__mock-card"></div>
+                                <div class="prototype__mock-card"></div>
+                            </div>
+                            <div class="prototype__mock-chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="prototype__info">
+                <h3 class="prototype__info-title">Что уже сделано</h3>
+                <ul class="prototype__features">
+                    <li class="prototype__feature">
+                        <span class="prototype__feature-icon">&#10003;</span>
+                        <div>
+                            <strong>20 микросервисов</strong>
+                            <span>626+ Java-файлов, DDD-архитектура, все компилируются</span>
+                        </div>
+                    </li>
+                    <li class="prototype__feature">
+                        <span class="prototype__feature-icon">&#10003;</span>
+                        <div>
+                            <strong>React SPA личного кабинета</strong>
+                            <span>TypeScript, Vite, компонентная библиотека</span>
+                        </div>
+                    </li>
+                    <li class="prototype__feature">
+                        <span class="prototype__feature-icon">&#10003;</span>
+                        <div>
+                            <strong>Auth через Keycloak</strong>
+                            <span>UUID-токены, мок ЕСИА, кастомная аутентификация</span>
+                        </div>
+                    </li>
+                    <li class="prototype__feature">
+                        <span class="prototype__feature-icon">&#10003;</span>
+                        <div>
+                            <strong>8 моков внешних сервисов</strong>
+                            <span>ФНС, ОФД, СБП, ЦБ, ГИС — для полного цикла разработки</span>
+                        </div>
+                    </li>
+                    <li class="prototype__feature">
+                        <span class="prototype__feature-icon">&#10003;</span>
+                        <div>
+                            <strong>Docker Compose + K8s</strong>
+                            <span>Полная инфраструктура: 4 compose-файла, 13 K8s-манифестов</span>
+                        </div>
+                    </li>
+                    <li class="prototype__feature">
+                        <span class="prototype__feature-icon">&#10003;</span>
+                        <div>
+                            <strong>API Gateway + BFF</strong>
+                            <span>Единый шлюз, rate limiting, трассировка запросов</span>
+                        </div>
+                    </li>
+                </ul>
+                <div class="prototype__actions">
+                    <a href="https://github.com/alexandr-narbaev/opora" class="btn btn--primary" target="_blank" rel="noopener" aria-label="Открыть исходный код проекта на GitHub">
+                        Исходный код на GitHub
+                    </a>
+                    <a href="#tech" class="btn btn--outline" aria-label="Перейти к технологическому стеку">Технологический стек</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<!-- TEAM — Investors -->
-<section class="section" id="team" style="background:linear-gradient(180deg,transparent,rgba(27,38,88,.3),transparent)">
-<div class="container">
-<div class="solution-header">
-<span class="section-label">Команда</span>
-<h2 class="section-title">De-risked execution</h2>
-</div>
-
-<div class="team-status reveal">
-<h3>Архитектура и GR-стратегия готовы</h3>
-<p>Полная спецификация, финансовая модель v4.0, юридическая рамка, C4-диаграммы. Time-to-MVP — 6 месяцев с момента формирования команды.</p>
-<div class="team-perks">
-<div class="team-perk"><span>🏗️</span> Архитектура готова</div>
-<div class="team-perk"><span>📊</span> Финмодель v4.0</div>
-<div class="team-perk"><span>⚖️</span> Юр. рамка</div>
-</div>
-</div>
-
-<div class="team-status reveal" style="border-color:rgba(244,185,66,.3)">
-<h3>Ищем операционного партнёра (CEO / GR)</h3>
-<p>Ключевой приоритет — человек, который поведёт проект в публичном поле. Опционы 5% УК, вестинг 2+3 года.</p>
-</div>
-</div>
+<!-- Testimonials / Social Proof -->
+<section class="social-proof" id="social-proof">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Валидация</span>
+            <h2 class="section-title">Подтверждено экспертами СИНВ-2026</h2>
+            <p class="section-desc">Заявка подана, получено 4 экспертизы. Анализ 17 845 идей форума подтверждает спрос.</p>
+        </div>
+        <div class="testimonials__grid">
+            <div class="testimonial-card">
+                <div class="testimonial-card__quote">&laquo;Платформа закрывает три системные проблемы МСП одновременно: видимость, доверие и кооперацию. Это уникальное позиционирование.&raquo;</div>
+                <div class="testimonial-card__meta">
+                    <div class="testimonial-card__avatar">Э</div>
+                    <div>
+                        <div class="testimonial-card__name">Эксперт СИНВ-2026</div>
+                        <div class="testimonial-card__role">Оценка: высокий потенциал</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-card__quote">&laquo;Финансовая модель жизнеспособна даже в пессимистичном сценарии. Статус национальной инфраструктуры — ключевое конкурентное преимущество.&raquo;</div>
+                <div class="testimonial-card__meta">
+                    <div class="testimonial-card__avatar">Э</div>
+                    <div>
+                        <div class="testimonial-card__name">Эксперт СИНВ-2026</div>
+                        <div class="testimonial-card__role">Финансовая оценка</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-card__quote">&laquo;319 идей-синергистов из 17 845 — это серьёзная валидация. Партнёры уже ждут платформу.&raquo;</div>
+                <div class="testimonial-card__meta">
+                    <div class="testimonial-card__avatar">Э</div>
+                    <div>
+                        <div class="testimonial-card__name">Эксперт СИНВ-2026</div>
+                        <div class="testimonial-card__role">Анализ партнёрской экосистемы</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="partners-logos" role="group" aria-label="Потенциальные партнёры и интеграции">
+        <p class="partners-logos__title">Потенциальные партнёры и интеграции</p>
+            <div class="partners-logos__grid" role="list">
+                <div class="partners-logo-item" role="listitem">ЕСИА</div>
+                <div class="partners-logo-item" role="listitem">ГИСП</div>
+                <div class="partners-logo-item" role="listitem">Честный знак</div>
+                <div class="partners-logo-item" role="listitem">Мой налог</div>
+                <div class="partners-logo-item" role="listitem">СБП</div>
+                <div class="partners-logo-item" role="listitem">Сколково</div>
+                <div class="partners-logo-item" role="listitem">ВЭБ.РФ</div>
+                <div class="partners-logo-item" role="listitem">Корпорация МСП</div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<!-- FAQ — Investors -->
-<section class="section" id="faq">
-<div class="container">
-<div class="solution-header">
-<span class="section-label">Вопросы и ответы</span>
-<h2 class="section-title">Часто задаваемые вопросы</h2>
-</div>
-
-<div class="faq-list">
-<div class="faq-item reveal">
-<div class="faq-q" onclick="toggleFaq(this)">
-<span>Почему не маркетплейс?</span>
-<span class="faq-arrow">▾</span>
-</div>
-<div class="faq-a"><p>Мы не конкурент Ozon/WB — мы инфраструктура доверия. Маркетплейсы не верифицируют «отечественность» и не решают B2B-кооперацию. «Опора» дополняет экосистему, а не заменяет её.</p></div>
-</div>
-<div class="faq-item reveal">
-<div class="faq-q" onclick="toggleFaq(this)">
-<span>Каковы юнит-экономики?</span>
-<span class="faq-arrow">▾</span>
-</div>
-<div class="faq-a"><p>LTV/CAC = 7.2×. Комиссия 0,8%, ARPU 72 руб./мес. Безубыточность к году 4. Даже пессимистичный сценарий даёт NPV 0,5 млрд руб.</p></div>
-</div>
-<div class="faq-item reveal">
-<div class="faq-q" onclick="toggleFaq(this)">
-<span>Где команда?</span>
-<span class="faq-arrow">▾</span>
-</div>
-<div class="faq-a"><p>Архитектура и GR-стратегия готовы. Идёт формирование ядра. Ищем операционного партнёра (CEO/GR). Опционы 5% УК, вестинг 2+3 года. Time-to-MVP — 6 месяцев.</p></div>
-</div>
-<div class="faq-item reveal">
-<div class="faq-q" onclick="toggleFaq(this)">
-<span>Какой объём инвестиций?</span>
-<span class="faq-arrow">▾</span>
-</div>
-<div class="faq-a"><p>Общий бюджет 10–12,5 млрд руб. на 5 лет. Транш 1 (предзапуск) — 2,2 млрд руб. Мульти-источник: госбюджет, институты развития, частные инвестиции. Бюджетный мультипликатор — 1,7×.</p></div>
-</div>
-<div class="faq-item reveal">
-<div class="faq-q" onclick="toggleFaq(this)">
-<span>Когда стартует пилот?</span>
-<span class="faq-arrow">▾</span>
-</div>
-<div class="faq-a"><p>Пилот запланирован на июль 2027 года в Москве и Зеленограде. Time-to-MVP — 6 месяцев. Цели: ≥100 брендов, ≥50 000 пользователей, ≥500 000 транзакций.</p></div>
-</div>
-</div>
-</div>
+<!-- Metrics -->
+<section class="metrics" id="metrics">
+    <div class="container">
+        <div class="section-header section-header--light">
+            <span class="section-tag section-tag--light">Экономика</span>
+            <h2 class="section-title section-title--light">Ключевые финансовые показатели</h2>
+            <p class="section-desc section-desc--light">Финансовая модель v4.0: 8 сценариев (A–H), ставка дисконтирования 18% (WACC). Даже в пессимистичном сценарии (санкции, регуляторный ступор) проект сохраняет жизнеспособность благодаря статусу национальной инфраструктуры и резервному фонду +30%.</p>
+        </div>
+        <div class="metrics__intro">
+            <p>Базовый сценарий: NPV 4,5 млрд ₽, IRR 32%, окупаемость 4,2 года. Оптимистичный: NPV 15 млрд ₽, IRR 60%+. Рынок e-com МСП России — 3,2 трлн руб. (2026, Data Insight). Целевая доля платформы — 3–5%.</p>
+        </div>
+        <div class="metrics__grid">
+            <div class="metric-card">
+                <div class="metric-card__value"><span class="counter" data-target="10">10</span>–12,5 <span>млрд ₽</span></div>
+                <div class="metric-card__label">Общий бюджет (5 лет)</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-card__value"><span class="counter" data-target="4.75">4,75</span>–6,0 <span>млрд ₽</span></div>
+                <div class="metric-card__label">Господдержка (50%)</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-card__value"><span class="counter" data-target="4.5">4,5</span> <span>млрд ₽</span></div>
+                <div class="metric-card__label">NPV (базовый сценарий)</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-card__value"><span class="counter" data-target="15">15</span> <span>млрд ₽</span></div>
+                <div class="metric-card__label">NPV (оптимистичный)</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-card__value"><span class="counter" data-target="32">32</span>%</div>
+                <div class="metric-card__label">IRR (базовый сценарий)</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-card__value">60%+</div>
+                <div class="metric-card__label">IRR (оптимистичный)</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-card__value"><span class="counter" data-target="4.2">4,2</span> <span>года</span></div>
+                <div class="metric-card__label">Срок окупаемости (простой)</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-card__value"><span class="counter" data-target="4.8">4,8</span> <span>года</span></div>
+                <div class="metric-card__label">Срок окупаемости (дисконт.)</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-card__value"><span class="counter" data-target="18">18</span>%</div>
+                <div class="metric-card__label">WACC</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-card__value"><span class="counter" data-target="1.7">1,7</span>×</div>
+                <div class="metric-card__label">Бюджетный мультипликатор</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-card__value"><span class="counter" data-target="4.38">4,38</span> <span>млн</span></div>
+                <div class="metric-card__label">Пользователей к 2031</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-card__value"><span class="counter" data-target="55">55</span>%</div>
+                <div class="metric-card__label">Доля отечественных товаров</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-card__value"><span class="counter" data-target="250">250</span>+ <span>млрд ₽</span></div>
+                <div class="metric-card__label">Капитализация к 2031</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-card__value"><span class="counter" data-target="200">200</span>K+</div>
+                <div class="metric-card__label">Брендов к 2030</div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<!-- DOWNLOADS — Investors -->
-<section class="section" id="downloads" style="background:linear-gradient(180deg,transparent,rgba(27,38,88,.3),transparent)">
-<div class="container">
-<div class="solution-header">
-<span class="section-label">Документы</span>
-<h2 class="section-title">Скачать для инвесторов</h2>
-</div>
-
-<div class="downloads-grid">
-<a class="dl-card reveal" href="#" title="Скачать Investment Summary">
-<div class="dl-icon">📊</div>
-<div><h4>Investment Summary</h4><p>Рынок, unit-экономика, команда, roadmap</p><span class="dl-size">PDF · 10 с.</span></div>
-</a>
-<a class="dl-card reveal" href="#" title="Скачать One-Pager">
-<div class="dl-icon">📄</div>
-<div><h4>One-Pager</h4><p>Краткое описание проекта на 1 странице</p><span class="dl-size">PDF · 2 с.</span></div>
-</a>
-<a class="dl-card reveal" href="#" title="Скачать Q&A для инвесторов">
-<div class="dl-icon">❓</div>
-<div><h4>Q&A для инвесторов</h4><p>Ответы на частые вопросы</p><span class="dl-size">PDF · 5 с.</span></div>
-</a>
-<a class="dl-card reveal" href="#" title="Скачать финансовую модель">
-<div class="dl-icon">💰</div>
-<div><h4>Финансовая модель v4.0</h4><p>8 сценариев, OPEX, P&L, чувствительность</p><span class="dl-size">PDF · ~50 с.</span></div>
-</a>
-</div>
-</div>
+<!-- Team -->
+<section class="team" id="team">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Команда</span>
+            <h2 class="section-title">3 волны: от C-level до полного штата</h2>
+            <p class="section-desc">Формируем команду с рыночной компенсацией, опционами (5% УК) и sign-on бонусами. Партнёрство с ведущими вузами для кадрового конвейера.</p>
+        </div>
+        <div class="team__waves">
+            <div class="team-wave">
+                <div class="team-wave__header">
+                    <span class="team-wave__num">Волна 1</span>
+                    <span class="team-wave__period">Июль 2026</span>
+                </div>
+                <h3 class="team-wave__title">Ядро</h3>
+                <p class="team-wave__count">9–12 человек</p>
+                <ul class="team-wave__roles">
+                    <li><strong>CTO</strong> — архитектор платформы</li>
+                    <li><strong>CFO</strong> — финансовая модель и инвесторы</li>
+                    <li><strong>CISO</strong> — безопасность класса К2</li>
+                    <li><strong>AI Lead</strong> — YandexGPT, CatBoost, RuBERT</li>
+                    <li><strong>Юрист</strong> — регуляторика, госконтракты</li>
+                    <li><strong>Lead Developer</strong> — Java/Quarkus</li>
+                </ul>
+                <div class="team-wave__comp">
+                    <span>Рыночная + опционы и sign-on</span>
+                </div>
+            </div>
+            <div class="team-wave">
+                <div class="team-wave__header">
+                    <span class="team-wave__num">Волна 2</span>
+                    <span class="team-wave__period">Январь 2027</span>
+                </div>
+                <h3 class="team-wave__title">Разработка</h3>
+                <p class="team-wave__count">20–30 человек</p>
+                <ul class="team-wave__roles">
+                    <li><strong>Middle/Senior Java</strong> — бэкенд-сервисы</li>
+                    <li><strong>React/TypeScript</strong> — фронтенд и ЛК</li>
+                    <li><strong>DevOps</strong> — K8s, CI/CD, мониторинг</li>
+                    <li><strong>QA</strong> — автоматизация, BDD, нагрузка</li>
+                    <li><strong>Data Engineer</strong> — Kafka, аналитика</li>
+                </ul>
+                <div class="team-wave__comp">
+                    <span>Конкурентный рынок + опционы</span>
+                </div>
+            </div>
+            <div class="team-wave">
+                <div class="team-wave__header">
+                    <span class="team-wave__num">Волна 3</span>
+                    <span class="team-wave__period">Июль 2027</span>
+                </div>
+                <h3 class="team-wave__title">Поддержка</h3>
+                <p class="team-wave__count">10–15 человек</p>
+                <ul class="team-wave__roles">
+                    <li><strong>Саппорт</strong> — пользовательская поддержка</li>
+                    <li><strong>Модерация</strong> — контент и бренды</li>
+                    <li><strong>Маркетинг</strong> — привлечение и удержание</li>
+                    <li><strong>Аналитик</strong> — метрики, отчёты, A/B</li>
+                </ul>
+                <div class="team-wave__comp">
+                    <span>Рыночная + бонусы</span>
+                </div>
+            </div>
+        </div>
+        <div class="team__benefits">
+            <h3 class="team__benefits-title">Модель удержания</h3>
+            <div class="team__benefits-grid">
+                <div class="team-benefit">
+                    <div class="team-benefit__icon">&#9733;</div>
+                    <h4>Опционы</h4>
+                    <p>5% уставного капитала, вестинг 2+3 года. Каждый сотрудник — соучредитель экосистемы.</p>
+                </div>
+                <div class="team-benefit">
+                    <div class="team-benefit__icon">&#9889;</div>
+                    <h4>Sign-on бонусы</h4>
+                    <p>1–3 оклада при входе. Быстрый старт без финансового стресса.</p>
+                </div>
+                <div class="team-benefit">
+                    <div class="team-benefit__icon">&#9878;</div>
+                    <h4>KPI-контракты</h4>
+                    <p>Прозрачные метрики. Достижение целей = рост компенсации и доли.</p>
+                </div>
+                <div class="team-benefit">
+                    <div class="team-benefit__icon">&#9734;</div>
+                    <h4>Партнёрство с вузами</h4>
+                    <p>Стажировки, целевой набор, совместные программы переподготовки.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
-</div><!-- /seg-investors -->
-
-
-<!-- ╔══════════════════════════════════════════╗ -->
-<!-- ║     SEGMENT 2: ГОСУДАРСТВУ               ║ -->
-<!-- ╚══════════════════════════════════════════╝ -->
-<div class="segment-content" id="seg-government">
-
-<!-- HERO — Government -->
-<section class="hero" id="hero-gov">
-<div class="container">
-<div class="hero-content">
-<div class="hero-badge"><span class="badge badge-blue">Национальная инфраструктура · ГЧП</span></div>
-<h1>Национальная цифровая платформа для <span class="em-gov">кооперации МСП</span></h1>
-<p class="hero-highlight">Бюджетный мультипликатор <em>1,7×</em> — каждый рубль возвращает 1,7 рубля налогов</p>
-<p class="hero-sub">6,8 млн предприятий МСП без единой цифровой среды. Импортозамещение, обеление самозанятых, создание 200 000 рабочих мест. Интеграция с ЕСИА, ГИСП, ФНС. Класс защищённости ФСТЭК К2.</p>
-<div class="hero-actions">
-<a href="#solution-gov" class="btn btn-gov">Ценность для государства →</a>
-<a href="#timeline-gov" class="btn btn-outline">Дорожная карта</a>
-<a href="#downloads-gov" class="btn btn-gold">Скачать GR-стратегию</a>
-</div>
-<div class="hero-metrics">
-<div class="metric">
-<span class="metric-value gov">1,7×</span>
-<span class="metric-label">Бюджетный мультипликатор</span>
-</div>
-<div class="metric">
-<span class="metric-value gov">1 : 3–5</span>
-<span class="metric-label">ROI для государства</span>
-</div>
-<div class="metric">
-<span class="metric-value gov count-up" data-target="200" data-suffix=" 000">0</span>
-<span class="metric-label">Рабочих мест</span>
-</div>
-<div class="metric">
-<span class="metric-value gov count-up" data-target="55" data-suffix="%">0</span>
-<span class="metric-label">Доля отечественных</span>
-</div>
-</div>
-</div>
-</div>
+<!-- Technology -->
+<section class="tech" id="tech">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Технологии</span>
+            <h2 class="section-title">Технологический стек</h2>
+            <p class="section-desc">Современные, проверенные технологии с долгосрочной поддержкой</p>
+        </div>
+        <div class="tech__grid">
+            <div class="tech-card">
+                <div class="tech-card__icon">J</div>
+                <h3 class="tech-card__title">Java 25</h3>
+                <p class="tech-card__desc">Основной язык бэкенда. Virtual Threads, Pattern Matching, Project Loom</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card__icon">Q</div>
+                <h3 class="tech-card__title">Quarkus 3.36</h3>
+                <p class="tech-card__desc">Cloud-native фреймворк. Быстрый старт, низкое потребление памяти, GraalVM</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card__icon">R</div>
+                <h3 class="tech-card__title">React 18</h3>
+                <p class="tech-card__desc">Фронтенд. Concurrent Mode, Suspense, серверные компоненты</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card__icon">P</div>
+                <h3 class="tech-card__title">PostgreSQL 17</h3>
+                <p class="tech-card__desc">Основная реляционная БД. JSONB, партиционирование, расширения</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card__icon">M</div>
+                <h3 class="tech-card__title">MongoDB 8.3</h3>
+                <p class="tech-card__desc">Документная БД для аналитики, логов и неструктурированных данных</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card__icon">K</div>
+                <h3 class="tech-card__title">Apache Kafka 4.2</h3>
+                <p class="tech-card__desc">Event streaming, transactional outbox, schema registry (Avro)</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card__icon">G</div>
+                <h3 class="tech-card__title">gRPC 1.81</h3>
+                <p class="tech-card__desc">Межсервисное взаимодействие. Protobuf, streaming, deadline propagation</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card__icon">KC</div>
+                <h3 class="tech-card__title">Keycloak 24</h3>
+                <p class="tech-card__desc">Identity & Access Management. OIDC, SAML, интеграция с ЕСИА</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card__icon">RD</div>
+                <h3 class="tech-card__title">Redis 8.6</h3>
+                <p class="tech-card__desc">Кэширование, сессии, rate limiting, pub/sub</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card__icon">HF</div>
+                <h3 class="tech-card__title">Hyperledger Fabric</h3>
+                <p class="tech-card__desc">Блокчейн для прослеживаемости. КриптоПро HLF patch, ГОСТ-криптография</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card__icon">AI</div>
+                <h3 class="tech-card__title">AI / ML</h3>
+                <p class="tech-card__desc">YandexGPT, CatBoost, RuBERT, Temporal Fusion Transformer, Kandinsky</p>
+            </div>
+            <div class="tech-card">
+                <div class="tech-card__icon">G9</div>
+                <h3 class="tech-card__title">Gradle 9.5</h3>
+                <p class="tech-card__desc">Сборка. Kotlin DSL, инкрементальная компиляция, кэширование</p>
+            </div>
+        </div>
+    </div>
 </section>
 
-<!-- VALUE — Government -->
-<section class="section" id="problem-gov">
-<div class="container">
-<span class="section-label">Ценность для государства</span>
-<h2 class="section-title">Три стратегических эффекта</h2>
-<p class="section-desc">«Опора» решает три задачи нацпроектов одновременно: импортозамещение, обеление теневого сектора, создание рабочих мест в регионах.</p>
-
-<div class="problem-grid">
-<div class="problem-card reveal">
-<span class="stat" style="color:var(--teal)">+55%</span>
-<h3>Импортозамещение</h3>
-<p>Верификация через ГИСП и «Честный знак» стимулирует спрос на отечественные товары. Грейдирование: Золото, Серебро, Бронза — потребитель видит реальную степень локализации.</p>
-</div>
-<div class="problem-card reveal">
-<span class="stat" style="color:var(--teal)">16,4 млн</span>
-<h3>Обеление самозанятых</h3>
-<p>Интеграция с «Мой налог». Песочница с 0% комиссией для первых 6 месяцев. 4,5 млн самозанятых нуждаются в платформе для поиска клиентов.</p>
-</div>
-<div class="problem-card reveal">
-<span class="stat" style="color:var(--teal)">200 000</span>
-<h3>Рабочих мест</h3>
-<p>Создание рабочих мест в моногородах и регионах через артельные кластеры и B2B-кооперацию. Геотаргетинг под специфику каждого региона.</p>
-</div>
-</div>
-</div>
+<!-- Roadmap -->
+<section class="roadmap" id="roadmap">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Дорожная карта</span>
+            <h2 class="section-title">Четыре фазы развития</h2>
+            <p class="section-desc">От предзапуска до международного прорыва — масштабируемая стратегия роста</p>
+        </div>
+        <div class="roadmap__timeline">
+            <div class="roadmap__line"></div>
+            <div class="roadmap__phase">
+                <div class="roadmap__marker roadmap__marker--active"></div>
+                <div class="roadmap__content">
+                    <div class="roadmap__phase-num">Фаза 0</div>
+                    <h3 class="roadmap__title">Предзапуск</h3>
+                    <div class="roadmap__period">Июль 2026 – Июнь 2027</div>
+                    <div class="roadmap__budget">2 200 млн руб. (Транш 1)</div>
+                    <ul class="roadmap__kpis">
+                        <li>Поручение Правительства РФ</li>
+                        <li>Регистрация АО «НП «Опора»</li>
+                        <li>Поправки в ст. 149 НК РФ и в Госдуму</li>
+                        <li>Ядро команды: 9–12 чел. (CTO, CFO, CISO, AI Lead)</li>
+                        <li>Рабочий прототип: 20 микросервисов, Docker Compose</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="roadmap__phase">
+                <div class="roadmap__marker"></div>
+                <div class="roadmap__content">
+                    <div class="roadmap__phase-num">Фаза 1</div>
+                    <h3 class="roadmap__title">Пилот</h3>
+                    <div class="roadmap__period">Июль 2027 – Июнь 2028</div>
+                    <div class="roadmap__budget">1 000 млн руб. (Транш 2)</div>
+                    <ul class="roadmap__kpis">
+                        <li>≥100 верифицированных брендов</li>
+                        <li>≥50 000 пользователей</li>
+                        <li>≥500 000 транзакций</li>
+                        <li>SLA ≥99,5%</li>
+                    </ul>
+                    <div class="roadmap__location">Пилот: Москва + Зеленоград</div>
+                </div>
+            </div>
+            <div class="roadmap__phase">
+                <div class="roadmap__marker"></div>
+                <div class="roadmap__content">
+                    <div class="roadmap__phase-num">Фаза 2</div>
+                    <h3 class="roadmap__title">Масштабирование</h3>
+                    <div class="roadmap__period">Июль 2028 – Декабрь 2030</div>
+                    <div class="roadmap__budget">2 200 млн руб. (Транш 3)</div>
+                    <ul class="roadmap__kpis">
+                        <li>≥200 000 брендов</li>
+                        <li>≥8 млн пользователей</li>
+                        <li>Капитализация 50 млрд руб.</li>
+                        <li>Команда: 30–40 человек</li>
+                        <li>Выход на операционную окупаемость</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="roadmap__phase">
+                <div class="roadmap__marker"></div>
+                <div class="roadmap__content">
+                    <div class="roadmap__phase-num">Фаза 3</div>
+                    <h3 class="roadmap__title">Международное развитие</h3>
+                    <div class="roadmap__period">2031+</div>
+                    <div class="roadmap__budget">800 млн руб. (Транш 4)</div>
+                    <ul class="roadmap__kpis">
+                        <li>10 000 брендов за рубежом</li>
+                        <li>5 стран (ЕАЭС, БРИКС)</li>
+                        <li>Капитализация 250+ млрд руб.</li>
+                        <li>4,38 млн пользователей</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<!-- SOLUTION — Government -->
-<section class="section" id="solution-gov" style="background:linear-gradient(180deg,transparent,rgba(27,38,88,.3),transparent)">
-<div class="container">
-<div class="solution-header">
-<span class="section-label">Интеграция с госсистемами</span>
-<h2 class="section-title">Подключение к существующей инфраструктуре</h2>
-<p class="section-desc">«Опора» не дублирует — интегрируется. ЕСИА для аутентификации, ГИСП для верификации, ФНС для налогового мониторинга.</p>
-</div>
-
-<div class="integrations-grid">
-<div class="integration-badge"><span class="ib-icon">🔐</span> ЕСИА</div>
-<div class="integration-badge"><span class="ib-icon">🏭</span> ГИСП</div>
-<div class="integration-badge"><span class="ib-icon">📋</span> Честный знак</div>
-<div class="integration-badge"><span class="ib-icon">💼</span> ФНС</div>
-<div class="integration-badge"><span class="ib-icon">🔒</span> ФСТЭК К2</div>
-<div class="integration-badge"><span class="ib-icon">🏦</span> ЦБ РФ</div>
-<div class="integration-badge"><span class="ib-icon">📱</span> Мой налог</div>
-</div>
-
-<div class="problem-banner reveal" style="margin-top:48px">
-<h3>Бюджетная эффективность</h3>
-<p>Каждый рубль государственной поддержки возвращает 1,7 рубля дополнительных налогов через обеление самозанятых и рост МСП.</p>
-<div class="market-tiers">
-<div class="market-tier">
-<span class="tier-value">1,7×</span>
-<span class="tier-label">Мультипликатор</span>
-</div>
-<div class="market-tier">
-<span class="tier-value">1 : 3–5</span>
-<span class="tier-label">ROI</span>
-</div>
-<div class="market-tier">
-<span class="tier-value count-up" data-target="10.5" data-suffix=" млрд" data-decimals="1">0</span>
-<span class="tier-label">Господдержка 2026</span>
-</div>
-</div>
-</div>
-</div>
+<!-- Risks -->
+<section class="risks" id="risks">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Риски</span>
+            <h2 class="section-title">Управление рисками</h2>
+            <p class="section-desc">Прозрачный анализ ключевых рисков и конкретные контрмеры. Готовность — лучше иллюзии безопасности.</p>
+        </div>
+        <div class="risks__grid">
+            <div class="risk-card">
+                <div class="risk-card__level risk-card__level--high">Критический</div>
+                <h3 class="risk-card__title">Санкционный «железный занавес»</h3>
+                <p class="risk-card__desc">Блокировка доступа к зарубежным облачным сервисам, библиотекам и инструментам разработки.</p>
+                <div class="risk-card__mitigation">
+                    <strong>Контрмера:</strong> Резерв +30% к бюджету, аренда GPU в отечественных облаках, приоритет Open Source, зеркалирование зависимостей.
+                </div>
+            </div>
+            <div class="risk-card">
+                <div class="risk-card__level risk-card__level--high">Критический</div>
+                <h3 class="risk-card__title">Кадровый голод</h3>
+                <p class="risk-card__desc">Дефицит senior-разработчиков Java/React на российском рынке. Конкуренция с крупными корпорациями.</p>
+                <div class="risk-card__mitigation">
+                    <strong>Контрмера:</strong> Опционы (5% УК), sign-on бонусы (1–3 оклада), партнёрство с вузами, программы переподготовки.
+                </div>
+            </div>
+            <div class="risk-card">
+                <div class="risk-card__level risk-card__level--medium">Высокий</div>
+                <h3 class="risk-card__title">Регуляторный «каток»</h3>
+                <p class="risk-card__desc">Длительное согласование поправок в НК РФ, постановлений Правительства, нормативных актов ЦБ РФ.</p>
+                <div class="risk-card__mitigation">
+                    <strong>Контрмера:</strong> Выделенный бюджет на GR, участие в рабочих группах Госдумы, параллельная разработка без привязки к регуляторике.
+                </div>
+            </div>
+            <div class="risk-card">
+                <div class="risk-card__level risk-card__level--medium">Высокий</div>
+                <h3 class="risk-card__title">Стагфляция ИТ-рынка</h3>
+                <p class="risk-card__desc">Рост зарплат разработчиков при снижении покупательной способности. Инфляция бюджета.</p>
+                <div class="risk-card__mitigation">
+                    <strong>Контрмера:</strong> Фиксация цен в контрактах, приоритет Open Source, удалённая команда (географическое расширение пула).
+                </div>
+            </div>
+            <div class="risk-card">
+                <div class="risk-card__level risk-card__level--medium">Высокий</div>
+                <h3 class="risk-card__title">Блокировка платежей</h3>
+                <p class="risk-card__desc">Ограничения на банковские переводы, санкции на платёжные системы.</p>
+                <div class="risk-card__mitigation">
+                    <strong>Контрмера:</strong> Интеграция с цифровым рублём (ЦФА), BRICS Bridge, резервные платёжные каналы.
+                </div>
+            </div>
+            <div class="risk-card">
+                <div class="risk-card__level risk-card__level--low">Средний</div>
+                <h3 class="risk-card__title">Низкая адопция</h3>
+                <p class="risk-card__desc">Медленное привлечение брендов и пользователей. Недостаточный эффект сетевой ценности.</p>
+                <div class="risk-card__mitigation">
+                    <strong>Контрмера:</strong> Пилот в Москве + Зеленоград, программа ранних партнёров (319 синергистов СИНВ), кешбэк до 7% для стимулирования.
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<!-- TIMELINE — Government -->
-<section class="section" id="timeline-gov">
-<div class="container">
-<div class="solution-header">
-<span class="section-label">Дорожная карта</span>
-<h2 class="section-title">4 фазы — от поручения Правительства до масштаба</h2>
-<p class="section-desc">Финансирование траншами под достижение измеримых KPI. Каждый транш — контрольная точка.</p>
-</div>
-
-<div class="timeline">
-<div class="tl-item active reveal">
-<div class="tl-phase">Фаза 0 · Предзапуск</div>
-<h3>Нормативная рамка и подготовка</h3>
-<div class="tl-dates">Июль 2026 — Июнь 2027 · Транш 1: 2 200 млн ₽</div>
-<p>Получение поручения Правительства. Регистрация АО «НП «Опора». Поправки в ст. 149 НК РФ. Межведомственная рабочая группа (ЦБ, Минфин, ФНС, Минпромторг).</p>
-<div class="tl-kpis">
-<span class="tl-kpi">Поручение Правительства</span>
-<span class="tl-kpi">Регистрация АО</span>
-<span class="tl-kpi">Поправки в ГД</span>
-</div>
-</div>
-
-<div class="tl-item reveal">
-<div class="tl-phase">Фаза 1 · Пилот</div>
-<h3>MVP: 3 модуля в Москве и Зеленограде</h3>
-<div class="tl-dates">Июль 2027 — Июнь 2028 · Транш 2: 1 000 млн ₽</div>
-<p>Запуск верификации, кооперации и лояльности. Привлечение первых брендов. Тестирование бизнес-модели.</p>
-<div class="tl-kpis">
-<span class="tl-kpi">≥100 брендов</span>
-<span class="tl-kpi">≥50 000 пользователей</span>
-<span class="tl-kpi">≥500 000 транзакций</span>
-<span class="tl-kpi">SLA ≥99,5%</span>
-</div>
-</div>
-
-<div class="tl-item reveal">
-<div class="tl-phase">Фаза 2 · Масштабирование</div>
-<h3>Вся Россия. Дополнительные модули.</h3>
-<div class="tl-dates">Июль 2028 — Декабрь 2030 · Транш 3: 2 200 млн ₽</div>
-<p>Масштабирование на всю страну. Запуск модулей Креаторы, Право, Цепочки, Кадры, Регионы, Экспорт.</p>
-<div class="tl-kpis">
-<span class="tl-kpi">≥200 000 брендов</span>
-<span class="tl-kpi">≥8 млн пользователей</span>
-<span class="tl-kpi">200 000 рабочих мест</span>
-</div>
-</div>
-
-<div class="tl-item reveal">
-<div class="tl-phase">Фаза 3 · Интернационализация</div>
-<h3>ЕАЭС и БРИКС</h3>
-<div class="tl-dates">2031+ · Транш 4: 800 млн ₽</div>
-<p>Экспорт модели в страны ЕАЭС и БРИКС. Локализация для Казахстана, Беларуси, Узбекистана, Индии, Китая.</p>
-<div class="tl-kpis">
-<span class="tl-kpi">5 стран</span>
-<span class="tl-kpi">10 000 брендов за рубежом</span>
-</div>
-</div>
-</div>
-</div>
+<!-- FAQ -->
+<section class="faq" id="faq">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Вопросы</span>
+            <h2 class="section-title">Часто задаваемые вопросы</h2>
+            <p class="section-desc">Ответы на ключевые вопросы об экосистеме «Опора»</p>
+        </div>
+        <div class="faq__list">
+            <details class="faq-item">
+                <summary class="faq-item__question">Что такое «Опора» и чем она отличается от существующих маркетплейсов?</summary>
+                <div class="faq-item__answer">
+                    <p>«Опора» — это не маркетплейс, а национальная цифровая экосистема. Ключевое отличие: мы верифицируем отечественное происхождение товаров через интеграцию с ГИСП, «Честным знаком» и ФНС. Маркетплейсы продают всё подряд, «Опора» — только проверенные российские бренды с прозрачной цепочкой поставок.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-item__question">Как финансируется проект?</summary>
+                <div class="faq-item__answer">
+                    <p>Смешанное финансирование: 50% — государственные субсидии (Минпромторг, Минцифры, институты развития), 50% — частные инвестиции. Общий бюджет 10–12,5 млрд руб. на 5 лет. Бюджетный мультипликатор — 1,7×, то есть каждый рубль государственных средств генерирует 1,7 рубля экономического эффекта.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-item__question">Кто может стать участником экосистемы?</summary>
+                <div class="faq-item__answer">
+                    <p>Любой производитель отечественной продукции, самозанятый, малый или средний бизнес. Для брендов — процедура верификации через ГИСП и «Честный знак». Для самозанятых — нулевая комиссия через модуль «Песочница» с интеграцией «Мой налог». Потребители получают кешбэк до 7% за покупку отечественных товаров.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-item__question">Как обеспечивается безопасность данных?</summary>
+                <div class="faq-item__answer">
+                    <p>Класс защиты К2 (ФСТЭК №117), ГОСТ-криптография (КриптоПро CSP 5.0), обязательный пентест. Интеграция с ЕСИА для аутентификации. Все данные хранятся на территории РФ. Планируется сертификация ФСТЭК и Роскомнадзора до запуска пилота.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-item__question">Когда запуск?</summary>
+                <div class="faq-item__answer">
+                    <p>Фаза 0 (предзапуск): июль 2026 – июнь 2027. Пилот в Москве и Зеленограде: июль 2027. Масштабирование на всю Россию: 2028–2030. Международный выход (ЕАЭС, БРИКС): 2031+. Сейчас активно набираем ядро команды (9–12 человек).</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-item__question">Как войти в команду?</summary>
+                <div class="faq-item__answer">
+                    <p>Первая волна найма (июль 2026): CTO, CFO, CISO, AI Lead, юрист, Lead Developer. Компенсация: рыночная + опционы (5% УК, вестинг 2+3 года) + sign-on бонус (1–3 оклада). Свяжитесь с нами через форму ниже или напишите на email.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-item__question">Какая бизнес-модель и источники дохода?</summary>
+                <div class="faq-item__answer">
+                    <p>Комбинированная модель: комиссия с транзакций на «Витрине», подписка B2B (аналитика, кооперация), монетизация обезличенных данных, премиум-размещение брендов. Кешбэк финансируется за счёт комиссии платформы и партнёрских отчислений, а не за счёт покупателя. Целевая маржинальность — 25–30% после выхода на операционную окупаемость.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-item__question">Как партнёры могут интегрироваться с платформой?</summary>
+                <div class="faq-item__answer">
+                    <p>Через открытый API Gateway (REST/gRPC). Предоставляем SDK для Java, Python и JavaScript. Документация — OpenAPI 3.0. Для банков: интеграция с СБП и ЦФА. Для ритейла: API каталога и прослеживаемости. Для госорганов: защищённые каналы с ГОСТ-криптографией. Пилотные интеграции — с 2027 года.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-item__question">Какие гарантии возврата инвестиций?</summary>
+                <div class="faq-item__answer">
+                    <p>Финансовая модель прошла верификацию в рамках СИНВ-2026 (получено 4 экспертизы). Базовый сценарий: NPV 4,5 млрд ₽, IRR 32%, окупаемость 4,2 года. Статус национальной инфраструктуры снижает регуляторные риски. Предусмотрен резервный фонд +30% к бюджету на случай санкционных ограничений. Инвесторы получают долю в АО «НП «Опора» с корпоративным договором и «золотой акцией» государства.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-item__question">Как проект обеспечивает технологический суверенитет?</summary>
+                <div class="faq-item__answer">
+                    <p>Всё ПО — российская разработка. Криптография — ГОСТ (КриптоПро CSP 5.0). Блокчейн — Hyperledger Fabric с патчем КриптоПро. Данные — на серверах в РФ. Зависимости зеркалируются в отечественные репозитории. Приоритет Open Source снижает риск vendor lock-in. Платформа соответствует требованиям постановления № 1236 об импортозамещении.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-item__question">Как работает кешбэк до 7% и кто его финансирует?</summary>
+                <div class="faq-item__answer">
+                    <p>Кешбэк начисляется баллами за покупку верифицированных отечественных товаров. Финансируется из комиссии платформы, маркетинговых бюджетов брендов и государственных субсидий на стимулирование спроса на российскую продукцию. Баллы можно использовать для следующих покупок или конвертировать в скидки. Поправки в ст. 149 НК РФ освобождают операции с баллами лояльности от НДС.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-item__question">В чём отличие от Wildberries, Ozon и других маркетплейсов?</summary>
+                <div class="faq-item__answer">
+                    <p>Маркетплейсы — это витрина товаров с комиссией 15–25%. «Опора» — это экосистема для роста бизнеса: мы не только продаём, но и верифицируем происхождение, связываем с партнёрами по кооперации, даём доступ к финансированию (краудфандинг, ЦФА), помогаем с экспортом и юридической защитой. Комиссия на «Витрине» — 5–10% в зависимости от грейда бренда. Мы зарабатываем на росте брендов, а не на обороте товаров.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-item__question">Какие гарантии для инвесторов при статусе национальной инфраструктуры?</summary>
+                <div class="faq-item__answer">
+                    <p>Статус национальной инфраструктуры закрепляется Постановлением Правительства РФ. Это даёт: приоритетный доступ к госзакупкам, интеграцию с ЕСИА и ГИСП, налоговые преференции (ст. 149 НК РФ), защиту от недружественных поглощений через «золотую акцию» государства. Инвесторы получают долю в АО «НП «Опора» с корпоративным договором, закрепляющим права миноритариев. Выход — через SPO к 2031 при целевой капитализации 250+ млрд руб.</p>
+                </div>
+            </details>
+        </div>
+    </div>
 </section>
 
-<!-- FAQ — Government -->
-<section class="section" id="faq-gov">
-<div class="container">
-<div class="solution-header">
-<span class="section-label">Вопросы и ответы</span>
-<h2 class="section-title">Часто задаваемые вопросы</h2>
-</div>
-
-<div class="faq-list">
-<div class="faq-item reveal">
-<div class="faq-q" onclick="toggleFaq(this)">
-<span>Почему государство должно участвовать?</span>
-<span class="faq-arrow">▾</span>
-</div>
-<div class="faq-a"><p>«Опора» — национальная инфраструктура, а не частный стартап. Бюджетный мультипликатор 1,7×: каждый рубль возвращает 1,7 рубля налогов. Обеление самозанятых, импортозамещение, 200 000 рабочих мест.</p></div>
-</div>
-<div class="faq-item reveal">
-<div class="faq-q" onclick="toggleFaq(this)">
-<span>Как обеспечивается безопасность?</span>
-<span class="faq-arrow">▾</span>
-</div>
-<div class="faq-a"><p>Класс защищённости К2 (ФСТЭК №117). ГОСТ-криптография (КриптоПро CSP 5.0). Федеративная аутентификация через ЕСИА. Обязательный пентест. Соответствие 152-ФЗ.</p></div>
-</div>
-<div class="faq-item reveal">
-<div class="faq-q" onclick="toggleFaq(this)">
-<span>Как это связано с нацпроектами?</span>
-<span class="faq-arrow">▾</span>
-</div>
-<div class="faq-a"><p>Прямая синергия: «Производительность труда» (кооперация), «Малое и среднее предпринимательство» (верификация), «Международная кооперация» (экспорт), «Кадры» (верификация компетенций).</p></div>
-</div>
-<div class="faq-item reveal">
-<div class="faq-q" onclick="toggleFaq(this)">
-<span>Что нужно от государства прямо сейчас?</span>
-<span class="faq-arrow">▾</span>
-</div>
-<div class="faq-a"><p>Поручение Правительства о создании межведомственной рабочей группы. Регистрация АО «НП «Опора». Поправки в ст. 149 НК РФ (НДС на баллы лояльности). Транш 1: 2,2 млрд руб.</p></div>
-</div>
-</div>
-</div>
+<!-- Documents / Downloads -->
+<section class="docs" id="docs">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Документы</span>
+            <h2 class="section-title">Скачайте материалы проекта</h2>
+            <p class="section-desc">Ключевые документы в PDF: для инвесторов, технических специалистов и партнёров</p>
+        </div>
+        <div class="docs__grid">
+            <a href="pdfs/one-pager.html" class="doc-card" aria-label="Скачать One-Pager">
+                <div class="doc-card__type" style="background: var(--teal);">HTML</div>
+                <h3 class="doc-card__title">One-Pager</h3>
+                <p class="doc-card__desc">Краткая презентация: миссия, проблема, решение, метрики, контакты. 1 страница.</p>
+                <span class="doc-card__audience">Для: все аудитории</span>
+            </a>
+            <a href="pdfs/investor-memo.html" class="doc-card" aria-label="Скачать Инвестиционный меморандум">
+                <div class="doc-card__type" style="background: var(--orange);">HTML</div>
+                <h3 class="doc-card__title">Инвестиционный меморандум</h3>
+                <p class="doc-card__desc">Финмодель v4.0, 8 сценариев A–H, структура сделки, анализ рынка, стратегия выхода</p>
+                <span class="doc-card__audience">Для: инвесторы, государство</span>
+            </a>
+            <a href="pdfs/technical-overview.html" class="doc-card" aria-label="Скачать Технический обзор">
+                <div class="doc-card__type" style="background: var(--blue);">HTML</div>
+                <h3 class="doc-card__title">Технический обзор</h3>
+                <p class="doc-card__desc">C4-архитектура, стек технологий, 20 сервисов, К2-безопасность, gRPC/Protobuf</p>
+                <span class="doc-card__audience">Для: CTO, разработчики, партнёры</span>
+            </a>
+            <a href="pdfs/modules-guide.html" class="doc-card" aria-label="Скачать Руководство по модулям">
+                <div class="doc-card__type" style="background: var(--green);">HTML</div>
+                <h3 class="doc-card__title">Руководство по модулям</h3>
+                <p class="doc-card__desc">20 сервисов: назначение, API-контракты, ключевые функции, статус реализации</p>
+                <span class="doc-card__audience">Для: архитекторы, интеграторы</span>
+            </a>
+            <a href="pdfs/sinv-analysis.html" class="doc-card" aria-label="Скачать Анализ СИНВ-2026">
+                <div class="doc-card__type" style="background: var(--orange);">HTML</div>
+                <h3 class="doc-card__title">Анализ СИНВ-2026</h3>
+                <p class="doc-card__desc">Валидация спроса: 17 845 идей, 319 синергистов, ТОП-35 партнёров, 4 экспертизы</p>
+                <span class="doc-card__audience">Для: инвесторы, государство</span>
+            </a>
+            <a href="documents.html" class="doc-card" aria-label="Перейти к полному каталогу документов">
+                <div class="doc-card__type">ВСЕ</div>
+                <h3 class="doc-card__title">Все документы →</h3>
+                <p class="doc-card__desc">Полный каталог: 116 документов в HTML и PDF для скачивания</p>
+                <span class="doc-card__audience">Для: глубокого изучения</span>
+            </a>
+        </div>
+    </div>
 </section>
 
-<!-- DOWNLOADS — Government -->
-<section class="section" id="downloads-gov" style="background:linear-gradient(180deg,transparent,rgba(27,38,88,.3),transparent)">
-<div class="container">
-<div class="solution-header">
-<span class="section-label">Документы</span>
-<h2 class="section-title">Скачать для государственных структур</h2>
-</div>
-
-<div class="downloads-grid">
-<a class="dl-card reveal" href="#" title="Скачать GR-стратегию">
-<div class="dl-icon" style="background:rgba(52,152,219,.1);color:#3498db">🏛️</div>
-<div><h4>GR-стратегия</h4><p>Нормативная рамка, межведомственная координация, поправки в НК</p><span class="dl-size">PDF · 12 с.</span></div>
-</a>
-<a class="dl-card reveal" href="#" title="Скачать White Paper">
-<div class="dl-icon" style="background:rgba(52,152,219,.1);color:#3498db">📘</div>
-<div><h4>White Paper v3.0</h4><p>Расширенная концепция: архитектура, модули, экономика</p><span class="dl-size">PDF · ~40 с.</span></div>
-</a>
-<a class="dl-card reveal" href="#" title="Скачать презентацию">
-<div class="dl-icon" style="background:rgba(52,152,219,.1);color:#3498db">📊</div>
-<div><h4>Презентация проекта</h4><p>18 слайдов: решение, экономика, дорожная карта</p><span class="dl-size">PDF · 18 слайдов</span></div>
-</a>
-</div>
-</div>
+<!-- Newsletter -->
+<section class="newsletter" id="newsletter">
+    <div class="container">
+        <div class="newsletter__inner">
+            <div class="newsletter__content">
+                <h2 class="newsletter__title">Будьте в курсе развития проекта</h2>
+                <p class="newsletter__desc">Подпишитесь на рассылку: обновления по фазам, вакансии, партнёрские предложения. Без спама — только по делу.</p>
+            </div>
+            <form class="newsletter__form" id="newsletterForm">
+                <div class="newsletter__input-group">
+                    <input type="email" class="newsletter__input" placeholder="your@email.com" required autocomplete="email" aria-label="Email для рассылки">
+                    <button type="submit" class="btn btn--primary newsletter__btn">Подписаться</button>
+                </div>
+                <div class="form-status" role="status" aria-live="polite"></div>
+                <p class="newsletter__disclaimer">Нажимая «Подписаться», вы соглашаетесь на обработку персональных данных в соответствии с 152-ФЗ.</p>
+            </form>
+        </div>
+    </div>
 </section>
 
-</div><!-- /seg-government -->
-
-
-<!-- ╔══════════════════════════════════════════╗ -->
-<!-- ║     SEGMENT 3: БИЗНЕСУ                   ║ -->
-<!-- ╚══════════════════════════════════════════╝ -->
-<div class="segment-content" id="seg-business">
-
-<!-- HERO — Business -->
-<section class="hero" id="hero-biz">
-<div class="container">
-<div class="hero-content">
-<div class="hero-badge"><span class="badge badge-gold">Для производителей и самозанятых</span></div>
-<h1>Найдите поставщика за <span class="em-gold">2 недели</span> вместо 6 месяцев</h1>
-<p class="hero-highlight">Верификация + AI-подбор + кешбэк до <em>7%</em></p>
-<p class="hero-sub">57% предприятий не могут найти поставщиков. «Опора» — платформа доверия, где каждый бренд проверен, а поиск партнёра занимает дни, а не месяцы.</p>
-<div class="hero-actions">
-<a href="#how-it-works" class="btn btn-gold">Как это работает →</a>
-<a href="#stories" class="btn btn-outline">Истории успеха</a>
-<a href="#contact-biz" class="btn btn-primary">Присоединиться</a>
-</div>
-</div>
-</div>
+<!-- Contact -->
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="contact__inner">
+            <div class="contact__info">
+                <span class="section-tag">Контакты</span>
+                <h2 class="section-title">Свяжитесь с нами</h2>
+                <p class="contact__text">
+                    Мы открыты к диалогу с государственными структурами, институтами развития,
+                    частными инвесторами, брендами и предпринимателями. Независимо от вашей роли —
+                    если вам интересна цифровая инфраструктура для 6,3 млн субъектов МСП, напишите нам.
+                </p>
+                <div class="contact__channels">
+                    <p class="contact__channels-title">Каналы связи</p>
+                    <div class="contact__channel-item">
+                        <span class="contact__channel-name">Email</span>
+                        <a href="mailto:contact@opora.digital" class="contact__channel-value">contact@opora.digital</a>
+                    </div>
+                    <div class="contact__channel-item">
+                        <span class="contact__channel-name">GitHub</span>
+                        <a href="https://github.com/alexandr-narbaev/opora" target="_blank" rel="noopener">github.com/alexandr-narbaev/opora</a>
+                    </div>
+                    <div class="contact__channel-item">
+                        <span class="contact__channel-name">GitVerse</span>
+                        <a href="https://gitverse.ru/alexandr-narbaev/opora" target="_blank" rel="noopener">gitverse.ru/alexandr-narbaev/opora</a>
+                    </div>
+                    <div class="contact__channel-item">
+                        <span class="contact__channel-name">Ответ</span>
+                        <span class="contact__channel-value">В течение 48 часов</span>
+                    </div>
+                </div>
+                <div class="contact__details">
+                    <div class="contact__detail">
+                        <span class="contact__detail-label">Проект</span>
+                        <span class="contact__detail-value">АО «НП «Опора»</span>
+                    </div>
+                    <div class="contact__detail">
+                        <span class="contact__detail-label">Статус</span>
+                        <span class="contact__detail-value">Фаза 0: Предзапуск</span>
+                    </div>
+                    <div class="contact__detail">
+                        <span class="contact__detail-label">Заявка СИНВ-2026</span>
+                        <span class="contact__detail-value contact__detail-value--success">Подана ✅</span>
+                    </div>
+                </div>
+            </div>
+            <form class="contact__form" id="contactForm">
+                <div class="form-group">
+                    <label for="name" class="form-label">Имя</label>
+                    <input type="text" id="name" name="name" class="form-input" placeholder="Ваше имя" required autocomplete="name">
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="email@example.com" required autocomplete="email">
+                </div>
+                <div class="form-group">
+                    <label for="org" class="form-label">Организация</label>
+                    <input type="text" id="org" name="org" class="form-input" placeholder="Название организации" autocomplete="organization">
+                </div>
+                <div class="form-group">
+                    <label for="role" class="form-label">Роль</label>
+                    <select id="role" name="role" class="form-input">
+                        <option value="">Выберите роль</option>
+                        <option value="investor">Инвестор</option>
+                        <option value="partner">Партнёр</option>
+                        <option value="government">Госорган</option>
+                        <option value="brand">Бренд / Производитель</option>
+                        <option value="developer">Разработчик</option>
+                        <option value="other">Другое</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message" class="form-label">Сообщение</label>
+                    <textarea id="message" name="message" class="form-input form-textarea" placeholder="Расскажите о вашем интересе к проекту" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn--primary btn--full">Отправить заявку</button>
+                <div class="form-status" role="status" aria-live="polite"></div>
+            </form>
+        </div>
+    </div>
 </section>
 
-<!-- HOW IT WORKS — Business -->
-<section class="section" id="how-it-works">
-<div class="container">
-<div class="solution-header">
-<span class="section-label">Как это работает</span>
-<h2 class="section-title">3 шага до результата</h2>
-<p class="section-desc">Простой процесс: зарегистрируйтесь, верифицируйте бренд, начните кооперацию.</p>
-</div>
-
-<div class="steps-grid">
-<div class="step-card reveal">
-<span class="step-num">01</span>
-<h3>Зарегистрируйтесь</h3>
-<p>Создайте профиль компании или самозанятого. Укажите отрасль, продукцию, регион. Занимает 10 минут.</p>
-</div>
-<div class="step-card reveal">
-<span class="step-num">02</span>
-<h3>Верифицируйте бренд</h3>
-<p>Получите грейд Золото/Серебро/Бронза на основе данных ГИСП и «Честного знака». Верифицированные бренды получают приоритет в каталоге.</p>
-</div>
-<div class="step-card reveal">
-<span class="step-num">03</span>
-<h3>Найдите партнёров</h3>
-<p>AI-подбор по 50+ параметрам. Артельные кластеры для совместных закупок. Смарт-контракты без посредников.</p>
-</div>
-</div>
-</div>
-</section>
-
-<!-- VALUE — Business -->
-<section class="section" id="solution-biz" style="background:linear-gradient(180deg,transparent,rgba(27,38,88,.3),transparent)">
-<div class="container">
-<div class="solution-header">
-<span class="section-label">Ценность</span>
-<h2 class="section-title">Что вы получаете</h2>
-</div>
-
-<div class="solution-grid">
-<div class="solution-card reveal">
-<span class="card-icon">🔍</span>
-<h3>AI-подбор поставщиков</h3>
-<p>Поиск по 50+ параметрам вместо 6–8 месяцев ручного поиска. Рекомендации на основе отрасли, региона, объёмов производства.</p>
-<span class="card-tag">С 6 месяцев до 2 недель</span>
-</div>
-<div class="solution-card reveal">
-<span class="card-icon">✅</span>
-<h3>Верификация бренда</h3>
-<p>Грейд Золото/Серебро/Бронза. Потребители видят степень «отечественности». Кешбэк до 7% привлекает покупателей.</p>
-<span class="card-tag">Конкурентное преимущество</span>
-</div>
-<div class="solution-card reveal">
-<span class="card-icon">💰</span>
-<h3>Снижение затрат</h3>
-<p>Кооперация с соседними производителями. Совместная логистика. Смарт-контракты без посредников. Экономия 15–20%.</p>
-<span class="card-tag">Реальная выгода</span>
-</div>
-</div>
-</div>
-</section>
-
-<!-- USER STORIES — Business -->
-<section class="section" id="stories">
-<div class="container">
-<div class="solution-header">
-<span class="section-label">Истории</span>
-<h2 class="section-title">Для кого «Опора»</h2>
-</div>
-
-<div class="stories-grid">
-<div class="story-card reveal">
-<span class="story-icon">🏭</span>
-<h4>Производитель</h4>
-<p>Мебельная фабрика в Тульской области. Ищет поставщика фурнитуры вместо импорта из Китая.</p>
-<div class="story-before"><span>Было</span><span>Поиск 6–8 мес.</span></div>
-<div class="story-after"><span>Стало</span><span>2 недели через AI</span></div>
-</div>
-<div class="story-card reveal">
-<span class="story-icon">🎨</span>
-<h4>Самозанятый</h4>
-<p>Дизайнер из Казани. Ищет заказы через соцсети, нет стабильного потока клиентов.</p>
-<div class="story-before"><span>Было</span><span>Случайные заказы</span></div>
-<div class="story-after"><span>Стало</span><span>Каталог + кешбэк</span></div>
-</div>
-<div class="story-card reveal">
-<span class="story-icon">🪵</span>
-<h4>Ремесленник</h4>
-<p>Мастер деревянных изделий из Вологды. Хочет продавать по всей России, но нет бюджета на маркетинг.</p>
-<div class="story-before"><span>Было</span><span>Местные продажи</span></div>
-<div class="story-after"><span>Стало</span><span>Верификация + каталог</span></div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- FAQ — Business -->
-<section class="section" id="faq-biz">
-<div class="container">
-<div class="solution-header">
-<span class="section-label">Вопросы и ответы</span>
-<h2 class="section-title">Часто задаваемые вопросы</h2>
-</div>
-
-<div class="faq-list">
-<div class="faq-item reveal">
-<div class="faq-q" onclick="toggleFaq(this)">
-<span>Это бесплатно?</span>
-<span class="faq-arrow">▾</span>
-</div>
-<div class="faq-a"><p>Да, регистрация и базовый каталог — бесплатно. Кешбэк до 7% за покупку отечественных товаров. Самозанятые — 0% комиссии в первые 6 месяцев (песочница).</p></div>
-</div>
-<div class="faq-item reveal">
-<div class="faq-q" onclick="toggleFaq(this)">
-<span>Что такое грейдирование?</span>
-<span class="faq-arrow">▾</span>
-</div>
-<div class="faq-a"><p>Три уровня локализации: «Золото» (≥80% добавленной стоимости в РФ), «Серебро» (≥50%), «Бронза» (≥30%). Верификация через ГИСП и «Честный знак». Чем выше грейд — тем больше кешбэк.</p></div>
-</div>
-<div class="faq-item reveal">
-<div class="faq-q" onclick="toggleFaq(this)">
-<span>Когда платформа заработает?</span>
-<span class="faq-arrow">▾</span>
-</div>
-<div class="faq-a"><p>Пилот запланирован на июль 2027 года в Москве и Зеленограде. Оставьте заявку — мы пригласим вас одним из первых.</p></div>
-</div>
-<div class="faq-item reveal">
-<div class="faq-q" onclick="toggleFaq(this)">
-<span>Как я могу помочь?</span>
-<span class="faq-arrow">▾</span>
-</div>
-<div class="faq-a"><p>Зарегистрируйтесь как ранний пользователь. Расскажите о проблеме поиска поставщиков коллегам. Присоединитесь к артельному кластеру в вашем регионе.</p></div>
-</div>
-</div>
-</div>
-</section>
-
-<!-- CTA — Business -->
-<section class="section" id="contact-biz" style="background:linear-gradient(180deg,transparent,rgba(27,38,88,.3),transparent)">
-<div class="container">
-<div class="problem-banner reveal">
-<h3>Присоединяйтесь к «Опоре»</h3>
-<p>Оставьте заявку — мы пригласим вас одним из первых, когда платформа запустится в вашем регионе.</p>
-<div style="margin-top:28px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
-<a href="#contact" class="btn btn-gold">Оставить заявку</a>
-<a href="mailto:alexander.narbayev@yandex.ru" class="btn btn-outline">Написать напрямую</a>
-</div>
-</div>
-</div>
-</section>
-
-</div><!-- /seg-business -->
-
-
-<!-- ═══════════════ CONTACT (shared) ═══════════════ -->
-<section class="section" id="contact">
-<div class="container">
-<div class="solution-header">
-<span class="section-label">Контакты</span>
-<h2 class="section-title">Станьте частью «Опоры»</h2>
-<p class="section-desc">Мы открыты для партнёрств с инвесторами, государственными структурами, брендами и самозанятыми.</p>
-</div>
-
-<div class="contact-grid">
-<div class="contact-info">
-<div class="ci-item reveal">
-<div class="ci-icon">👤</div>
-<div><h4>Александр Нарбаев</h4><p>Лидер проекта</p></div>
-</div>
-<div class="ci-item reveal">
-<div class="ci-icon">📧</div>
-<div><h4>alexander.narbayev@yandex.ru</h4><p>Деловая переписка</p></div>
-</div>
-<div class="ci-item reveal">
-<div class="ci-icon">📱</div>
-<div><h4>+7 999 452-33-98</h4><p>Телефон / Telegram</p></div>
-</div>
-<div class="ci-item reveal">
-<div class="ci-icon">📍</div>
-<div><h4>Москва, Россия</h4><p>Пилот: Москва + Зеленоград</p></div>
-</div>
-<div class="ci-item reveal">
-<div class="ci-icon">🏛️</div>
-<div><h4>АО «НП «Опора»</h4><p>Государственно-частное партнёрство</p></div>
-</div>
-</div>
-
-<div class="contact-form reveal">
-<h3>Напишите нам</h3>
-<form onsubmit="event.preventDefault();alert('Спасибо! Мы свяжемся с вами в ближайшее время.')">
-<div class="form-group">
-<label for="name">Имя</label>
-<input type="text" id="name" placeholder="Ваше имя" required>
-</div>
-<div class="form-group">
-<label for="email">Email</label>
-<input type="email" id="email" placeholder="email@example.com" required>
-</div>
-<div class="form-group">
-<label for="role">Кто вы?</label>
-<select id="role">
-<option value="">Выберите роль</option>
-<option value="investor">Инвестор</option>
-<option value="ceo-partner">Операционный партнёр (CEO/GR)</option>
-<option value="brand">Представитель бренда</option>
-<option value="gov">Государственный орган</option>
-<option value="self-employed">Самозанятый</option>
-<option value="other">Другое</option>
-</select>
-</div>
-<div class="form-group">
-<label for="message">Сообщение</label>
-<textarea id="message" placeholder="Расскажите, чем вы хотите помочь или что вас интересует"></textarea>
-</div>
-<button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Отправить сообщение</button>
-</form>
-</div>
-</div>
-</div>
-</section>
-
-<!-- ═══════════════ FOOTER ═══════════════ -->
-<footer>
-<div class="container">
-<div class="footer-grid">
-<div class="footer-brand">
-<a href="#hero" class="nav-logo"><span>◆</span> ОПОРА</a>
-<p>Национальная цифровая платформа верификации и B2B-кооперации для МСП.</p>
-</div>
-<div class="footer-col">
-<h4>Платформа</h4>
-<ul>
-<li><a href="#" onclick="switchSegment('investors');return false">Инвесторам</a></li>
-<li><a href="#" onclick="switchSegment('government');return false">Государству</a></li>
-<li><a href="#" onclick="switchSegment('business');return false">Бизнесу</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4>Документы</h4>
-<ul>
-<li><a href="#downloads">Investment Summary</a></li>
-<li><a href="#downloads">One-Pager</a></li>
-<li><a href="#downloads">Финансовая модель</a></li>
-</ul>
-</div>
-<div class="footer-col">
-<h4>Контакты</h4>
-<ul>
-<li><a href="mailto:alexander.narbayev@yandex.ru">Email</a></li>
-<li><a href="tel:+79994523398">Телефон</a></li>
-<li><a href="#contact">Форма обратной связи</a></li>
-</ul>
-</div>
-</div>
-<div class="footer-bottom">
-© 2026 АО «НП «Опора». Все права защищены.
-</div>
-</div>
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer__inner">
+            <div class="footer__brand">
+                <span class="nav__logo-icon">&#9670;</span>
+                <span class="nav__logo-text">ОПОРА</span>
+                <p class="footer__tagline">Национальная цифровая экосистема роста отечественных брендов</p>
+                <div class="footer__social">
+                    <a href="https://github.com/alexandr-narbaev/opora" class="footer__social-link" target="_blank" rel="noopener" aria-label="GitHub">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    </a>
+                    <a href="https://gitverse.ru/alexandr-narbaev/opora" class="footer__social-link" target="_blank" rel="noopener" aria-label="GitVerse">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0L1.608 6v12L12 24l10.392-6V6L12 0zm-1.073 1.445h.001a10.727 10.727 0 012.146 0l-.001.001-2.146-.001zm-4.55 2.489l4.55 2.627v5.254l-4.55 2.627-4.55-2.627V6.561l4.55-2.627zm11.246 0l4.55 2.627v5.254l-4.55 2.627V6.561l-.001-.001 4.551-2.626zM12 6.274l4.55 2.627v5.254L12 16.782l-4.55-2.627V8.901L12 6.274z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer__links">
+                <div class="footer__col">
+                    <h4 class="footer__heading">Модули</h4>
+                    <ul>
+                        <li><a href="#solution">Витрина</a></li>
+                        <li><a href="#solution">Кооперация</a></li>
+                        <li><a href="#solution">Креаторы</a></li>
+                        <li><a href="#solution">Лояльность</a></li>
+                        <li><a href="#solution">Экспорт</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__heading">Проект</h4>
+                    <ul>
+                        <li><a href="#roadmap">Дорожная карта</a></li>
+                        <li><a href="#metrics">Метрики</a></li>
+                        <li><a href="#team">Команда</a></li>
+                        <li><a href="#risks">Риски</a></li>
+                        <li><a href="#docs">Документы</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__heading">Документация</h4>
+                    <ul>
+                        <li><a href="documents.html">Все документы (116)</a></li>
+                        <li><a href="pdfs/one-pager.html" download>One-Pager (HTML)</a></li>
+                        <li><a href="pdfs/investor-memo.html" download>Инвестмеморандум</a></li>
+                        <li><a href="pdfs/technical-overview.html" download>Технический обзор</a></li>
+                        <li><a href="pdfs/sinv-analysis.html" download>Анализ СИНВ-2026</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__heading">Контакты</h4>
+                    <ul>
+                        <li>АО «НП «Опора»</li>
+                        <li>Фаза 0: Предзапуск</li>
+                        <li><a href="#contact">Форма обратной связи</a></li>
+                        <li><a href="https://github.com/alexandr-narbaev/opora" target="_blank" rel="noopener">GitHub</a></li>
+                        <li><a href="https://gitverse.ru/alexandr-narbaev/opora" target="_blank" rel="noopener">GitVerse</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2026 АО «НП «Опора». Все права защищены.</p>
+            <p class="footer__disclaimer">Проект находится на стадии предзапуска (Фаза 0). Информация носит ознакомительный характер.</p>
+        </div>
+    </div>
 </footer>
 
-<!-- ═══════════════ SCRIPTS ═══════════════ -->
-<script>
-// ── Segment Switcher ──
-function switchSegment(segName){
-document.querySelectorAll('.segment-tab').forEach(t=>t.classList.remove('active'));
-document.querySelectorAll('.segment-content').forEach(c=>c.classList.remove('active'));
-const tab=document.querySelector('.segment-tab[data-segment="'+segName+'"]');
-if(tab)tab.classList.add('active');
-const content=document.getElementById('seg-'+segName);
-if(content){
-content.classList.add('active');
-// Re-observe reveals in new segment
-content.querySelectorAll('.reveal').forEach(el=>{
-if(!el.classList.contains('visible'))observer.observe(el);
-});
-content.querySelectorAll('.count-up').forEach(el=>{
-if(!el.dataset.animated)counterObserver.observe(el);
-});
-}
-window.scrollTo({top:0,behavior:'smooth'});
-// Update nav links hash context
-updateNavLinks(segName);
-}
+</main>
 
-function updateNavLinks(seg){
-const links=document.querySelectorAll('.nav-links a[href^="#"]');
-if(seg==='government'){
-links[0].setAttribute('href','#problem-gov');
-links[1].setAttribute('href','#solution-gov');
-links[2].setAttribute('href','#timeline-gov');
-links[3].setAttribute('href','#timeline-gov');
-links[4].setAttribute('href','#faq-gov');
-}else if(seg==='business'){
-links[0].setAttribute('href','#how-it-works');
-links[1].setAttribute('href','#solution-biz');
-links[2].setAttribute('href','#stories');
-links[3].setAttribute('href','#how-it-works');
-links[4].setAttribute('href','#faq-biz');
-}else{
-links[0].setAttribute('href','#problem');
-links[1].setAttribute('href','#solution');
-links[2].setAttribute('href','#finance');
-links[3].setAttribute('href','#timeline');
-links[4].setAttribute('href','#faq');
-}
-}
-
-document.querySelectorAll('.segment-tab').forEach(tab=>{
-tab.addEventListener('click',()=>switchSegment(tab.dataset.segment));
-});
-
-// ── FAQ Accordion ──
-function toggleFaq(el){
-const item=el.parentElement;
-const wasOpen=item.classList.contains('open');
-document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
-if(!wasOpen)item.classList.add('open');
-}
-
-// ── Smooth Scroll for Nav Links ──
-document.querySelectorAll('.nav-links a[href^="#"]').forEach(a=>{
-a.addEventListener('click',e=>{
-e.preventDefault();
-const t=document.querySelector(a.getAttribute('href'));
-if(t){t.scrollIntoView({behavior:'smooth',block:'start'});document.getElementById('navLinks').classList.remove('open')}
-});
-});
-
-// ── Scroll Reveal ──
-const observer=new IntersectionObserver((entries)=>{
-entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}});
-},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-
-// ── Animated Counters ──
-function animateCounter(el){
-const target=parseFloat(el.dataset.target);
-const suffix=el.dataset.suffix||'';
-const decimals=parseInt(el.dataset.decimals)||0;
-const duration=2000;
-const start=performance.now();
-el.dataset.animated='true';
-
-function update(now){
-const elapsed=now-start;
-const progress=Math.min(elapsed/duration,1);
-const eased=1-Math.pow(1-progress,3);
-const current=eased*target;
-
-if(decimals>0){
-el.textContent=current.toFixed(decimals)+suffix;
-}else{
-el.textContent=Math.floor(current).toLocaleString('ru-RU')+suffix;
-}
-
-if(progress<1)requestAnimationFrame(update);
-}
-requestAnimationFrame(update);
-}
-
-const counterObserver=new IntersectionObserver((entries)=>{
-entries.forEach(e=>{
-if(e.isIntersecting){animateCounter(e.target);counterObserver.unobserve(e.target)}
-});
-},{threshold:0.5});
-document.querySelectorAll('.count-up').forEach(el=>counterObserver.observe(el));
-
-// ── Navbar Scroll Effect ──
-window.addEventListener('scroll',()=>{
-const nav=document.querySelector('nav');
-if(window.scrollY>50){nav.style.background='rgba(13,18,41,.97)'}else{nav.style.background='rgba(13,18,41,.92)'}
-},{passive:true});
-</script>
+<script src="script.js"></script>
 </body>
 </html>

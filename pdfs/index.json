@@ -1,0 +1,45 @@
+{
+  "generated": "2026-07-17T22:41:14.251508",
+  "documents": [
+    {
+      "id": "one-pager",
+      "title": "One-Pager",
+      "description": "Краткое описание проекта: миссия, проблема, решение, метрики, контакты",
+      "category": "Презентация",
+      "pdf": null,
+      "html": "pdfs/one-pager.html"
+    },
+    {
+      "id": "investor-memo",
+      "title": "Инвестиционный меморандум",
+      "description": "Полная финансовая модель, бизнес-модель, анализ рисков, запрос к инвесторам",
+      "category": "Инвестиции",
+      "pdf": null,
+      "html": "pdfs/investor-memo.html"
+    },
+    {
+      "id": "technical-overview",
+      "title": "Технический обзор",
+      "description": "Архитектура, стек технологий, декомпозиция сервисов, безопасность",
+      "category": "Технические",
+      "pdf": null,
+      "html": "pdfs/technical-overview.html"
+    },
+    {
+      "id": "modules-guide",
+      "title": "Руководство по модулям",
+      "description": "20 сервисов платформы: назначение, API, статус реализации",
+      "category": "Технические",
+      "pdf": null,
+      "html": "pdfs/modules-guide.html"
+    },
+    {
+      "id": "sinv-analysis",
+      "title": "Анализ СИНВ-2026",
+      "description": "Валидация через 17 845 идей форума: 319 синергистов, ТОП-10 партнёров",
+      "category": "Исследования",
+      "pdf": null,
+      "html": "pdfs/sinv-analysis.html"
+    }
+  ]
+}

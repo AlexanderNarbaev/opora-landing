@@ -1,0 +1,14 @@
+# robots.txt — Опора
+# https://opora.digital/robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://opora.digital/sitemap.xml
+
+# Disallow admin/internal paths
+Disallow: /scripts/
+Disallow: /assets/raw/
+Disallow: /.git/
+Disallow: /node_modules/

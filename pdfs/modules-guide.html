@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Руководство по модулям — Опора</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm 2.5cm;
+            @bottom-center {
+                content: "АО «НП «Опора» — " counter(page) " / " counter(pages);
+                font-size: 9px;
+                color: #999;
+                font-family: 'Inter', 'Segoe UI', sans-serif;
+            }
+        }
+        body {
+            font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 11pt;
+            line-height: 1.65;
+            color: #1a1a2e;
+            max-width: 100%;
+        }
+        h1 {
+            font-size: 22pt;
+            font-weight: 800;
+            color: #233370;
+            border-bottom: 3px solid #2EC4B6;
+            padding-bottom: 12px;
+            margin-top: 0;
+            margin-bottom: 24px;
+        }
+        h2 {
+            font-size: 16pt;
+            font-weight: 700;
+            color: #233370;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #e8eaed;
+            padding-bottom: 6px;
+        }
+        h3 {
+            font-size: 13pt;
+            font-weight: 700;
+            color: #2d4290;
+            margin-top: 24px;
+            margin-bottom: 8px;
+        }
+        h4 {
+            font-size: 11pt;
+            font-weight: 700;
+            color: #555770;
+            margin-top: 16px;
+            margin-bottom: 6px;
+        }
+        p {
+            margin: 0 0 12px;
+        }
+        strong {
+            color: #233370;
+        }
+        a {
+            color: #2EC4B6;
+            text-decoration: none;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 10pt;
+        }
+        th {
+            background: #233370;
+            color: white;
+            padding: 10px 12px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 9.5pt;
+        }
+        td {
+            padding: 8px 12px;
+            border-bottom: 1px solid #e8eaed;
+            vertical-align: top;
+        }
+        tr:nth-child(even) td {
+            background: #f4f5f7;
+        }
+        tr:hover td {
+            background: rgba(46, 196, 182, 0.05);
+        }
+        ul, ol {
+            margin: 8px 0 16px 24px;
+        }
+        li {
+            margin-bottom: 4px;
+        }
+        code {
+            background: #f4f5f7;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 9.5pt;
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+            color: #2d4290;
+        }
+        pre {
+            background: #1a1a2e;
+            color: #e8eaed;
+            padding: 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 9pt;
+            line-height: 1.5;
+        }
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #e8eaed;
+            margin: 32px 0;
+        }
+        blockquote {
+            border-left: 4px solid #2EC4B6;
+            padding: 12px 20px;
+            margin: 16px 0;
+            background: rgba(46, 196, 182, 0.05);
+            border-radius: 0 8px 8px 0;
+        }
+        .header-bar {
+            background: linear-gradient(135deg, #233370, #2d4290);
+            color: white;
+            padding: 16px 24px;
+            margin: -2cm -2.5cm 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-bar__logo {
+            font-size: 14pt;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+        }
+        .header-bar__date {
+            font-size: 9pt;
+            opacity: 0.7;
+        }
+        .footer-note {
+            margin-top: 48px;
+            padding-top: 16px;
+            border-top: 1px solid #e8eaed;
+            font-size: 9pt;
+            color: #999;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-bar">
+        <span class="header-bar__logo">◆ ОПОРА</span>
+        <span class="header-bar__date">Национальная цифровая экосистема • 17.07.2026</span>
+    </div>
+    <h1 id="_1">РУКОВОДСТВО ПО МОДУЛЯМ</h1>
+<h2 id="20-137">Платформа «Опора» — 20 сервисов (13+7)</h2>
+<p><strong>Версия 1.0 | Июль 2026</strong></p>
+<hr />
+<h2 id="_2">Обзор архитектуры</h2>
+<p>Платформа «Опора» состоит из <strong>20 сервисов</strong>, сгруппированных в <strong>4 контура</strong>: 3 бизнес-контура и 1 инфраструктурный.</p>
+<table>
+<thead>
+<tr>
+<th>Контур</th>
+<th>Модули</th>
+<th>Назначение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Коммерция</strong></td>
+<td>Витрина, Аналитика, Песочница, Лояльность, Платежи</td>
+<td>B2C-взаимодействие, лояльность, данные, платежи</td>
+</tr>
+<tr>
+<td><strong>Кооперация</strong></td>
+<td>Кооперация, Креаторы, Кадры, Регионы</td>
+<td>B2B-мэтчинг, HR, география</td>
+</tr>
+<tr>
+<td><strong>Финансы и право</strong></td>
+<td>Финансы, Право, Цепочки, Экспорт</td>
+<td>Финансы, юриспруденция, логистика, экспорт</td>
+</tr>
+<tr>
+<td><strong>Инфраструктура</strong></td>
+<td>Auth, Gateway, Mock, LK, BFF, Admin, AI</td>
+<td>Техническая инфраструктура, ИИ-сервисы</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="-">Бизнес-модули</h2>
+<h3 id="1-catalog-service">1. Опора.Витрина (catalog-service)</h3>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Назначение</strong></td>
+<td>Каталог верифицированных российских брендов с грейдированием и кешбэком</td>
+</tr>
+<tr>
+<td><strong>Статус</strong></td>
+<td>✅ IMPLEMENTED (37 Java-файлов)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ключевые функции:</strong>
+- Каталог брендов с фильтрацией по ОКПД2, ОКВЭД, региону, степени локализации
+- Трёхуровневое грейдирование: Золото / Серебро / Бронза
+- Кешбэк до 7% (3% базовый + 4% за активность)
+- Социальный трек (отслеживание impact-покупок)
+- Интеграция с «Честным знаком» и ГИСП
+- Мультиязычность (RU, EN, ZH)</p>
+<p><strong>Целевые пользователи:</strong> Граждане (B2C), представители брендов</p>
+<p><strong>API-эндпоинты:</strong>
+- <code>GET /api/v1/brands</code> — список брендов с фильтрацией
+- <code>GET /api/v1/brands/{id}</code> — карточка бренда
+- <code>GET /api/v1/products</code> — каталог товаров
+- <code>POST /api/v1/brands/{id}/verify</code> — запуск верификации
+- <code>GET /api/v1/grades/{brandId}</code> — грейд бренда</p>
+<hr />
+<h3 id="2-cooperation-service">2. Опора.Кооперация (cooperation-service)</h3>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Назначение</strong></td>
+<td>AI-подбор партнёров, артельные кластеры, B2B-тендеры</td>
+</tr>
+<tr>
+<td><strong>Статус</strong></td>
+<td>✅ IMPLEMENTED (100 Java-файлов)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ключевые функции:</strong>
+- AI-подбор партнёров по 50+ параметрам (CatBoost)
+- Карточки мощностей с верификацией через Госуслуги
+- Артельные кластеры (объединение МСП под крупные заказы)
+- B2B-тендеры с AI-ранжированием
+- Репутационный реестр (7-балльная шкала)
+- Смарт-контракты для фиксации обязательств</p>
+<p><strong>Целевые пользователи:</strong> МСП-производители, крупные заказчики</p>
+<p><strong>API-эндпоинты:</strong>
+- <code>POST /api/v1/matching</code> — AI-подбор партнёров
+- <code>GET /api/v1/capacities</code> — реестр мощностей
+- <code>POST /api/v1/tenders</code> — создание тендера
+- <code>POST /api/v1/clusters</code> — создание артельного кластера
+- <code>GET /api/v1/reputation/{businessId}</code> — репутационный профиль</p>
+<hr />
+<h3 id="3-creators-service">3. Опора.Креаторы (creators-service)</h3>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Назначение</strong></td>
+<td>Маркетплейс для самозанятых: дизайнеры, копирайтеры, маркетологи</td>
+</tr>
+<tr>
+<td><strong>Статус</strong></td>
+<td>✅ IMPLEMENTED (51 Java-файл)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ключевые функции:</strong>
+- Портфолио креаторов с верификацией компетенций
+- Биржа заказов с AI-мэтчингом
+- 0% комиссия для самозанятых, 7% для агентств
+- Интеграция с «Мой налог» (авто-отчётность)
+- Система рейтингов и отзывов
+- Безопасная сделка (эскроу)</p>
+<p><strong>Целевые пользователи:</strong> Самозанятые (16,4 млн в РФ), МСП-заказчики</p>
+<p><strong>API-эндпоинты:</strong>
+- <code>GET /api/v1/creators</code> — каталог креаторов
+- <code>POST /api/v1/orders</code> — размещение заказа
+- <code>POST /api/v1/orders/{id}/accept</code> — принятие заказа
+- <code>GET /api/v1/creators/{id}/portfolio</code> — портфолио
+- <code>POST /api/v1/reviews</code> — создание отзыва</p>
+<hr />
+<h3 id="4-analytics-service">4. Опора.Аналитика (analytics-service)</h3>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Назначение</strong></td>
+<td>CRM/CDP, прогноз спроса, монетизация обезличенных данных</td>
+</tr>
+<tr>
+<td><strong>Статус</strong></td>
+<td>✅ IMPLEMENTED (32 Java-файла)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ключевые функции:</strong>
+- Встроенная CRM для брендов
+- CDP (Customer Data Platform) — портрет потребителя
+- Прогноз спроса (Temporal Fusion Transformer)
+- Монетизация обезличенных данных (с согласия граждан)
+- BI-дашборды и отчёты
+- Сегментация аудитории</p>
+<p><strong>Целевые пользователи:</strong> Представители брендов, аналитики, маркетологи</p>
+<p><strong>API-эндпоинты:</strong>
+- <code>GET /api/v1/analytics/dashboard</code> — BI-дашборд
+- <code>GET /api/v1/analytics/segments</code> — сегменты аудитории
+- <code>POST /api/v1/analytics/forecast</code> — прогноз спроса
+- <code>GET /api/v1/analytics/consumer-profile</code> — портрет потребителя
+- <code>POST /api/v1/data-monetization/consent</code> — управление согласиями</p>
+<hr />
+<h3 id="5-legal-service">5. Опора.Право (legal-service)</h3>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Назначение</strong></td>
+<td>Арбитраж, AI-юрист, патентный маркетплейс, типовые смарт-контракты</td>
+</tr>
+<tr>
+<td><strong>Статус</strong></td>
+<td>✅ IMPLEMENTED (37 Java-файлов)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ключевые функции:</strong>
+- AI-юрист с авто-претензиями (RuBERT)
+- Коллективные иски
+- Три уровня эскалации (медиация → арбитраж → суд)
+- Патентный маркетплейс
+- Типовые смарт-контракты с NDA
+- Интеграция с «Право.ru» и ФАС</p>
+<p><strong>Целевые пользователи:</strong> МСП, юристы, патентные поверенные</p>
+<p><strong>API-эндпоинты:</strong>
+- <code>POST /api/v1/disputes</code> — создание спора
+- <code>POST /api/v1/legal/ai-consult</code> — AI-консультация
+- <code>GET /api/v1/patents</code> — патентный маркетплейс
+- <code>POST /api/v1/contracts/template</code> — типовой контракт
+- <code>POST /api/v1/disputes/{id}/escalate</code> — эскалация</p>
+<hr />
+<h3 id="6-finance-service">6. Опора.Финансы (finance-service)</h3>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Назначение</strong></td>
+<td>Краудфандинг 2.0, токены участия, интеграция с ЦФА</td>
+</tr>
+<tr>
+<td><strong>Статус</strong></td>
+<td>✅ BUILD (15 Java-файлов)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ключевые функции:</strong>
+- Краудфандинг 2.0 (токенизация будущей выручки)
+- Кредитный скоринг по истории операций на платформе
+- Интеграция с ЦФА (цифровые финансовые активы)
+- Токены участия в проектах
+- Интеграция с цифровым рублём ЦБ РФ</p>
+<p><strong>Целевые пользователи:</strong> МСП-заёмщики, инвесторы, граждане</p>
+<p><strong>API-эндпоинты:</strong>
+- <code>POST /api/v1/campaigns</code> — создание краудфандинг-кампании
+- <code>GET /api/v1/campaigns/{id}</code> — детали кампании
+- <code>POST /api/v1/investments</code> — инвестирование
+- <code>GET /api/v1/credit-score/{businessId}</code> — кредитный скоринг
+- <code>POST /api/v1/tokens/issue</code> — выпуск токенов</p>
+<hr />
+<h3 id="7-sandbox-service">7. Опора.Песочница (sandbox-service)</h3>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Назначение</strong></td>
+<td>Нулевая комиссия для самозанятых, быстрый старт бизнеса</td>
+</tr>
+<tr>
+<td><strong>Статус</strong></td>
+<td>✅ IMPLEMENTED (32 Java-файла)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ключевые функции:</strong>
+- Витрина за 5 минут (минимальный онбординг)
+- Авто-чеки ФНС (интеграция с «Мой налог»)
+- B2B-нетворкинг
+- Студенческое наставничество
+- 0% комиссия для самозанятых</p>
+<p><strong>Целевые пользователи:</strong> Самозанятые, начинающие предприниматели, студенты</p>
+<p><strong>API-эндпоинты:</strong>
+- <code>POST /api/v1/sandbox/register</code> — быстрая регистрация
+- <code>GET /api/v1/sandbox/mentorship</code> — поиск наставника
+- <code>POST /api/v1/sandbox/invoice</code> — создание счёта
+- <code>GET /api/v1/sandbox/networking</code> — B2B-нетворкинг</p>
+<hr />
+<h3 id="8-chains-service">8. Опора.Цепочки (chains-service)</h3>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Назначение</strong></td>
+<td>B2B-закупки, блокчейн-прослеживаемость цепочек поставок</td>
+</tr>
+<tr>
+<td><strong>Статус</strong></td>
+<td>✅ BUILD (17 Java-файлов)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ключевые функции:</strong>
+- B2B-закупки с автоматизацией контрактинга
+- B2G-контур для самозанятых в госзакупках
+- Логистическая кооперация с картой маршрутов
+- Блокчейн-прослеживаемость (Hyperledger Fabric)
+- QR-маркировка товаров</p>
+<p><strong>Целевые пользователи:</strong> МСП-производители, логистические компании, госзаказчики</p>
+<p><strong>API-эндпоинты:</strong>
+- <code>GET /api/v1/supply-chains</code> — цепочки поставок
+- <code>POST /api/v1/shipments</code> — создание отгрузки
+- <code>GET /api/v1/tracking/{orderId}</code> — отслеживание
+- <code>POST /api/v1/procurement</code> — B2B-закупка</p>
+<hr />
+<h3 id="9-personnel-service">9. Опора.Кадры (personnel-service)</h3>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Назначение</strong></td>
+<td>Верификация компетенций, интеграция с вузами, целевой найм</td>
+</tr>
+<tr>
+<td><strong>Статус</strong></td>
+<td>✅ BUILD (16 Java-файлов)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ключевые функции:</strong>
+- Верификация компетенций через интеграцию с вузами
+- Практика на платформе (стажировки)
+- Целевой найм с проверкой навыков
+- Партнёрства с образовательными учреждениями</p>
+<p><strong>Целевые пользователи:</strong> МСП-работодатели, студенты, соискатели</p>
+<p><strong>API-эндпоинты:</strong>
+- <code>GET /api/v1/candidates</code> — поиск кандидатов
+- <code>POST /api/v1/competencies/verify</code> — верификация компетенций
+- <code>POST /api/v1/internships</code> — размещение стажировки
+- <code>GET /api/v1/universities</code> — партнёрские вузы</p>
+<hr />
+<h3 id="10-regions-service">10. Опора.Регионы (regions-service)</h3>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Назначение</strong></td>
+<td>Геотаргетинг под специфику моногородов и приграничных территорий</td>
+</tr>
+<tr>
+<td><strong>Статус</strong></td>
+<td>✅ BUILD (16 Java-файлов)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ключевые функции:</strong>
+- Геотаргетинг рекомендаций
+- Специфика моногородов (узкая специализация)
+- Приграничные территории (таможня, логистика)
+- Региональная аналитика</p>
+<p><strong>Целевые пользователи:</strong> МСП в регионах, региональные администрации</p>
+<p><strong>API-эндпоинты:</strong>
+- <code>GET /api/v1/regions</code> — список регионов
+- <code>GET /api/v1/regions/{id}/businesses</code> — бизнесы региона
+- <code>POST /api/v1/regions/{id}/recommendations</code> — рекомендации</p>
+<hr />
+<h3 id="11-export-service">11. Опора.Экспорт (export-service)</h3>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Назначение</strong></td>
+<td>«Единое окно» для выхода на рынки ЕАЭС и БРИКС</td>
+</tr>
+<tr>
+<td><strong>Статус</strong></td>
+<td>✅ BUILD (27 Java-файлов)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ключевые функции:</strong>
+- Единое окно экспортных процедур
+- Интеграция с таможенными системами
+- Маркетплейсы ЕАЭС и БРИКС
+- Логистические партнёры
+- Валютные расчёты через BRICS Bridge</p>
+<p><strong>Целевые пользователи:</strong> МСП-экспортёры</p>
+<p><strong>API-эндпоинты:</strong>
+- <code>GET /api/v1/export/markets</code> — целевые рынки
+- <code>POST /api/v1/export/declarations</code> — экспортная декларация
+- <code>GET /api/v1/export/logistics</code> — логистические маршруты
+- <code>POST /api/v1/export/certificates</code> — сертификация</p>
+<hr />
+<h3 id="12-loyalty-service">12. Опора.Лояльность (loyalty-service)</h3>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Назначение</strong></td>
+<td>Программа лояльности, баллы, кешбэк, управление вознаграждениями</td>
+</tr>
+<tr>
+<td><strong>Статус</strong></td>
+<td>✅ BUILD (35 Java-файлов)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ключевые функции:</strong>
+- Начисление и списание баллов лояльности
+- Кешбэк до 7% (3% базовый + 4% за активность)
+- Уровневая система привилегий
+- Интеграция с каталогом Витрины
+- Антифрод-система (Isolation Forest + XGBoost)
+- Управление акциями и специальными предложениями</p>
+<p><strong>Целевые пользователи:</strong> Граждане (B2C), партнёры-ритейлеры</p>
+<p><strong>API-эндпоинты:</strong>
+- <code>GET /api/v1/loyalty/balance</code> — баланс баллов
+- <code>POST /api/v1/loyalty/redeem</code> — списание баллов
+- <code>GET /api/v1/loyalty/history</code> — история операций
+- <code>POST /api/v1/loyalty/antifraud/check</code> — проверка на фрод</p>
+<hr />
+<h3 id="13-payments-service">13. Опора.Платежи (payments-service)</h3>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Назначение</strong></td>
+<td>Платёжная инфраструктура, СБП, интеграция с ЦФА и цифровым рублём</td>
+</tr>
+<tr>
+<td><strong>Статус</strong></td>
+<td>✅ BUILD (46 Java-файлов)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ключевые функции:</strong>
+- Приём платежей через СБП (Система быстрых платежей)
+- Маркированные платежи (спецсчёт лояльности)
+- Интеграция с ЦФА (цифровые финансовые активы)
+- Поддержка цифрового рубля ЦБ РФ
+- B2B-расчёты и эскроу-счета
+- Реконсиляция и отчётность</p>
+<p><strong>Целевые пользователи:</strong> МСП-продавцы, граждане, партнёры</p>
+<p><strong>API-эндпоинты:</strong>
+- <code>POST /api/v1/payments/initiate</code> — инициирование платежа
+- <code>GET /api/v1/payments/status/{id}</code> — статус платежа
+- <code>POST /api/v1/payments/sbp</code> — платёж через СБП
+- <code>GET /api/v1/payments/reconciliation</code> — сверка платежей</p>
+<hr />
+<h2 id="_3">Инфраструктурные модули</h2>
+<h3 id="14-auth-service">14. Auth Service</h3>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Назначение</strong></td>
+<td>Федеративная аутентификация (Keycloak + мок ЕСИА)</td>
+</tr>
+<tr>
+<td><strong>Статус</strong></td>
+<td>✅ BUILD (21 Java-файл)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Функции:</strong> OAuth 2.0/OIDC, MFA, RBAC, интеграция с ЕСИА</p>
+<hr />
+<h3 id="15-gateway-service">15. Gateway Service</h3>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Назначение</strong></td>
+<td>API Gateway, rate limiting, circuit breaker</td>
+</tr>
+<tr>
+<td><strong>Статус</strong></td>
+<td>✅ BUILD (28 Java-файлов)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Функции:</strong> Единая точка входа, маршрутизация, JWT-валидация, CORS</p>
+<hr />
+<h3 id="16-mock-service">16. Mock Service</h3>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Назначение</strong></td>
+<td>8 моков внешних сервисов для разработки и тестирования</td>
+</tr>
+<tr>
+<td><strong>Статус</strong></td>
+<td>✅ BUILD (25 Java-файлов)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Моки:</strong> ФНС, ОФД, СБП, ЦБ РФ, ГИСП, Честный знак, ЕСИА, Мой налог</p>
+<hr />
+<h3 id="17-lk-service">17. LK Service (Личный кабинет)</h3>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Назначение</strong></td>
+<td>Фронтенд-приложение (React SPA)</td>
+</tr>
+<tr>
+<td><strong>Статус</strong></td>
+<td>✅ BUILD (21 Java-файл + React)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Типы кабинетов:</strong> Гражданин, Представитель бренда, Партнёр, Самозанятый</p>
+<hr />
+<h3 id="18-bff-service">18. BFF Service</h3>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Назначение</strong></td>
+<td>Backend-for-Frontend — агрегация данных для UI</td>
+</tr>
+<tr>
+<td><strong>Статус</strong></td>
+<td>✅ IMPLEMENTED (28 Java-файлов)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Функции:</strong> Агрегация API, трансформация данных, кэширование</p>
+<hr />
+<h3 id="19-admin-service">19. Admin Service</h3>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Назначение</strong></td>
+<td>Администрирование платформы</td>
+</tr>
+<tr>
+<td><strong>Статус</strong></td>
+<td>✅ BUILD (17 Java-файлов)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Функции:</strong> Управление пользователями, модерация, мониторинг, конфигурация</p>
+<hr />
+<h3 id="20-ai-service">20. AI Service</h3>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Назначение</strong></td>
+<td>ИИ-сервисы: рекомендации, прогноз спроса, антифрод, модерация контента</td>
+</tr>
+<tr>
+<td><strong>Статус</strong></td>
+<td>✅ BUILD (22 Java-файла)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>AI-модели:</strong></p>
+<ul>
+<li><strong>Рекомендации</strong> — CatBoost (подбор партнёров, товаров)</li>
+<li><strong>Прогноз спроса</strong> — Temporal Fusion Transformer</li>
+<li><strong>Антифрод</strong> — Isolation Forest + XGBoost</li>
+<li><strong>Модерация контента</strong> — RuBERT</li>
+<li><strong>Генерация контента</strong> — YandexGPT + Kandinsky</li>
+</ul>
+<p><strong>Целевые пользователи:</strong> Все модули платформы (внутренний сервис)</p>
+<p><strong>API-эндпоинты:</strong>
+- <code>POST /api/v1/ai/recommendations</code> — персонализированные рекомендации
+- <code>POST /api/v1/ai/forecast-demand</code> — прогноз спроса
+- <code>POST /api/v1/ai/antifraud</code> — проверка на фрод
+- <code>POST /api/v1/ai/moderation</code> — модерация контента</p>
+<hr />
+<h2 id="_4">Сводная таблица</h2>
+<table>
+<thead>
+<tr>
+<th>№</th>
+<th>Модуль</th>
+<th>Сервис</th>
+<th style="text-align: center;">Java</th>
+<th style="text-align: center;">Статус</th>
+<th>Контур</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Витрина</td>
+<td>catalog-service</td>
+<td style="text-align: center;">37</td>
+<td style="text-align: center;">✅ IMPLEMENTED</td>
+<td>Коммерция</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Кооперация</td>
+<td>cooperation-service</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">✅ IMPLEMENTED</td>
+<td>Кооперация</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Креаторы</td>
+<td>creators-service</td>
+<td style="text-align: center;">51</td>
+<td style="text-align: center;">✅ IMPLEMENTED</td>
+<td>Кооперация</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Аналитика</td>
+<td>analytics-service</td>
+<td style="text-align: center;">32</td>
+<td style="text-align: center;">✅ IMPLEMENTED</td>
+<td>Коммерция</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Право</td>
+<td>legal-service</td>
+<td style="text-align: center;">37</td>
+<td style="text-align: center;">✅ IMPLEMENTED</td>
+<td>Финансы и право</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Финансы</td>
+<td>finance-service</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">✅ BUILD</td>
+<td>Финансы и право</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Песочница</td>
+<td>sandbox-service</td>
+<td style="text-align: center;">32</td>
+<td style="text-align: center;">✅ IMPLEMENTED</td>
+<td>Коммерция</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Цепочки</td>
+<td>chains-service</td>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">✅ BUILD</td>
+<td>Финансы и право</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Кадры</td>
+<td>personnel-service</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">✅ BUILD</td>
+<td>Кооперация</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Регионы</td>
+<td>regions-service</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">✅ BUILD</td>
+<td>Кооперация</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Экспорт</td>
+<td>export-service</td>
+<td style="text-align: center;">27</td>
+<td style="text-align: center;">✅ BUILD</td>
+<td>Финансы и право</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Лояльность</td>
+<td>loyalty-service</td>
+<td style="text-align: center;">35</td>
+<td style="text-align: center;">✅ BUILD</td>
+<td>Коммерция</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Платежи</td>
+<td>payments-service</td>
+<td style="text-align: center;">46</td>
+<td style="text-align: center;">✅ BUILD</td>
+<td>Коммерция</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Auth</td>
+<td>auth-service</td>
+<td style="text-align: center;">21</td>
+<td style="text-align: center;">✅ BUILD</td>
+<td>Инфраструктура</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Gateway</td>
+<td>gateway-service</td>
+<td style="text-align: center;">28</td>
+<td style="text-align: center;">✅ BUILD</td>
+<td>Инфраструктура</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Mock</td>
+<td>mock-service</td>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">✅ BUILD</td>
+<td>Инфраструктура</td>
+</tr>
+<tr>
+<td>17</td>
+<td>ЛК</td>
+<td>lk-service</td>
+<td style="text-align: center;">21</td>
+<td style="text-align: center;">✅ BUILD</td>
+<td>Инфраструктура</td>
+</tr>
+<tr>
+<td>18</td>
+<td>BFF</td>
+<td>bff-service</td>
+<td style="text-align: center;">28</td>
+<td style="text-align: center;">✅ IMPLEMENTED</td>
+<td>Инфраструктура</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Admin</td>
+<td>admin-service</td>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">✅ BUILD</td>
+<td>Инфраструктура</td>
+</tr>
+<tr>
+<td>20</td>
+<td>AI</td>
+<td>ai-service</td>
+<td style="text-align: center;">22</td>
+<td style="text-align: center;">✅ BUILD</td>
+<td>Инфраструктура</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>Документ подготовлен на основе аудита от 17.07.2026. Статус сервисов обновляется еженедельно.</em></p>
+    <div class="footer-note">
+        АО «НП «Опора» • Москва, 2026 • opora.ru • Строго конфиденциально
+    </div>
+</body>
+</html>

@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Технический обзор — Опора</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm 2.5cm;
+            @bottom-center {
+                content: "АО «НП «Опора» — " counter(page) " / " counter(pages);
+                font-size: 9px;
+                color: #999;
+                font-family: 'Inter', 'Segoe UI', sans-serif;
+            }
+        }
+        body {
+            font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 11pt;
+            line-height: 1.65;
+            color: #1a1a2e;
+            max-width: 100%;
+        }
+        h1 {
+            font-size: 22pt;
+            font-weight: 800;
+            color: #233370;
+            border-bottom: 3px solid #2EC4B6;
+            padding-bottom: 12px;
+            margin-top: 0;
+            margin-bottom: 24px;
+        }
+        h2 {
+            font-size: 16pt;
+            font-weight: 700;
+            color: #233370;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #e8eaed;
+            padding-bottom: 6px;
+        }
+        h3 {
+            font-size: 13pt;
+            font-weight: 700;
+            color: #2d4290;
+            margin-top: 24px;
+            margin-bottom: 8px;
+        }
+        h4 {
+            font-size: 11pt;
+            font-weight: 700;
+            color: #555770;
+            margin-top: 16px;
+            margin-bottom: 6px;
+        }
+        p {
+            margin: 0 0 12px;
+        }
+        strong {
+            color: #233370;
+        }
+        a {
+            color: #2EC4B6;
+            text-decoration: none;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 10pt;
+        }
+        th {
+            background: #233370;
+            color: white;
+            padding: 10px 12px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 9.5pt;
+        }
+        td {
+            padding: 8px 12px;
+            border-bottom: 1px solid #e8eaed;
+            vertical-align: top;
+        }
+        tr:nth-child(even) td {
+            background: #f4f5f7;
+        }
+        tr:hover td {
+            background: rgba(46, 196, 182, 0.05);
+        }
+        ul, ol {
+            margin: 8px 0 16px 24px;
+        }
+        li {
+            margin-bottom: 4px;
+        }
+        code {
+            background: #f4f5f7;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 9.5pt;
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+            color: #2d4290;
+        }
+        pre {
+            background: #1a1a2e;
+            color: #e8eaed;
+            padding: 16px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 9pt;
+            line-height: 1.5;
+        }
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #e8eaed;
+            margin: 32px 0;
+        }
+        blockquote {
+            border-left: 4px solid #2EC4B6;
+            padding: 12px 20px;
+            margin: 16px 0;
+            background: rgba(46, 196, 182, 0.05);
+            border-radius: 0 8px 8px 0;
+        }
+        .header-bar {
+            background: linear-gradient(135deg, #233370, #2d4290);
+            color: white;
+            padding: 16px 24px;
+            margin: -2cm -2.5cm 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-bar__logo {
+            font-size: 14pt;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+        }
+        .header-bar__date {
+            font-size: 9pt;
+            opacity: 0.7;
+        }
+        .footer-note {
+            margin-top: 48px;
+            padding-top: 16px;
+            border-top: 1px solid #e8eaed;
+            font-size: 9pt;
+            color: #999;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-bar">
+        <span class="header-bar__logo">◆ ОПОРА</span>
+        <span class="header-bar__date">Национальная цифровая экосистема • 17.07.2026</span>
+    </div>
+    <h1 id="_1">ТЕХНИЧЕСКИЙ ОБЗОР</h1>
+<h2 id="_2">Платформа «Опора» — Архитектура и технологический стек</h2>
+<p><strong>Версия 2.1 | Июль 2026</strong></p>
+<hr />
+<h2 id="1">1. Архитектурные принципы</h2>
+<p>Платформа построена на принципах <strong>Clean Architecture + Domain-Driven Design (DDD)</strong> с изолированными bounded contextами.</p>
+<table>
+<thead>
+<tr>
+<th>Принцип</th>
+<th>Реализация</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Микросервисная архитектура</strong></td>
+<td>20 сервисов, каждый со своей БД (Database per Service)</td>
+</tr>
+<tr>
+<td><strong>Clean Architecture</strong></td>
+<td>Слои: domain → application → infrastructure → interfaces</td>
+</tr>
+<tr>
+<td><strong>DDD</strong></td>
+<td>Bounded Context, Aggregates, Value Objects, Domain Events</td>
+</tr>
+<tr>
+<td><strong>CQRS</strong></td>
+<td>Разделение чтения и записи без Event Sourcing</td>
+</tr>
+<tr>
+<td><strong>Event-Driven</strong></td>
+<td>Apache Kafka для асинхронного обмена событиями</td>
+</tr>
+<tr>
+<td><strong>API-First</strong></td>
+<td>OpenAPI 3.0 спецификации до реализации</td>
+</tr>
+</tbody>
+</table>
+<h3 id="adr-architecture-decision-records">Ключевые ADR (Architecture Decision Records)</h3>
+<table>
+<thead>
+<tr>
+<th>ADR</th>
+<th>Решение</th>
+<th>Статус</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ADR-001</td>
+<td>Миграция на микросервисы</td>
+<td>✅ Исполнено</td>
+</tr>
+<tr>
+<td>ADR-002</td>
+<td>Стек Java 25 + Quarkus 3.36 + React 18</td>
+<td>✅ Исполнено</td>
+</tr>
+<tr>
+<td>ADR-003</td>
+<td>Feature-Sliced Design для фронтенда</td>
+<td>✅ Исполнено</td>
+</tr>
+<tr>
+<td>ADR-004</td>
+<td>CQRS без Event Sourcing</td>
+<td>✅ Исполнено</td>
+</tr>
+<tr>
+<td>ADR-005</td>
+<td>API Gateway (Quarkus REST)</td>
+<td>✅ Исполнено</td>
+</tr>
+<tr>
+<td>ADR-006</td>
+<td>Database per Service</td>
+<td>✅ Исполнено</td>
+</tr>
+<tr>
+<td>ADR-007</td>
+<td>Mock External Services</td>
+<td>✅ Исполнено</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2">2. Технологический стек</h2>
+<table>
+<thead>
+<tr>
+<th>Компонент</th>
+<th>Версия</th>
+<th>Назначение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Java</strong></td>
+<td>25</td>
+<td>Основной язык бэкенда</td>
+</tr>
+<tr>
+<td><strong>Quarkus</strong></td>
+<td>3.36</td>
+<td>Фреймворк для микросервисов (Kotlin DSL, Gradle 9.5.1)</td>
+</tr>
+<tr>
+<td><strong>React</strong></td>
+<td>18</td>
+<td>Личный кабинет (SPA, TypeScript, Vite)</td>
+</tr>
+<tr>
+<td><strong>Apache Wicket</strong></td>
+<td>10.9.0</td>
+<td>SSR для SEO-критичных страниц каталога</td>
+</tr>
+<tr>
+<td><strong>PostgreSQL</strong></td>
+<td>17</td>
+<td>Реляционное хранилище (отдельная схема на сервис)</td>
+</tr>
+<tr>
+<td><strong>MongoDB</strong></td>
+<td>8.3</td>
+<td>Документоориентированное хранилище</td>
+</tr>
+<tr>
+<td><strong>Redis</strong></td>
+<td>8.6.3</td>
+<td>Кэширование, сессии</td>
+</tr>
+<tr>
+<td><strong>Apache Kafka</strong></td>
+<td>4.2.0</td>
+<td>Интеграционная шина (события, синхронизация)</td>
+</tr>
+<tr>
+<td><strong>gRPC Java</strong></td>
+<td>1.81.0</td>
+<td>Межсервисное взаимодействие</td>
+</tr>
+<tr>
+<td><strong>Apicurio Registry</strong></td>
+<td>3.2.x</td>
+<td>Schema Registry (Avro)</td>
+</tr>
+<tr>
+<td><strong>Keycloak</strong></td>
+<td>24</td>
+<td>Федеративная аутентификация (OIDC/OAuth 2.0)</td>
+</tr>
+<tr>
+<td><strong>Hyperledger Fabric</strong></td>
+<td>+ КриптоПро HLF</td>
+<td>Блокчейн-прослеживаемость</td>
+</tr>
+<tr>
+<td><strong>ClickHouse</strong></td>
+<td>—</td>
+<td>Аналитический контур, BI</td>
+</tr>
+<tr>
+<td><strong>Docker</strong></td>
+<td>—</td>
+<td>Контейнеризация (multi-stage builds)</td>
+</tr>
+<tr>
+<td><strong>Kubernetes</strong></td>
+<td>—</td>
+<td>Оркестрация (HPA, NetworkPolicy)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="3-20">3. Декомпозиция сервисов (20 сервисов: 13 бизнес + 7 инфраструктурных)</h2>
+<h3 id="31-13">3.1. Бизнес-модули (13)</h3>
+<table>
+<thead>
+<tr>
+<th>Сервис</th>
+<th>Назначение</th>
+<th style="text-align: center;">Java-файлы</th>
+<th style="text-align: center;">Архитектура</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>catalog-service</strong></td>
+<td>Витрина: каталог брендов, грейдирование, кешбэк</td>
+<td style="text-align: center;">37</td>
+<td style="text-align: center;">DDD</td>
+</tr>
+<tr>
+<td><strong>cooperation-service</strong></td>
+<td>Кооперация: AI-мэтчинг, артельные кластеры, тендеры</td>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">DDD</td>
+</tr>
+<tr>
+<td><strong>creators-service</strong></td>
+<td>Креаторы: маркетплейс самозанятых</td>
+<td style="text-align: center;">51</td>
+<td style="text-align: center;">DDD</td>
+</tr>
+<tr>
+<td><strong>analytics-service</strong></td>
+<td>Аналитика: CRM/CDP, прогноз спроса</td>
+<td style="text-align: center;">32</td>
+<td style="text-align: center;">DDD</td>
+</tr>
+<tr>
+<td><strong>legal-service</strong></td>
+<td>Право: арбитраж, AI-юрист, патентный маркетплейс</td>
+<td style="text-align: center;">37</td>
+<td style="text-align: center;">DDD</td>
+</tr>
+<tr>
+<td><strong>finance-service</strong></td>
+<td>Финансы: краудфандинг 2.0, ЦФА, токены</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">Плоская</td>
+</tr>
+<tr>
+<td><strong>sandbox-service</strong></td>
+<td>Песочница: витрина за 5 минут, интеграция с «Мой налог»</td>
+<td style="text-align: center;">32</td>
+<td style="text-align: center;">DDD</td>
+</tr>
+<tr>
+<td><strong>chains-service</strong></td>
+<td>Цепочки: B2B-закупки, блокчейн-прослеживаемость</td>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">Плоская</td>
+</tr>
+<tr>
+<td><strong>personnel-service</strong></td>
+<td>Кадры: верификация компетенций, интеграция с вузами</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">Плоская</td>
+</tr>
+<tr>
+<td><strong>regions-service</strong></td>
+<td>Регионы: геотаргетинг, специфика моногородов</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">Плоская</td>
+</tr>
+<tr>
+<td><strong>export-service</strong></td>
+<td>Экспорт: выход на рынки ЕАЭС и БРИКС</td>
+<td style="text-align: center;">27</td>
+<td style="text-align: center;">DDD</td>
+</tr>
+<tr>
+<td><strong>loyalty-service</strong></td>
+<td>Лояльность: программа лояльности, баллы, кешбэк</td>
+<td style="text-align: center;">35</td>
+<td style="text-align: center;">DDD</td>
+</tr>
+<tr>
+<td><strong>payments-service</strong></td>
+<td>Платежи: платёжная инфраструктура, СБП, ЦФА</td>
+<td style="text-align: center;">46</td>
+<td style="text-align: center;">DDD</td>
+</tr>
+</tbody>
+</table>
+<h3 id="32-7">3.2. Инфраструктурные сервисы (7)</h3>
+<table>
+<thead>
+<tr>
+<th>Сервис</th>
+<th>Назначение</th>
+<th style="text-align: center;">Java-файлы</th>
+<th style="text-align: center;">Архитектура</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>auth-service</strong></td>
+<td>Keycloak + мок ЕСИА, аутентификация</td>
+<td style="text-align: center;">21</td>
+<td style="text-align: center;">DDD</td>
+</tr>
+<tr>
+<td><strong>gateway-service</strong></td>
+<td>API Gateway, rate limiting, circuit breaker</td>
+<td style="text-align: center;">28</td>
+<td style="text-align: center;">DDD</td>
+</tr>
+<tr>
+<td><strong>mock-service</strong></td>
+<td>8 моков внешних сервисов (ФНС, ОФД, СБП, ЦБ, ГИС)</td>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">—</td>
+</tr>
+<tr>
+<td><strong>lk-service</strong></td>
+<td>Личный кабинет (React SPA)</td>
+<td style="text-align: center;">21</td>
+<td style="text-align: center;">React SPA</td>
+</tr>
+<tr>
+<td><strong>bff-service</strong></td>
+<td>Backend-for-Frontend</td>
+<td style="text-align: center;">28</td>
+<td style="text-align: center;">DDD</td>
+</tr>
+<tr>
+<td><strong>admin-service</strong></td>
+<td>Администрирование платформы</td>
+<td style="text-align: center;">17</td>
+<td style="text-align: center;">Плоская</td>
+</tr>
+<tr>
+<td><strong>ai-service</strong></td>
+<td>ИИ-сервисы: рекомендации, аналитика, антифрод</td>
+<td style="text-align: center;">22</td>
+<td style="text-align: center;">Плоская</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33-shared-">3.3. Shared-модули</h3>
+<table>
+<thead>
+<tr>
+<th>Модуль</th>
+<th style="text-align: center;">Статус</th>
+<th>Содержимое</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>shared/domain</td>
+<td style="text-align: center;">❌</td>
+<td>Базовые DDD-типы (AggregateRoot, ValueObject, DomainEvent) — в разработке</td>
+</tr>
+<tr>
+<td>shared/application</td>
+<td style="text-align: center;">❌</td>
+<td>Базовые application-сервисы — в разработке</td>
+</tr>
+<tr>
+<td>shared/kafka-events</td>
+<td style="text-align: center;">✅</td>
+<td>DomainEvent.java, KafkaTopics.java</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Итого: 626 Java-файлов, 20/20 сервисов с Docker. 14 сервисов на DDD-архитектуре, 6 — на плоской (в процессе рефакторинга).</strong></p>
+<hr />
+<h2 id="4">4. Модель данных</h2>
+<h3 id="41">4.1. Принципы</h3>
+<ul>
+<li><strong>Database per Service</strong> — каждый сервис owns свою схему в PostgreSQL</li>
+<li><strong>Синхронизация через Kafka</strong> — доменные события для кросс-сервисных данных</li>
+<li><strong>Eventual Consistency</strong> — согласованность через идемпотентность и компенсационные транзакции</li>
+</ul>
+<h3 id="42">4.2. Ключевые сущности</h3>
+<table>
+<thead>
+<tr>
+<th>Сервис</th>
+<th>Агрегаты</th>
+<th>Ключевые таблицы</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>catalog-service</td>
+<td>Brand, Product, Grade, Cashback</td>
+<td>brands, products, grades, cashback_rules</td>
+</tr>
+<tr>
+<td>cooperation-service</td>
+<td>Partnership, Cluster, Tender, Reputation</td>
+<td>partnerships, clusters, tenders, reputation_scores</td>
+</tr>
+<tr>
+<td>loyalty-service</td>
+<td>Transaction, PointsBalance, AntiFraud</td>
+<td>transactions, points_balances, antifraud_signals</td>
+</tr>
+<tr>
+<td>chains-service</td>
+<td>SupplyChain, Shipment, SmartContract</td>
+<td>supply_chain_nodes, shipments, contracts</td>
+</tr>
+<tr>
+<td>finance-service</td>
+<td>Crowdfunding, Token, CreditScore</td>
+<td>campaigns, tokens, credit_profiles</td>
+</tr>
+</tbody>
+</table>
+<h3 id="43">4.3. Интеграционные потоки</h3>
+<div class="codehilite"><pre><span></span><code>┌─────────────┐     Kafka Events     ┌──────────────┐
+│  catalog-    │ ──────────────────► │  loyalty-    │
+│  service     │  BrandVerified      │  service     │
+└─────────────┘                      └──────────────┘
+       │                                     │
+       │ REST/gRPC                           │ Kafka
+       ▼                                     ▼
+┌─────────────┐                      ┌──────────────┐
+│  cooperation│  ◄──────────────── │  analytics-  │
+│  service    │   MatchFound        │  service     │
+└─────────────┘                      └──────────────┘
+</code></pre></div>
+
+<hr />
+<h2 id="5">5. Архитектура безопасности</h2>
+<h3 id="51-2">5.1. Класс защищённости К2</h3>
+<table>
+<thead>
+<tr>
+<th>Требование</th>
+<th>Реализация</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Аутентификация</td>
+<td>ЕСИА (OIDC/OAuth 2.0) через Keycloak</td>
+</tr>
+<tr>
+<td>Авторизация</td>
+<td>RBAC + ABAC, JWT-токены</td>
+</tr>
+<tr>
+<td>Криптография</td>
+<td>ГОСТ (КриптоПро CSP 5.0 R3)</td>
+</tr>
+<tr>
+<td>Аудит</td>
+<td>Логирование всех операций, immutable audit trail</td>
+</tr>
+<tr>
+<td>Защита данных</td>
+<td>Шифрование at rest (PostgreSQL TDE) + in transit (TLS 1.3)</td>
+</tr>
+<tr>
+<td>Сетевая сегментация</td>
+<td>Kubernetes NetworkPolicy, zero-trust</td>
+</tr>
+<tr>
+<td>Пентест</td>
+<td>Обязательный, ежегодный</td>
+</tr>
+</tbody>
+</table>
+<h3 id="52">5.2. Интеграции с госсистемами</h3>
+<table>
+<thead>
+<tr>
+<th>Система</th>
+<th>Протокол</th>
+<th>Назначение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ЕСИА</td>
+<td>OAuth 2.0/OIDC</td>
+<td>Аутентификация граждан и юрлиц</td>
+</tr>
+<tr>
+<td>ГИСП</td>
+<td>REST API</td>
+<td>Верификация продукции</td>
+</tr>
+<tr>
+<td>Честный знак</td>
+<td>REST API</td>
+<td>Проверка маркировки</td>
+</tr>
+<tr>
+<td>ОФД</td>
+<td>REST/SOAP</td>
+<td>Подтверждение покупок</td>
+</tr>
+<tr>
+<td>ФНС</td>
+<td>REST/SOAP</td>
+<td>Налоговые данные</td>
+</tr>
+<tr>
+<td>Мой налог</td>
+<td>API</td>
+<td>Самозанятые</td>
+</tr>
+<tr>
+<td>ЦБ РФ</td>
+<td>—</td>
+<td>Цифровой рубль, смарт-контракты</td>
+</tr>
+</tbody>
+</table>
+<h3 id="53-stride">5.3. Модель угроз (STRIDE)</h3>
+<table>
+<thead>
+<tr>
+<th>Угроза</th>
+<th>Контрмера</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Spoofing</td>
+<td>ЕСИА + MFA + JWT validation</td>
+</tr>
+<tr>
+<td>Tampering</td>
+<td>ГОСТ-подпись, immutable audit log</td>
+</tr>
+<tr>
+<td>Repudiation</td>
+<td>Blockchain-фиксация критичных операций</td>
+</tr>
+<tr>
+<td>Information Disclosure</td>
+<td>Encryption at rest + in transit, RBAC</td>
+</tr>
+<tr>
+<td>Denial of Service</td>
+<td>Rate limiting (100 req/min), WAF, circuit breaker</td>
+</tr>
+<tr>
+<td>Elevation of Privilege</td>
+<td>Least privilege, NetworkPolicy, Trivy scanning</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6">6. Стратегия развёртывания</h2>
+<h3 id="61">6.1. Инфраструктура</h3>
+<table>
+<thead>
+<tr>
+<th>Компонент</th>
+<th>Решение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Контейнеризация</td>
+<td>Docker (multi-stage builds, JVM + native-image)</td>
+</tr>
+<tr>
+<td>Оркестрация</td>
+<td>Kubernetes (HPA, NetworkPolicy, StatefulSet)</td>
+</tr>
+<tr>
+<td>CI/CD</td>
+<td>GitHub Actions → Docker Registry → K8s</td>
+</tr>
+<tr>
+<td>Мониторинг</td>
+<td>Prometheus + Grafana + OpenTelemetry</td>
+</tr>
+<tr>
+<td>Логирование</td>
+<td>ELK Stack (Elasticsearch, Logstash, Kibana)</td>
+</tr>
+<tr>
+<td>Трейсинг</td>
+<td>Jaeger / OpenTelemetry</td>
+</tr>
+</tbody>
+</table>
+<h3 id="62">6.2. Стратегия развёртывания</h3>
+<table>
+<thead>
+<tr>
+<th>Этап</th>
+<th>Среда</th>
+<th>Конфигурация</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Разработка</td>
+<td>Local (Docker Compose)</td>
+<td>Все сервисы, моки внешних систем</td>
+</tr>
+<tr>
+<td>Тестирование</td>
+<td>minikube / K8s dev</td>
+<td>Интеграционные тесты, BDD</td>
+</tr>
+<tr>
+<td>Стейджинг</td>
+<td>K8s staging</td>
+<td>Production-like, нагрузочное тестирование</td>
+</tr>
+<tr>
+<td>Продакшн</td>
+<td>K8s production (ЦОД РФ)</td>
+<td>Blue-Green деплой, SLA ≥99.5%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="63">6.3. Нефункциональные требования</h3>
+<table>
+<thead>
+<tr>
+<th>Параметр</th>
+<th>Требование</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Доступность</td>
+<td>≥99.5% (пилот), ≥99.9% (продакшн)</td>
+</tr>
+<tr>
+<td>Время ответа API</td>
+<td>≤200ms (p95)</td>
+</tr>
+<tr>
+<td>Пропускная способность</td>
+<td>≥10 000 RPS (пиковая)</td>
+</tr>
+<tr>
+<td>RTO (Recovery Time Objective)</td>
+<td>≤4 часа</td>
+</tr>
+<tr>
+<td>RPO (Recovery Point Objective)</td>
+<td>≤1 час</td>
+</tr>
+<tr>
+<td>Хранение данных</td>
+<td>7 лет (требования ФСТЭК)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7">7. Тестовая стратегия</h2>
+<table>
+<thead>
+<tr>
+<th>Уровень</th>
+<th>Инструменты</th>
+<th>Покрытие</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Unit-тесты</td>
+<td>JUnit 5 + Mockito</td>
+<td>≥80% строк кода</td>
+</tr>
+<tr>
+<td>Интеграционные</td>
+<td>REST Assured + Testcontainers</td>
+<td>Критичные пути</td>
+</tr>
+<tr>
+<td>BDD</td>
+<td>Cucumber</td>
+<td>Пользовательские сценарии</td>
+</tr>
+<tr>
+<td>Нагрузочные</td>
+<td>Gatling</td>
+<td>SLA-валидация</td>
+</tr>
+<tr>
+<td>E2E</td>
+<td>Playwright</td>
+<td>UI-сценарии</td>
+</tr>
+<tr>
+<td>Безопасность</td>
+<td>Trivy, OWASP ZAP, FindSecBugs</td>
+<td>Все сервисы</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8-2026">8. Статус реализации (июль 2026)</h2>
+<table>
+<thead>
+<tr>
+<th>Категория</th>
+<th>Статус</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Java-файлы</td>
+<td>626 (20 сервисов)</td>
+</tr>
+<tr>
+<td>Docker</td>
+<td>20/20 сервисов</td>
+</tr>
+<tr>
+<td>DDD-архитектура</td>
+<td>14/20 сервисов (6 — плоская, рефакторинг в процессе)</td>
+</tr>
+<tr>
+<td>MVP-спецификации</td>
+<td>75 документов</td>
+</tr>
+<tr>
+<td>OpenAPI-контракты</td>
+<td>10 спецификаций</td>
+</tr>
+<tr>
+<td>C4-диаграммы</td>
+<td>4 уровня (Context, Container, Component, Deployment)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>Документ подготовлен на основе архитектурного проекта версии 2.1 (DOC-21) и аудита от 17.07.2026.</em></p>
+    <div class="footer-note">
+        АО «НП «Опора» • Москва, 2026 • opora.ru • Строго конфиденциально
+    </div>
+</body>
+</html>
