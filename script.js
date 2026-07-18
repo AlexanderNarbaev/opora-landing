@@ -6,23 +6,23 @@
 (function () {
     'use strict';
 
-    var trackToggle = document.getElementById('trackToggle');
+    var trackBar = document.getElementById('trackBar');
     var currentTrack = 'investor';
 
     /* ---- Quad Track Toggle ---- */
-    if (trackToggle) {
-        trackToggle.addEventListener('click', function (e) {
-            var btn = e.target.closest('.nav__track-btn');
+    if (trackBar) {
+        trackBar.addEventListener('click', function (e) {
+            var btn = e.target.closest('.track-bar__btn');
             if (!btn) return;
 
             var track = btn.dataset.track;
             if (track === currentTrack) return;
 
-            trackToggle.querySelectorAll('.nav__track-btn').forEach(function (b) {
-                b.classList.remove('nav__track-btn--active');
+            trackBar.querySelectorAll('.track-bar__btn').forEach(function (b) {
+                b.classList.remove('track-bar__btn--active');
                 b.setAttribute('aria-checked', 'false');
             });
-            btn.classList.add('nav__track-btn--active');
+            btn.classList.add('track-bar__btn--active');
             btn.setAttribute('aria-checked', 'true');
 
             var outViews = document.querySelectorAll('.dual-view[data-view="' + currentTrack + '"]');
@@ -94,7 +94,8 @@
             var target = document.querySelector(href);
             if (target) {
                 e.preventDefault();
-                var offset = 72;
+                var isMobile = window.innerWidth <= 768;
+                var offset = isMobile ? 56 : 120;
                 var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
                 window.scrollTo({ top: top, behavior: 'smooth' });
             }
@@ -186,7 +187,7 @@
         );
 
         var cards = document.querySelectorAll(
-            '.problem-card, .module-card, .metric-card, .tech-card, .doc-card, .dual-card, .roadmap__content, .risk-card, .faq-item'
+            '.problem-card, .module-card, .metric-card, .tech-card, .doc-card, .dual-card, .roadmap__content, .risk-card, .faq-item, .flow__step'
         );
         cards.forEach(function (card, i) {
             card.style.opacity = '0';
@@ -195,6 +196,21 @@
             fadeObserver.observe(card);
         });
     }
+
+    /* ---- Module Card Expansion ---- */
+    document.querySelectorAll('.module-card--expandable').forEach(function (card) {
+        card.addEventListener('click', function (e) {
+            if (e.target.closest('a')) return;
+            var wasExpanded = card.classList.contains('module-card--expanded');
+            document.querySelectorAll('.module-card--expanded').forEach(function (c) {
+                c.classList.remove('module-card--expanded');
+            });
+            if (!wasExpanded) {
+                card.classList.add('module-card--expanded');
+                card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        });
+    });
 
     /* ---- Contact Form handling ---- */
     var form = document.getElementById('contactForm');
@@ -215,7 +231,7 @@
             if (formStatus) formStatus.textContent = '';
 
             setTimeout(function () {
-                btn.textContent = 'Отправлено ✓';
+                btn.textContent = 'Отправлено \u2713';
                 btn.style.background = '#4CAF76';
                 if (formStatus) {
                     formStatus.textContent = 'Заявка успешно отправлена';
@@ -252,7 +268,7 @@
             if (nlStatus) nlStatus.textContent = '';
 
             setTimeout(function () {
-                btn.textContent = 'Готово ✓';
+                btn.textContent = 'Готово \u2713';
                 btn.style.background = '#4CAF76';
                 if (nlStatus) {
                     nlStatus.textContent = 'Подписка оформлена';
@@ -276,7 +292,7 @@
     var sections = document.querySelectorAll('section[id]');
 
     function highlightNav() {
-        var scrollPos = window.scrollY + 100;
+        var scrollPos = window.scrollY + 140;
 
         sections.forEach(function (section) {
             var top = section.offsetTop;

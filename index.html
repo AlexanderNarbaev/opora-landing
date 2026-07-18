@@ -47,11 +47,13 @@
       "description": "Платформа для покупки и продажи верифицированных российских товаров. Кешбэк до 7%, проверенные бренды, B2B-кооперация.",
       "foundingDate": "2026-07",
       "address": { "@type": "PostalAddress", "addressCountry": "RU", "addressLocality": "Москва" },
-      "sameAs": [
-        "https://github.com/alexandr-narbaev/opora",
-        "https://gitverse.ru/alexandr-narbaev/opora"
-      ],
-      "contactPoint": { "@type": "ContactPoint", "contactType": "customer service", "email": "contact@opora.digital", "availableLanguage": "Russian" }
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+7 999 452-33-98",
+        "email": "alexander.narbayev@yandex.ru",
+        "availableLanguage": "Russian"
+      }
     }
     </script>
     <script type="application/ld+json">
@@ -87,12 +89,6 @@
             <span class="nav__logo-icon">&#9670;</span>
             <span class="nav__logo-text">ОПОРА</span>
         </a>
-        <div class="nav__track-toggle" id="trackToggle" role="radiogroup" aria-label="Я — ...">
-            <button class="nav__track-btn nav__track-btn--active" data-track="investor" role="radio" aria-checked="true">Инвестор</button>
-            <button class="nav__track-btn" data-track="government" role="radio" aria-checked="false">Государство</button>
-            <button class="nav__track-btn" data-track="business" role="radio" aria-checked="false">Бизнес</button>
-            <button class="nav__track-btn" data-track="citizen" role="radio" aria-checked="false">Гражданин</button>
-        </div>
         <button class="nav__toggle" id="navToggle" aria-label="Меню" aria-expanded="false" aria-controls="navLinks">
             <span></span><span></span><span></span>
         </button>
@@ -101,15 +97,27 @@
             <li><a href="#problem">Проблема</a></li>
             <li><a href="#benefits">Что вы получаете</a></li>
             <li><a href="#services">Сервисы</a></li>
+            <li><a href="#flow">Как это работает</a></li>
             <li><a href="#economics">Экономика</a></li>
             <li><a href="#roadmap">Дорожная карта</a></li>
             <li><a href="#risks">Риски</a></li>
+            <li><a href="#team">Команда</a></li>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#docs">Документы</a></li>
             <li><a href="#contact" class="nav__cta">Связаться</a></li>
         </ul>
     </div>
 </nav>
+
+<!-- Track selector bar -->
+<div class="track-bar" id="trackBar" role="radiogroup" aria-label="Я — ...">
+    <div class="track-bar__inner">
+        <button class="track-bar__btn track-bar__btn--active" data-track="investor" role="radio" aria-checked="true">Инвестор</button>
+        <button class="track-bar__btn" data-track="government" role="radio" aria-checked="false">Государство</button>
+        <button class="track-bar__btn" data-track="business" role="radio" aria-checked="false">Бизнес</button>
+        <button class="track-bar__btn" data-track="citizen" role="radio" aria-checked="false">Гражданин</button>
+    </div>
+</div>
 
 <main id="main-content" tabindex="-1">
 
@@ -249,7 +257,7 @@
     </div>
 </section>
 
-<!-- ====== SOLUTION CARDS (shared) ====== -->
+<!-- ====== SOLUTION CARDS ====== -->
 <section class="solution" id="solution">
     <div class="container">
         <div class="section-header">
@@ -289,7 +297,7 @@
         <div class="section-header">
             <span class="section-tag">Что вы получаете</span>
             <h2 class="section-title benefits-title-dynamic" id="benefitsTitle">Почему это выгодно</h2>
-            <p class="section-desc">Выберите свою роль в переключателе наверху — и увидите, что «Опора» даёт именно вам.</p>
+            <p class="section-desc">Выберите свою роль в переключателе над меню — и увидите, что «Опора» даёт именно вам.</p>
         </div>
 
         <!-- Инвестор -->
@@ -378,113 +386,426 @@
     </div>
 </section>
 
-<!-- ====== SERVICES CATALOG (all 20) ====== -->
+<!-- ====== SERVICES CATALOG ====== -->
 <section class="services-catalog" id="services">
     <div class="container">
         <div class="section-header">
             <span class="section-tag">Платформа</span>
             <h2 class="section-title">20 сервисов — от каталога до экспорта</h2>
-            <p class="section-desc">13 сервисов для бизнеса и покупателей, 7 инфраструктурных — всё уже работает в прототипе</p>
+            <p class="section-desc">13 сервисов для бизнеса и покупателей, 7 инфраструктурных — всё уже в прототипе. Нажмите на карточку для подробностей.</p>
         </div>
 
         <h3 class="solution__group-title">Для бизнеса и покупателей</h3>
         <div class="solution__grid">
-            <div class="module-card">
-                <span class="module-card__status">Готово</span>
+
+            <div class="module-card module-card--expandable" data-module="vitrina">
+                <span class="module-card__status module-card__status--dev">Разрабатывается</span>
                 <h3 class="module-card__title">Витрина</h3>
                 <p class="module-card__text">Каталог проверенных российских брендов. Рейтинг Золото/Серебро/Бронза. Кешбэк до 7% для покупателей.</p>
+                <div class="module-card__expand">
+                    <div class="module-card__expand-section">
+                        <strong>Связи с модулями:</strong>
+                        <span>Лояльность (кешбэк) &rarr; Кооперация (партнёры) &rarr; Платежи (транзакции) &rarr; Экспорт (международный каталог)</span>
+                    </div>
+                    <div class="module-card__expand-section">
+                        <strong>Ключевые метрики:</strong>
+                        <span>Кешбэк до 7% &bull; 3 уровня грейдирования &bull; 0.8% комиссия &bull; &lt;24ч верификация</span>
+                    </div>
+                </div>
             </div>
-            <div class="module-card">
-                <span class="module-card__status">Готово</span>
+
+            <div class="module-card module-card--expandable" data-module="cooperation">
+                <span class="module-card__status module-card__status--dev">Разрабатывается</span>
                 <h3 class="module-card__title">Кооперация</h3>
                 <p class="module-card__text">AI-подбор B2B-партнёров. Совместные закупки, артельные кластеры, смарт-контракты для сделок.</p>
+                <div class="module-card__expand">
+                    <div class="module-card__expand-section">
+                        <strong>Связи с модулями:</strong>
+                        <span>AI-сервисы (матчинг) &rarr; Цепочки (поставки) &rarr; Право (контракты) &rarr; Экспорт (международные кластеры)</span>
+                    </div>
+                    <div class="module-card__expand-section">
+                        <strong>Ключевые метрики:</strong>
+                        <span>14 дней на поиск партнёра &bull; 100+ Java-файлов &bull; Смарт-контракты с NDA</span>
+                    </div>
+                </div>
             </div>
-            <div class="module-card">
-                <span class="module-card__status">Готово</span>
+
+            <div class="module-card module-card--expandable" data-module="creators">
+                <span class="module-card__status module-card__status--dev">Разрабатывается</span>
                 <h3 class="module-card__title">Креаторы</h3>
                 <p class="module-card__text">Маркетплейс для самозанятых: дизайнеры, копирайтеры, маркетологи. Комиссия 0%.</p>
+                <div class="module-card__expand">
+                    <div class="module-card__expand-section">
+                        <strong>Связи с модулями:</strong>
+                        <span>Песочница (самозанятые) &rarr; Аналитика (оценка спроса) &rarr; Платежи (расчёты) &rarr; Право (договоры)</span>
+                    </div>
+                    <div class="module-card__expand-section">
+                        <strong>Ключевые метрики:</strong>
+                        <span>0% комиссия &bull; 51 Java-файл &bull; Интеграция с «Мой налог»</span>
+                    </div>
+                </div>
             </div>
-            <div class="module-card">
-                <span class="module-card__status">Готово</span>
+
+            <div class="module-card module-card--expandable" data-module="analytics">
+                <span class="module-card__status module-card__status--dev">Разрабатывается</span>
                 <h3 class="module-card__title">Аналитика</h3>
                 <p class="module-card__text">Показывает, что и где продаётся. Прогноз спроса. Помогает брендам не гадать, а знать.</p>
+                <div class="module-card__expand">
+                    <div class="module-card__expand-section">
+                        <strong>Связи с модулями:</strong>
+                        <span>AI-сервисы (прогноз) &rarr; Витрина (данные продаж) &rarr; Экспорт (рынки) &rarr; Регионы (геотаргетинг)</span>
+                    </div>
+                    <div class="module-card__expand-section">
+                        <strong>Ключевые метрики:</strong>
+                        <span>Temporal Fusion Transformer &bull; CRM/CDP &bull; 32 Java-файла &bull; Монетизация данных</span>
+                    </div>
+                </div>
             </div>
-            <div class="module-card">
-                <span class="module-card__status">Готово</span>
+
+            <div class="module-card module-card--expandable" data-module="legal">
+                <span class="module-card__status module-card__status--dev">Разрабатывается</span>
                 <h3 class="module-card__title">Право</h3>
                 <p class="module-card__text">Арбитраж, патентный маркетплейс, типовые смарт-контракты. Юридическая защита без юристов.</p>
+                <div class="module-card__expand">
+                    <div class="module-card__expand-section">
+                        <strong>Связи с модулями:</strong>
+                        <span>Кооперация (контракты) &rarr; Креаторы (договоры) &rarr; Финансы (NDA) &rarr; Экспорт (патенты)</span>
+                    </div>
+                    <div class="module-card__expand-section">
+                        <strong>Ключевые метрики:</strong>
+                        <span>37 Java-файлов &bull; Патентный маркетплейс &bull; Типовые смарт-контракты</span>
+                    </div>
+                </div>
             </div>
-            <div class="module-card">
-                <span class="module-card__status">Готово</span>
+
+            <div class="module-card module-card--expandable" data-module="finance">
+                <span class="module-card__status module-card__status--dev">Разрабатывается</span>
                 <h3 class="module-card__title">Финансы</h3>
                 <p class="module-card__text">Краудфандинг для бизнеса. Токены участия в проектах. Интеграция с цифровыми финансовыми активами.</p>
+                <div class="module-card__expand">
+                    <div class="module-card__expand-section">
+                        <strong>Связи с модулями:</strong>
+                        <span>Платежи (расчёты) &rarr; AI-сервисы (антифрод) &rarr; Право (NDA) &rarr; Лояльность (токены)</span>
+                    </div>
+                    <div class="module-card__expand-section">
+                        <strong>Ключевые метрики:</strong>
+                        <span>ЦФА интеграция &bull; Токены участия &bull; 15 Java-файлов &bull; Краудфандинг 2.0</span>
+                    </div>
+                </div>
             </div>
-            <div class="module-card">
-                <span class="module-card__status">Готово</span>
+
+            <div class="module-card module-card--expandable" data-module="sandbox">
+                <span class="module-card__status module-card__status--dev">Разрабатывается</span>
                 <h3 class="module-card__title">Песочница</h3>
                 <p class="module-card__text">Вход для самозанятых. Нулевая комиссия. Автоматическая интеграция с «Мой налог».</p>
+                <div class="module-card__expand">
+                    <div class="module-card__expand-section">
+                        <strong>Связи с модулями:</strong>
+                        <span>Креаторы (самозанятые) &rarr; Auth (ЕСИА) &rarr; Mock (ФНС) &rarr; Платежи (расчёты)</span>
+                    </div>
+                    <div class="module-card__expand-section">
+                        <strong>Ключевые метрики:</strong>
+                        <span>0% комиссия &bull; 32 Java-файла &bull; Интеграция с ФНС &bull; Для самозанятых</span>
+                    </div>
+                </div>
             </div>
-            <div class="module-card">
-                <span class="module-card__status">Готово</span>
+
+            <div class="module-card module-card--expandable" data-module="chains">
+                <span class="module-card__status module-card__status--dev">Разрабатывается</span>
                 <h3 class="module-card__title">Цепочки поставок</h3>
                 <p class="module-card__text">B2B-закупки с прослеживаемостью. От сырья до прилавка — вся цепочка видна.</p>
+                <div class="module-card__expand">
+                    <div class="module-card__expand-section">
+                        <strong>Связи с модулями:</strong>
+                        <span>Кооперация (закупки) &rarr; Витрина (товары) &rarr; Экспорт (логистика) &rarr; Блокчейн (прослеживаемость)</span>
+                    </div>
+                    <div class="module-card__expand-section">
+                        <strong>Ключевые метрики:</strong>
+                        <span>17 Java-файлов &bull; Блокчейн-прослеживаемость &bull; HLF интеграция</span>
+                    </div>
+                </div>
             </div>
-            <div class="module-card">
-                <span class="module-card__status">Готово</span>
+
+            <div class="module-card module-card--expandable" data-module="personnel">
+                <span class="module-card__status module-card__status--dev">Разрабатывается</span>
                 <h3 class="module-card__title">Кадры</h3>
                 <p class="module-card__text">Поиск сотрудников с подтверждёнными навыками. Биржа стажировок. Интеграция с вузами.</p>
+                <div class="module-card__expand">
+                    <div class="module-card__expand-section">
+                        <strong>Связи с модулями:</strong>
+                        <span>Auth (верификация) &rarr; Кооперация (команды) &rarr; Регионы (специалисты) &rarr; AI (матчинг)</span>
+                    </div>
+                    <div class="module-card__expand-section">
+                        <strong>Ключевые метрики:</strong>
+                        <span>16 Java-файлов &bull; Верификация компетенций &bull; Интеграция с вузами</span>
+                    </div>
+                </div>
             </div>
-            <div class="module-card">
-                <span class="module-card__status">Готово</span>
+
+            <div class="module-card module-card--expandable" data-module="regions">
+                <span class="module-card__status module-card__status--dev">Разрабатывается</span>
                 <h3 class="module-card__title">Регионы</h3>
                 <p class="module-card__text">Специальные условия для моногородов и региональных кластеров. Геотаргетинг спроса.</p>
+                <div class="module-card__expand">
+                    <div class="module-card__expand-section">
+                        <strong>Связи с модулями:</strong>
+                        <span>Аналитика (спрос) &rarr; Витрина (каталог) &rarr; Экспорт (регионы) &rarr; Кадры (специалисты)</span>
+                    </div>
+                    <div class="module-card__expand-section">
+                        <strong>Ключевые метрики:</strong>
+                        <span>16 Java-файлов &bull; Геотаргетинг &bull; Фокус на моногорода</span>
+                    </div>
+                </div>
             </div>
-            <div class="module-card">
-                <span class="module-card__status">Готово</span>
+
+            <div class="module-card module-card--expandable" data-module="export">
+                <span class="module-card__status module-card__status--dev">Разрабатывается</span>
                 <h3 class="module-card__title">Экспорт</h3>
                 <p class="module-card__text">Выход на рынки ЕАЭС и БРИКС. White-label решения. Документооборот и логистика.</p>
+                <div class="module-card__expand">
+                    <div class="module-card__expand-section">
+                        <strong>Связи с модулями:</strong>
+                        <span>Витрина (каталог) &rarr; Цепочки (логистика) &rarr; Право (патенты) &rarr; Регионы (гео)</span>
+                    </div>
+                    <div class="module-card__expand-section">
+                        <strong>Ключевые метрики:</strong>
+                        <span>27 Java-файлов &bull; ЕАЭС + БРИКС &bull; White-label &bull; 5 стран к 2031</span>
+                    </div>
+                </div>
             </div>
-            <div class="module-card">
-                <span class="module-card__status">Готово</span>
+
+            <div class="module-card module-card--expandable" data-module="loyalty">
+                <span class="module-card__status module-card__status--dev">Разрабатывается</span>
                 <h3 class="module-card__title">Лояльность</h3>
                 <p class="module-card__text">Балльная система. Кешбэк, скидки, грейдирование. Баллы не облагаются НДС.</p>
+                <div class="module-card__expand">
+                    <div class="module-card__expand-section">
+                        <strong>Связи с модулями:</strong>
+                        <span>Витрина (кешбэк) &rarr; Платежи (транзакции) &rarr; Финансы (токены) &rarr; Аналитика (LTV)</span>
+                    </div>
+                    <div class="module-card__expand-section">
+                        <strong>Ключевые метрики:</strong>
+                        <span>До 7% кешбэк &bull; Баллы без НДС &bull; 35 Java-файлов &bull; LTV/CAC 21.2×</span>
+                    </div>
+                </div>
             </div>
-            <div class="module-card">
-                <span class="module-card__status">Готово</span>
+
+            <div class="module-card module-card--expandable" data-module="payments">
+                <span class="module-card__status module-card__status--dev">Разрабатывается</span>
                 <h3 class="module-card__title">Платежи</h3>
                 <p class="module-card__text">Приём платежей через СБП и цифровой рубль. Маркированные платежи ЦБ РФ.</p>
+                <div class="module-card__expand">
+                    <div class="module-card__expand-section">
+                        <strong>Связи с модулями:</strong>
+                        <span>Витрина (покупки) &rarr; Лояльность (баллы) &rarr; Финансы (ЦФА) &rarr; Mock (СБП)</span>
+                    </div>
+                    <div class="module-card__expand-section">
+                        <strong>Ключевые метрики:</strong>
+                        <span>46 Java-файлов &bull; СБП + цифровой рубль &bull; Маркированные платежи ЦБ</span>
+                    </div>
+                </div>
             </div>
         </div>
 
         <h3 class="solution__group-title">Инфраструктура</h3>
         <div class="solution__grid solution__grid--infra">
-            <div class="module-card module-card--infra">
+            <div class="module-card module-card--infra module-card--expandable" data-module="auth">
+                <span class="module-card__status module-card__status--design">Проектируется</span>
                 <h3 class="module-card__title">Авторизация</h3>
                 <p class="module-card__text">Вход через ЕСИА (Госуслуги). Защита класса К2. Ваши данные в безопасности.</p>
+                <div class="module-card__expand">
+                    <div class="module-card__expand-section">
+                        <strong>Связи с модулями:</strong>
+                        <span>Все сервисы (аутентификация) &rarr; Gateway (защита) &rarr; Keycloak &rarr; Mock (ЕСИА)</span>
+                    </div>
+                    <div class="module-card__expand-section">
+                        <strong>Ключевые метрики:</strong>
+                        <span>Keycloak 24 &bull; OAuth 2.0/OIDC &bull; 21 Java-файл &bull; Класс К2</span>
+                    </div>
+                </div>
             </div>
-            <div class="module-card module-card--infra">
+            <div class="module-card module-card--infra module-card--expandable" data-module="gateway">
+                <span class="module-card__status module-card__status--design">Проектируется</span>
                 <h3 class="module-card__title">Шлюз API</h3>
                 <p class="module-card__text">Единая точка входа для всех сервисов. Защита от перегрузок. Открытый API для партнёров.</p>
+                <div class="module-card__expand">
+                    <div class="module-card__expand-section">
+                        <strong>Связи с модулями:</strong>
+                        <span>BFF (интерфейсы) &rarr; Auth (токены) &rarr; Все 13 бизнес-сервисов &rarr; Rate limiting</span>
+                    </div>
+                    <div class="module-card__expand-section">
+                        <strong>Ключевые метрики:</strong>
+                        <span>28 Java-файлов &bull; API Gateway &bull; BFF &bull; Защита P1</span>
+                    </div>
+                </div>
             </div>
-            <div class="module-card module-card--infra">
+            <div class="module-card module-card--infra module-card--expandable" data-module="lk">
+                <span class="module-card__status module-card__status--design">Проектируется</span>
                 <h3 class="module-card__title">Личный кабинет</h3>
                 <p class="module-card__text">Современное веб-приложение. Вся аналитика, заказы и финансы — в одном окне.</p>
+                <div class="module-card__expand">
+                    <div class="module-card__expand-section">
+                        <strong>Связи с модулями:</strong>
+                        <span>BFF (данные) &rarr; Auth (вход) &rarr; Gateway (API) &rarr; Все бизнес-сервисы</span>
+                    </div>
+                    <div class="module-card__expand-section">
+                        <strong>Ключевые метрики:</strong>
+                        <span>React 18 SPA &bull; 21 Java-файл &bull; Dashboard &bull; Адаптивный дизайн</span>
+                    </div>
+                </div>
             </div>
-            <div class="module-card module-card--infra">
+            <div class="module-card module-card--infra module-card--expandable" data-module="bff">
+                <span class="module-card__status module-card__status--design">Проектируется</span>
                 <h3 class="module-card__title">BFF</h3>
                 <p class="module-card__text">Сервер для быстрой работы интерфейсов. Мгновенная загрузка данных.</p>
+                <div class="module-card__expand">
+                    <div class="module-card__expand-section">
+                        <strong>Связи с модулями:</strong>
+                        <span>ЛК (фронтенд) &rarr; Gateway (API) &rarr; Все сервисы &rarr; Кеширование</span>
+                    </div>
+                    <div class="module-card__expand-section">
+                        <strong>Ключевые метрики:</strong>
+                        <span>28 Java-файлов &bull; Backend-for-Frontend &bull; Оптимизация запросов</span>
+                    </div>
+                </div>
             </div>
-            <div class="module-card module-card--infra">
+            <div class="module-card module-card--infra module-card--expandable" data-module="admin">
+                <span class="module-card__status module-card__status--design">Проектируется</span>
                 <h3 class="module-card__title">Администрирование</h3>
                 <p class="module-card__text">Панель управления платформой. Модерация брендов и транзакций.</p>
+                <div class="module-card__expand">
+                    <div class="module-card__expand-section">
+                        <strong>Связи с модулями:</strong>
+                        <span>Gateway (доступ) &rarr; AI (модерация) &rarr; Витрина (бренды) &rarr; Платежи (транзакции)</span>
+                    </div>
+                    <div class="module-card__expand-section">
+                        <strong>Ключевые метрики:</strong>
+                        <span>17 Java-файлов &bull; Панель управления &bull; Модерация контента</span>
+                    </div>
+                </div>
             </div>
-            <div class="module-card module-card--infra">
+            <div class="module-card module-card--infra module-card--expandable" data-module="ai">
+                <span class="module-card__status module-card__status--design">Проектируется</span>
                 <h3 class="module-card__title">ИИ-сервисы</h3>
                 <p class="module-card__text">Рекомендации товаров, прогноз спроса, модерация контента, защита от мошенников.</p>
+                <div class="module-card__expand">
+                    <div class="module-card__expand-section">
+                        <strong>Связи с модулями:</strong>
+                        <span>Аналитика (прогноз) &rarr; Витрина (рекомендации) &rarr; Кооперация (матчинг) &rarr; Платежи (антифрод)</span>
+                    </div>
+                    <div class="module-card__expand-section">
+                        <strong>Ключевые метрики:</strong>
+                        <span>CatBoost + RuBERT &bull; Isolation Forest &bull; 22 Java-файла &bull; TFT прогноз</span>
+                    </div>
+                </div>
             </div>
-            <div class="module-card module-card--infra">
+            <div class="module-card module-card--infra module-card--expandable" data-module="mock">
+                <span class="module-card__status module-card__status--design">Проектируется</span>
                 <h3 class="module-card__title">Тестовые заглушки</h3>
                 <p class="module-card__text">Эмуляторы госсистем для разработки. Позволяют тестировать без доступа к реальным системам.</p>
+                <div class="module-card__expand">
+                    <div class="module-card__expand-section">
+                        <strong>Связи с модулями:</strong>
+                        <span>Все сервисы (тестирование) &rarr; Auth (ЕСИА) &rarr; Песочница (ФНС) &rarr; Платежи (СБП)</span>
+                    </div>
+                    <div class="module-card__expand-section">
+                        <strong>Ключевые метрики:</strong>
+                        <span>25 Java-файлов &bull; 8 заглушек &bull; ФНС, ОФД, СБП, ЦБ, ГИС &bull; Полный цикл</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ====== PRODUCT FLOW ====== -->
+<section class="flow" id="flow">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Путь продукта</span>
+            <h2 class="section-title">Как товар проходит через платформу</h2>
+            <p class="section-desc">От регистрации производителя до кешбэка покупателю — сквозной процесс</p>
+        </div>
+        <div class="flow__diagram">
+            <div class="flow__step">
+                <div class="flow__step-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="6"/><path d="M22 14l3 3-3 3"/><path d="M16 12h6.5"/></svg>
+                </div>
+                <div class="flow__step-content">
+                    <h3>Регистрация производителя</h3>
+                    <p>Бренд регистрируется через ЕСИА, заполняет профиль и добавляет товары</p>
+                </div>
+            </div>
+            <div class="flow__arrow">&rarr;</div>
+            <div class="flow__step">
+                <div class="flow__step-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><path d="M8 16l5 5 11-11"/></svg>
+                </div>
+                <div class="flow__step-content">
+                    <h3>Верификация</h3>
+                    <p>Автоматическая проверка через ГИСП и «Честный знак»: происхождение, сертификаты, цепочка поставок</p>
+                </div>
+            </div>
+            <div class="flow__arrow">&rarr;</div>
+            <div class="flow__step">
+                <div class="flow__step-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><polygon points="16,2 20,12 31,12 22,20 25,30 16,23 7,30 10,20 1,12 12,12"/></svg>
+                </div>
+                <div class="flow__step-content">
+                    <h3>Грейдирование</h3>
+                    <p>Присвоение уровня: Золото (полный цикл в РФ), Серебро (сборка), Бронза (дистрибуция бренда)</p>
+                </div>
+            </div>
+            <div class="flow__arrow">&rarr;</div>
+            <div class="flow__step">
+                <div class="flow__step-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><rect x="4" y="4" width="10" height="10" rx="2"/><rect x="18" y="4" width="10" height="10" rx="2"/><rect x="4" y="18" width="10" height="10" rx="2"/><rect x="18" y="18" width="10" height="10" rx="2"/></svg>
+                </div>
+                <div class="flow__step-content">
+                    <h3>Размещение в каталоге</h3>
+                    <p>Товар появляется в Витрине с верификационным знаком. Покупатели видят рейтинг и происхождение</p>
+                </div>
+            </div>
+        </div>
+        <div class="flow__diagram flow__diagram--second">
+            <div class="flow__step">
+                <div class="flow__step-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><circle cx="14" cy="14" r="6"/><path d="M18.5 24a6.5 6.5 0 100-13 6.5 6.5 0 000 13z"/><line x1="18" y1="20" x2="22" y2="24"/></svg>
+                </div>
+                <div class="flow__step-content">
+                    <h3>Покупатель находит товар</h3>
+                    <p>Поиск по категориям, фильтрам и AI-рекомендациям. Видит верификацию и рейтинг бренда</p>
+                </div>
+            </div>
+            <div class="flow__arrow">&rarr;</div>
+            <div class="flow__step">
+                <div class="flow__step-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><rect x="6" y="14" width="20" height="12" rx="2"/><line x1="16" y1="14" x2="16" y2="8"/><circle cx="16" cy="6" r="2"/></svg>
+                </div>
+                <div class="flow__step-content">
+                    <h3>Покупка</h3>
+                    <p>Оплата через СБП или цифровой рубль. Комиссия платформы 0.8%. Маркированный платёж ЦБ РФ</p>
+                </div>
+            </div>
+            <div class="flow__arrow">&rarr;</div>
+            <div class="flow__step">
+                <div class="flow__step-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><circle cx="16" cy="16" r="12"/><path d="M10 16l4 4 8-8"/></svg>
+                </div>
+                <div class="flow__step-content">
+                    <h3>Кешбэк</h3>
+                    <p>Автоматическое начисление баллов (до 7%). 1 балл = 1 рубль. Баллы не облагаются НДС</p>
+                </div>
+            </div>
+            <div class="flow__arrow">&rarr;</div>
+            <div class="flow__step">
+                <div class="flow__step-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="14" r="8"/><path d="M18 22l-2 4h8l-2-4"/><path d="M14 28l-2-4h8l-2 4"/></svg>
+                </div>
+                <div class="flow__step-content">
+                    <h3>Рейтинг и лояльность</h3>
+                    <p>Покупатель оценивает товар. Рейтинг влияет на позицию в каталоге и уровень кешбэка</p>
+                </div>
             </div>
         </div>
     </div>
@@ -502,9 +823,10 @@
             <div class="prototype__video">
                 <video controls autoplay muted loop width="100%" style="border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
                     <source src="assets/opora-prototype.webm" type="video/webm">
+                    <source src="assets/opora-prototype.mp4" type="video/mp4">
                     Ваш браузер не поддерживает видео.
                 </video>
-                <p style="text-align: center; margin-top: 12px; color: var(--text-muted); font-size: 0.9rem;">Демонстрация личного кабинета — все страницы кликабельны</p>
+                <p style="text-align: center; margin-top: 12px; color: var(--text-muted); font-size: 0.9rem;">Демонстрация прототипа: вход (demo@opora.test), дашборд, каталог брендов, кооперация, финансы — все страницы кликабельны</p>
             </div>
             <div class="prototype__preview">
                 <div class="prototype__browser">
@@ -581,11 +903,6 @@
                         </div>
                     </li>
                 </ul>
-                <div class="prototype__actions">
-                    <a href="https://github.com/alexandr-narbaev/opora" class="btn btn--primary" target="_blank" rel="noopener noreferrer" aria-label="Открыть исходный код на GitHub">
-                        Исходный код на GitHub
-                    </a>
-                </div>
             </div>
         </div>
     </div>
@@ -606,7 +923,7 @@
                 <div class="metric-card__label">LTV/CAC</div>
             </div>
             <div class="metric-card">
-                <div class="metric-card__value">4.5 / 15.0 <span>млрд ₽</span></div>
+                <div class="metric-card__value">4.5 / 15.0 <span>млрд &#8381;</span></div>
                 <div class="metric-card__label">NPV (базовый / оптим.)</div>
             </div>
             <div class="metric-card">
@@ -618,7 +935,7 @@
                 <div class="metric-card__label">Окупаемость (прост. / дисконт.)</div>
             </div>
             <div class="metric-card">
-                <div class="metric-card__value">10–12.5 <span>млрд ₽</span></div>
+                <div class="metric-card__value">10–12.5 <span>млрд &#8381;</span></div>
                 <div class="metric-card__label">Бюджет на 5 лет</div>
             </div>
             <div class="metric-card">
@@ -646,7 +963,7 @@
                 <div class="metric-card__label">Брендов к 2030</div>
             </div>
             <div class="metric-card">
-                <div class="metric-card__value">250+ <span>млрд ₽</span></div>
+                <div class="metric-card__value">250+ <span>млрд &#8381;</span></div>
                 <div class="metric-card__label">Капитализация к 2031</div>
             </div>
         </div>
@@ -691,7 +1008,7 @@
                         <li>Запуск Витрины и Кооперации</li>
                         <li>Пилот: Москва + Зеленоград</li>
                         <li>100 брендов, 50 000 пользователей</li>
-                        <li>Надёжность платформы ≥ 99.5%</li>
+                        <li>Надёжность платформы &ge; 99.5%</li>
                     </ul>
                     <div class="roadmap__location">Пилот: Москва + Зеленоград</div>
                 </div>
@@ -781,6 +1098,71 @@
                     <strong>Что делаем:</strong> Пилот в Москве и Зеленограде, кешбэк до 7% для первых пользователей, бесплатное размещение для первых брендов.
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- ====== TEAM ====== -->
+<section class="team-mgmt" id="team">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Команда</span>
+            <h2 class="section-title">Кто стоит за проектом</h2>
+            <p class="section-desc">Ядро команды готово к старту. При наличии финансирования — масштабируемся за считаные недели.</p>
+        </div>
+
+        <div class="team-mgmt__grid">
+
+            <div class="team-mgmt__card team-mgmt__card--lead">
+                <div class="team-mgmt__card-avatar">АН</div>
+                <div class="team-mgmt__card-name">Александр Нарбаев</div>
+                <div class="team-mgmt__card-role">CEO &amp; CTO</div>
+                <p class="team-mgmt__card-desc">
+                    Автор проекта «Опора». Разработка архитектуры, технической стратегии и бизнес-модели.
+                    Полный цикл: от идеи до работающего прототипа из 20 микросервисов.
+                </p>
+            </div>
+
+            <div class="team-mgmt__card team-mgmt__card--open">
+                <div class="team-mgmt__card-avatar team-mgmt__card-avatar--open">CFO</div>
+                <div class="team-mgmt__card-name">Вакансия</div>
+                <div class="team-mgmt__card-role">Финансовый директор</div>
+                <p class="team-mgmt__card-desc">Управление бюджетом 10–12.5 млрд руб. Привлечение инвестиций, GR, финмодель.</p>
+            </div>
+
+            <div class="team-mgmt__card team-mgmt__card--open">
+                <div class="team-mgmt__card-avatar team-mgmt__card-avatar--open">CISO</div>
+                <div class="team-mgmt__card-name">Вакансия</div>
+                <div class="team-mgmt__card-role">Директор по безопасности</div>
+                <p class="team-mgmt__card-desc">Защита класса К2. ГОСТ-криптография. Аудит ФСТЭК. Работа с КриптоПро.</p>
+            </div>
+
+            <div class="team-mgmt__card team-mgmt__card--open">
+                <div class="team-mgmt__card-avatar team-mgmt__card-avatar--open">AI</div>
+                <div class="team-mgmt__card-name">Вакансия</div>
+                <div class="team-mgmt__card-role">AI Lead</div>
+                <p class="team-mgmt__card-desc">Рекомендательные системы, прогноз спроса, антифрод. CatBoost, RuBERT, TFT.</p>
+            </div>
+
+            <div class="team-mgmt__card team-mgmt__card--open">
+                <div class="team-mgmt__card-avatar team-mgmt__card-avatar--open">LAW</div>
+                <div class="team-mgmt__card-name">Вакансия</div>
+                <div class="team-mgmt__card-role">Главный юрист</div>
+                <p class="team-mgmt__card-desc">Корпоративное право, GR, поправки в НК РФ, патентное право.</p>
+            </div>
+
+            <div class="team-mgmt__card team-mgmt__card--open">
+                <div class="team-mgmt__card-avatar team-mgmt__card-avatar--open">LEAD</div>
+                <div class="team-mgmt__card-name">Вакансия</div>
+                <div class="team-mgmt__card-role">Lead Developer</div>
+                <p class="team-mgmt__card-desc">Управление командой разработки. Java 25, Quarkus, микросервисная архитектура.</p>
+            </div>
+
+        </div>
+
+        <div class="team-mgmt__funding">
+            <h3>При наличии финансирования</h3>
+            <p>К команде готовы оперативно подключиться необходимые специалисты. План найма на 3 волны (до 57 человек к июлю 2027) уже проработан. Каждый ключевой сотрудник имеет резерв из 2–3 кандидатов. Опционы (5% УК, вестинг 2+3 года), sign-on бонусы (1–3 оклада), партнёрства с вузами — мы знаем, как привлекать лучших.</p>
         </div>
     </div>
 </section>
@@ -875,7 +1257,7 @@
             </a>
             <a href="documents.html" class="doc-card" aria-label="Все документы">
                 <div class="doc-card__type">ВСЕ</div>
-                <h3 class="doc-card__title">Все документы →</h3>
+                <h3 class="doc-card__title">Все документы &rarr;</h3>
                 <p class="doc-card__desc">Полный каталог: 365+ документов в HTML и PDF.</p>
                 <span class="doc-card__audience">Для глубокого изучения</span>
             </a>
@@ -883,7 +1265,7 @@
     </div>
 </section>
 
-<!-- ====== FOOTER CTA (4 variants) ====== -->
+<!-- ====== FOOTER CTA ====== -->
 <section class="footer-cta" id="footer-cta">
     <div class="container">
         <div class="dual-view investor-view" data-view="investor">
@@ -892,7 +1274,7 @@
                     <h2 class="footer-cta__title">Инвестируйте в платформу,<br>которая уже работает</h2>
                     <p class="footer-cta__desc">LTV/CAC 21.2×, IRR 32%, NPV 4.5 млрд руб. 20 сервисов в прототипе. Готовый регуляторный каркас.</p>
                 </div>
-                <a href="mailto:contact@opora.digital?subject=Data%20Room%20Request" class="btn btn--lg">Запросить Data Room</a>
+                <a href="mailto:alexander.narbayev@yandex.ru?subject=Опора%20—%20Data%20Room%20Request" class="btn btn--lg">Запросить Data Room</a>
             </div>
         </div>
         <div class="dual-view gr-view" data-view="government" hidden>
@@ -901,7 +1283,7 @@
                     <h2 class="footer-cta__title">Рост МСП — без прямых<br>бюджетных вливаний</h2>
                     <p class="footer-cta__desc">Бюджетный мультипликатор 1.7×. Интеграция с ЕСИА, ГИСП, ФНС. 200 000 новых рабочих мест к 2031.</p>
                 </div>
-                <a href="mailto:contact@opora.digital?subject=Пакет%20для%20МВР" class="btn btn--lg">Запросить материалы для МВР</a>
+                <a href="mailto:alexander.narbayev@yandex.ru?subject=Опора%20—%20Пакет%20для%20МВР" class="btn btn--lg">Запросить материалы для МВР</a>
             </div>
         </div>
         <div class="dual-view biz-view" data-view="business" hidden>
@@ -940,16 +1322,20 @@
                 <div class="contact__channels">
                     <p class="contact__channels-title">Каналы связи</p>
                     <div class="contact__channel-item">
+                        <span class="contact__channel-name">Телефон</span>
+                        <a href="tel:+79994523398" class="contact__channel-value">+7 999 452-33-98</a>
+                    </div>
+                    <div class="contact__channel-item">
                         <span class="contact__channel-name">Email</span>
-                        <a href="mailto:contact@opora.digital" class="contact__channel-value">contact@opora.digital</a>
+                        <a href="mailto:alexander.narbayev@yandex.ru" class="contact__channel-value">alexander.narbayev@yandex.ru</a>
                     </div>
                     <div class="contact__channel-item">
-                        <span class="contact__channel-name">GitHub</span>
-                        <a href="https://github.com/alexandr-narbaev/opora" target="_blank" rel="noopener noreferrer">github.com/alexandr-narbaev/opora</a>
+                        <span class="contact__channel-name">VK</span>
+                        <a href="https://vk.com/alexander.narbaev" target="_blank" rel="noopener noreferrer" class="contact__channel-value">vk.com/alexander.narbaev</a>
                     </div>
                     <div class="contact__channel-item">
-                        <span class="contact__channel-name">GitVerse</span>
-                        <a href="https://gitverse.ru/alexandr-narbaev/opora" target="_blank" rel="noopener noreferrer">gitverse.ru/alexandr-narbaev/opora</a>
+                        <span class="contact__channel-name">MAX</span>
+                        <a href="https://max.ru/alexander.narbaev" target="_blank" rel="noopener noreferrer" class="contact__channel-value">max.ru/alexander.narbaev</a>
                     </div>
                     <div class="contact__channel-item">
                         <span class="contact__channel-name">Ответ</span>
@@ -1015,14 +1401,6 @@
                 <span class="nav__logo-icon">&#9670;</span>
                 <span class="nav__logo-text">ОПОРА</span>
                 <p class="footer__tagline">Покупайте своё. Продавайте своё.</p>
-                <div class="footer__social">
-                    <a href="https://github.com/alexandr-narbaev/opora" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                    </a>
-                    <a href="https://gitverse.ru/alexandr-narbaev/opora" class="footer__social-link" target="_blank" rel="noopener noreferrer" aria-label="GitVerse">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0L1.608 6v12L12 24l10.392-6V6L12 0zm-1.073 1.445h.001a10.727 10.727 0 012.146 0l-.001.001-2.146-.001zm-4.55 2.489l4.55 2.627v5.254l-4.55 2.627-4.55-2.627V6.561l4.55-2.627zm11.246 0l4.55 2.627v5.254l-4.55 2.627V6.561l-.001-.001 4.551-2.626zM12 6.274l4.55 2.627v5.254L12 16.782l-4.55-2.627V8.901L12 6.274z"/></svg>
-                    </a>
-                </div>
             </div>
             <div class="footer__links">
                 <div class="footer__col">
@@ -1058,9 +1436,9 @@
                     <ul>
                         <li>АО «НП «Опора»</li>
                         <li>Фаза 0: Предзапуск</li>
+                        <li><a href="tel:+79994523398">+7 999 452-33-98</a></li>
+                        <li><a href="mailto:alexander.narbayev@yandex.ru">alexander.narbayev@yandex.ru</a></li>
                         <li><a href="#contact">Обратная связь</a></li>
-                        <li><a href="https://github.com/alexandr-narbaev/opora" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-                        <li><a href="https://gitverse.ru/alexandr-narbaev/opora" target="_blank" rel="noopener noreferrer">GitVerse</a></li>
                     </ul>
                 </div>
             </div>
