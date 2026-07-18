@@ -6,11 +6,10 @@
 (function () {
     'use strict';
 
-    /* ---- Dual Track Toggle (Инвесторам | Государству) ---- */
     var trackToggle = document.getElementById('trackToggle');
-    var dualViews = document.querySelectorAll('.dual-view');
     var currentTrack = 'investor';
 
+    /* ---- Quad Track Toggle ---- */
     if (trackToggle) {
         trackToggle.addEventListener('click', function (e) {
             var btn = e.target.closest('.nav__track-btn');
@@ -19,7 +18,6 @@
             var track = btn.dataset.track;
             if (track === currentTrack) return;
 
-            // Update buttons
             trackToggle.querySelectorAll('.nav__track-btn').forEach(function (b) {
                 b.classList.remove('nav__track-btn--active');
                 b.setAttribute('aria-checked', 'false');
@@ -27,11 +25,9 @@
             btn.classList.add('nav__track-btn--active');
             btn.setAttribute('aria-checked', 'true');
 
-            // Fade out current views
             var outViews = document.querySelectorAll('.dual-view[data-view="' + currentTrack + '"]');
             var inViews = document.querySelectorAll('.dual-view[data-view="' + track + '"]');
 
-            // Show new views and hide old views
             inViews.forEach(function (v) {
                 v.hidden = false;
                 v.style.opacity = '0';
@@ -58,7 +54,6 @@
 
     /* ---- Navigation: scroll shadow ---- */
     var nav = document.getElementById('nav');
-
     function onScroll() {
         if (window.scrollY > 10) {
             nav.classList.add('nav--scrolled');
@@ -66,7 +61,6 @@
             nav.classList.remove('nav--scrolled');
         }
     }
-
     window.addEventListener('scroll', onScroll, { passive: true });
 
     /* ---- Mobile menu toggle ---- */
@@ -80,7 +74,6 @@
             toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         });
 
-        // Close on link click
         links.querySelectorAll('a').forEach(function (a) {
             a.addEventListener('click', function () {
                 links.classList.remove('nav__links--open');
@@ -98,7 +91,7 @@
             var target = document.querySelector(href);
             if (target) {
                 e.preventDefault();
-                var offset = 72; // nav height
+                var offset = 72;
                 var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
                 window.scrollTo({ top: top, behavior: 'smooth' });
             }
@@ -115,19 +108,16 @@
         var duration = 1800;
         var startTime = null;
 
-        // Reset to 0 immediately before animation starts
         el.textContent = '0' + suffix;
 
         function step(timestamp) {
             if (!startTime) startTime = timestamp;
             var progress = Math.min((timestamp - startTime) / duration, 1);
-            // Ease out cubic
             var eased = 1 - Math.pow(1 - progress, 3);
             var current = target * eased;
 
             if (isDecimal) {
                 var formatted = current.toFixed(2);
-                // Strip trailing zeros: 4.50 → 4.5, 15.00 → 15
                 formatted = parseFloat(formatted).toString().replace('.', ',');
                 el.textContent = formatted + suffix;
             } else {
@@ -151,17 +141,8 @@
         requestAnimationFrame(step);
     }
 
-    function animateAllCounters() {
-        document.querySelectorAll('.counter').forEach(function (el) {
-            if (!el.dataset.animated) {
-                animateCounter(el);
-            }
-        });
-    }
-
-    /* ---- Intersection Observer: animate on scroll ---- */
+    /* ---- Intersection Observer ---- */
     if ('IntersectionObserver' in window) {
-        // Counter observer — triggers when any counter enters viewport
         var counterObserver = new IntersectionObserver(
             function (entries) {
                 entries.forEach(function (entry) {
@@ -178,20 +159,16 @@
             { threshold: 0.3 }
         );
 
-        // Observe hero stats
         var heroStats = document.querySelector('.hero__stats');
         if (heroStats) counterObserver.observe(heroStats);
 
-        // Observe metrics section
-        var metricsSection = document.querySelector('.metrics');
+        var metricsSection = document.querySelector('.economics');
         if (metricsSection) counterObserver.observe(metricsSection);
 
-        // Also observe individual counters in metrics
         document.querySelectorAll('.metric-card .counter').forEach(function (c) {
             counterObserver.observe(c);
         });
 
-        // Fade-in observer for cards
         var fadeObserver = new IntersectionObserver(
             function (entries) {
                 entries.forEach(function (entry) {
@@ -205,9 +182,8 @@
             { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
         );
 
-        // Apply to all card elements
         var cards = document.querySelectorAll(
-            '.problem-card, .module-card, .metric-card, .tech-card, .doc-card, .doc-item, .roadmap__content, .testimonial-card, .risk-card, .faq-item, .team-wave, .team-benefit, .partners-logo-item'
+            '.problem-card, .module-card, .metric-card, .tech-card, .doc-card, .dual-card, .roadmap__content, .risk-card, .faq-item'
         );
         cards.forEach(function (card, i) {
             card.style.opacity = '0';
@@ -316,7 +292,7 @@
 
     window.addEventListener('scroll', highlightNav, { passive: true });
 
-    /* ---- Keyboard accessibility: close menu on Escape ---- */
+    /* ---- Keyboard: close menu on Escape ---- */
     document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape' && links && links.classList.contains('nav__links--open')) {
             links.classList.remove('nav__links--open');
@@ -326,7 +302,7 @@
         }
     });
 
-    /* ---- Prototype browser mockup: subtle animation ---- */
+    /* ---- Prototype mockup accent colors ---- */
     var mockCards = document.querySelectorAll('.prototype__mock-card');
     if (mockCards.length > 0) {
         var cardColors = ['#2EC4B6', '#4CAF76', '#233370'];

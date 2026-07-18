@@ -487,11 +487,18 @@ img { max-width: 100%; display: block; }
     color: var(--text-secondary);
 }
 
-/* --- Solution / Modules --- */
+/* --- Solution --- */
 .solution {
     padding: 100px 0;
 }
 
+/* --- Benefits --- */
+.benefits {
+    padding: 100px 0;
+    background: var(--gray-light);
+}
+
+/* --- Services Catalog --- */
 .services-catalog {
     padding: 100px 0;
 }
@@ -1962,7 +1969,7 @@ img { max-width: 100%; display: block; }
 }
 
 /* ==========================================================================
-   Dual-Track System (Investor / GR)
+   Quad-Track System (Инвестор / Государство / Бизнес / Гражданин)
    ========================================================================== */
 
 /* Track toggle in nav */
@@ -1978,11 +1985,11 @@ img { max-width: 100%; display: block; }
 }
 
 .nav__track-btn {
-    padding: 6px 18px;
+    padding: 6px 14px;
     border: none;
     border-radius: 6px;
     font-family: var(--font);
-    font-size: 0.78rem;
+    font-size: 0.76rem;
     font-weight: 600;
     cursor: pointer;
     background: transparent;
@@ -2054,17 +2061,19 @@ img { max-width: 100%; display: block; }
 }
 
 .dual-card__num {
-    width: 44px;
-    height: 44px;
+    min-width: 48px;
+    height: 48px;
     border-radius: 12px;
     background: linear-gradient(135deg, var(--blue), var(--blue-light));
     color: var(--white);
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 800;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 16px;
+    padding: 0 10px;
+    white-space: nowrap;
 }
 
 .dual-card__title {
@@ -2370,7 +2379,15 @@ img { max-width: 100%; display: block; }
     }
 
     .nav__track-btn {
-        padding: 6px 14px;
-        font-size: 0.72rem;
+        padding: 5px 10px;
+        font-size: 0.68rem;
+    }
+
+    .nav__container {
+        flex-wrap: wrap;
+        height: auto;
+        min-height: 64px;
+        padding-top: 8px;
+        padding-bottom: 8px;
     }
 }
