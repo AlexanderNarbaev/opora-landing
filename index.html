@@ -30,7 +30,7 @@
     <meta name="twitter:image:alt" content="Опора — покупайте своё, продавайте своё">
 
     <title>Опора — покупайте своё, продавайте своё</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23233370'/><text x='16' y='22' font-size='18' font-family='sans-serif' font-weight='800' fill='%232EC4B6' text-anchor='middle'>О</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -86,7 +86,7 @@
 <nav class="nav" id="nav">
     <div class="nav__container">
         <a href="#hero" class="nav__logo">
-            <span class="nav__logo-icon">&#9670;</span>
+            <img src="assets/logo.svg" alt="Опора" class="nav__logo-img" width="32" height="32">
             <span class="nav__logo-text">ОПОРА</span>
         </a>
         <button class="nav__toggle" id="navToggle" aria-label="Меню" aria-expanded="false" aria-controls="navLinks">
@@ -1226,49 +1226,73 @@
         </div>
         <div class="docs__grid">
             <a href="pdfs/one-pager.html" class="doc-card" aria-label="One-Pager">
-                <div class="doc-card__type" style="background: var(--teal);">HTML</div>
+                <div class="doc-card__badges">
+                    <span class="doc-card__type" style="background: var(--teal);">HTML</span>
+                    <a href="pdfs/pdf/one-pager.pdf" class="doc-card__type" style="background: var(--orange);" download>PDF</a>
+                </div>
                 <h3 class="doc-card__title">One-Pager</h3>
                 <p class="doc-card__desc">Одна страница. Вся суть. Миссия, проблема, решение, метрики, контакты.</p>
                 <span class="doc-card__audience">Для всех</span>
             </a>
             <a href="pdfs/investor-memo.html" class="doc-card" aria-label="Инвестмеморандум">
-                <div class="doc-card__type" style="background: var(--orange);">HTML</div>
+                <div class="doc-card__badges">
+                    <span class="doc-card__type" style="background: var(--orange);">HTML</span>
+                    <a href="pdfs/pdf/investor-memo.pdf" class="doc-card__type" style="background: var(--orange);" download>PDF</a>
+                </div>
                 <h3 class="doc-card__title">Инвестиционный меморандум</h3>
                 <p class="doc-card__desc">Финмодель v4.0, 8 сценариев A–H, структура сделки, анализ рынка.</p>
                 <span class="doc-card__audience">Для инвесторов</span>
             </a>
             <a href="pdfs/technical-overview.html" class="doc-card" aria-label="Технический обзор">
-                <div class="doc-card__type" style="background: var(--blue);">HTML</div>
+                <div class="doc-card__badges">
+                    <span class="doc-card__type" style="background: var(--blue);">HTML</span>
+                    <a href="pdfs/pdf/technical-overview.pdf" class="doc-card__type" style="background: var(--orange);" download>PDF</a>
+                </div>
                 <h3 class="doc-card__title">Технический обзор</h3>
                 <p class="doc-card__desc">Архитектура, стек технологий, 20 сервисов, безопасность класса К2.</p>
                 <span class="doc-card__audience">Для CTO и разработчиков</span>
             </a>
             <a href="pdfs/modules-guide.html" class="doc-card" aria-label="Руководство по модулям">
-                <div class="doc-card__type" style="background: var(--green);">HTML</div>
+                <div class="doc-card__badges">
+                    <span class="doc-card__type" style="background: var(--green);">HTML</span>
+                    <a href="pdfs/pdf/modules-guide.pdf" class="doc-card__type" style="background: var(--orange);" download>PDF</a>
+                </div>
                 <h3 class="doc-card__title">Руководство по модулям</h3>
                 <p class="doc-card__desc">Все 20 сервисов: что делают, как взаимодействуют, статус.</p>
                 <span class="doc-card__audience">Для архитекторов и интеграторов</span>
             </a>
             <a href="pdfs/concept-mvr.html" class="doc-card" aria-label="Концепция для МВР">
-                <div class="doc-card__type" style="background: var(--blue);">HTML</div>
+                <div class="doc-card__badges">
+                    <span class="doc-card__type" style="background: var(--blue);">HTML</span>
+                    <a href="pdfs/pdf/concept-mvr.pdf" class="doc-card__type" style="background: var(--orange);" download>PDF</a>
+                </div>
                 <h3 class="doc-card__title">Концепция для МВР</h3>
                 <p class="doc-card__desc">Бюджетный мультипликатор 1.7×, интеграции с госсистемами, дорожная карта.</p>
                 <span class="doc-card__audience">Для государства</span>
             </a>
             <a href="pdfs/concept.html" class="doc-card" aria-label="Концепция проекта">
-                <div class="doc-card__type" style="background: var(--navy);">HTML</div>
+                <div class="doc-card__badges">
+                    <span class="doc-card__type" style="background: var(--navy);">HTML</span>
+                    <a href="pdfs/pdf/concept.pdf" class="doc-card__type" style="background: var(--orange);" download>PDF</a>
+                </div>
                 <h3 class="doc-card__title">Концепция проекта</h3>
                 <p class="doc-card__desc">Видение, миссия, архитектура из 20 сервисов, принципы, дорожная карта.</p>
                 <span class="doc-card__audience">Для всех</span>
             </a>
             <a href="pdfs/financial-model.html" class="doc-card" aria-label="Финансовая модель">
-                <div class="doc-card__type" style="background: var(--orange);">HTML</div>
+                <div class="doc-card__badges">
+                    <span class="doc-card__type" style="background: var(--orange);">HTML</span>
+                    <a href="pdfs/pdf/financial-model.pdf" class="doc-card__type" style="background: var(--orange);" download>PDF</a>
+                </div>
                 <h3 class="doc-card__title">Финансовая модель</h3>
                 <p class="doc-card__desc">LTV/CAC 21.2×, IRR 32%/60%+, NPV 4.5/15.0, 8 сценариев A–H, юнит-экономика.</p>
                 <span class="doc-card__audience">Для инвесторов</span>
             </a>
             <a href="pdfs/legal-package.html" class="doc-card" aria-label="Юридический пакет">
-                <div class="doc-card__type" style="background: var(--blue);">HTML</div>
+                <div class="doc-card__badges">
+                    <span class="doc-card__type" style="background: var(--blue);">HTML</span>
+                    <a href="pdfs/pdf/legal-package.pdf" class="doc-card__type" style="background: var(--orange);" download>PDF</a>
+                </div>
                 <h3 class="doc-card__title">Юридический пакет</h3>
                 <p class="doc-card__desc">Оргформа АО, поправки в ст. 149 НК РФ, ЭПР, К2, интеграции с госсистемами.</p>
                 <span class="doc-card__audience">Для юристов и GR</span>
@@ -1416,7 +1440,7 @@
     <div class="container">
         <div class="footer__inner">
             <div class="footer__brand">
-                <span class="nav__logo-icon">&#9670;</span>
+                <img src="assets/logo.svg" alt="Опора" class="nav__logo-img" width="32" height="32">
                 <span class="nav__logo-text">ОПОРА</span>
                 <p class="footer__tagline">Покупайте своё. Продавайте своё.</p>
             </div>
