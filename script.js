@@ -126,7 +126,10 @@
             var current = target * eased;
 
             if (isDecimal) {
-                el.textContent = current.toFixed(2).replace('.', ',') + suffix;
+                var formatted = current.toFixed(2);
+                // Strip trailing zeros: 4.50 → 4.5, 15.00 → 15
+                formatted = parseFloat(formatted).toString().replace('.', ',');
+                el.textContent = formatted + suffix;
             } else {
                 el.textContent = Math.round(current) + suffix;
             }
@@ -135,7 +138,9 @@
                 requestAnimationFrame(step);
             } else {
                 if (isDecimal) {
-                    el.textContent = target.toFixed(2).replace('.', ',') + suffix;
+                    var formattedFinal = target.toFixed(2);
+                    formattedFinal = parseFloat(formattedFinal).toString().replace('.', ',');
+                    el.textContent = formattedFinal + suffix;
                 } else {
                     el.textContent = target + suffix;
                 }
