@@ -66,6 +66,18 @@
     }
     window.addEventListener('scroll', onScroll, { passive: true });
 
+    /* ---- Video autoplay fallback ---- */
+    var video = document.querySelector('video[autoplay]');
+    if (video) {
+        video.play().catch(function () {
+            // Autoplay blocked — add click-to-play
+            video.addEventListener('click', function () {
+                video.play();
+            });
+            video.style.cursor = 'pointer';
+        });
+    }
+
     /* ---- Mobile menu toggle ---- */
     var toggle = document.getElementById('navToggle');
     var links = document.getElementById('navLinks');

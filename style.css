@@ -1729,6 +1729,26 @@ img { max-width: 100%; display: block; }
     align-self: flex-start;
 }
 
+.doc-card__badges {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.doc-card__badges .doc-card__type {
+    margin-bottom: 0;
+}
+
+.doc-card__badges a.doc-card__type {
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.doc-card__badges a.doc-card__type:hover {
+    opacity: 0.8;
+}
+
 .doc-card__title {
     font-size: 1.05rem;
     font-weight: 700;
