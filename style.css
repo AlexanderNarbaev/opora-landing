@@ -1955,3 +1955,406 @@ img { max-width: 100%; display: block; }
         font-size: 0.75rem;
     }
 }
+
+/* ==========================================================================
+   Dual-Track System (Investor / GR)
+   ========================================================================== */
+
+/* Track toggle in nav */
+.nav__track-toggle {
+    display: flex;
+    gap: 0;
+    background: var(--gray-light);
+    border-radius: var(--radius-sm);
+    padding: 3px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav__track-btn {
+    padding: 6px 18px;
+    border: none;
+    border-radius: 6px;
+    font-family: var(--font);
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    background: transparent;
+    color: var(--text-secondary);
+    transition: all var(--transition);
+    white-space: nowrap;
+    outline: none;
+}
+
+.nav__track-btn:focus-visible {
+    outline: 2px solid var(--teal);
+    outline-offset: 2px;
+}
+
+.nav__track-btn--active {
+    background: var(--white);
+    color: var(--blue);
+    box-shadow: var(--shadow-sm);
+}
+
+.nav__track-btn:hover:not(.nav__track-btn--active) {
+    color: var(--blue);
+}
+
+/* Dual view visibility */
+.dual-view {
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.dual-view[hidden] {
+    display: none !important;
+}
+
+/* ==========================================================================
+   Problem/Solution section
+   ========================================================================== */
+
+.problem-solution {
+    padding: 100px 0;
+    background: var(--gray-light);
+}
+
+.dual-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.dual-cards--3col {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.dual-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 32px 28px;
+    border: 1px solid var(--gray-mid);
+    transition: all var(--transition);
+}
+
+.dual-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--teal);
+}
+
+.dual-card__num {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--blue), var(--blue-light));
+    color: var(--white);
+    font-size: 1.1rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.dual-card__title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 10px;
+}
+
+.dual-card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   Regulatory section
+   ========================================================================== */
+
+.regulatory {
+    padding: 100px 0;
+}
+
+/* ==========================================================================
+   Economics section
+   ========================================================================== */
+
+.economics {
+    padding: 100px 0;
+    background: linear-gradient(135deg, var(--blue-dark), var(--blue));
+}
+
+/* ==========================================================================
+   Architecture section
+   ========================================================================== */
+
+.architecture {
+    padding: 100px 0;
+}
+
+/* ==========================================================================
+   Team / Management section
+   ========================================================================== */
+
+.team-mgmt {
+    padding: 100px 0;
+    background: var(--gray-light);
+}
+
+.team-mgmt__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.team-mgmt__card {
+    background: var(--white);
+    border: 1px solid var(--gray-mid);
+    border-radius: var(--radius);
+    padding: 32px 28px;
+    transition: all var(--transition);
+}
+
+.team-mgmt__card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--teal);
+}
+
+.team-mgmt__card--lead {
+    border-color: var(--teal);
+    background: linear-gradient(135deg, rgba(46, 196, 182, 0.04), rgba(76, 175, 118, 0.04));
+}
+
+.team-mgmt__card-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--blue), var(--blue-light));
+    color: var(--white);
+    font-size: 1.1rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+}
+
+.team-mgmt__card-avatar--open {
+    background: linear-gradient(135deg, var(--teal), var(--green));
+}
+
+.team-mgmt__card-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 4px;
+}
+
+.team-mgmt__card-role {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--teal);
+    margin-bottom: 10px;
+}
+
+.team-mgmt__card-desc {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.team-mgmt__funding {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 32px;
+    border: 1px solid rgba(46, 196, 182, 0.3);
+    background: linear-gradient(135deg, rgba(46, 196, 182, 0.06), rgba(76, 175, 118, 0.04));
+}
+
+.team-mgmt__funding h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 8px;
+}
+
+.team-mgmt__funding p {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* GR: Org structure */
+.team-mgmt__org-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--blue);
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.team-mgmt__org-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.team-mgmt__org-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+    border: 1px solid var(--gray-mid);
+    transition: all var(--transition);
+}
+
+.team-mgmt__org-card:hover {
+    border-color: var(--teal);
+    box-shadow: var(--shadow-sm);
+}
+
+.team-mgmt__org-card-header {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--blue);
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+    border-bottom: 2px solid var(--teal);
+}
+
+.team-mgmt__org-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.team-mgmt__org-card ul li {
+    position: relative;
+    padding-left: 16px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.team-mgmt__org-card ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--teal);
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   Footer CTA (dual-view)
+   ========================================================================== */
+
+.footer-cta {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--blue-dark), var(--blue));
+}
+
+.footer-cta__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+}
+
+.footer-cta__title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.25;
+    margin-bottom: 12px;
+}
+
+.footer-cta__desc {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    max-width: 520px;
+}
+
+.footer-cta .btn--lg {
+    padding: 18px 36px;
+    font-size: 1rem;
+    white-space: nowrap;
+    background: var(--teal);
+    color: var(--blue-dark);
+    border: none;
+}
+
+.footer-cta .btn--lg:hover {
+    background: var(--teal-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(46, 196, 182, 0.3);
+}
+
+/* ==========================================================================
+   Responsive: Dual Track
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+    .dual-cards,
+    .dual-cards--3col {
+        grid-template-columns: 1fr;
+    }
+
+    .team-mgmt__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-mgmt__org-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-cta__inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 32px;
+    }
+
+    .footer-cta__desc {
+        max-width: none;
+    }
+
+    .nav__track-toggle {
+        position: static;
+        transform: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .dual-cards,
+    .dual-cards--3col {
+        grid-template-columns: 1fr;
+    }
+
+    .team-mgmt__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .team-mgmt__org-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-cta__inner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav__track-toggle {
+        position: static;
+        transform: none;
+    }
+
+    .nav__track-btn {
+        padding: 6px 14px;
+        font-size: 0.72rem;
+    }
+}

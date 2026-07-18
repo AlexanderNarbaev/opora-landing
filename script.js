@@ -6,6 +6,56 @@
 (function () {
     'use strict';
 
+    /* ---- Dual Track Toggle (Инвесторам | Государству) ---- */
+    var trackToggle = document.getElementById('trackToggle');
+    var dualViews = document.querySelectorAll('.dual-view');
+    var currentTrack = 'investor';
+
+    if (trackToggle) {
+        trackToggle.addEventListener('click', function (e) {
+            var btn = e.target.closest('.nav__track-btn');
+            if (!btn) return;
+
+            var track = btn.dataset.track;
+            if (track === currentTrack) return;
+
+            // Update buttons
+            trackToggle.querySelectorAll('.nav__track-btn').forEach(function (b) {
+                b.classList.remove('nav__track-btn--active');
+                b.setAttribute('aria-checked', 'false');
+            });
+            btn.classList.add('nav__track-btn--active');
+            btn.setAttribute('aria-checked', 'true');
+
+            // Fade out current views
+            var outViews = document.querySelectorAll('.dual-view[data-view="' + currentTrack + '"]');
+            var inViews = document.querySelectorAll('.dual-view[data-view="' + track + '"]');
+
+            // Show new views and hide old views
+            inViews.forEach(function (v) {
+                v.hidden = false;
+                v.style.opacity = '0';
+                v.style.transform = 'translateY(8px)';
+                requestAnimationFrame(function () {
+                    v.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+                    v.style.opacity = '1';
+                    v.style.transform = 'translateY(0)';
+                });
+            });
+
+            outViews.forEach(function (v) {
+                v.style.opacity = '0';
+                v.style.transform = 'translateY(8px)';
+                v.addEventListener('transitionend', function handler() {
+                    v.hidden = true;
+                    v.removeEventListener('transitionend', handler);
+                });
+            });
+
+            currentTrack = track;
+        });
+    }
+
     /* ---- Navigation: scroll shadow ---- */
     var nav = document.getElementById('nav');
 

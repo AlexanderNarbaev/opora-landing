@@ -116,18 +116,21 @@
             <span class="nav__logo-icon">&#9670;</span>
             <span class="nav__logo-text">ОПОРА</span>
         </a>
+        <div class="nav__track-toggle" id="trackToggle" role="radiogroup" aria-label="Выбор трека">
+            <button class="nav__track-btn nav__track-btn--active" data-track="investor" role="radio" aria-checked="true">Инвесторам</button>
+            <button class="nav__track-btn" data-track="gr" role="radio" aria-checked="false">Государству</button>
+        </div>
         <button class="nav__toggle" id="navToggle" aria-label="Меню" aria-expanded="false" aria-controls="navLinks">
             <span></span><span></span><span></span>
         </button>
         <ul class="nav__links" id="navLinks">
-            <li><a href="#problems">Проблема</a></li>
-            <li><a href="#solution">Решение</a></li>
-            <li><a href="#prototype">Прототип</a></li>
-            <li><a href="#metrics">Метрики</a></li>
-            <li><a href="#team">Команда</a></li>
-            <li><a href="#tech">Технологии</a></li>
+            <li><a href="#hero">О проекте</a></li>
+            <li><a href="#problem-solution">Проблема</a></li>
+            <li><a href="#regulatory">Регуляторика</a></li>
+            <li><a href="#economics">Экономика</a></li>
+            <li><a href="#architecture">Технологии</a></li>
+            <li><a href="#team-mgmt">Команда</a></li>
             <li><a href="#roadmap">Дорожная карта</a></li>
-            <li><a href="#risks">Риски</a></li>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#docs">Документы</a></li>
             <li><a href="#contact" class="nav__cta">Связаться</a></li>
@@ -138,28 +141,49 @@
 <!-- Main Content -->
 <main id="main-content" tabindex="-1">
 
-<!-- Hero -->
+<!-- ====== HERO ====== -->
 <section class="hero" id="hero">
     <div class="hero__bg">
         <div class="hero__grid"></div>
     </div>
     <div class="hero__container">
         <div class="hero__badge">Национальный проект</div>
-        <h1 class="hero__title">
-            Опора — национальная<br>
-            цифровая экосистема<br>
-            <span class="hero__title-accent">для МСП</span>
-        </h1>
-        <p class="hero__subtitle">
-            Единая платформа, которая решает три системные проблемы МСП: невидимость брендов, кризис доверия
-            к «сделано в России» и отсутствие B2B-кооперации. 20 интегрированных сервисов —
-            от верификации и кешбэка до 7% через блокчейн-прослеживаемость и выход на рынки БРИКС.
-            Бюджетный мультипликатор 1,7×: каждый рубль господдержки возвращает 1,7 рубля в экономику.
-        </p>
-        <div class="hero__actions">
-            <a href="#solution" class="btn btn--primary" aria-label="Перейти к описанию решения">Узнать больше</a>
-            <a href="#docs" class="btn btn--outline" aria-label="Перейти к скачиванию документов">Скачать документы</a>
+
+        <!-- Investor View -->
+        <div class="dual-view investor-view" data-view="investor">
+            <h1 class="hero__title">
+                «Опора» — национальная<br>
+                B2B/B2C инфраструктура<br>
+                <span class="hero__title-accent">для монетизации доверия</span><br>
+                и производственной кооперации
+            </h1>
+            <p class="hero__subtitle">
+                LTV/CAC — 21.2x. Готовый регуляторный каркас. 20 микросервисов в рабочем прототипе. 0.8% комиссия платформы.
+            </p>
+            <div class="hero__actions">
+                <a href="pdfs/investor-memo.html" class="btn btn--primary">Скачать инвест-меморандум</a>
+                <a href="#economics" class="btn btn--outline">Финансовая модель</a>
+            </div>
         </div>
+
+        <!-- GR View -->
+        <div class="dual-view gr-view" data-view="gr" hidden>
+            <h1 class="hero__title">
+                «Опора» — федеральная<br>
+                цифровая экосистема<br>
+                <span class="hero__title-accent">для стимулирования спроса</span><br>
+                на отечественные бренды и кооперации МСП
+            </h1>
+            <p class="hero__subtitle">
+                Интеграция с ЕСИА, ГИСП, ФНС и платформой цифрового рубля. Бюджетный мультипликатор 1:3.
+            </p>
+            <div class="hero__actions">
+                <a href="pdfs/concept-mvr.html" class="btn btn--primary">Посмотреть концепцию для МВР</a>
+                <a href="#regulatory" class="btn btn--outline">Регуляторная готовность</a>
+            </div>
+        </div>
+
+        <!-- Shared stats -->
         <div class="hero__stats">
             <div class="hero__stat">
                 <span class="hero__stat-number counter" data-target="20">20</span>
@@ -177,28 +201,26 @@
     </div>
 </section>
 
-<!-- Problems -->
-<section class="problems" id="problems">
+<!-- ====== PROBLEM / SOLUTION ====== -->
+<section class="problem-solution" id="problem-solution">
     <div class="container">
         <div class="section-header">
-            <span class="section-tag">Проблема</span>
-            <h2 class="section-title">Три системные проблемы рынка МСП</h2>
-            <p class="section-desc">6,3 млн субъектов МСП — это 40% ВВП России. Но 85% из них не имеют доступа к цифровым каналам сбыта. Рынок, который теряет триллионы рублей из-за трёх барьеров.</p>
+            <span class="section-tag">Проблема и решение</span>
+            <h2 class="section-title">Три системные проблемы МСП — одно решение</h2>
+            <p class="section-desc">6,3 млн субъектов МСП — это 40% ВВП России. Но 85% из них не имеют доступа к цифровым каналам сбыта.</p>
         </div>
+
+        <!-- Shared problem cards -->
         <div class="problems__grid">
             <div class="problem-card">
                 <div class="problem-card__icon">
                     <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="22" stroke="#233370" stroke-width="2" stroke-dasharray="4 4"/><path d="M16 32L24 16L32 32" stroke="#233370" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><line x1="19" y1="27" x2="29" y2="27" stroke="#233370" stroke-width="2" stroke-linecap="round"/></svg>
                 </div>
                 <h3 class="problem-card__title">Невидимость малых брендов</h3>
-                <p class="problem-card__text">
-                    Рынок монополизирован крупными федеральными сетями. Малые производители качественной продукции
-                    не имеют доступа к каналам сбыта и маркетинговым инструментам. Их товары остаются невидимыми
-                    для миллионов потенциальных покупателей.
-                </p>
+                <p class="problem-card__text">80% малых брендов невидимы для покупателей. Монополизация каналов сбыта федеральными сетями. Качественная продукция МСП остаётся вне поля зрения потребителей.</p>
                 <div class="problem-card__stat">
-                    <span class="problem-card__stat-num">&lt;5%</span>
-                    <span class="problem-card__stat-text">полки ритейла заняты МСП-брендами</span>
+                    <span class="problem-card__stat-num">80%</span>
+                    <span class="problem-card__stat-text">малых брендов невидимы</span>
                 </div>
             </div>
             <div class="problem-card">
@@ -206,14 +228,10 @@
                     <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="22" stroke="#2EC4B6" stroke-width="2" stroke-dasharray="4 4"/><path d="M24 14V26L30 30" stroke="#2EC4B6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="24" r="3" fill="#2EC4B6"/></svg>
                 </div>
                 <h3 class="problem-card__title">Кризис доверия к «отечественности»</h3>
-                <p class="problem-card__text">
-                    Отсутствует единая система верификации происхождения товаров. Гринвошинг подрывает доверие
-                    потребителей к маркировке «сделано в России». Честные производители страдают от недоверия,
-                    а недобросовестные — процветают.
-                </p>
+                <p class="problem-card__text">Доля отечественных брендов в ритейле — 35%. Отсутствие единой системы верификации порождает гринвошинг и недоверие потребителей.</p>
                 <div class="problem-card__stat">
-                    <span class="problem-card__stat-num">67%</span>
-                    <span class="problem-card__stat-text">потребителей не доверяют маркировке</span>
+                    <span class="problem-card__stat-num">35%</span>
+                    <span class="problem-card__stat-text">доля отечественных брендов</span>
                 </div>
             </div>
             <div class="problem-card">
@@ -221,125 +239,118 @@
                     <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="22" stroke="#4CAF76" stroke-width="2" stroke-dasharray="4 4"/><circle cx="18" cy="20" r="4" stroke="#4CAF76" stroke-width="2"/><circle cx="30" cy="20" r="4" stroke="#4CAF76" stroke-width="2"/><circle cx="24" cy="32" r="4" stroke="#4CAF76" stroke-width="2"/><line x1="21" y1="23" x2="22" y2="29" stroke="#4CAF76" stroke-width="1.5"/><line x1="27" y1="23" x2="26" y2="29" stroke="#4CAF76" stroke-width="1.5"/></svg>
                 </div>
                 <h3 class="problem-card__title">Разобщённость бизнеса</h3>
-                <p class="problem-card__text">
-                    Нет единой платформы для B2B-кооперации. Малые предприятия не могут объединять ресурсы,
-                    совместно закупать сырьё, делиться логистикой. Каждый работает в изоляции, теряя
-                    эффект масштаба.
-                </p>
+                <p class="problem-card__text">Нет единой платформы для B2B-кооперации. МСП не могут объединять ресурсы для закупок и логистики, теряя эффект масштаба.</p>
                 <div class="problem-card__stat">
                     <span class="problem-card__stat-num">85%</span>
-                    <span class="problem-card__stat-text">МСП не имеют цифровых каналов B2B-сбыта</span>
+                    <span class="problem-card__stat-text">МСП без B2B-каналов</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dual-view solution -->
+        <div class="dual-view investor-view" data-view="investor" style="margin-top:48px">
+            <div class="section-header">
+                <h2 class="section-title">AI-матчинг и трёхуровневое грейдирование</h2>
+                <p class="section-desc">80% малых брендов невидимы. AI-матчинг сокращает поиск партнёра до 14 дней. Трёхуровневое грейдирование (Золото/Серебро/Бронза) создаёт прозрачную систему доверия и монетизации.</p>
+            </div>
+            <div class="dual-cards">
+                <div class="dual-card">
+                    <div class="dual-card__num">1</div>
+                    <h3 class="dual-card__title">AI-матчинг партнёров</h3>
+                    <p>Сокращение поиска B2B-партнёра с 6 месяцев до 14 дней. CatBoost + графовые алгоритмы.</p>
+                </div>
+                <div class="dual-card">
+                    <div class="dual-card__num">2</div>
+                    <h3 class="dual-card__title">Грейдирование брендов</h3>
+                    <p>Золото/Серебро/Бронза — прозрачная верификация через ГИСП и «Честный знак».</p>
+                </div>
+                <div class="dual-card">
+                    <div class="dual-card__num">3</div>
+                    <h3 class="dual-card__title">Кешбэк до 7%</h3>
+                    <p>Стимулирование спроса на отечественные товары. Балльная система без НДС (ст. 149 НК РФ).</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="dual-view gr-view" data-view="gr" style="margin-top:48px" hidden>
+            <div class="section-header">
+                <h2 class="section-title">55% отечественных брендов к 2031</h2>
+                <p class="section-desc">Доля отечественных брендов — 35%. Платформа увеличивает до 55% к 2031. Автоматическая верификация через ГИСП и ФНС.</p>
+            </div>
+            <div class="dual-cards">
+                <div class="dual-card">
+                    <div class="dual-card__num">1</div>
+                    <h3 class="dual-card__title">Автоверификация</h3>
+                    <p>Интеграция с ГИСП, «Честный знак» и ФНС. Проверка происхождения товаров в реальном времени.</p>
+                </div>
+                <div class="dual-card">
+                    <div class="dual-card__num">2</div>
+                    <h3 class="dual-card__title">Национальное грейдирование</h3>
+                    <p>Единый стандарт верификации отечественных брендов — от самозанятых до средних предприятий.</p>
+                </div>
+                <div class="dual-card">
+                    <div class="dual-card__num">3</div>
+                    <h3 class="dual-card__title">Бюджетный мультипликатор 1:3</h3>
+                    <p>Каждый рубль государственных средств генерирует 3 рубля экономического эффекта.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Solution -->
-<section class="solution" id="solution">
+<!-- ====== REGULATORY READINESS ====== -->
+<section class="regulatory" id="regulatory">
     <div class="container">
         <div class="section-header">
-            <span class="section-tag">Решение</span>
-            <h2 class="section-title">20 сервисов — три слоя экосистемы</h2>
-            <p class="section-desc">Бизнес-модули для участников, инфраструктурные сервисы для надёжности, AI/ML для интеллекта</p>
+            <span class="section-tag">Регуляторная готовность</span>
+            <h2 class="section-title">Юридический каркас и комплаенс</h2>
         </div>
 
-        <!-- Core Business Modules -->
-        <h3 class="solution__group-title">Бизнес-модули — для брендов, партнёров и потребителей</h3>
-        <div class="solution__grid">
-            <div class="module-card module-card--accent">
-                <div class="module-card__status">P0 MVP</div>
-                <h3 class="module-card__title">Опора.Витрина</h3>
-                <p class="module-card__text">Каталог верифицированных брендов с грейдированием (Золото/Серебро/Бронза), кешбэком до 7% и социальным трекингом. Для: покупатели, бренды.</p>
-            </div>
-            <div class="module-card module-card--accent">
-                <div class="module-card__status">P0 MVP</div>
-                <h3 class="module-card__title">Опора.Кооперация</h3>
-                <p class="module-card__text">AI-подбор партнёров, артельные кластеры, совместные закупки, смарт-контракты. Для: производственные МСП, поставщики.</p>
-            </div>
-            <div class="module-card module-card--accent">
-                <div class="module-card__status">P0 MVP</div>
-                <h3 class="module-card__title">Опора.Креаторы</h3>
-                <p class="module-card__text">Маркетплейс для самозанятых: дизайн, копирайтинг, маркетинг. 0% комиссия. Для: фрилансеры, самозанятые, креативные агентства.</p>
-            </div>
-            <div class="module-card">
-                <h3 class="module-card__title">Опора.Аналитика</h3>
-                <p class="module-card__text">CRM/CDP для брендов, прогноз спроса (Temporal Fusion Transformer), монетизация обезличенных данных, A/B-тестирование. Для: бренды, маркетологи.</p>
-            </div>
-            <div class="module-card">
-                <h3 class="module-card__title">Опора.Право</h3>
-                <p class="module-card__text">Онлайн-арбитраж, патентный маркетплейс, типовые смарт-контракты с NDA, AI-анализ договоров. Для: юристы, предприниматели.</p>
-            </div>
-            <div class="module-card">
-                <h3 class="module-card__title">Опора.Финансы</h3>
-                <p class="module-card__text">Краудфандинг 2.0, токены участия в капитале, интеграция с ЦФА через платформу ЦБ. Для: стартапы, частные инвесторы.</p>
-            </div>
-            <div class="module-card">
-                <h3 class="module-card__title">Опора.Песочница</h3>
-                <p class="module-card__text">Нулевая комиссия для самозанятых, авторегистрация через «Мой налог», обучающие курсы. Для: самозанятые, микробизнес.</p>
-            </div>
-            <div class="module-card">
-                <h3 class="module-card__title">Опора.Цепочки</h3>
-                <p class="module-card__text">B2B-закупки, блокчейн-прослеживаемость (Hyperledger Fabric + КриптоПро), совместная логистика. Для: производители, ритейл.</p>
-            </div>
-            <div class="module-card">
-                <h3 class="module-card__title">Опора.Кадры</h3>
-                <p class="module-card__text">Верификация компетенций через блокчейн, интеграция с вузами, программы переподготовки. Для: HR, соискатели, вузы.</p>
-            </div>
-            <div class="module-card">
-                <h3 class="module-card__title">Опора.Регионы</h3>
-                <p class="module-card__text">Геотаргетинг под специфику моногородов, преференции для удалённых территорий, региональные витрины. Для: администрации, локальные бренды.</p>
-            </div>
-            <div class="module-card">
-                <h3 class="module-card__title">Опора.Экспорт</h3>
-                <p class="module-card__text">Выход на рынки ЕАЭС и БРИКС, регуляторный навигатор, таможенное сопровождение, BRICS Bridge. Для: экспортёры.</p>
-            </div>
-            <div class="module-card">
-                <h3 class="module-card__title">Опора.Лояльность</h3>
-                <p class="module-card__text">Балльная система, кешбэк до 7%, персональные AI-предложения, грейдирование брендов (Золото/Серебро/Бронза). Для: потребители, бренды.</p>
-            </div>
-            <div class="module-card">
-                <h3 class="module-card__title">Опора.Платежи</h3>
-                <p class="module-card__text">Платёжная инфраструктура: СБП, ЦФА, цифровой рубль, маркированные платежи, спецсчёт лояльности. Для: все участники экосистемы.</p>
+        <div class="dual-view investor-view" data-view="investor">
+            <p class="section-desc" style="margin-bottom:40px">De-risked Execution. Поправки в ст. 149 НК РФ, проект Указания ЦБ РФ, Положение о МВР. MVP за 6 месяцев.</p>
+            <div class="dual-cards dual-cards--3col">
+                <div class="dual-card">
+                    <div class="dual-card__num">НК</div>
+                    <h3 class="dual-card__title">Налоговые преференции</h3>
+                    <p>Поправки в ст. 149 НК РФ — освобождение операций с баллами лояльности от НДС.</p>
+                </div>
+                <div class="dual-card">
+                    <div class="dual-card__num">ЦБ</div>
+                    <h3 class="dual-card__title">Финансовый комплаенс</h3>
+                    <p>Проект Указания ЦБ РФ о маркированных платежах и спецсчёте лояльности.</p>
+                </div>
+                <div class="dual-card">
+                    <div class="dual-card__num">ЭПР</div>
+                    <h3 class="dual-card__title">Экспериментальный режим</h3>
+                    <p>Положение о МВР. ЭПР на 2027–2032 годы. MVP за 6 месяцев после старта финансирования.</p>
+                </div>
             </div>
         </div>
 
-        <!-- Infrastructure Services -->
-        <h3 class="solution__group-title">Инфраструктурные сервисы — фундамент платформы</h3>
-        <div class="solution__grid solution__grid--infra">
-            <div class="module-card module-card--infra">
-                <h3 class="module-card__title">Auth Service</h3>
-                <p class="module-card__text">Keycloak + мок ЕСИА. Единая точка аутентификации через госсистемы по OAuth 2.0/OIDC. Класс защиты К2 (ФСТЭК №117).</p>
-            </div>
-            <div class="module-card module-card--infra">
-                <h3 class="module-card__title">API Gateway</h3>
-                <p class="module-card__text">Единый шлюз, BFF-паттерн, rate limiting, распределённая трассировка запросов. Изоляция внутренних сервисов.</p>
-            </div>
-            <div class="module-card module-card--infra">
-                <h3 class="module-card__title">AI Service</h3>
-                <p class="module-card__text">YandexGPT + Kandinsky для контента, CatBoost для рекомендаций, RuBERT для модерации, TFT для прогнозов спроса.</p>
-            </div>
-            <div class="module-card module-card--infra">
-                <h3 class="module-card__title">Mock Service</h3>
-                <p class="module-card__text">8 моков внешних сервисов (ФНС, ОФД, СБП, ЦБ, ГИС, Честный знак, ЕСИА, Мой налог) для полного цикла разработки.</p>
-            </div>
-            <div class="module-card module-card--infra">
-                <h3 class="module-card__title">Admin Service</h3>
-                <p class="module-card__text">Администрирование, мониторинг, управление пользователями, контентом и модерацией.</p>
-            </div>
-            <div class="module-card module-card--infra">
-                <h3 class="module-card__title">BFF Service</h3>
-                <p class="module-card__text">Backend-for-Frontend: агрегация данных, персонализация лент, оптимизация под клиентские устройства.</p>
-            </div>
-            <div class="module-card module-card--infra">
-                <h3 class="module-card__title">LK Service (React SPA)</h3>
-                <p class="module-card__text">Личный кабинет на React 18: 6 ролей, 40+ маршрутов, TypeScript, Vite, компонентная библиотека.</p>
+        <div class="dual-view gr-view" data-view="gr" hidden>
+            <p class="section-desc" style="margin-bottom:40px">Синхронизация с ФЗ-289, ФЗ-248, ФСТЭК К2, 152-ФЗ. Готовые соглашения с Минэком, Минфином, ФНС, Минпромторгом, ЦБ РФ.</p>
+            <div class="dual-cards dual-cards--3col">
+                <div class="dual-card">
+                    <div class="dual-card__num">ФЗ</div>
+                    <h3 class="dual-card__title">Законодательная база</h3>
+                    <p>Синхронизация с ФЗ-289 (таможенное регулирование), ФЗ-248 (госконтроль), 152-ФЗ (персональные данные).</p>
+                </div>
+                <div class="dual-card">
+                    <div class="dual-card__num">К2</div>
+                    <h3 class="dual-card__title">Информационная безопасность</h3>
+                    <p>Класс защиты К2 (ФСТЭК №117). ГОСТ-криптография (КриптоПро CSP 5.0). Обязательный пентест.</p>
+                </div>
+                <div class="dual-card">
+                    <div class="dual-card__num">МВР</div>
+                    <h3 class="dual-card__title">Межведомственная рабочая группа</h3>
+                    <p>Соглашения с Минэкономразвития, Минфином, ФНС, Минпромторгом, ЦБ РФ. Дорожная карта интеграций.</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Prototype -->
+<!-- ====== PROTOTYPE (shared) ====== -->
 <section class="prototype" id="prototype">
     <div class="container">
         <div class="section-header">
@@ -427,307 +438,268 @@
                     <a href="https://github.com/alexandr-narbaev/opora" class="btn btn--primary" target="_blank" rel="noopener" aria-label="Открыть исходный код проекта на GitHub">
                         Исходный код на GitHub
                     </a>
-                    <a href="#tech" class="btn btn--outline" aria-label="Перейти к технологическому стеку">Технологический стек</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Testimonials / Social Proof -->
-<section class="social-proof" id="social-proof">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-tag">Валидация</span>
-            <h2 class="section-title">Подтверждено экспертами СИНВ-2026</h2>
-            <p class="section-desc">Заявка подана, получено 4 экспертизы. Анализ 17 845 идей форума подтверждает спрос.</p>
-        </div>
-        <div class="testimonials__grid">
-            <div class="testimonial-card">
-                <div class="testimonial-card__quote">&laquo;Платформа закрывает три системные проблемы МСП одновременно: видимость, доверие и кооперацию. Это уникальное позиционирование.&raquo;</div>
-                <div class="testimonial-card__meta">
-                    <div class="testimonial-card__avatar">Э</div>
-                    <div>
-                        <div class="testimonial-card__name">Эксперт СИНВ-2026</div>
-                        <div class="testimonial-card__role">Оценка: высокий потенциал</div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-card__quote">&laquo;Финансовая модель жизнеспособна даже в пессимистичном сценарии. Статус национальной инфраструктуры — ключевое конкурентное преимущество.&raquo;</div>
-                <div class="testimonial-card__meta">
-                    <div class="testimonial-card__avatar">Э</div>
-                    <div>
-                        <div class="testimonial-card__name">Эксперт СИНВ-2026</div>
-                        <div class="testimonial-card__role">Финансовая оценка</div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-card__quote">&laquo;319 идей-синергистов из 17 845 — это серьёзная валидация. Партнёры уже ждут платформу.&raquo;</div>
-                <div class="testimonial-card__meta">
-                    <div class="testimonial-card__avatar">Э</div>
-                    <div>
-                        <div class="testimonial-card__name">Эксперт СИНВ-2026</div>
-                        <div class="testimonial-card__role">Анализ партнёрской экосистемы</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="partners-logos" role="group" aria-label="Потенциальные партнёры и интеграции">
-        <p class="partners-logos__title">Потенциальные партнёры и интеграции</p>
-            <div class="partners-logos__grid" role="list">
-                <div class="partners-logo-item" role="listitem">ЕСИА</div>
-                <div class="partners-logo-item" role="listitem">ГИСП</div>
-                <div class="partners-logo-item" role="listitem">Честный знак</div>
-                <div class="partners-logo-item" role="listitem">Мой налог</div>
-                <div class="partners-logo-item" role="listitem">СБП</div>
-                <div class="partners-logo-item" role="listitem">Сколково</div>
-                <div class="partners-logo-item" role="listitem">ВЭБ.РФ</div>
-                <div class="partners-logo-item" role="listitem">Корпорация МСП</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Metrics -->
-<section class="metrics" id="metrics">
+<!-- ====== ECONOMICS / SCALE ====== -->
+<section class="economics" id="economics">
     <div class="container">
         <div class="section-header section-header--light">
-            <span class="section-tag section-tag--light">Экономика</span>
+            <span class="section-tag section-tag--light">Экономика и масштаб</span>
             <h2 class="section-title section-title--light">Ключевые финансовые показатели</h2>
-            <p class="section-desc section-desc--light">Финансовая модель v4.0: 8 сценариев (A–H), ставка дисконтирования 18% (WACC). Даже в пессимистичном сценарии (санкции, регуляторный ступор) проект сохраняет жизнеспособность благодаря статусу национальной инфраструктуры и резервному фонду +30%.</p>
         </div>
-        <div class="metrics__intro">
-            <p>Базовый сценарий: NPV 4,5 млрд ₽, IRR 32%, окупаемость 4,2 года. Оптимистичный: NPV 15 млрд ₽, IRR 60%+. Рынок e-com МСП России — 3,2 трлн руб. (2026, Data Insight). Целевая доля платформы — 3–5%.</p>
+
+        <div class="dual-view investor-view" data-view="investor">
+            <p class="section-desc section-desc--light" style="margin-bottom:40px">LTV/CAC 21.2x, NPV 4.5 млрд, IRR 32%/60%+, окупаемость 4.8 года, комиссия платформы 0.8%.</p>
+            <div class="metrics__grid">
+                <div class="metric-card">
+                    <div class="metric-card__value">21.2x</div>
+                    <div class="metric-card__label">LTV/CAC</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-card__value"><span class="counter" data-target="4.5">4,5</span> <span>млрд ₽</span></div>
+                    <div class="metric-card__label">NPV (базовый)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-card__value">32% / 60%+</div>
+                    <div class="metric-card__label">IRR (базовый / оптим.)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-card__value"><span class="counter" data-target="4.8">4,8</span> <span>года</span></div>
+                    <div class="metric-card__label">Окупаемость (дисконт.)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-card__value">0.8%</div>
+                    <div class="metric-card__label">Комиссия платформы</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-card__value"><span class="counter" data-target="4.38">4,38</span> <span>млн</span></div>
+                    <div class="metric-card__label">Пользователей к 2031</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-card__value"><span class="counter" data-target="200">200</span>K+</div>
+                    <div class="metric-card__label">Брендов к 2030</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-card__value"><span class="counter" data-target="250">250</span>+ <span>млрд ₽</span></div>
+                    <div class="metric-card__label">Капитализация к 2031</div>
+                </div>
+            </div>
         </div>
-        <div class="metrics__grid">
-            <div class="metric-card">
-                <div class="metric-card__value"><span class="counter" data-target="10">10</span>–12,5 <span>млрд ₽</span></div>
-                <div class="metric-card__label">Общий бюджет (5 лет)</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-card__value"><span class="counter" data-target="4.75">4,75</span>–6,0 <span>млрд ₽</span></div>
-                <div class="metric-card__label">Господдержка (50%)</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-card__value"><span class="counter" data-target="4.5">4,5</span> <span>млрд ₽</span></div>
-                <div class="metric-card__label">NPV (базовый сценарий)</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-card__value"><span class="counter" data-target="15">15</span> <span>млрд ₽</span></div>
-                <div class="metric-card__label">NPV (оптимистичный)</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-card__value"><span class="counter" data-target="32">32</span>%</div>
-                <div class="metric-card__label">IRR (базовый сценарий)</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-card__value">60%+</div>
-                <div class="metric-card__label">IRR (оптимистичный)</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-card__value"><span class="counter" data-target="4.2">4,2</span> <span>года</span></div>
-                <div class="metric-card__label">Срок окупаемости (простой)</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-card__value"><span class="counter" data-target="4.8">4,8</span> <span>года</span></div>
-                <div class="metric-card__label">Срок окупаемости (дисконт.)</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-card__value"><span class="counter" data-target="18">18</span>%</div>
-                <div class="metric-card__label">WACC</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-card__value"><span class="counter" data-target="1.7">1,7</span>×</div>
-                <div class="metric-card__label">Бюджетный мультипликатор</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-card__value"><span class="counter" data-target="4.38">4,38</span> <span>млн</span></div>
-                <div class="metric-card__label">Пользователей к 2031</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-card__value"><span class="counter" data-target="55">55</span>%</div>
-                <div class="metric-card__label">Доля отечественных товаров</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-card__value"><span class="counter" data-target="250">250</span>+ <span>млрд ₽</span></div>
-                <div class="metric-card__label">Капитализация к 2031</div>
-            </div>
-            <div class="metric-card">
-                <div class="metric-card__value"><span class="counter" data-target="200">200</span>K+</div>
-                <div class="metric-card__label">Брендов к 2030</div>
+
+        <div class="dual-view gr-view" data-view="gr" hidden>
+            <p class="section-desc section-desc--light" style="margin-bottom:40px">Бюджетный мультипликатор 1:3, рост оборота МСП +45%, 200 000 рабочих мест, снижение теневого оборота -15%.</p>
+            <div class="metrics__grid">
+                <div class="metric-card">
+                    <div class="metric-card__value">1:3</div>
+                    <div class="metric-card__label">Бюджетный мультипликатор</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-card__value">+45%</div>
+                    <div class="metric-card__label">Рост оборота МСП</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-card__value"><span class="counter" data-target="200">200</span> <span>тыс.</span></div>
+                    <div class="metric-card__label">Новых рабочих мест</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-card__value">-15%</div>
+                    <div class="metric-card__label">Снижение теневого оборота</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-card__value">55%</div>
+                    <div class="metric-card__label">Доля отечественных брендов</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-card__value"><span class="counter" data-target="4.38">4,38</span> <span>млн</span></div>
+                    <div class="metric-card__label">Пользователей к 2031</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-card__value"><span class="counter" data-target="200">200</span>K+</div>
+                    <div class="metric-card__label">Брендов к 2030</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-card__value"><span class="counter" data-target="55">55</span>%</div>
+                    <div class="metric-card__label">Отечественных товаров</div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Team -->
-<section class="team" id="team">
+<!-- ====== ARCHITECTURE / TECHNOLOGY ====== -->
+<section class="architecture" id="architecture">
     <div class="container">
         <div class="section-header">
-            <span class="section-tag">Команда</span>
-            <h2 class="section-title">3 волны: от C-level до полного штата</h2>
-            <p class="section-desc">Формируем команду с рыночной компенсацией, опционами (5% УК) и sign-on бонусами. Партнёрство с ведущими вузами для кадрового конвейера.</p>
+            <span class="section-tag">Архитектура и технологии</span>
+            <h2 class="section-title">Технологический фундамент</h2>
         </div>
-        <div class="team__waves">
-            <div class="team-wave">
-                <div class="team-wave__header">
-                    <span class="team-wave__num">Волна 1</span>
-                    <span class="team-wave__period">Июль 2026</span>
+
+        <div class="dual-view investor-view" data-view="investor">
+            <p class="section-desc" style="margin-bottom:40px">Событийная микросервисная архитектура, SLA ≥ 99.9%, AI-модели (CatBoost, TFT), открытый API Gateway.</p>
+            <div class="tech__grid">
+                <div class="tech-card">
+                    <div class="tech-card__icon">MS</div>
+                    <h3 class="tech-card__title">Событийная архитектура</h3>
+                    <p class="tech-card__desc">Apache Kafka 4.2, Transactional Outbox, Schema Registry (Avro), event sourcing</p>
                 </div>
-                <h3 class="team-wave__title">Ядро</h3>
-                <p class="team-wave__count">9–12 человек</p>
-                <ul class="team-wave__roles">
-                    <li><strong>CTO</strong> — архитектор платформы</li>
-                    <li><strong>CFO</strong> — финансовая модель и инвесторы</li>
-                    <li><strong>CISO</strong> — безопасность класса К2</li>
-                    <li><strong>AI Lead</strong> — YandexGPT, CatBoost, RuBERT</li>
-                    <li><strong>Юрист</strong> — регуляторика, госконтракты</li>
-                    <li><strong>Lead Developer</strong> — Java/Quarkus</li>
-                </ul>
-                <div class="team-wave__comp">
-                    <span>Рыночная + опционы и sign-on</span>
+                <div class="tech-card">
+                    <div class="tech-card__icon">%</div>
+                    <h3 class="tech-card__title">SLA ≥ 99.9%</h3>
+                    <p class="tech-card__desc">Kubernetes, отказоустойчивость, BCP/DRP, географическое резервирование</p>
                 </div>
-            </div>
-            <div class="team-wave">
-                <div class="team-wave__header">
-                    <span class="team-wave__num">Волна 2</span>
-                    <span class="team-wave__period">Январь 2027</span>
+                <div class="tech-card">
+                    <div class="tech-card__icon">AI</div>
+                    <h3 class="tech-card__title">AI/ML модели</h3>
+                    <p class="tech-card__desc">CatBoost для рекомендаций, TFT для прогноза спроса, RuBERT для модерации</p>
                 </div>
-                <h3 class="team-wave__title">Разработка</h3>
-                <p class="team-wave__count">20–30 человек</p>
-                <ul class="team-wave__roles">
-                    <li><strong>Middle/Senior Java</strong> — бэкенд-сервисы</li>
-                    <li><strong>React/TypeScript</strong> — фронтенд и ЛК</li>
-                    <li><strong>DevOps</strong> — K8s, CI/CD, мониторинг</li>
-                    <li><strong>QA</strong> — автоматизация, BDD, нагрузка</li>
-                    <li><strong>Data Engineer</strong> — Kafka, аналитика</li>
-                </ul>
-                <div class="team-wave__comp">
-                    <span>Конкурентный рынок + опционы</span>
+                <div class="tech-card">
+                    <div class="tech-card__icon">API</div>
+                    <h3 class="tech-card__title">Открытый API Gateway</h3>
+                    <p class="tech-card__desc">REST/gRPC, OpenAPI 3.0, SDK для Java/Python/JS, rate limiting</p>
                 </div>
-            </div>
-            <div class="team-wave">
-                <div class="team-wave__header">
-                    <span class="team-wave__num">Волна 3</span>
-                    <span class="team-wave__period">Июль 2027</span>
+                <div class="tech-card">
+                    <div class="tech-card__icon">J</div>
+                    <h3 class="tech-card__title">Java 25 + Quarkus 3.36</h3>
+                    <p class="tech-card__desc">Virtual Threads, GraalVM native image, низкое потребление памяти</p>
                 </div>
-                <h3 class="team-wave__title">Поддержка</h3>
-                <p class="team-wave__count">10–15 человек</p>
-                <ul class="team-wave__roles">
-                    <li><strong>Саппорт</strong> — пользовательская поддержка</li>
-                    <li><strong>Модерация</strong> — контент и бренды</li>
-                    <li><strong>Маркетинг</strong> — привлечение и удержание</li>
-                    <li><strong>Аналитик</strong> — метрики, отчёты, A/B</li>
-                </ul>
-                <div class="team-wave__comp">
-                    <span>Рыночная + бонусы</span>
+                <div class="tech-card">
+                    <div class="tech-card__icon">BC</div>
+                    <h3 class="tech-card__title">Блокчейн-прослеживаемость</h3>
+                    <p class="tech-card__desc">Hyperledger Fabric + КриптоПро, ГОСТ-криптография, смарт-контракты</p>
                 </div>
             </div>
         </div>
-        <div class="team__benefits">
-            <h3 class="team__benefits-title">Модель удержания</h3>
-            <div class="team__benefits-grid">
-                <div class="team-benefit">
-                    <div class="team-benefit__icon">&#9733;</div>
-                    <h4>Опционы</h4>
-                    <p>5% уставного капитала, вестинг 2+3 года. Каждый сотрудник — соучредитель экосистемы.</p>
+
+        <div class="dual-view gr-view" data-view="gr" hidden>
+            <p class="section-desc" style="margin-bottom:40px">Интеграции с государственными системами: ЕСИА, ГИСП, «Честный знак», ЕГРЮЛ, ФНС, ОФД, цифровой рубль.</p>
+            <div class="partners-logos" role="group" aria-label="Государственные интеграции">
+                <div class="partners-logos__grid" role="list" style="grid-template-columns:repeat(auto-fill, minmax(180px, 1fr)); gap:16px">
+                    <div class="partners-logo-item" role="listitem">ЕСИА</div>
+                    <div class="partners-logo-item" role="listitem">ГИСП</div>
+                    <div class="partners-logo-item" role="listitem">Честный знак</div>
+                    <div class="partners-logo-item" role="listitem">ЕГРЮЛ</div>
+                    <div class="partners-logo-item" role="listitem">ФНС</div>
+                    <div class="partners-logo-item" role="listitem">ОФД</div>
+                    <div class="partners-logo-item" role="listitem">Цифровой рубль</div>
+                    <div class="partners-logo-item" role="listitem">Мой налог</div>
+                    <div class="partners-logo-item" role="listitem">СБП</div>
+                    <div class="partners-logo-item" role="listitem">Сколково</div>
+                    <div class="partners-logo-item" role="listitem">ВЭБ.РФ</div>
+                    <div class="partners-logo-item" role="listitem">Корпорация МСП</div>
                 </div>
-                <div class="team-benefit">
-                    <div class="team-benefit__icon">&#9889;</div>
-                    <h4>Sign-on бонусы</h4>
-                    <p>1–3 оклада при входе. Быстрый старт без финансового стресса.</p>
-                </div>
-                <div class="team-benefit">
-                    <div class="team-benefit__icon">&#9878;</div>
-                    <h4>KPI-контракты</h4>
-                    <p>Прозрачные метрики. Достижение целей = рост компенсации и доли.</p>
-                </div>
-                <div class="team-benefit">
-                    <div class="team-benefit__icon">&#9734;</div>
-                    <h4>Партнёрство с вузами</h4>
-                    <p>Стажировки, целевой набор, совместные программы переподготовки.</p>
+            </div>
+            <div style="margin-top:40px">
+                <h3 class="solution__group-title">Инфраструктурные сервисы</h3>
+                <div class="solution__grid solution__grid--infra">
+                    <div class="module-card module-card--infra">
+                        <h3 class="module-card__title">Auth Service</h3>
+                        <p class="module-card__text">Keycloak + ЕСИА. OAuth 2.0/OIDC. Класс защиты К2 (ФСТЭК №117).</p>
+                    </div>
+                    <div class="module-card module-card--infra">
+                        <h3 class="module-card__title">API Gateway</h3>
+                        <p class="module-card__text">Единый шлюз, BFF, rate limiting, распределённая трассировка.</p>
+                    </div>
+                    <div class="module-card module-card--infra">
+                        <h3 class="module-card__title">AI Service</h3>
+                        <p class="module-card__text">Рекомендации, прогноз спроса, модерация контента, антифрод.</p>
+                    </div>
+                    <div class="module-card module-card--infra">
+                        <h3 class="module-card__title">Mock Service</h3>
+                        <p class="module-card__text">8 моков: ФНС, ОФД, СБП, ЦБ, ГИС, Честный знак, ЕСИА, Мой налог.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Technology -->
-<section class="tech" id="tech">
+<!-- ====== TEAM / MANAGEMENT ====== -->
+<section class="team-mgmt" id="team-mgmt">
     <div class="container">
         <div class="section-header">
-            <span class="section-tag">Технологии</span>
-            <h2 class="section-title">Технологический стек</h2>
-            <p class="section-desc">Современные, проверенные технологии с долгосрочной поддержкой</p>
+            <span class="section-tag">Команда и управление</span>
+            <h2 class="section-title">Кто стоит за проектом</h2>
         </div>
-        <div class="tech__grid">
-            <div class="tech-card">
-                <div class="tech-card__icon">J</div>
-                <h3 class="tech-card__title">Java 25</h3>
-                <p class="tech-card__desc">Основной язык бэкенда. Virtual Threads, Pattern Matching, Project Loom</p>
+
+        <div class="dual-view investor-view" data-view="investor">
+            <p class="section-desc" style="margin-bottom:40px">Александр Нарбаев (19+ лет в IT), набор CTO/CFO/AI Lead, кредитные линии на Фазу 0.</p>
+            <div class="team-mgmt__grid">
+                <div class="team-mgmt__card team-mgmt__card--lead">
+                    <div class="team-mgmt__card-avatar">АН</div>
+                    <h3 class="team-mgmt__card-name">Александр Нарбаев</h3>
+                    <p class="team-mgmt__card-role">Основатель, CEO</p>
+                    <p class="team-mgmt__card-desc">19+ лет в IT. Архитектор распределённых систем, опыт управления командами до 50 человек. Full-stack: Java, React, DevOps.</p>
+                </div>
+                <div class="team-mgmt__card">
+                    <div class="team-mgmt__card-avatar team-mgmt__card-avatar--open">CTO</div>
+                    <h3 class="team-mgmt__card-name">CTO</h3>
+                    <p class="team-mgmt__card-role">Открытая позиция</p>
+                    <p class="team-mgmt__card-desc">Архитектор платформы. Java/Quarkus, gRPC, Kafka, K8s. Рыночная компенсация + опционы.</p>
+                </div>
+                <div class="team-mgmt__card">
+                    <div class="team-mgmt__card-avatar team-mgmt__card-avatar--open">CFO</div>
+                    <h3 class="team-mgmt__card-name">CFO</h3>
+                    <p class="team-mgmt__card-role">Открытая позиция</p>
+                    <p class="team-mgmt__card-desc">Финансовая модель, инвестиции, госконтракты. Опыт проектов >1 млрд руб.</p>
+                </div>
+                <div class="team-mgmt__card">
+                    <div class="team-mgmt__card-avatar team-mgmt__card-avatar--open">AI</div>
+                    <h3 class="team-mgmt__card-name">AI Lead</h3>
+                    <p class="team-mgmt__card-role">Открытая позиция</p>
+                    <p class="team-mgmt__card-desc">CatBoost, TFT, RuBERT, рекомендательные системы. Опыт промышленного ML.</p>
+                </div>
             </div>
-            <div class="tech-card">
-                <div class="tech-card__icon">Q</div>
-                <h3 class="tech-card__title">Quarkus 3.36</h3>
-                <p class="tech-card__desc">Cloud-native фреймворк. Быстрый старт, низкое потребление памяти, GraalVM</p>
+            <div class="team-mgmt__funding">
+                <h3>Финансирование Фазы 0</h3>
+                <p>Кредитные линии на предзапуск: 2.2 млрд руб. (Транш 1). Привлечение ядра команды — июль 2026.</p>
             </div>
-            <div class="tech-card">
-                <div class="tech-card__icon">R</div>
-                <h3 class="tech-card__title">React 18</h3>
-                <p class="tech-card__desc">Фронтенд. Concurrent Mode, Suspense, серверные компоненты</p>
-            </div>
-            <div class="tech-card">
-                <div class="tech-card__icon">P</div>
-                <h3 class="tech-card__title">PostgreSQL 17</h3>
-                <p class="tech-card__desc">Основная реляционная БД. JSONB, партиционирование, расширения</p>
-            </div>
-            <div class="tech-card">
-                <div class="tech-card__icon">M</div>
-                <h3 class="tech-card__title">MongoDB 8.3</h3>
-                <p class="tech-card__desc">Документная БД для аналитики, логов и неструктурированных данных</p>
-            </div>
-            <div class="tech-card">
-                <div class="tech-card__icon">K</div>
-                <h3 class="tech-card__title">Apache Kafka 4.2</h3>
-                <p class="tech-card__desc">Event streaming, transactional outbox, schema registry (Avro)</p>
-            </div>
-            <div class="tech-card">
-                <div class="tech-card__icon">G</div>
-                <h3 class="tech-card__title">gRPC 1.81</h3>
-                <p class="tech-card__desc">Межсервисное взаимодействие. Protobuf, streaming, deadline propagation</p>
-            </div>
-            <div class="tech-card">
-                <div class="tech-card__icon">KC</div>
-                <h3 class="tech-card__title">Keycloak 24</h3>
-                <p class="tech-card__desc">Identity & Access Management. OIDC, SAML, интеграция с ЕСИА</p>
-            </div>
-            <div class="tech-card">
-                <div class="tech-card__icon">RD</div>
-                <h3 class="tech-card__title">Redis 8.6</h3>
-                <p class="tech-card__desc">Кэширование, сессии, rate limiting, pub/sub</p>
-            </div>
-            <div class="tech-card">
-                <div class="tech-card__icon">HF</div>
-                <h3 class="tech-card__title">Hyperledger Fabric</h3>
-                <p class="tech-card__desc">Блокчейн для прослеживаемости. КриптоПро HLF patch, ГОСТ-криптография</p>
-            </div>
-            <div class="tech-card">
-                <div class="tech-card__icon">AI</div>
-                <h3 class="tech-card__title">AI / ML</h3>
-                <p class="tech-card__desc">YandexGPT, CatBoost, RuBERT, Temporal Fusion Transformer, Kandinsky</p>
-            </div>
-            <div class="tech-card">
-                <div class="tech-card__icon">G9</div>
-                <h3 class="tech-card__title">Gradle 9.5</h3>
-                <p class="tech-card__desc">Сборка. Kotlin DSL, инкрементальная компиляция, кэширование</p>
+        </div>
+
+        <div class="dual-view gr-view" data-view="gr" hidden>
+            <p class="section-desc" style="margin-bottom:40px">Межведомственная рабочая группа, Председатель — Зам Минэкономразвития, состав: Минфин, Минпромторг, Минцифры, ЦБ, ФНС, Корпорация МСП.</p>
+            <div class="team-mgmt__org">
+                <h3 class="team-mgmt__org-title">Структура управления</h3>
+                <div class="team-mgmt__org-grid">
+                    <div class="team-mgmt__org-card">
+                        <div class="team-mgmt__org-card-header">Наблюдательный совет</div>
+                        <ul>
+                            <li>Представители Минэкономразвития</li>
+                            <li>Представители Минфина</li>
+                            <li>Представители Минпромторга</li>
+                            <li>Представители Минцифры</li>
+                            <li>Частные инвесторы</li>
+                        </ul>
+                    </div>
+                    <div class="team-mgmt__org-card">
+                        <div class="team-mgmt__org-card-header">Стратегический комитет</div>
+                        <ul>
+                            <li>ЦБ РФ — платёжная инфраструктура</li>
+                            <li>ФНС — налоговая интеграция</li>
+                            <li>Корпорация МСП — поддержка МСП</li>
+                            <li>ВЭБ.РФ — проектное финансирование</li>
+                            <li>Сколково — инновационная экспертиза</li>
+                        </ul>
+                    </div>
+                    <div class="team-mgmt__org-card">
+                        <div class="team-mgmt__org-card-header">Межведомственная рабочая группа</div>
+                        <ul>
+                            <li><strong>Председатель:</strong> Замглавы Минэкономразвития</li>
+                            <li>Согласование нормативных актов</li>
+                            <li>Координация интеграций с госсистемами</li>
+                            <li>Контроль KPI национального проекта</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Roadmap -->
+<!-- ====== ROADMAP ====== -->
 <section class="roadmap" id="roadmap">
     <div class="container">
         <div class="section-header">
@@ -737,66 +709,68 @@
         </div>
         <div class="roadmap__timeline">
             <div class="roadmap__line"></div>
+
             <div class="roadmap__phase">
                 <div class="roadmap__marker roadmap__marker--active"></div>
                 <div class="roadmap__content">
                     <div class="roadmap__phase-num">Фаза 0</div>
                     <h3 class="roadmap__title">Предзапуск</h3>
-                    <div class="roadmap__period">Июль 2026 – Июнь 2027</div>
-                    <div class="roadmap__budget">2 200 млн руб. (Транш 1)</div>
+                    <div class="roadmap__period">2026</div>
+                    <div class="roadmap__budget">2.2 млрд руб.</div>
                     <ul class="roadmap__kpis">
-                        <li>Поручение Правительства РФ</li>
                         <li>Регистрация АО «НП «Опора»</li>
-                        <li>Поправки в ст. 149 НК РФ и в Госдуму</li>
-                        <li>Ядро команды: 9–12 чел. (CTO, CFO, CISO, AI Lead)</li>
-                        <li>Рабочий прототип: 20 микросервисов, Docker Compose</li>
+                        <li>Согласование МВР и ЭПР</li>
+                        <li>Поправки в ст. 149 НК РФ</li>
+                        <li>Набор ядра команды (9–12 чел.)</li>
                     </ul>
                 </div>
             </div>
+
             <div class="roadmap__phase">
                 <div class="roadmap__marker"></div>
                 <div class="roadmap__content">
                     <div class="roadmap__phase-num">Фаза 1</div>
                     <h3 class="roadmap__title">Пилот</h3>
-                    <div class="roadmap__period">Июль 2027 – Июнь 2028</div>
-                    <div class="roadmap__budget">1 000 млн руб. (Транш 2)</div>
+                    <div class="roadmap__period">2027</div>
+                    <div class="roadmap__budget">1.0 млрд руб.</div>
                     <ul class="roadmap__kpis">
-                        <li>≥100 верифицированных брендов</li>
-                        <li>≥50 000 пользователей</li>
-                        <li>≥500 000 транзакций</li>
-                        <li>SLA ≥99,5%</li>
+                        <li>MVP «Витрина» и «Кооперация»</li>
+                        <li>Пилот Москва + Зеленоград</li>
+                        <li>100 брендов, 50k MAU</li>
+                        <li>SLA ≥ 99.5%</li>
                     </ul>
                     <div class="roadmap__location">Пилот: Москва + Зеленоград</div>
                 </div>
             </div>
+
             <div class="roadmap__phase">
                 <div class="roadmap__marker"></div>
                 <div class="roadmap__content">
                     <div class="roadmap__phase-num">Фаза 2</div>
-                    <h3 class="roadmap__title">Масштабирование</h3>
-                    <div class="roadmap__period">Июль 2028 – Декабрь 2030</div>
-                    <div class="roadmap__budget">2 200 млн руб. (Транш 3)</div>
+                    <h3 class="roadmap__title">Национальный запуск</h3>
+                    <div class="roadmap__period">2028–2030</div>
+                    <div class="roadmap__budget">2.2 млрд руб.</div>
                     <ul class="roadmap__kpis">
-                        <li>≥200 000 брендов</li>
-                        <li>≥8 млн пользователей</li>
+                        <li>Интеграция цифрового рубля</li>
+                        <li>200k брендов</li>
+                        <li>4.38M пользователей</li>
                         <li>Капитализация 50 млрд руб.</li>
-                        <li>Команда: 30–40 человек</li>
-                        <li>Выход на операционную окупаемость</li>
                     </ul>
                 </div>
             </div>
+
             <div class="roadmap__phase">
                 <div class="roadmap__marker"></div>
                 <div class="roadmap__content">
                     <div class="roadmap__phase-num">Фаза 3</div>
                     <h3 class="roadmap__title">Международное развитие</h3>
                     <div class="roadmap__period">2031+</div>
-                    <div class="roadmap__budget">800 млн руб. (Транш 4)</div>
+                    <div class="roadmap__budget">800 млн руб.</div>
                     <ul class="roadmap__kpis">
+                        <li>Экспорт white-label в ЕАЭС и БРИКС</li>
                         <li>10 000 брендов за рубежом</li>
-                        <li>5 стран (ЕАЭС, БРИКС)</li>
+                        <li>5 стран присутствия</li>
                         <li>Капитализация 250+ млрд руб.</li>
-                        <li>4,38 млн пользователей</li>
                     </ul>
                 </div>
             </div>
@@ -804,7 +778,7 @@
     </div>
 </section>
 
-<!-- Risks -->
+<!-- ====== RISKS (shared) ====== -->
 <section class="risks" id="risks">
     <div class="container">
         <div class="section-header">
@@ -824,7 +798,7 @@
             <div class="risk-card">
                 <div class="risk-card__level risk-card__level--high">Критический</div>
                 <h3 class="risk-card__title">Кадровый голод</h3>
-                <p class="risk-card__desc">Дефицит senior-разработчиков Java/React на российском рынке. Конкуренция с крупными корпорациями.</p>
+                <p class="risk-card__desc">Дефицит senior-разработчиков Java/React на российском рынке.</p>
                 <div class="risk-card__mitigation">
                     <strong>Контрмера:</strong> Опционы (5% УК), sign-on бонусы (1–3 оклада), партнёрство с вузами, программы переподготовки.
                 </div>
@@ -834,15 +808,7 @@
                 <h3 class="risk-card__title">Регуляторный «каток»</h3>
                 <p class="risk-card__desc">Длительное согласование поправок в НК РФ, постановлений Правительства, нормативных актов ЦБ РФ.</p>
                 <div class="risk-card__mitigation">
-                    <strong>Контрмера:</strong> Выделенный бюджет на GR, участие в рабочих группах Госдумы, параллельная разработка без привязки к регуляторике.
-                </div>
-            </div>
-            <div class="risk-card">
-                <div class="risk-card__level risk-card__level--medium">Высокий</div>
-                <h3 class="risk-card__title">Стагфляция ИТ-рынка</h3>
-                <p class="risk-card__desc">Рост зарплат разработчиков при снижении покупательной способности. Инфляция бюджета.</p>
-                <div class="risk-card__mitigation">
-                    <strong>Контрмера:</strong> Фиксация цен в контрактах, приоритет Open Source, удалённая команда (географическое расширение пула).
+                    <strong>Контрмера:</strong> Выделенный бюджет на GR, участие в рабочих группах, параллельная разработка без привязки к регуляторике.
                 </div>
             </div>
             <div class="risk-card">
@@ -856,16 +822,16 @@
             <div class="risk-card">
                 <div class="risk-card__level risk-card__level--low">Средний</div>
                 <h3 class="risk-card__title">Низкая адопция</h3>
-                <p class="risk-card__desc">Медленное привлечение брендов и пользователей. Недостаточный эффект сетевой ценности.</p>
+                <p class="risk-card__desc">Медленное привлечение брендов и пользователей.</p>
                 <div class="risk-card__mitigation">
-                    <strong>Контрмера:</strong> Пилот в Москве + Зеленоград, программа ранних партнёров (319 синергистов СИНВ), кешбэк до 7% для стимулирования.
+                    <strong>Контрмера:</strong> Пилот в Москве + Зеленоград, кешбэк до 7% для стимулирования первых пользователей.
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- FAQ -->
+<!-- ====== FAQ (shared, документы) ====== -->
 <section class="faq" id="faq">
     <div class="container">
         <div class="section-header">
@@ -883,7 +849,7 @@
             <details class="faq-item">
                 <summary class="faq-item__question">Как финансируется проект?</summary>
                 <div class="faq-item__answer">
-                    <p>Смешанное финансирование: 50% — государственные субсидии (Минпромторг, Минцифры, институты развития), 50% — частные инвестиции. Общий бюджет 10–12,5 млрд руб. на 5 лет. Бюджетный мультипликатор — 1,7×, то есть каждый рубль государственных средств генерирует 1,7 рубля экономического эффекта.</p>
+                    <p>Смешанное финансирование: 50% — государственные субсидии (Минпромторг, Минцифры, институты развития), 50% — частные инвестиции. Общий бюджет 10–12,5 млрд руб. на 5 лет. Бюджетный мультипликатор — 1:3, то есть каждый рубль государственных средств генерирует 3 рубля экономического эффекта.</p>
                 </div>
             </details>
             <details class="faq-item">
@@ -910,53 +876,11 @@
                     <p>Первая волна найма (июль 2026): CTO, CFO, CISO, AI Lead, юрист, Lead Developer. Компенсация: рыночная + опционы (5% УК, вестинг 2+3 года) + sign-on бонус (1–3 оклада). Свяжитесь с нами через форму ниже или напишите на email.</p>
                 </div>
             </details>
-            <details class="faq-item">
-                <summary class="faq-item__question">Какая бизнес-модель и источники дохода?</summary>
-                <div class="faq-item__answer">
-                    <p>Комбинированная модель: комиссия с транзакций на «Витрине», подписка B2B (аналитика, кооперация), монетизация обезличенных данных, премиум-размещение брендов. Кешбэк финансируется за счёт комиссии платформы и партнёрских отчислений, а не за счёт покупателя. Целевая маржинальность — 25–30% после выхода на операционную окупаемость.</p>
-                </div>
-            </details>
-            <details class="faq-item">
-                <summary class="faq-item__question">Как партнёры могут интегрироваться с платформой?</summary>
-                <div class="faq-item__answer">
-                    <p>Через открытый API Gateway (REST/gRPC). Предоставляем SDK для Java, Python и JavaScript. Документация — OpenAPI 3.0. Для банков: интеграция с СБП и ЦФА. Для ритейла: API каталога и прослеживаемости. Для госорганов: защищённые каналы с ГОСТ-криптографией. Пилотные интеграции — с 2027 года.</p>
-                </div>
-            </details>
-            <details class="faq-item">
-                <summary class="faq-item__question">Какие гарантии возврата инвестиций?</summary>
-                <div class="faq-item__answer">
-                    <p>Финансовая модель прошла верификацию в рамках СИНВ-2026 (получено 4 экспертизы). Базовый сценарий: NPV 4,5 млрд ₽, IRR 32%, окупаемость 4,2 года. Статус национальной инфраструктуры снижает регуляторные риски. Предусмотрен резервный фонд +30% к бюджету на случай санкционных ограничений. Инвесторы получают долю в АО «НП «Опора» с корпоративным договором и «золотой акцией» государства.</p>
-                </div>
-            </details>
-            <details class="faq-item">
-                <summary class="faq-item__question">Как проект обеспечивает технологический суверенитет?</summary>
-                <div class="faq-item__answer">
-                    <p>Всё ПО — российская разработка. Криптография — ГОСТ (КриптоПро CSP 5.0). Блокчейн — Hyperledger Fabric с патчем КриптоПро. Данные — на серверах в РФ. Зависимости зеркалируются в отечественные репозитории. Приоритет Open Source снижает риск vendor lock-in. Платформа соответствует требованиям постановления № 1236 об импортозамещении.</p>
-                </div>
-            </details>
-            <details class="faq-item">
-                <summary class="faq-item__question">Как работает кешбэк до 7% и кто его финансирует?</summary>
-                <div class="faq-item__answer">
-                    <p>Кешбэк начисляется баллами за покупку верифицированных отечественных товаров. Финансируется из комиссии платформы, маркетинговых бюджетов брендов и государственных субсидий на стимулирование спроса на российскую продукцию. Баллы можно использовать для следующих покупок или конвертировать в скидки. Поправки в ст. 149 НК РФ освобождают операции с баллами лояльности от НДС.</p>
-                </div>
-            </details>
-            <details class="faq-item">
-                <summary class="faq-item__question">В чём отличие от Wildberries, Ozon и других маркетплейсов?</summary>
-                <div class="faq-item__answer">
-                    <p>Маркетплейсы — это витрина товаров с комиссией 15–25%. «Опора» — это экосистема для роста бизнеса: мы не только продаём, но и верифицируем происхождение, связываем с партнёрами по кооперации, даём доступ к финансированию (краудфандинг, ЦФА), помогаем с экспортом и юридической защитой. Комиссия на «Витрине» — 5–10% в зависимости от грейда бренда. Мы зарабатываем на росте брендов, а не на обороте товаров.</p>
-                </div>
-            </details>
-            <details class="faq-item">
-                <summary class="faq-item__question">Какие гарантии для инвесторов при статусе национальной инфраструктуры?</summary>
-                <div class="faq-item__answer">
-                    <p>Статус национальной инфраструктуры закрепляется Постановлением Правительства РФ. Это даёт: приоритетный доступ к госзакупкам, интеграцию с ЕСИА и ГИСП, налоговые преференции (ст. 149 НК РФ), защиту от недружественных поглощений через «золотую акцию» государства. Инвесторы получают долю в АО «НП «Опора» с корпоративным договором, закрепляющим права миноритариев. Выход — через SPO к 2031 при целевой капитализации 250+ млрд руб.</p>
-                </div>
-            </details>
         </div>
     </div>
 </section>
 
-<!-- Documents / Downloads -->
+<!-- ====== DOCUMENTS (документы) ====== -->
 <section class="docs" id="docs">
     <div class="container">
         <div class="section-header">
@@ -975,7 +899,7 @@
                 <div class="doc-card__type" style="background: var(--orange);">HTML</div>
                 <h3 class="doc-card__title">Инвестиционный меморандум</h3>
                 <p class="doc-card__desc">Финмодель v4.0, 8 сценариев A–H, структура сделки, анализ рынка, стратегия выхода</p>
-                <span class="doc-card__audience">Для: инвесторы, государство</span>
+                <span class="doc-card__audience">Для: инвесторы</span>
             </a>
             <a href="pdfs/technical-overview.html" class="doc-card" aria-label="Скачать Технический обзор">
                 <div class="doc-card__type" style="background: var(--blue);">HTML</div>
@@ -989,11 +913,11 @@
                 <p class="doc-card__desc">20 сервисов: назначение, API-контракты, ключевые функции, статус реализации</p>
                 <span class="doc-card__audience">Для: архитекторы, интеграторы</span>
             </a>
-            <a href="pdfs/sinv-analysis.html" class="doc-card" aria-label="Скачать Анализ СИНВ-2026">
-                <div class="doc-card__type" style="background: var(--orange);">HTML</div>
-                <h3 class="doc-card__title">Анализ СИНВ-2026</h3>
-                <p class="doc-card__desc">Валидация спроса: 17 845 идей, 319 синергистов, ТОП-35 партнёров, 4 экспертизы</p>
-                <span class="doc-card__audience">Для: инвесторы, государство</span>
+            <a href="pdfs/concept-mvr.html" class="doc-card" aria-label="Скачать Концепцию для МВР">
+                <div class="doc-card__type" style="background: var(--blue);">HTML</div>
+                <h3 class="doc-card__title">Концепция для МВР</h3>
+                <p class="doc-card__desc">Обоснование бюджетного мультипликатора 1:3, интеграции с госсистемами, дорожная карта регуляторики</p>
+                <span class="doc-card__audience">Для: государство</span>
             </a>
             <a href="documents.html" class="doc-card" aria-label="Перейти к полному каталогу документов">
                 <div class="doc-card__type">ВСЕ</div>
@@ -1005,27 +929,31 @@
     </div>
 </section>
 
-<!-- Newsletter -->
-<section class="newsletter" id="newsletter">
+<!-- ====== FOOTER CTA (dual-view) ====== -->
+<section class="footer-cta" id="footer-cta">
     <div class="container">
-        <div class="newsletter__inner">
-            <div class="newsletter__content">
-                <h2 class="newsletter__title">Будьте в курсе развития проекта</h2>
-                <p class="newsletter__desc">Подпишитесь на рассылку: обновления по фазам, вакансии, партнёрские предложения. Без спама — только по делу.</p>
-            </div>
-            <form class="newsletter__form" id="newsletterForm">
-                <div class="newsletter__input-group">
-                    <input type="email" class="newsletter__input" placeholder="your@email.com" required autocomplete="email" aria-label="Email для рассылки">
-                    <button type="submit" class="btn btn--primary newsletter__btn">Подписаться</button>
+        <div class="dual-view investor-view" data-view="investor">
+            <div class="footer-cta__inner">
+                <div class="footer-cta__content">
+                    <h2 class="footer-cta__title">Инвестируйте в национальную<br>инфраструктуру доверия</h2>
+                    <p class="footer-cta__desc">LTV/CAC 21.2x, IRR 32%, NPV 4.5 млрд руб. Готовый регуляторный каркас. Рабочий прототип из 20 микросервисов.</p>
                 </div>
-                <div class="form-status" role="status" aria-live="polite"></div>
-                <p class="newsletter__disclaimer">Нажимая «Подписаться», вы соглашаетесь на обработку персональных данных в соответствии с 152-ФЗ.</p>
-            </form>
+                <a href="mailto:contact@opora.digital?subject=Data%20Room%20Request" class="btn btn--primary btn--lg">Запросить Data Room</a>
+            </div>
+        </div>
+        <div class="dual-view gr-view" data-view="gr" hidden>
+            <div class="footer-cta__inner">
+                <div class="footer-cta__content">
+                    <h2 class="footer-cta__title">Платформа «Опора» — инструмент<br>реализации нацпроектов</h2>
+                    <p class="footer-cta__desc">Бюджетный мультипликатор 1:3. Интеграция с ЕСИА, ГИСП, ФНС. 200 000 новых рабочих мест к 2031.</p>
+                </div>
+                <a href="mailto:contact@opora.digital?subject=Пакет%20документов%20для%20МВР" class="btn btn--primary btn--lg">Запросить пакет документов для МВР</a>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Contact -->
+<!-- ====== CONTACT (shared) ====== -->
 <section class="contact" id="contact">
     <div class="container">
         <div class="contact__inner">
@@ -1066,8 +994,8 @@
                         <span class="contact__detail-value">Фаза 0: Предзапуск</span>
                     </div>
                     <div class="contact__detail">
-                        <span class="contact__detail-label">Заявка СИНВ-2026</span>
-                        <span class="contact__detail-value contact__detail-value--success">Подана ✅</span>
+                        <span class="contact__detail-label">Этап</span>
+                        <span class="contact__detail-value contact__detail-value--success">Формирование команды</span>
                     </div>
                 </div>
             </div>
@@ -1107,7 +1035,7 @@
     </div>
 </section>
 
-<!-- Footer -->
+<!-- ====== FOOTER (shared) ====== -->
 <footer class="footer">
     <div class="container">
         <div class="footer__inner">
@@ -1128,19 +1056,19 @@
                 <div class="footer__col">
                     <h4 class="footer__heading">Модули</h4>
                     <ul>
-                        <li><a href="#solution">Витрина</a></li>
-                        <li><a href="#solution">Кооперация</a></li>
-                        <li><a href="#solution">Креаторы</a></li>
-                        <li><a href="#solution">Лояльность</a></li>
-                        <li><a href="#solution">Экспорт</a></li>
+                        <li><a href="#problem-solution">Витрина</a></li>
+                        <li><a href="#problem-solution">Кооперация</a></li>
+                        <li><a href="#problem-solution">Креаторы</a></li>
+                        <li><a href="#problem-solution">Лояльность</a></li>
+                        <li><a href="#problem-solution">Экспорт</a></li>
                     </ul>
                 </div>
                 <div class="footer__col">
                     <h4 class="footer__heading">Проект</h4>
                     <ul>
                         <li><a href="#roadmap">Дорожная карта</a></li>
-                        <li><a href="#metrics">Метрики</a></li>
-                        <li><a href="#team">Команда</a></li>
+                        <li><a href="#economics">Метрики</a></li>
+                        <li><a href="#team-mgmt">Команда</a></li>
                         <li><a href="#risks">Риски</a></li>
                         <li><a href="#docs">Документы</a></li>
                     </ul>
@@ -1152,7 +1080,7 @@
                         <li><a href="pdfs/one-pager.html" download>One-Pager (HTML)</a></li>
                         <li><a href="pdfs/investor-memo.html" download>Инвестмеморандум</a></li>
                         <li><a href="pdfs/technical-overview.html" download>Технический обзор</a></li>
-                        <li><a href="pdfs/sinv-analysis.html" download>Анализ СИНВ-2026</a></li>
+                        <li><a href="pdfs/concept-mvr.html" download>Концепция для МВР</a></li>
                     </ul>
                 </div>
                 <div class="footer__col">
