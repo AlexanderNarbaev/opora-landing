@@ -40,12 +40,15 @@
             });
 
             outViews.forEach(function (v) {
+                v.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
                 v.style.opacity = '0';
                 v.style.transform = 'translateY(8px)';
-                v.addEventListener('transitionend', function handler() {
+                setTimeout(function () {
                     v.hidden = true;
-                    v.removeEventListener('transitionend', handler);
-                });
+                    v.style.opacity = '';
+                    v.style.transform = '';
+                    v.style.transition = '';
+                }, 400);
             });
 
             currentTrack = track;
