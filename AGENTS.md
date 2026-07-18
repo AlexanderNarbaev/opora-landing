@@ -21,3 +21,11 @@
 ## Models
 - Primary: `deepseek/deepseek-v4-pro`
 - Small/fast: `deepseek/deepseek-v4-flash`
+
+## AI Development Tools (via opencode_initializer)
+
+Recommended open-source AI plugins:
+- DevoxxGenie (JetBrains, Apache 2.0) — local LLMs, RAG, MCP, agent mode
+- Cline (VS Code+JetBrains, Apache 2.0) — AI coding agent, Ollama, MCP
+- Tabby (VS Code+JetBrains, Apache 2.0) — self-hosted code completion
+- Aider (CLI, Apache 2.0) — git-aware multi-file AI edits

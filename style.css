@@ -19,7 +19,7 @@
 /* Skip to content link */
 .skip-link {
     position: absolute;
-    top: -100%;
+    top: 0;
     left: 16px;
     z-index: 10000;
     padding: 10px 20px;
@@ -29,11 +29,12 @@
     font-weight: 600;
     border-radius: var(--radius-sm);
     text-decoration: none;
-    transition: top 0.2s ease;
+    transform: translateY(-100%);
+    transition: transform 0.2s ease;
 }
 
 .skip-link:focus {
-    top: 8px;
+    transform: translateY(8px);
 }
 
 :root {
@@ -488,6 +489,10 @@ img { max-width: 100%; display: block; }
 
 /* --- Solution / Modules --- */
 .solution {
+    padding: 100px 0;
+}
+
+.services-catalog {
     padding: 100px 0;
 }
 
@@ -2020,6 +2025,10 @@ img { max-width: 100%; display: block; }
     background: var(--gray-light);
 }
 
+.problem-solution .dual-view {
+    margin-top: 48px;
+}
+
 .dual-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -2077,6 +2086,13 @@ img { max-width: 100%; display: block; }
 
 .regulatory {
     padding: 100px 0;
+}
+
+.regulatory .dual-view > .section-desc,
+.economics .dual-view > .section-desc,
+.architecture .dual-view > .section-desc,
+.team-mgmt .dual-view > .section-desc {
+    margin-bottom: 40px;
 }
 
 /* ==========================================================================
