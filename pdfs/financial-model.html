@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Финансовая модель — Опора</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm 2.5cm;
+            @bottom-center {
+                content: "АО «НП «Опора» — " counter(page) " / " counter(pages);
+                font-size: 9px;
+                color: #999;
+                font-family: 'Inter', 'Segoe UI', sans-serif;
+            }
+        }
+        body {
+            font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 11pt;
+            line-height: 1.65;
+            color: #1a1a2e;
+            max-width: 100%;
+        }
+        h1 {
+            font-size: 22pt;
+            font-weight: 800;
+            color: #233370;
+            border-bottom: 3px solid #2EC4B6;
+            padding-bottom: 12px;
+            margin-top: 0;
+            margin-bottom: 24px;
+        }
+        h2 {
+            font-size: 16pt;
+            font-weight: 700;
+            color: #233370;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #e8eaed;
+            padding-bottom: 6px;
+        }
+        h3 {
+            font-size: 13pt;
+            font-weight: 700;
+            color: #2d4290;
+            margin-top: 24px;
+            margin-bottom: 8px;
+        }
+        h4 {
+            font-size: 11pt;
+            font-weight: 700;
+            color: #555770;
+            margin-top: 16px;
+            margin-bottom: 6px;
+        }
+        p {
+            margin: 0 0 12px;
+        }
+        strong {
+            color: #233370;
+        }
+        a {
+            color: #2EC4B6;
+            text-decoration: none;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 10pt;
+        }
+        th {
+            background: #233370;
+            color: white;
+            padding: 10px 12px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 9.5pt;
+        }
+        td {
+            padding: 8px 12px;
+            border-bottom: 1px solid #e8eaed;
+            vertical-align: top;
+        }
+        tr:nth-child(even) td {
+            background: #f4f5f7;
+        }
+        tr:hover td {
+            background: rgba(46, 196, 182, 0.05);
+        }
+        ul, ol {
+            margin: 8px 0 16px 24px;
+        }
+        li {
+            margin-bottom: 4px;
+        }
+        code {
+            background: #f4f5f7;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 9.5pt;
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+            color: #2d4290;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #e8eaed;
+            margin: 32px 0;
+        }
+        blockquote {
+            border-left: 4px solid #2EC4B6;
+            padding: 12px 20px;
+            margin: 16px 0;
+            background: rgba(46, 196, 182, 0.05);
+            border-radius: 0 8px 8px 0;
+        }
+        .header-bar {
+            background: linear-gradient(135deg, #233370, #2d4290);
+            color: white;
+            padding: 16px 24px;
+            margin: -2cm -2.5cm 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-bar__logo {
+            font-size: 14pt;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+        }
+        .header-bar__date {
+            font-size: 9pt;
+            opacity: 0.7;
+        }
+        .metric-banner {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin: 16px 0 24px;
+        }
+        .metric-banner__item {
+            background: linear-gradient(135deg, #233370, #2d4290);
+            color: white;
+            border-radius: 8px;
+            padding: 14px 12px;
+            text-align: center;
+        }
+        .metric-banner__value {
+            font-size: 18pt;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        .metric-banner__label {
+            font-size: 8pt;
+            opacity: 0.75;
+            margin-top: 2px;
+        }
+        .scenario-line {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 4px 0;
+            font-size: 10pt;
+        }
+        .scenario-line__marker {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+            flex-shrink: 0;
+        }
+        .s-good { background: #4CAF76; }
+        .s-ok { background: #2EC4B6; }
+        .s-warn { background: #f0a500; }
+        .s-bad { background: #e74c3c; }
+        .footer-note {
+            margin-top: 48px;
+            padding-top: 16px;
+            border-top: 1px solid #e8eaed;
+            font-size: 9pt;
+            color: #999;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-bar">
+        <span class="header-bar__logo">ОПОРА — Финансовая модель</span>
+        <span class="header-bar__date">Июль 2026 • Версия 4.0</span>
+    </div>
+
+    <h1>Финансовая модель проекта «Опора»</h1>
+
+    <p><strong>Финансовая модель v4.0</strong> — результат многократного пересчёта и верификации. Просчитана в 8 сценариях (A–H): от кризисного до международного прорыва. Даже в пессимистичном сценарии проект жизнеспособен благодаря статусу национальной инфраструктуры и диверсификации доходов.</p>
+
+    <div class="metric-banner">
+        <div class="metric-banner__item">
+            <div class="metric-banner__value">21.2×</div>
+            <div class="metric-banner__label">LTV/CAC</div>
+        </div>
+        <div class="metric-banner__item">
+            <div class="metric-banner__value">32%/60%+</div>
+            <div class="metric-banner__label">IRR баз./оптим.</div>
+        </div>
+        <div class="metric-banner__item">
+            <div class="metric-banner__value">4.5/15.0</div>
+            <div class="metric-banner__label">NPV млрд руб.</div>
+        </div>
+        <div class="metric-banner__item">
+            <div class="metric-banner__value">4.2 года</div>
+            <div class="metric-banner__label">Окупаемость</div>
+        </div>
+    </div>
+
+    <hr>
+
+    <h2>1. Ключевые финансовые показатели</h2>
+
+    <table>
+        <tr><th>Показатель</th><th>Значение</th><th>Описание</th></tr>
+        <tr><td>Общий бюджет (5 лет)</td><td><strong>10–12,5 млрд руб.</strong></td><td>Фазы 0–3, включая резерв 30%</td></tr>
+        <tr><td>Господдержка (доля)</td><td><strong>50%</strong> (4,75–6,0 млрд руб.)</td><td>Федеральный бюджет + субсидии + институты развития</td></tr>
+        <tr><td>Частные инвестиции</td><td><strong>1,5–2,0 млрд руб.</strong></td><td>Венчурные фонды, бизнес-ангелы, корпоративные инвесторы</td></tr>
+        <tr><td>Собственные средства</td><td><strong>0,5–0,7 млрд руб.</strong></td><td>Средства основателей и ранних участников</td></tr>
+        <tr><td>NPV (базовый сценарий)</td><td><strong>4,5 млрд руб.</strong></td><td>Чистая приведённая стоимость</td></tr>
+        <tr><td>NPV (оптимистичный)</td><td><strong>15,0 млрд руб.</strong></td><td>При сценарии международного прорыва</td></tr>
+        <tr><td>IRR (базовый)</td><td><strong>32%</strong></td><td>Внутренняя норма доходности</td></tr>
+        <tr><td>IRR (оптимистичный)</td><td><strong>60%+</strong></td><td>При сценарии H</td></tr>
+        <tr><td>Срок окупаемости простой</td><td><strong>4,2 года</strong></td><td>С даты запуска пилота (июль 2027)</td></tr>
+        <tr><td>Срок окупаемости дисконт.</td><td><strong>4,8 года</strong></td><td>С учётом WACC 18%</td></tr>
+        <tr><td>WACC</td><td><strong>18%</strong></td><td>Средневзвешенная стоимость капитала</td></tr>
+        <tr><td>Бюджетный мультипликатор</td><td><strong>1,7×</strong></td><td>Экономический эффект на каждый рубль инвестиций</td></tr>
+    </table>
+
+    <hr>
+
+    <h2>2. Юнит-экономика (LTV/CAC)</h2>
+
+    <table>
+        <tr><th>Компонент</th><th>Значение</th><th>Обоснование</th></tr>
+        <tr><td><strong>Средний чек</strong></td><td>2 500 руб.</td><td>Среднее для сегмента потребительских товаров МСП</td></tr>
+        <tr><td><strong>Частота покупок</strong></td><td>1,8 / мес.</td><td>Средняя для товаров повседневного спроса</td></tr>
+        <tr><td><strong>Срок жизни</strong></td><td>36 мес.</td><td>Удержание через кешбэк и программу лояльности</td></tr>
+        <tr><td><strong>LTV</strong></td><td>~162 000 руб.</td><td>Выручка с пользователя за всё время</td></tr>
+        <tr><td><strong>CAC</strong></td><td>~7 650 руб.</td><td>Низкий за счёт встроенной лояльности и кешбэка</td></tr>
+        <tr><td><strong>LTV/CAC</strong></td><td><strong>21,2×</strong></td><td>Один из лучших показателей среди платформенных бизнесов</td></tr>
+    </table>
+
+    <hr>
+
+    <h2>3. Потоки доходов</h2>
+
+    <table>
+        <tr><th>Канал</th><th>Доля</th><th>Описание</th><th>Прогноз к 2031</th></tr>
+        <tr><td><strong>Комиссия с транзакций</strong></td><td>45%</td><td>0,8% с каждой покупки на платформе</td><td>~4,5 млрд руб./год</td></tr>
+        <tr><td><strong>Премиум-подписка брендов</strong></td><td>20%</td><td>Расширенная аналитика, приоритетный AI-матчинг, white-label</td><td>~2,0 млрд руб./год</td></tr>
+        <tr><td><strong>Монетизация данных</strong></td><td>15%</td><td>Обезличенная аналитика спроса для брендов и регионов</td><td>~1,5 млрд руб./год</td></tr>
+        <tr><td><strong>B2B-сервисы</strong></td><td>12%</td><td>Смарт-контракты, патентный маркетплейс, арбитраж</td><td>~1,2 млрд руб./год</td></tr>
+        <tr><td><strong>Экспортное сопровождение</strong></td><td>8%</td><td>Документооборот, логистика, сертификация для ЕАЭС/БРИКС</td><td>~0,8 млрд руб./год</td></tr>
+    </table>
+
+    <hr>
+
+    <h2>4. Структура бюджета по фазам</h2>
+
+    <table>
+        <tr><th>Фаза</th><th>Срок</th><th>Бюджет</th><th>Основные статьи</th></tr>
+        <tr>
+            <td><strong>Фаза 0. Предзапуск</strong></td>
+            <td>Июль 2026 – Июнь 2027</td>
+            <td><strong>2,2 млрд руб.</strong></td>
+            <td>Регистрация АО, GR, юруслуги, прототипирование, найм ядра (9–12 чел.), инфраструктура</td>
+        </tr>
+        <tr>
+            <td><strong>Фаза 1. Пилот</strong></td>
+            <td>Июль 2027 – Июнь 2028</td>
+            <td><strong>1,0 млрд руб.</strong></td>
+            <td>Разработка, маркетинг пилота (Москва + Зеленоград), найм волны 2 (20–30 чел.)</td>
+        </tr>
+        <tr>
+            <td><strong>Фаза 2. Масштабирование</strong></td>
+            <td>Июль 2028 – Дек 2030</td>
+            <td><strong>2,2 млрд руб.</strong></td>
+            <td>Региональная экспансия, маркетинг, найм волны 3 (10–15 чел.), инфраструктура</td>
+        </tr>
+        <tr>
+            <td><strong>Фаза 3. Международное</strong></td>
+            <td>2031+</td>
+            <td><strong>800 млн руб.</strong></td>
+            <td>Локализация, партнёрства, сертификация, логистика</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2>5. Источники финансирования</h2>
+
+    <table>
+        <tr><th>Источник</th><th>Сумма, млрд руб.</th><th>Доля</th></tr>
+        <tr><td>Федеральный бюджет (нацпроекты)</td><td>2,5–3,5</td><td>25–28%</td></tr>
+        <tr><td>Субсидии Минпромторга / Минцифры</td><td>1,2–1,8</td><td>12–14%</td></tr>
+        <tr><td>Институты развития (Сколково, ВЭБ.РФ)</td><td>0,8–1,2</td><td>8–10%</td></tr>
+        <tr><td>Корпорация МСП (зонтичные поручительства)</td><td>1,5–2,0</td><td>15–16%</td></tr>
+        <tr><td>Частные инвестиции</td><td>1,5–2,0</td><td>15–16%</td></tr>
+        <tr><td>Грантовые программы</td><td>0,3–0,5</td><td>3–4%</td></tr>
+        <tr><td>Собственные средства</td><td>0,5–0,7</td><td>5–6%</td></tr>
+    </table>
+
+    <hr>
+
+    <h2>6. Сценарии (A–H)</h2>
+
+    <h3>Группа 1: Базовые (A–C)</h3>
+    <table>
+        <tr><th>ID</th><th>Сценарий</th><th>IRR</th><th>NPV</th><th>Окупаемость</th></tr>
+        <tr>
+            <td><span class="scenario-line__marker s-good"></span> <strong>A</strong></td>
+            <td><strong>Базовый (целевой)</strong> — плановый рост, господдержка по графику, рынок стабилен</td>
+            <td>32%</td>
+            <td>4,5 млрд руб.</td>
+            <td>4,2 года</td>
+        </tr>
+        <tr>
+            <td><span class="scenario-line__marker s-ok"></span> <strong>B</strong></td>
+            <td><strong>Консервативный</strong> — задержка регуляторики, медленный набор пользователей</td>
+            <td>22%</td>
+            <td>2,1 млрд руб.</td>
+            <td>5,5 года</td>
+        </tr>
+        <tr>
+            <td><span class="scenario-line__marker s-good"></span> <strong>C</strong></td>
+            <td><strong>Оптимистичный (РФ)</strong> — быстрая экспансия, господдержка увеличена</td>
+            <td>48%</td>
+            <td>9,8 млрд руб.</td>
+            <td>3,2 года</td>
+        </tr>
+    </table>
+
+    <h3>Группа 2: Стрессовые (D–F)</h3>
+    <table>
+        <tr><th>ID</th><th>Сценарий</th><th>IRR</th><th>NPV</th><th>Окупаемость</th></tr>
+        <tr>
+            <td><span class="scenario-line__marker s-warn"></span> <strong>D</strong></td>
+            <td><strong>Санкционный</strong> — ограничение доступа к технологиям, облакам, библиотекам</td>
+            <td>18%</td>
+            <td>1,2 млрд руб.</td>
+            <td>6,1 года</td>
+        </tr>
+        <tr>
+            <td><span class="scenario-line__marker s-warn"></span> <strong>E</strong></td>
+            <td><strong>Кадровый голод</strong> — острый дефицит разработчиков, рост зарплат на 40%+</td>
+            <td>15%</td>
+            <td>0,8 млрд руб.</td>
+            <td>6,8 года</td>
+        </tr>
+        <tr>
+            <td><span class="scenario-line__marker s-bad"></span> <strong>F</strong></td>
+            <td><strong>Кризисный</strong> — регуляторный ступор + санкции + стагфляция ИТ-рынка</td>
+            <td>10%</td>
+            <td>0,3 млрд руб.</td>
+            <td>8,4 года</td>
+        </tr>
+    </table>
+
+    <h3>Группа 3: Прорывные (G–H)</h3>
+    <table>
+        <tr><th>ID</th><th>Сценарий</th><th>IRR</th><th>NPV</th><th>Окупаемость</th></tr>
+        <tr>
+            <td><span class="scenario-line__marker s-ok"></span> <strong>G</strong></td>
+            <td><strong>Региональный прорыв</strong> — быстрая экспансия в регионы, госзаказ на верификацию</td>
+            <td>45%</td>
+            <td>11,2 млрд руб.</td>
+            <td>3,5 года</td>
+        </tr>
+        <tr>
+            <td><span class="scenario-line__marker s-good"></span> <strong>H</strong></td>
+            <td><strong>Международный прорыв</strong> — БРИКС, ЕАЭС, BRICS Bridge, цифровой рубль</td>
+            <td>60%+</td>
+            <td>15,0 млрд руб.</td>
+            <td>2,8 года</td>
+        </tr>
+    </table>
+
+    <blockquote>
+        <strong>Ключевой вывод:</strong> даже в самом пессимистичном сценарии F (регуляторный ступор + санкции + кадровый голод) проект остаётся безубыточным (IRR 10%, NPV 0,3 млрд руб.) благодаря: статусу национальной инфраструктуры, эффекту обеления самозанятых, резервному фонду +30% и диверсификации доходов.
+    </blockquote>
+
+    <hr>
+
+    <h2>7. KPI-цели</h2>
+
+    <table>
+        <tr><th>Год</th><th>Пользователи</th><th>Бренды</th><th>Транзакции</th><th>Оборот платформы</th></tr>
+        <tr><td>2027 (пилот)</td><td>50 тыс.</td><td>100</td><td>500 тыс.</td><td>1,25 млрд руб.</td></tr>
+        <tr><td>2028</td><td>300 тыс.</td><td>1 500</td><td>4 млн</td><td>10 млрд руб.</td></tr>
+        <tr><td>2029</td><td>1,2 млн</td><td>12 000</td><td>25 млн</td><td>62 млрд руб.</td></tr>
+        <tr><td>2030</td><td>3,0 млн</td><td>80 000</td><td>120 млн</td><td>300 млрд руб.</td></tr>
+        <tr><td>2031</td><td>4,38 млн</td><td>200 000+</td><td>350 млн+</td><td>875 млрд руб.</td></tr>
+    </table>
+
+    <hr>
+
+    <h2>8. Капитализация (прогноз)</h2>
+
+    <table>
+        <tr><th>Год</th><th>Капитализация</th><th>Мультипликатор</th><th>Комментарий</th></tr>
+        <tr><td>2027 (пилот)</td><td>3–5 млрд руб.</td><td>4× выручки</td><td>Ранняя стадия, proof-of-concept</td></tr>
+        <tr><td>2028</td><td>15–20 млрд руб.</td><td>5× выручки</td><td>Первые метрики, traction</td></tr>
+        <tr><td>2029</td><td>35–45 млрд руб.</td><td>6× выручки</td><td>Масштабирование, регионы</td></tr>
+        <tr><td>2030</td><td>50 млрд руб.</td><td>6× выручки</td><td>Зрелая платформа</td></tr>
+        <tr><td>2031</td><td><strong>250+ млрд руб.</strong></td><td>8× выручки</td><td>Международная экспансия</td></tr>
+    </table>
+
+    <div class="footer-note">
+        Финансовая модель v4.0. Все цифры являются прогнозными и основаны на текущих рыночных данных.<br>
+        АО «НП «Опора». Контакты: <a href="mailto:alexander.narbayev@yandex.ru">alexander.narbayev@yandex.ru</a>
+    </div>
+</body>
+</html>

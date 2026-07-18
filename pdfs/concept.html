@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Концепция проекта — Опора</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm 2.5cm;
+            @bottom-center {
+                content: "АО «НП «Опора» — " counter(page) " / " counter(pages);
+                font-size: 9px;
+                color: #999;
+                font-family: 'Inter', 'Segoe UI', sans-serif;
+            }
+        }
+        body {
+            font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 11pt;
+            line-height: 1.65;
+            color: #1a1a2e;
+            max-width: 100%;
+        }
+        h1 {
+            font-size: 22pt;
+            font-weight: 800;
+            color: #233370;
+            border-bottom: 3px solid #2EC4B6;
+            padding-bottom: 12px;
+            margin-top: 0;
+            margin-bottom: 24px;
+        }
+        h2 {
+            font-size: 16pt;
+            font-weight: 700;
+            color: #233370;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #e8eaed;
+            padding-bottom: 6px;
+        }
+        h3 {
+            font-size: 13pt;
+            font-weight: 700;
+            color: #2d4290;
+            margin-top: 24px;
+            margin-bottom: 8px;
+        }
+        h4 {
+            font-size: 11pt;
+            font-weight: 700;
+            color: #555770;
+            margin-top: 16px;
+            margin-bottom: 6px;
+        }
+        p {
+            margin: 0 0 12px;
+        }
+        strong {
+            color: #233370;
+        }
+        a {
+            color: #2EC4B6;
+            text-decoration: none;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 10pt;
+        }
+        th {
+            background: #233370;
+            color: white;
+            padding: 10px 12px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 9.5pt;
+        }
+        td {
+            padding: 8px 12px;
+            border-bottom: 1px solid #e8eaed;
+            vertical-align: top;
+        }
+        tr:nth-child(even) td {
+            background: #f4f5f7;
+        }
+        tr:hover td {
+            background: rgba(46, 196, 182, 0.05);
+        }
+        ul, ol {
+            margin: 8px 0 16px 24px;
+        }
+        li {
+            margin-bottom: 4px;
+        }
+        code {
+            background: #f4f5f7;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 9.5pt;
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+            color: #2d4290;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #e8eaed;
+            margin: 32px 0;
+        }
+        blockquote {
+            border-left: 4px solid #2EC4B6;
+            padding: 12px 20px;
+            margin: 16px 0;
+            background: rgba(46, 196, 182, 0.05);
+            border-radius: 0 8px 8px 0;
+        }
+        .header-bar {
+            background: linear-gradient(135deg, #233370, #2d4290);
+            color: white;
+            padding: 16px 24px;
+            margin: -2cm -2.5cm 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-bar__logo {
+            font-size: 14pt;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+        }
+        .header-bar__date {
+            font-size: 9pt;
+            opacity: 0.7;
+        }
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin: 16px 0;
+        }
+        .value-card {
+            background: #f4f5f7;
+            border-radius: 8px;
+            padding: 16px;
+            text-align: center;
+            border: 1px solid #e8eaed;
+        }
+        .value-card__num {
+            font-size: 20pt;
+            font-weight: 800;
+            color: #2EC4B6;
+            margin-bottom: 4px;
+        }
+        .value-card__label {
+            font-size: 9pt;
+            color: #555770;
+            line-height: 1.35;
+        }
+        .principle-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin: 16px 0;
+        }
+        .principle-card {
+            background: #f4f5f7;
+            border-radius: 6px;
+            padding: 12px;
+            border-left: 3px solid #2EC4B6;
+        }
+        .principle-card__name {
+            font-weight: 700;
+            color: #233370;
+            font-size: 10.5pt;
+            margin-bottom: 4px;
+        }
+        .principle-card__desc {
+            font-size: 9.5pt;
+            color: #555770;
+            margin: 0;
+        }
+        .footer-note {
+            margin-top: 48px;
+            padding-top: 16px;
+            border-top: 1px solid #e8eaed;
+            font-size: 9pt;
+            color: #999;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-bar">
+        <span class="header-bar__logo">ОПОРА — Концепция проекта</span>
+        <span class="header-bar__date">Июль 2026</span>
+    </div>
+
+    <h1>Концепция проекта «Опора»</h1>
+
+    <p><strong>«Опора»</strong> — национальная цифровая экосистема для верификации, продвижения и кооперации российских производителей. Мы не строим ещё один маркетплейс. Мы строим <strong>инфраструктуру доверия</strong> между покупателем, производителем и государством.</p>
+
+    <hr>
+
+    <h2>1. Миссия и видение</h2>
+
+    <h3>Миссия</h3>
+    <p>Сделать российские бренды видимыми, верифицированными и конкурентоспособными — через единую платформу, объединяющую покупателей, производителей, государство и инвесторов.</p>
+
+    <h3>Видение к 2031 году</h3>
+    <p>Платформа, на которой <strong>4,38 млн пользователей</strong> ежедневно покупают верифицированные российские товары, <strong>200 000+ брендов</strong> находят партнёров и выходят на экспорт, а доля российских брендов в ритейле достигает <strong>55%</strong> (против 35% сегодня). Капитализация — <strong>250+ млрд руб.</strong></p>
+
+    <hr>
+
+    <h2>2. Проблема: три барьера для МСП</h2>
+
+    <table>
+        <tr>
+            <th>Барьер</th>
+            <th>Масштаб</th>
+            <th>Последствия</th>
+        </tr>
+        <tr>
+            <td><strong>Невидимость</strong> — малые бренды не находят покупателей</td>
+            <td>80% брендов</td>
+            <td>Полки маркетплейсов забиты, реклама дорога, до федеральных сетей не добраться</td>
+        </tr>
+        <tr>
+            <td><strong>Кризис доверия</strong> — непонятно, что действительно российское</td>
+            <td>Доля РФ-брендов 35%</td>
+            <td>Гринвошинг, подделки, отсутствие единой системы верификации</td>
+        </tr>
+        <tr>
+            <td><strong>Разобщённость</strong> — каждый предприниматель сам за себя</td>
+            <td>85% без B2B-каналов</td>
+            <td>Нет площадки для совместных закупок, логистики и производственной кооперации</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2>3. Решение: три ответа одной платформой</h2>
+
+    <div class="value-grid">
+        <div class="value-card">
+            <div class="value-card__num">✓</div>
+            <div class="value-card__label">Верификация брендов через ГИСП, «Честный знак» и грейдирование (Золото/Серебро/Бронза)</div>
+        </div>
+        <div class="value-card">
+            <div class="value-card__num">AI</div>
+            <div class="value-card__label">AI-матчинг B2B-партнёров: 14 дней вместо 6 месяцев. Совместные закупки и артельные кластеры</div>
+        </div>
+        <div class="value-card">
+            <div class="value-card__num">7%</div>
+            <div class="value-card__label">Кешбэк до 7% для покупателей. Балльная система без НДС. Комиссия платформы — 0.8%</div>
+        </div>
+    </div>
+
+    <hr>
+
+    <h2>4. Архитектура платформы</h2>
+
+    <h3>20 сервисов: 13 бизнес + 7 инфраструктурных</h3>
+
+    <h4>Бизнес-сервисы (13)</h4>
+    <table>
+        <tr><th>Сервис</th><th>Назначение</th><th>Ключевая метрика</th></tr>
+        <tr><td><strong>Витрина</strong></td><td>Каталог верифицированных брендов, грейдирование, кешбэк</td><td>Кешбэк до 7%</td></tr>
+        <tr><td><strong>Кооперация</strong></td><td>AI-подбор B2B-партнёров, артельные кластеры, смарт-контракты</td><td>14 дней на поиск</td></tr>
+        <tr><td><strong>Креаторы</strong></td><td>Маркетплейс для самозанятых: дизайн, копирайтинг, маркетинг</td><td>0% комиссия</td></tr>
+        <tr><td><strong>Аналитика</strong></td><td>CRM/CDP, прогноз спроса (Temporal Fusion Transformer), монетизация данных</td><td>Монетизация обезличенных данных</td></tr>
+        <tr><td><strong>Право</strong></td><td>Арбитраж, патентный маркетплейс, типовые смарт-контракты с NDA</td><td>Патентный маркетплейс</td></tr>
+        <tr><td><strong>Финансы</strong></td><td>Краудфандинг 2.0, токены участия, интеграция с ЦФА</td><td>ЦФА + краудфандинг</td></tr>
+        <tr><td><strong>Песочница</strong></td><td>Нулевая комиссия для самозанятых, интеграция с «Мой налог»</td><td>0% комиссия</td></tr>
+        <tr><td><strong>Цепочки</strong></td><td>B2B-закупки, блокчейн-прослеживаемость (Hyperledger Fabric)</td><td>Блокчейн HLF</td></tr>
+        <tr><td><strong>Кадры</strong></td><td>Верификация компетенций, интеграция с вузами, биржа стажировок</td><td>Верификация компетенций</td></tr>
+        <tr><td><strong>Регионы</strong></td><td>Геотаргетинг под специфику моногородов, региональные кластеры</td><td>Геотаргетинг</td></tr>
+        <tr><td><strong>Экспорт</strong></td><td>Выход на рынки ЕАЭС и БРИКС, white-label решения</td><td>5 стран к 2031</td></tr>
+        <tr><td><strong>Лояльность</strong></td><td>Программа лояльности, баллы, кешбэк без НДС</td><td>LTV/CAC 21.2×</td></tr>
+        <tr><td><strong>Платежи</strong></td><td>Платёжная инфраструктура: СБП, цифровой рубль, маркированные платежи ЦБ</td><td>СБП + цифровой рубль</td></tr>
+    </table>
+
+    <h4>Инфраструктурные сервисы (7)</h4>
+    <ul>
+        <li><strong>Auth Service</strong> — Keycloak + ЕСИА, OAuth 2.0/OIDC, класс защиты К2</li>
+        <li><strong>Gateway Service</strong> — API Gateway, BFF, rate limiting</li>
+        <li><strong>LK Service</strong> — Личный кабинет на React 18 SPA</li>
+        <li><strong>BFF Service</strong> — Backend-for-Frontend, оптимизация запросов</li>
+        <li><strong>Admin Service</strong> — Администрирование, модерация</li>
+        <li><strong>AI Service</strong> — ИИ-сервисы: CatBoost, RuBERT, TFT, Isolation Forest</li>
+        <li><strong>Mock Service</strong> — 8 эмуляторов госсистем (ФНС, ОФД, СБП, ЦБ, ГИС)</li>
+    </ul>
+
+    <hr>
+
+    <h2>5. Ключевые метрики</h2>
+
+    <table>
+        <tr><th>Показатель</th><th>Значение</th><th>Примечание</th></tr>
+        <tr><td>Бюджет (5 лет)</td><td>10–12,5 млрд руб.</td><td>Фазы 0–3</td></tr>
+        <tr><td>Господдержка</td><td>50% (4,75–6,0 млрд руб.)</td><td>Федеральный бюджет, субсидии, институты развития</td></tr>
+        <tr><td>NPV (базовый / оптим.)</td><td>4,5 / 15,0 млрд руб.</td><td>Финансовая модель v4.0</td></tr>
+        <tr><td>IRR (базовый / оптим.)</td><td>32% / 60%+</td><td>8 сценариев A–H</td></tr>
+        <tr><td>Срок окупаемости простой</td><td>4,2 года</td><td>С даты запуска пилота</td></tr>
+        <tr><td>Срок окупаемости дисконт.</td><td>4,8 года</td><td>WACC 18%</td></tr>
+        <tr><td>WACC</td><td>18%</td><td>Средневзвешенная стоимость капитала</td></tr>
+        <tr><td>LTV/CAC</td><td>21,2×</td><td>Юнит-экономика</td></tr>
+        <tr><td>Комиссия платформы</td><td>0,8%</td><td>Ниже любого маркетплейса</td></tr>
+        <tr><td>Бюджетный мультипликатор</td><td>1,7×</td><td>Экономический эффект на рубль инвестиций</td></tr>
+        <tr><td>Пользователи к 2031</td><td>4,38 млн</td><td>B2C + B2B</td></tr>
+        <tr><td>Капитализация к 2031</td><td>250+ млрд руб.</td><td>При оптимистичном сценарии</td></tr>
+    </table>
+
+    <hr>
+
+    <h2>6. Дорожная карта</h2>
+
+    <table>
+        <tr><th>Фаза</th><th>Срок</th><th>Бюджет</th><th>Основные вехи</th></tr>
+        <tr>
+            <td><strong>Фаза 0. Предзапуск</strong></td>
+            <td>Июль 2026 – Июнь 2027</td>
+            <td>2,2 млрд руб. (Транш 1)</td>
+            <td>Регистрация АО, согласование нормативной базы, поправки в ст. 149 НК РФ, набор ядра (9–12 чел.)</td>
+        </tr>
+        <tr>
+            <td><strong>Фаза 1. Пилот</strong></td>
+            <td>Июль 2027 – Июнь 2028</td>
+            <td>1,0 млрд руб. (Транш 2)</td>
+            <td>Запуск Витрины и Кооперации. Москва + Зеленоград. 100 брендов, 50K пользователей, SLA ≥99.5%</td>
+        </tr>
+        <tr>
+            <td><strong>Фаза 2. Масштабирование</strong></td>
+            <td>Июль 2028 – Дек 2030</td>
+            <td>2,2 млрд руб. (Транш 3)</td>
+            <td>Вся Россия. 200K брендов, 4.38 млн пользователей, капитализация 50 млрд руб.</td>
+        </tr>
+        <tr>
+            <td><strong>Фаза 3. Международное</strong></td>
+            <td>2031+</td>
+            <td>800 млн руб. (Транш 4)</td>
+            <td>Экспорт в ЕАЭС и БРИКС. 10K брендов за рубежом, 5 стран, капитализация 250+ млрд руб.</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h2>7. Принципы платформы</h2>
+
+    <div class="principle-grid">
+        <div class="principle-card">
+            <div class="principle-card__name">Рыночные стимулы, не запреты</div>
+            <p class="principle-card__desc">Увеличиваем долю российских брендов с 35% до 55% через кешбэк, верификацию и доступ к каналам сбыта — не через пошлины и ограничения.</p>
+        </div>
+        <div class="principle-card">
+            <div class="principle-card__name">Прозрачность происхождения</div>
+            <p class="principle-card__desc">Каждый товар проходит автоматическую верификацию. Покупатель видит, где и кем произведён товар. Никакого гринвошинга.</p>
+        </div>
+        <div class="principle-card">
+            <div class="principle-card__name">Низкая комиссия — высокий оборот</div>
+            <p class="principle-card__desc">0,8% с транзакции, 0% для самозанятых. Мы зарабатываем на объёме, а не на высоких комиссиях.</p>
+        </div>
+        <div class="principle-card">
+            <div class="principle-card__name">Открытая экосистема</div>
+            <p class="principle-card__desc">Открытый API для партнёров. Интеграция с госсистемами (ЕСИА, ГИСП, ФНС, «Честный знак»). White-label для регионов.</p>
+        </div>
+        <div class="principle-card">
+            <div class="principle-card__name">Безопасность класса К2</div>
+            <p class="principle-card__desc">ФСТЭК №117. ГОСТ-криптография (КриптоПро CSP 5.0). Обязательный пентест. Защита персональных данных.</p>
+        </div>
+        <div class="principle-card">
+            <div class="principle-card__name">AI-усиление, не замена</div>
+            <p class="principle-card__desc">ИИ помогает находить партнёров, прогнозировать спрос и бороться с мошенничеством. Решения принимают люди.</p>
+        </div>
+    </div>
+
+    <hr>
+
+    <h2>8. Почему сейчас</h2>
+
+    <ul>
+        <li><strong>Рыночный момент:</strong> 6,3 млн субъектов МСП, 40% ВВП, но 80% брендов невидимы. Рынок ждёт инфраструктуру доверия.</li>
+        <li><strong>Госповестка:</strong> Нацпроект «Малое и среднее предпринимательство», курс на импортозамещение и технологический суверенитет.</li>
+        <li><strong>Технологическая готовность:</strong> 20 сервисов уже в коде (626+ Java-файлов). React-интерфейс. Docker Compose, Kubernetes. Всё компилируется и запускается.</li>
+        <li><strong>Регуляторное окно:</strong> Поправки в ст. 149 НК РФ (баллы без НДС), Постановление об ЭПР (2027–2032), нормативные акты ЦБ.</li>
+    </ul>
+
+    <hr>
+
+    <h2>9. Технологический стек</h2>
+
+    <table>
+        <tr><th>Компонент</th><th>Технология</th></tr>
+        <tr><td>Бэкенд</td><td>Java 25, Quarkus 3.36, Gradle 9.5.1 (Kotlin DSL)</td></tr>
+        <tr><td>Фронтенд</td><td>React 18 SPA, Apache Wicket 10.9.0</td></tr>
+        <tr><td>Базы данных</td><td>PostgreSQL 17, MongoDB 8.3, Redis 8.6.3</td></tr>
+        <tr><td>Обмен сообщениями</td><td>Apache Kafka 4.2.0, gRPC 1.81.0</td></tr>
+        <tr><td>Схемы</td><td>Apicurio Registry 3.2.x (Avro)</td></tr>
+        <tr><td>Аутентификация</td><td>Keycloak 24, OAuth 2.0/OIDC</td></tr>
+        <tr><td>Блокчейн</td><td>Hyperledger Fabric + КриптоПро HLF patch</td></tr>
+        <tr><td>AI/ML</td><td>YandexGPT, Kandinsky, CatBoost, RuBERT, TFT, XGBoost</td></tr>
+        <tr><td>Инфраструктура</td><td>Docker Compose, Kubernetes</td></tr>
+        <tr><td>Архитектура</td><td>Clean Architecture + DDD, микросервисы</td></tr>
+    </table>
+
+    <hr>
+
+    <h2>10. Что уже сделано</h2>
+
+    <table>
+        <tr><th>Артефакт</th><th>Статус</th><th>Объём</th></tr>
+        <tr><td>20 микросервисов</td><td>✅ Компилируются</td><td>626+ Java-файлов</td></tr>
+        <tr><td>Личный кабинет</td><td>✅ React SPA</td><td>21 Java-файл</td></tr>
+        <tr><td>Docker Compose</td><td>✅ Готово</td><td>4 файла конфигурации</td></tr>
+        <tr><td>Kubernetes</td><td>✅ Готово</td><td>13 манифестов</td></tr>
+        <tr><td>Моки госсистем</td><td>✅ Готово</td><td>8 эмуляторов (ФНС, ОФД, СБП, ЦБ, ГИС)</td></tr>
+        <tr><td>Финансовая модель</td><td>✅ v4.0</td><td>8 сценариев A–H</td></tr>
+        <tr><td>Документация</td><td>✅ Готово</td><td>365+ документов</td></tr>
+    </table>
+
+    <div class="footer-note">
+        Проект находится на стадии предзапуска (Фаза 0). Информация носит ознакомительный характер.<br>
+        АО «НП «Опора». Контакты: <a href="mailto:alexander.narbayev@yandex.ru">alexander.narbayev@yandex.ru</a>
+    </div>
+</body>
+</html>

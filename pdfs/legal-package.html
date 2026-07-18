@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Юридический пакет — Опора</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm 2.5cm;
+            @bottom-center {
+                content: "АО «НП «Опора» — " counter(page) " / " counter(pages);
+                font-size: 9px;
+                color: #999;
+                font-family: 'Inter', 'Segoe UI', sans-serif;
+            }
+        }
+        body {
+            font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 11pt;
+            line-height: 1.65;
+            color: #1a1a2e;
+            max-width: 100%;
+        }
+        h1 {
+            font-size: 22pt;
+            font-weight: 800;
+            color: #233370;
+            border-bottom: 3px solid #2EC4B6;
+            padding-bottom: 12px;
+            margin-top: 0;
+            margin-bottom: 24px;
+        }
+        h2 {
+            font-size: 16pt;
+            font-weight: 700;
+            color: #233370;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #e8eaed;
+            padding-bottom: 6px;
+        }
+        h3 {
+            font-size: 13pt;
+            font-weight: 700;
+            color: #2d4290;
+            margin-top: 24px;
+            margin-bottom: 8px;
+        }
+        h4 {
+            font-size: 11pt;
+            font-weight: 700;
+            color: #555770;
+            margin-top: 16px;
+            margin-bottom: 6px;
+        }
+        p {
+            margin: 0 0 12px;
+        }
+        strong {
+            color: #233370;
+        }
+        a {
+            color: #2EC4B6;
+            text-decoration: none;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 10pt;
+        }
+        th {
+            background: #233370;
+            color: white;
+            padding: 10px 12px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 9.5pt;
+        }
+        td {
+            padding: 8px 12px;
+            border-bottom: 1px solid #e8eaed;
+            vertical-align: top;
+        }
+        tr:nth-child(even) td {
+            background: #f4f5f7;
+        }
+        tr:hover td {
+            background: rgba(46, 196, 182, 0.05);
+        }
+        ul, ol {
+            margin: 8px 0 16px 24px;
+        }
+        li {
+            margin-bottom: 4px;
+        }
+        code {
+            background: #f4f5f7;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 9.5pt;
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+            color: #2d4290;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #e8eaed;
+            margin: 32px 0;
+        }
+        blockquote {
+            border-left: 4px solid #2EC4B6;
+            padding: 12px 20px;
+            margin: 16px 0;
+            background: rgba(46, 196, 182, 0.05);
+            border-radius: 0 8px 8px 0;
+        }
+        .header-bar {
+            background: linear-gradient(135deg, #233370, #2d4290);
+            color: white;
+            padding: 16px 24px;
+            margin: -2cm -2.5cm 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-bar__logo {
+            font-size: 14pt;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+        }
+        .header-bar__date {
+            font-size: 9pt;
+            opacity: 0.7;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 8.5pt;
+            font-weight: 600;
+        }
+        .status-ready { background: #4CAF76; color: white; }
+        .status-progress { background: #f0a500; color: white; }
+        .status-pending { background: #999; color: white; }
+        .doc-card {
+            background: #f4f5f7;
+            border-radius: 6px;
+            padding: 12px;
+            margin: 8px 0;
+            border-left: 3px solid #2EC4B6;
+        }
+        .doc-card__title {
+            font-weight: 700;
+            color: #233370;
+            font-size: 10.5pt;
+            margin-bottom: 2px;
+        }
+        .doc-card__desc {
+            font-size: 9.5pt;
+            color: #555770;
+            margin: 0;
+        }
+        .footer-note {
+            margin-top: 48px;
+            padding-top: 16px;
+            border-top: 1px solid #e8eaed;
+            font-size: 9pt;
+            color: #999;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-bar">
+        <span class="header-bar__logo">ОПОРА — Юридический пакет</span>
+        <span class="header-bar__date">Июль 2026</span>
+    </div>
+
+    <h1>Юридическая рамка проекта «Опора»</h1>
+
+    <p>Юридическая рамка проекта «Опора» обеспечивает правовую основу для деятельности платформы как <strong>национальной цифровой экосистемы</strong> с миноритарным госучастием. Пакет охватывает корпоративное управление, налогообложение, информационную безопасность и интеграцию с государственными системами.</p>
+
+    <hr>
+
+    <h2>1. Организационно-правовая форма</h2>
+
+    <table>
+        <tr><th>Параметр</th><th>Значение</th></tr>
+        <tr><td><strong>Форма</strong></td><td>Акционерное общество «Национальная платформа «Опора» (АО «НП «Опора»)</td></tr>
+        <tr><td><strong>Госучастие</strong></td><td>Миноритарное (до 49%) + «золотая акция» (право вето по ключевым вопросам)</td></tr>
+        <tr><td><strong>Частные соучредители</strong></td><td>Венчурные фонды, институты развития, частные инвесторы</td></tr>
+        <tr><td><strong>Уставный капитал</strong></td><td>Определяется после раунда финансирования (Фаза 0)</td></tr>
+        <tr><td><strong>Опционы сотрудников</strong></td><td>5% УК, вестинг 2+3 года (2 года cliff, 3 года линейный)</td></tr>
+    </table>
+
+    <hr>
+
+    <h2>2. Учредительные документы</h2>
+
+    <div class="doc-card">
+        <div class="doc-card__title">Устав АО «НП «Опора»</div>
+        <p class="doc-card__desc">Определяет правовой статус, структуру управления, права акционеров. Включает положения о миноритарном госучастии и «золотой акции».</p>
+    </div>
+
+    <div class="doc-card">
+        <div class="doc-card__title">Корпоративный договор</div>
+        <p class="doc-card__desc">Регулирует отношения между частными и государственным соучредителями: порядок принятия решений, выход из состава, механизмы разрешения споров.</p>
+    </div>
+
+    <div class="doc-card">
+        <div class="doc-card__title">Положение о Наблюдательном совете</div>
+        <p class="doc-card__desc">Состав (представители государства, частных инвесторов, независимые директора), компетенция, порядок созыва и принятия решений.</p>
+    </div>
+
+    <div class="doc-card">
+        <div class="doc-card__title">Положение о Стратегическом комитете</div>
+        <p class="doc-card__desc">Консультативный орган с участием представителей Минэка, Минцифры, ЦБ РФ, отраслевых ассоциаций. Выработка стратегических рекомендаций.</p>
+    </div>
+
+    <div class="doc-card">
+        <div class="doc-card__title">Трудовые соглашения с KPI</div>
+        <p class="doc-card__desc">Типовые контракты для ключевых сотрудников с привязкой вознаграждения к измеримым показателям эффективности.</p>
+    </div>
+
+    <hr>
+
+    <h2>3. Налоговое регулирование</h2>
+
+    <h3>Поправки в ст. 149 НК РФ</h3>
+    <p>Ключевой элемент юридической рамки — <strong>освобождение операций с баллами лояльности от НДС</strong>. Это позволяет:</p>
+    <ul>
+        <li>Начислять кешбэк до 7% без увеличения налоговой нагрузки на платформу</li>
+        <li>Не учитывать баллы как объект налогообложения при их начислении и использовании</li>
+        <li>Создать прецедент для программ лояльности с балльной системой как инструмента стимулирования спроса</li>
+    </ul>
+
+    <h3>Налоговый режим самозанятых</h3>
+    <p>Модуль «Песочница» интегрирован с системой «Мой налог» (ФНС). Для самозанятых — автоматический налоговый учёт через API ФНС. Комиссия платформы — <strong>0%</strong>.</p>
+
+    <table>
+        <tr><th>Налог</th><th>Режим</th><th>Примечание</th></tr>
+        <tr><td>НДС на баллы лояльности</td><td>Освобождение (ст. 149 НК РФ)</td><td>Требуются поправки</td></tr>
+        <tr><td>НДС на комиссию платформы</td><td>Стандартный (20%)</td><td>Комиссия 0,8% от транзакции</td></tr>
+        <tr><td>Налог на прибыль</td><td>Стандартный (20%)</td><td>После выхода на окупаемость</td></tr>
+        <tr><td>НДФЛ (самозанятые)</td><td>4–6% через «Мой налог»</td><td>Автоматический учёт</td></tr>
+        <tr><td>Страховые взносы</td><td>Стандартный режим</td><td>Для сотрудников АО</td></tr>
+    </table>
+
+    <hr>
+
+    <h2>4. Регуляторная среда</h2>
+
+    <h3>Постановление Правительства об ЭПР (2027–2032)</h3>
+    <p>Экспериментальный правовой режим (ЭПР) в сфере цифровых инноваций позволяет:</p>
+    <ul>
+        <li>Тестировать балльную систему лояльности без полного соответствия текущему законодательству о платёжных системах</li>
+        <li>Использовать маркированные платежи ЦБ РФ в пилотном режиме</li>
+        <li>Интегрировать цифровой рубль на ранней стадии</li>
+        <li>Применять смарт-контракты для B2B-сделок в рамках ЭПР</li>
+    </ul>
+
+    <h3>Нормативные акты ЦБ РФ</h3>
+    <ul>
+        <li><strong>Маркированные платежи</strong> — специальный код транзакции для идентификации платежей на платформе «Опора»</li>
+        <li><strong>Спецсчёт лояльности</strong> — отдельный счёт для учёта баллов, не являющихся денежными средствами</li>
+        <li><strong>Интеграция с СБП</strong> — приём платежей через Систему быстрых платежей Банка России</li>
+    </ul>
+
+    <hr>
+
+    <h2>5. Информационная безопасность (класс К2)</h2>
+
+    <table>
+        <tr><th>Требование</th><th>Стандарт</th><th>Реализация</th></tr>
+        <tr><td>Класс защиты</td><td><strong>К2</strong> (ФСТЭК № 117)</td><td>Повышенный уровень защиты значимых объектов КИИ</td></tr>
+        <tr><td>Криптография</td><td><strong>ГОСТ</strong></td><td>КриптоПро CSP 5.0, ГОСТ 34.10-2018, ГОСТ 34.11-2018</td></tr>
+        <tr><td>Аутентификация</td><td><strong>OAuth 2.0 / OIDC</strong></td><td>Keycloak 24 + ЕСИА (Госуслуги)</td></tr>
+        <tr><td>Аудит</td><td><strong>ФСТЭК</strong></td><td>Обязательный пентест, регулярный аудит защищённости</td></tr>
+        <tr><td>Персональные данные</td><td><strong>152-ФЗ</strong></td><td>Локализация ПДн на серверах в РФ, согласие на обработку</td></tr>
+        <tr><td>Блокчейн</td><td><strong>Hyperledger Fabric + КриптоПро</strong></td><td>ГОСТ-криптография для смарт-контрактов и прослеживаемости</td></tr>
+    </table>
+
+    <blockquote>
+        <strong>Класс К2</strong> — второй (повышенный) уровень защищённости по классификации ФСТЭК России. Требует: сертифицированные СЗИ, многофакторную аутентификацию, журналирование всех событий безопасности, регулярный аудит и пентест.
+    </blockquote>
+
+    <hr>
+
+    <h2>6. Интеграции с государственными системами</h2>
+
+    <table>
+        <tr><th>Система</th><th>Протокол</th><th>Назначение</th><th>Статус</th></tr>
+        <tr><td><strong>ЕСИА</strong></td><td>OAuth 2.0 / OIDC</td><td>Аутентификация пользователей через Госуслуги</td><td><span class="status-badge status-ready">Готово</span></td></tr>
+        <tr><td><strong>ГИСП</strong></td><td>REST API</td><td>Верификация продукции и производственных цепочек</td><td><span class="status-badge status-progress">В процессе</span></td></tr>
+        <tr><td><strong>Честный знак</strong></td><td>REST API</td><td>Проверка маркировки товаров</td><td><span class="status-badge status-progress">В процессе</span></td></tr>
+        <tr><td><strong>ФНС</strong></td><td>REST / SOAP</td><td>Налоговый учёт, интеграция с «Мой налог»</td><td><span class="status-badge status-pending">Запланировано</span></td></tr>
+        <tr><td><strong>ОФД</strong></td><td>REST / SOAP</td><td>Подтверждение покупок через операторов фискальных данных</td><td><span class="status-badge status-pending">Запланировано</span></td></tr>
+        <tr><td><strong>ЦБ РФ (СБП)</strong></td><td>API СБП</td><td>Приём платежей через Систему быстрых платежей</td><td><span class="status-badge status-pending">Запланировано</span></td></tr>
+    </table>
+
+    <hr>
+
+    <h2>7. Интеллектуальная собственность</h2>
+
+    <table>
+        <tr><th>Объект</th><th>Защита</th><th>Примечание</th></tr>
+        <tr><td>Программный код</td><td>Свидетельство Роспатента</td><td>20 микросервисов, React SPA, инфраструктура</td></tr>
+        <tr><td>Товарный знак «Опора»</td><td>Регистрация в Роспатенте</td><td>Классы МКТУ 35, 36, 38, 42, 45</td></tr>
+        <tr><td>Методология верификации</td><td>Патент на изобретение</td><td>Способ автоматической верификации происхождения товаров</td></tr>
+        <tr><td>AI-модели</td><td>Коммерческая тайна + патент</td><td>CatBoost, TFT, RuBERT-модели как часть платформы</td></tr>
+        <tr><td>Патентный маркетплейс</td><td>Платформа для сделок</td><td>Встроенный в модуль «Право»</td></tr>
+    </table>
+
+    <hr>
+
+    <h2>8. Статус согласований</h2>
+
+    <table>
+        <tr><th>Документ / Этап</th><th>Статус</th><th>Ожидаемый срок</th></tr>
+        <tr><td>Регистрация АО «НП «Опора»</td><td><span class="status-badge status-progress">В процессе</span></td><td>Q3 2026</td></tr>
+        <tr><td>Поправки в ст. 149 НК РФ</td><td><span class="status-badge status-pending">Проект</span></td><td>Q2 2027</td></tr>
+        <tr><td>Постановление об ЭПР</td><td><span class="status-badge status-pending">Проект</span></td><td>Q2 2027</td></tr>
+        <tr><td>Соглашение с Минэкономразвития</td><td><span class="status-badge status-pending">Проект</span></td><td>Q4 2026</td></tr>
+        <tr><td>Соглашение с Минцифрой</td><td><span class="status-badge status-pending">Проект</span></td><td>Q4 2026</td></tr>
+        <tr><td>Нормативные акты ЦБ РФ</td><td><span class="status-badge status-pending">Проект</span></td><td>Q2 2027</td></tr>
+        <tr><td>Аттестация ФСТЭК (К2)</td><td><span class="status-badge status-pending">Запланировано</span></td><td>Q2 2027</td></tr>
+        <tr><td>Устав + корпдоговор + положения</td><td><span class="status-badge status-ready">Готово</span></td><td>Июль 2026</td></tr>
+    </table>
+
+    <hr>
+
+    <h2>9. Комплаенс и GR-стратегия</h2>
+
+    <p>Для обеспечения юридической устойчивости предусмотрены:</p>
+
+    <ul>
+        <li><strong>Выделенный бюджет на GR</strong> — работа с профильными комитетами Госдумы, Минэком, Минцифры, ЦБ РФ</li>
+        <li><strong>Участие в рабочих группах</strong> — по цифровой экономике, импортозамещению, поддержке МСП</li>
+        <li><strong>Юридическое сопровождение</strong> — штатный юрист (Волна 1) + внешние консультанты</li>
+        <li><strong>Комплаенс-мониторинг</strong> — отслеживание изменений в 152-ФЗ, 149-ФЗ, нормативных актах ЦБ РФ и ФСТЭК</li>
+        <li><strong>Прозрачность</strong> — публичная отчётность о структуре собственности, финансах и KPI</li>
+    </ul>
+
+    <div class="footer-note">
+        Юридический пакет актуален на июль 2026 года. Все документы подлежат согласованию с регулирующими органами.<br>
+        АО «НП «Опора». Контакты: <a href="mailto:alexander.narbayev@yandex.ru">alexander.narbayev@yandex.ru</a>
+    </div>
+</body>
+</html>
