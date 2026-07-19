@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Инвестиционный меморандум — Опора</title>
+    <title>Инвестиционный меморандум v5.0 — Опора</title>
     <style>
         @page {
             size: A4;
@@ -16,45 +16,38 @@
         }
         body {
             font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-            font-size: 11pt;
-            line-height: 1.65;
+            font-size: 10.5pt;
+            line-height: 1.6;
             color: #1a1a2e;
             max-width: 100%;
         }
         h1 {
-            font-size: 22pt;
+            font-size: 20pt;
             font-weight: 800;
             color: #233370;
             border-bottom: 3px solid #2EC4B6;
-            padding-bottom: 12px;
+            padding-bottom: 10px;
             margin-top: 0;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
         h2 {
-            font-size: 16pt;
+            font-size: 14pt;
             font-weight: 700;
             color: #233370;
-            margin-top: 32px;
-            margin-bottom: 12px;
+            margin-top: 28px;
+            margin-bottom: 10px;
             border-bottom: 1px solid #e8eaed;
-            padding-bottom: 6px;
+            padding-bottom: 4px;
         }
         h3 {
-            font-size: 13pt;
+            font-size: 11.5pt;
             font-weight: 700;
             color: #2d4290;
-            margin-top: 24px;
+            margin-top: 20px;
             margin-bottom: 8px;
         }
-        h4 {
-            font-size: 11pt;
-            font-weight: 700;
-            color: #555770;
-            margin-top: 16px;
-            margin-bottom: 6px;
-        }
         p {
-            margin: 0 0 12px;
+            margin: 0 0 10px;
         }
         strong {
             color: #233370;
@@ -66,73 +59,49 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 16px 0;
-            font-size: 10pt;
+            margin: 14px 0;
+            font-size: 9.5pt;
         }
         th {
             background: #233370;
             color: white;
-            padding: 10px 12px;
+            padding: 9px 11px;
             text-align: left;
             font-weight: 600;
-            font-size: 9.5pt;
+            font-size: 9pt;
         }
         td {
-            padding: 8px 12px;
+            padding: 7px 11px;
             border-bottom: 1px solid #e8eaed;
             vertical-align: top;
         }
         tr:nth-child(even) td {
             background: #f4f5f7;
         }
-        tr:hover td {
-            background: rgba(46, 196, 182, 0.05);
-        }
         ul, ol {
-            margin: 8px 0 16px 24px;
+            margin: 8px 0 14px 24px;
         }
         li {
             margin-bottom: 4px;
         }
-        code {
-            background: #f4f5f7;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-size: 9.5pt;
-            font-family: 'JetBrains Mono', 'Fira Code', monospace;
-            color: #2d4290;
-        }
-        pre {
-            background: #1a1a2e;
-            color: #e8eaed;
-            padding: 16px;
-            border-radius: 8px;
-            overflow-x: auto;
-            font-size: 9pt;
-            line-height: 1.5;
-        }
-        pre code {
-            background: none;
-            padding: 0;
-            color: inherit;
-        }
         hr {
             border: none;
             border-top: 1px solid #e8eaed;
-            margin: 32px 0;
+            margin: 24px 0;
         }
         blockquote {
             border-left: 4px solid #2EC4B6;
-            padding: 12px 20px;
+            padding: 12px 18px;
             margin: 16px 0;
             background: rgba(46, 196, 182, 0.05);
             border-radius: 0 8px 8px 0;
+            font-size: 10pt;
         }
         .header-bar {
             background: linear-gradient(135deg, #233370, #2d4290);
             color: white;
             padding: 16px 24px;
-            margin: -2cm -2.5cm 24px;
+            margin: -2cm -2.5cm 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -145,6 +114,39 @@
         .header-bar__date {
             font-size: 9pt;
             opacity: 0.7;
+        }
+        .confidential-stamp {
+            border: 2px solid #E54D4D;
+            color: #E54D4D;
+            padding: 8px 16px;
+            text-align: center;
+            font-size: 9pt;
+            font-weight: 700;
+            border-radius: 6px;
+            margin: 14px 0;
+        }
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin: 16px 0;
+        }
+        .metric-item {
+            background: linear-gradient(135deg, #233370, #2d4290);
+            color: white;
+            border-radius: 8px;
+            padding: 14px 12px;
+            text-align: center;
+        }
+        .metric-item__value {
+            font-size: 16pt;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        .metric-item__label {
+            font-size: 7.5pt;
+            opacity: 0.75;
+            margin-top: 2px;
         }
         .footer-note {
             margin-top: 48px;
@@ -159,564 +161,254 @@
 <body>
     <div class="header-bar">
         <span class="header-bar__logo">◆ ОПОРА</span>
-        <span class="header-bar__date">Национальная цифровая экосистема • 17.07.2026</span>
+        <span class="header-bar__date">Национальная цифровая экосистема • 19.07.2026</span>
     </div>
-    <h1 id="_1">ИНВЕСТИЦИОННЫЙ МЕМОРАНДУМ</h1>
-<h2 id="_2">АО «НП «Опора» — Национальная цифровая экосистема роста отечественных брендов</h2>
-<p><strong>Версия 4.1 | Июль 2026 | Строго конфиденциально</strong></p>
-<hr />
-<h2 id="1">1. Резюме</h2>
-<p>АО «НП «Опора» привлекает <strong>10–12,5 млрд рублей</strong> из пула источников на создание и масштабирование национальной цифровой экосистемы из <strong>20 сервисов (13+7)</strong>, объединяющей программу лояльности с верификацией отечественности, производственную кооперацию, токенизацию долей участия и экспорт модели в страны БРИКС.</p>
-<p>Проект занимает уникальную нишу — <strong>открытой, верифицирующей инфраструктуры</strong>, аналогов которой нет ни в России, ни в мире. Платформа прошла трёхлетнюю проработку. Архитектура из 20 сервисов подтверждена детальным анализом потребностей рынка.</p>
-<p><strong>Ключевые показатели:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Показатель</th>
-<th>Значение</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>NPV (базовый сценарий)</td>
-<td>4,5 млрд руб.</td>
-</tr>
-<tr>
-<td>NPV (взвешенный по 8 сценариям)</td>
-<td>3,12 млрд руб.</td>
-</tr>
-<tr>
-<td>IRR</td>
-<td>32%</td>
-</tr>
-<tr>
-<td>Срок окупаемости (простой)</td>
-<td>4,2 года</td>
-</tr>
-<tr>
-<td>Срок окупаемости (дисконтированный)</td>
-<td>4,8 года</td>
-</tr>
-<tr>
-<td>Выручка (год 5)</td>
-<td>6,04 млрд руб.</td>
-</tr>
-<tr>
-<td>Чистая прибыль (год 5)</td>
-<td>1,23 млрд руб.</td>
-</tr>
-<tr>
-<td>LTV/CAC</td>
-<td>21,2×</td>
-</tr>
-<tr>
-<td>WACC</td>
-<td>18%</td>
-</tr>
-<tr>
-<td>Пользователи к 2031</td>
-<td>4,38 млн</td>
-</tr>
-<tr>
-<td>Бюджетный мультипликатор</td>
-<td>1,7×</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="2">2. Рыночная возможность</h2>
-<h3 id="21">2.1. Объём рынков</h3>
-<table>
-<thead>
-<tr>
-<th>Рынок</th>
-<th>Объём (2025–2026)</th>
-<th>Источник</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Программы лояльности РФ</td>
-<td>450 млрд руб.</td>
-<td>Frank RG</td>
-</tr>
-<tr>
-<td>ЦФА (прогноз 2026)</td>
-<td>1,4–1,5 трлн руб.</td>
-<td>ЦБ РФ</td>
-</tr>
-<tr>
-<td>B2B-кооперация МСП</td>
-<td>350 млрд руб. (потенциал)</td>
-<td>Расчёт: 2% МСП × 500K × 5 сделок</td>
-</tr>
-<tr>
-<td>Креативные услуги для МСП</td>
-<td>80–120 млрд руб.</td>
-<td>ФНС, расчёт</td>
-</tr>
-</tbody>
-</table>
-<h3 id="22">2.2. Целевые сегменты</h3>
-<table>
-<thead>
-<tr>
-<th>Сегмент</th>
-<th>Параметр</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>TAM (Total Addressable Market)</td>
-<td>450 млрд руб. — весь рынок лояльности РФ</td>
-</tr>
-<tr>
-<td>SAM (Serviceable Addressable Market)</td>
-<td>100–150 млрд руб. — цифровые сервисы для МСП</td>
-</tr>
-<tr>
-<td>SOM (Serviceable Obtainable Market)</td>
-<td>6,04 млрд руб. к году 5 (~4–6% SAM)</td>
-</tr>
-</tbody>
-</table>
-<h3 id="23">2.3. Макроконтекст</h3>
-<table>
-<thead>
-<tr>
-<th>Показатель</th>
-<th>Значение</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Ключевая ставка ЦБ РФ</td>
-<td>14,25% (июнь 2026)</td>
-</tr>
-<tr>
-<td>Инфляция (прогноз)</td>
-<td>4,8–5,5%</td>
-</tr>
-<tr>
-<td>Рост числа МСП</td>
-<td>+100 000 (янв–март 2026, исторический максимум)</td>
-</tr>
-<tr>
-<td>Господдержка МСП (2026)</td>
-<td>~900 млрд руб. (совокупно)</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="3-8">3. Бизнес-модель: 8 потоков дохода</h2>
-<table>
-<thead>
-<tr>
-<th>№</th>
-<th>Поток</th>
-<th>Описание</th>
-<th>Доля в выручке (год 5)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td><strong>Кешбэк-комиссия</strong></td>
-<td>2% от транзакций с кешбэком (из 7% кешбэка)</td>
-<td>~40%</td>
-</tr>
-<tr>
-<td>2</td>
-<td><strong>Корпоративные тарифы</strong></td>
-<td>Платный доступ крупных брендов к аналитике и продвижению</td>
-<td>~20%</td>
-</tr>
-<tr>
-<td>3</td>
-<td><strong>B2B-комиссия</strong></td>
-<td>1% от кооперационных сделок</td>
-<td>~15%</td>
-</tr>
-<tr>
-<td>4</td>
-<td><strong>Data Monetization</strong></td>
-<td>Монетизация обезличенных данных (с согласия граждан)</td>
-<td>~10%</td>
-</tr>
-<tr>
-<td>5</td>
-<td><strong>Комиссия креаторов</strong></td>
-<td>7% для крупных агентств (0% для самозанятых)</td>
-<td>~5%</td>
-</tr>
-<tr>
-<td>6</td>
-<td><strong>API-доходы</strong></td>
-<td>Партнёрские интеграции, доступ к данным</td>
-<td>~5%</td>
-</tr>
-<tr>
-<td>7</td>
-<td><strong>Доход от резервного фонда</strong></td>
-<td>10–12% годовых от 2 680 млн руб.</td>
-<td>~3%</td>
-</tr>
-<tr>
-<td>8</td>
-<td><strong>Экспортные лицензии</strong></td>
-<td>Лицензирование модели в ЕАЭС/БРИКС</td>
-<td>~2%</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="4-5">4. Финансовые прогнозы (5 лет)</h2>
-<h3 id="41-pl">4.1. Прогнозный P&amp;L, млн руб.</h3>
-<table>
-<thead>
-<tr>
-<th>Статья</th>
-<th style="text-align: right;">Год 1</th>
-<th style="text-align: right;">Год 2</th>
-<th style="text-align: right;">Год 3</th>
-<th style="text-align: right;">Год 4</th>
-<th style="text-align: right;">Год 5</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Доходы (основные)</td>
-<td style="text-align: right;">15</td>
-<td style="text-align: right;">410</td>
-<td style="text-align: right;">1 100</td>
-<td style="text-align: right;">2 780</td>
-<td style="text-align: right;">5 270</td>
-</tr>
-<tr>
-<td>Доп. доходы (API)</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">50</td>
-<td style="text-align: right;">150</td>
-<td style="text-align: right;">300</td>
-<td style="text-align: right;">450</td>
-</tr>
-<tr>
-<td>Доход от резерв. фонда</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">200</td>
-<td style="text-align: right;">250</td>
-<td style="text-align: right;">280</td>
-<td style="text-align: right;">320</td>
-</tr>
-<tr>
-<td><strong>Всего доходов</strong></td>
-<td style="text-align: right;"><strong>15</strong></td>
-<td style="text-align: right;"><strong>660</strong></td>
-<td style="text-align: right;"><strong>1 500</strong></td>
-<td style="text-align: right;"><strong>3 360</strong></td>
-<td style="text-align: right;"><strong>6 040</strong></td>
-</tr>
-<tr>
-<td>Расходы</td>
-<td style="text-align: right;">2 200</td>
-<td style="text-align: right;">2 736</td>
-<td style="text-align: right;">3 384</td>
-<td style="text-align: right;">3 792</td>
-<td style="text-align: right;">4 200</td>
-</tr>
-<tr>
-<td>EBITDA</td>
-<td style="text-align: right;">−1 953</td>
-<td style="text-align: right;">−2 076</td>
-<td style="text-align: right;">−1 884</td>
-<td style="text-align: right;">−432</td>
-<td style="text-align: right;">1 840</td>
-</tr>
-<tr>
-<td><strong>Чистая прибыль</strong></td>
-<td style="text-align: right;"><strong>−2 153</strong></td>
-<td style="text-align: right;"><strong>−2 276</strong></td>
-<td style="text-align: right;"><strong>−2 084</strong></td>
-<td style="text-align: right;"><strong>−632</strong></td>
-<td style="text-align: right;"><strong>1 230</strong></td>
-</tr>
-</tbody>
-</table>
-<h3 id="42-cash-flow">4.2. Прогнозный Cash Flow, млн руб.</h3>
-<table>
-<thead>
-<tr>
-<th>Статья</th>
-<th style="text-align: right;">Год 1</th>
-<th style="text-align: right;">Год 2</th>
-<th style="text-align: right;">Год 3</th>
-<th style="text-align: right;">Год 4</th>
-<th style="text-align: right;">Год 5</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Чистый денежный поток</td>
-<td style="text-align: right;">−2 053</td>
-<td style="text-align: right;">−2 176</td>
-<td style="text-align: right;">−1 984</td>
-<td style="text-align: right;">−532</td>
-<td style="text-align: right;">1 330</td>
-</tr>
-<tr>
-<td>Накопительный CF</td>
-<td style="text-align: right;">−2 053</td>
-<td style="text-align: right;">−4 229</td>
-<td style="text-align: right;">−6 213</td>
-<td style="text-align: right;">−6 745</td>
-<td style="text-align: right;">−5 415</td>
-</tr>
-</tbody>
-</table>
-<h3 id="43-8">4.3. Сценарный анализ (8 сценариев)</h3>
-<table>
-<thead>
-<tr>
-<th>№</th>
-<th>Сценарий</th>
-<th style="text-align: center;">NPV (млрд)</th>
-<th style="text-align: center;">IRR</th>
-<th style="text-align: center;">Окупаемость</th>
-<th style="text-align: center;">Вероятность</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>A</td>
-<td><strong>Базовый (реалистичный)</strong></td>
-<td style="text-align: center;">4,5</td>
-<td style="text-align: center;">32%</td>
-<td style="text-align: center;">4,2 года</td>
-<td style="text-align: center;">35%</td>
-</tr>
-<tr>
-<td>B</td>
-<td>Регуляторный ступор</td>
-<td style="text-align: center;">1,8</td>
-<td style="text-align: center;">18%</td>
-<td style="text-align: center;">6,5 лет</td>
-<td style="text-align: center;">20%</td>
-</tr>
-<tr>
-<td>C</td>
-<td>Санкционный удар</td>
-<td style="text-align: center;">0,8</td>
-<td style="text-align: center;">14%</td>
-<td style="text-align: center;">8,0 лет</td>
-<td style="text-align: center;">15%</td>
-</tr>
-<tr>
-<td>D</td>
-<td>Прорывной (новый рынок)</td>
-<td style="text-align: center;">8,5</td>
-<td style="text-align: center;">45%</td>
-<td style="text-align: center;">3,0 года</td>
-<td style="text-align: center;">8%</td>
-</tr>
-<tr>
-<td>E</td>
-<td>Стагнация спроса</td>
-<td style="text-align: center;">1,2</td>
-<td style="text-align: center;">14%</td>
-<td style="text-align: center;">7,0 лет</td>
-<td style="text-align: center;">12%</td>
-</tr>
-<tr>
-<td>F</td>
-<td>Кадровый коллапс</td>
-<td style="text-align: center;">−0,5</td>
-<td style="text-align: center;">8%</td>
-<td style="text-align: center;">&gt;10 лет</td>
-<td style="text-align: center;">5%</td>
-</tr>
-<tr>
-<td>G</td>
-<td>Кризисный (все негативные)</td>
-<td style="text-align: center;">−1,2</td>
-<td style="text-align: center;">&lt;5%</td>
-<td style="text-align: center;">Не окупается</td>
-<td style="text-align: center;">3%</td>
-</tr>
-<tr>
-<td>H</td>
-<td><strong>Международный прорыв</strong></td>
-<td style="text-align: center;">15,0</td>
-<td style="text-align: center;">60%+</td>
-<td style="text-align: center;">2,0 года</td>
-<td style="text-align: center;">2%</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Взвешенный NPV:</strong> 3,12 млрд руб. — положителен даже при учёте негативных сценариев.</p>
-<hr />
-<h2 id="5">5. Анализ рисков</h2>
-<table>
-<thead>
-<tr>
-<th>Риск</th>
-<th style="text-align: center;">Вероятность</th>
-<th style="text-align: center;">Влияние</th>
-<th>Контрмера</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Санкционный «железный занавес»</td>
-<td style="text-align: center;">Средняя</td>
-<td style="text-align: center;">Высокое</td>
-<td>Резерв +30% к бюджету, аренда GPU в облаке, Open Source</td>
-</tr>
-<tr>
-<td>Кадровый голод</td>
-<td style="text-align: center;">Высокая</td>
-<td style="text-align: center;">Среднее</td>
-<td>Опционы (5% УК, вестинг 2+3 года), sign-on бонусы</td>
-</tr>
-<tr>
-<td>Регуляторный «каток»</td>
-<td style="text-align: center;">Средняя</td>
-<td style="text-align: center;">Высокое</td>
-<td>Бюджет на GR, участие в рабочих группах, ЭПР</td>
-</tr>
-<tr>
-<td>Стагфляция ИТ-рынка</td>
-<td style="text-align: center;">Средняя</td>
-<td style="text-align: center;">Среднее</td>
-<td>Фиксация цен в контрактах, Open Source</td>
-</tr>
-<tr>
-<td>Блокировка платежей</td>
-<td style="text-align: center;">Низкая</td>
-<td style="text-align: center;">Высокое</td>
-<td>Цифровой рубль, BRICS Bridge</td>
-</tr>
-<tr>
-<td>Конкуренты (Сбер, Ozon)</td>
-<td style="text-align: center;">Высокая</td>
-<td style="text-align: center;">Среднее</td>
-<td>Госстатус, верификация, 20 сервисов vs. 1–2</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="6">6. Структура собственности и управление</h2>
-<h3 id="61">6.1. Распределение долей</h3>
-<table>
-<thead>
-<tr>
-<th>Участник</th>
-<th>Доля</th>
-<th>Форма взноса</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Российская Федерация (Минцифры/Минпромторг)</td>
-<td>25% + 1 акция</td>
-<td>Денежные средства + нормативная рамка</td>
-</tr>
-<tr>
-<td>Институты развития (Сколково, ВЭБ.РФ)</td>
-<td>20%</td>
-<td>Денежные средства (транш 1)</td>
-</tr>
-<tr>
-<td>Корпорация МСП</td>
-<td>15%</td>
-<td>Зонтичные поручительства</td>
-</tr>
-<tr>
-<td>Частные инвесторы</td>
-<td>20%</td>
-<td>Денежные средства (транши 2–3)</td>
-</tr>
-<tr>
-<td>Стратегические партнёры</td>
-<td>15%</td>
-<td>Денежные средства + доступ к аудитории</td>
-</tr>
-<tr>
-<td>Основатель и команда</td>
-<td>5%</td>
-<td>Интеллектуальная собственность (sweat equity)</td>
-</tr>
-</tbody>
-</table>
-<h3 id="62">6.2. Корпоративное управление</h3>
-<ul>
-<li><strong>«Золотая акция»</strong> государства — право вето по ключевым решениям</li>
-<li><strong>Наблюдательный совет</strong> — стратегический надзор</li>
-<li><strong>Стратегический комитет</strong> — операционное управление</li>
-<li><strong>Sweat equity основателя</strong> — опцион 5% УК, вестинг 4 года (1 год cliff)</li>
-</ul>
-<hr />
-<h2 id="7">7. Источники финансирования</h2>
-<table>
-<thead>
-<tr>
-<th>Источник</th>
-<th style="text-align: center;">Сумма (млрд руб.)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Федеральный бюджет (нацпроекты)</td>
-<td style="text-align: center;">2,5–3,5</td>
-</tr>
-<tr>
-<td>Субсидии Минпромторга/Минцифры</td>
-<td style="text-align: center;">1,2–1,8</td>
-</tr>
-<tr>
-<td>Институты развития (Сколково, ВЭБ.РФ)</td>
-<td style="text-align: center;">0,8–1,2</td>
-</tr>
-<tr>
-<td>Корпорация МСП (зонтичные поручительства)</td>
-<td style="text-align: center;">1,5–2,0</td>
-</tr>
-<tr>
-<td>Частные инвестиции</td>
-<td style="text-align: center;">1,5–2,0</td>
-</tr>
-<tr>
-<td>Грантовые программы</td>
-<td style="text-align: center;">0,3–0,5</td>
-</tr>
-<tr>
-<td>Собственные средства</td>
-<td style="text-align: center;">0,5–0,7</td>
-</tr>
-<tr>
-<td><strong>Итого</strong></td>
-<td style="text-align: center;"><strong>10–12,5</strong></td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="8">8. Запрос к инвесторам</h2>
-<p><strong>Привлекается:</strong> 1,5–2,0 млрд руб. частных инвестиций (транши 2–3, 2027–2030).</p>
-<p><strong>Инструменты:</strong>
-- Конвертируемый заём (институты развития)
-- Долевое участие (частные инвесторы, 20% УК)
-- Стратегическое партнёрство (банки, маркетплейсы, ритейлеры, 15% УК)</p>
-<p><strong>Ожидаемая капитализация:</strong>
-- Год 3 (2029): 15–20 млрд руб.
-- Год 5 (2031): 50 млрд руб.
-- Год 7 (2033): 250+ млрд руб. (при международном прорыве)</p>
-<hr />
-<p><strong>Александр Нарбаев</strong> — лидер проекта<br />
-АО «НП «Опора» | Москва, 2026<br />
-+7 999 452-33-98 | alexander.narbayev@yandex.ru</p>
-<hr />
-<p><em>Настоящий документ содержит конфиденциальную информацию. Распространение без письменного согласия АО «НП «Опора» запрещено.</em></p>
+
+    <h1>ИНВЕСТИЦИОННЫЙ МЕМОРАНДУМ v5.0</h1>
+    <h2>АО «НП «Опора» — Национальная цифровая экосистема роста отечественных брендов</h2>
+
+    <div class="confidential-stamp">СТРОГО КОНФИДЕНЦИАЛЬНО • ТОЛЬКО ДЛЯ КВАЛИФИЦИРОВАННЫХ ИНВЕСТОРОВ</div>
+
+    <div class="intro-box" style="background: rgba(46, 196, 182, 0.06); border-left: 4px solid #2EC4B6; padding: 14px 18px; margin: 16px 0; border-radius: 0 8px 8px 0; font-size: 10pt;">
+        <strong>Для кого этот документ:</strong> частные инвесторы, венчурные фонды, институты развития, бизнес-ангелы, стратегические партнёры.<br>
+        <strong>Зачем читать:</strong> чтобы получить полную картину инвестиционной возможности: рынок, юнит-экономика, 8 сценариев, риски, стратегия выхода и условия входа.<br>
+        <strong>Методология:</strong> документ основан на финансовой модели v4.0 (8 сценариев A–H, WACC 18%, горизонт 5 лет), результатах анализа 17&nbsp;845 идей форума СИНВ-2026, White Paper v3 и действующей нормативно-правовой базе РФ.
+    </div>
+
+    <hr>
+
+    <h2>1. Резюме для инвестора</h2>
+    <p>АО «НП «Опора» привлекает <strong>10–12,5 млрд рублей</strong> из пула источников на создание национальной цифровой экосистемы из <strong>20 сервисов</strong> (13 бизнес + 7 инфраструктурных). Проект занимает уникальную нишу — <strong>открытой верифицирующей инфраструктуры</strong>, аналогов которой нет ни в России, ни в мире.</p>
+    <p>Платформа прошла трёхлетнюю проработку: дважды представлена на форумах «Сильные идеи для нового времени» (топ-100 в 2024), архитектура подтверждена детальным анализом 17&nbsp;845 предпринимательских идей, 626+ Java-файлов написано, все 20 сервисов компилируются.</p>
+
+    <div class="metric-grid">
+        <div class="metric-item">
+            <div class="metric-item__value">32% / 60%+</div>
+            <div class="metric-item__label">IRR баз. / оптим.</div>
+        </div>
+        <div class="metric-item">
+            <div class="metric-item__value">4,5 / 15,0</div>
+            <div class="metric-item__label">NPV млрд руб.</div>
+        </div>
+        <div class="metric-item">
+            <div class="metric-item__value">21,2×</div>
+            <div class="metric-item__label">LTV / CAC</div>
+        </div>
+        <div class="metric-item">
+            <div class="metric-item__value">4,2 года</div>
+            <div class="metric-item__label">Окупаемость</div>
+        </div>
+    </div>
+
+    <table>
+        <tr><th>Показатель</th><th>Значение</th></tr>
+        <tr><td>NPV (базовый)</td><td>4,5 млрд руб.</td></tr>
+        <tr><td>NPV (взвешенный по 8 сценариям)</td><td>3,12 млрд руб.</td></tr>
+        <tr><td>IRR (базовый)</td><td>32%</td></tr>
+        <tr><td>Срок окупаемости (простой / дисконт.)</td><td>4,2 / 4,8 года</td></tr>
+        <tr><td>Выручка (год 5)</td><td>6,04 млрд руб.</td></tr>
+        <tr><td>Чистая прибыль (год 5)</td><td>1,23 млрд руб.</td></tr>
+        <tr><td>LTV/CAC</td><td>21,2×</td></tr>
+        <tr><td>WACC</td><td>18%</td></tr>
+        <tr><td>Пользователи к 2031</td><td>4,38 млн</td></tr>
+        <tr><td>Бюджетный мультипликатор</td><td>1,7×</td></tr>
+    </table>
+
+    <h2>2. Почему сейчас: макроконтекст</h2>
+    <p>Инвестиционный момент для входа в проект является оптимальным по совокупности факторов. Во-первых, государство форсирует цифровизацию МСП: объём господдержки сектора в 2026 году достигает <strong>~900 млрд руб.</strong> совокупно, а число субъектов МСП выросло на 100&nbsp;000 только за январь–март 2026 года — исторический максимум. Во-вторых, ключевая ставка ЦБ РФ (14,25% на июнь 2026) делает долговое финансирование дорогим, что повышает привлекательность долевого участия в проектах с господдержкой.</p>
+    <p>В-третьих, с 1 октября 2026 года вступает в силу ФЗ-289 «О платформенной экономике», создающий правовую основу для платформ типа «Опоры». ЦБ РФ публикует концепцию смарт-контрактов для цифрового рубля. Правительство утвердило Концепцию токенизации активов реального сектора. Все три регуляторных тренда работают на модель «Опоры».</p>
+
+    <h2>3. Рыночная возможность</h2>
+    <h3>3.1. Объём целевых рынков</h3>
+    <p>«Опора» оперирует на пересечении четырёх крупных рынков. Ниже — их объём и доля, которую платформа может занять к году 5. Консервативность оценок подтверждается тем, что даже при захвате 1–4% каждого рынка совокупная выручка достигает 6,04 млрд руб.</p>
+
+    <table>
+        <tr><th>Рынок</th><th>Объём (2025–2026)</th><th>Источник</th><th>Доля «Опоры» (год 5)</th></tr>
+        <tr><td>Программы лояльности РФ</td><td>450 млрд руб.</td><td>Frank RG</td><td>~1,3%</td></tr>
+        <tr><td>ЦФА (прогноз 2026)</td><td>1,4–1,5 трлн руб.</td><td>ЦБ РФ</td><td>Инфраструктурный оператор</td></tr>
+        <tr><td>B2B-кооперация МСП</td><td>~350 млрд руб. (потенциал)</td><td>Расчёт: 2% МСП × 500K × 5 сделок</td><td>~0,9%</td></tr>
+        <tr><td>Креативные услуги для МСП</td><td>80–120 млрд руб.</td><td>ФНС, расчёт</td><td>~3–5%</td></tr>
+    </table>
+
+    <h3>3.2. TAM / SAM / SOM</h3>
+    <p>Методология TAM/SAM/SOM позволяет оценить реалистичный потенциал захвата рынка. TAM отражает весь доступный рынок, SAM — ту его часть, которую можно обслужить текущей моделью, SOM — реально достижимую долю.</p>
+
+    <table>
+        <tr><th>Сегмент</th><th>Значение</th><th>Интерпретация</th></tr>
+        <tr><td>TAM</td><td>450 млрд руб.</td><td>Весь рынок лояльности РФ — верхняя граница возможного</td></tr>
+        <tr><td>SAM</td><td>100–150 млрд руб.</td><td>Цифровые сервисы для МСП — адресуемый рынок</td></tr>
+        <tr><td>SOM</td><td>6,04 млрд руб. к году 5</td><td>~4–6% SAM — консервативная оценка достижимой доли</td></tr>
+    </table>
+    <p><em>Консервативность SOM (4–6% от SAM) оставляет значительный запас для роста. При реализации сценария H (международный прорыв) SOM может достигнуть 15–20% SAM.</em></p>
+
+    <h3>3.3. Конкурентный ландшафт</h3>
+    <p>Ключевое преимущество «Опоры» — отсутствие прямых конкурентов в нише открытой верифицирующей инфраструктуры. Косвенные конкуренты (СберСпасибо, Ozon, Wildberries) оперируют в смежных нишах и не объединяют верификацию, кооперацию и экспорт в единой архитектуре.</p>
+
+    <table>
+        <tr><th>Конкурент</th><th>Сильные стороны</th><th>Отличие «Опоры»</th></tr>
+        <tr><td>Маркетплейсы (Ozon, WB)</td><td>Огромная аудитория, логистика</td><td>Комиссия 0,8% vs. 15–25%, верификация «отечественности», 20 сервисов экосистемы</td></tr>
+        <tr><td>СберСпасибо</td><td>106 млн участников, эквайринг</td><td>Открытая архитектура (не привязана к одному банку), грейдирование брендов, B2B-кооперация</td></tr>
+        <tr><td>Госпрограммы поддержки</td><td>Финансирование, субсидии</td><td>«Опора» — инфраструктурный слой, делающий госпрограммы эффективнее</td></tr>
+    </table>
+
+    <blockquote>
+        <strong>Вывод по рынку:</strong> ниша свободна, макроконтекст благоприятен, 319 независимых идей СИНВ-2026 подтверждают спрос на каждый модуль. Это не гипотеза — это подтверждённая рынком потребность, которую никто не закрывает.
+    </blockquote>
+
+    <h2>4. Бизнес-модель: 8 потоков дохода</h2>
+    <p>Диверсификация доходов — ключевой элемент защиты инвестора. В отличие от монопродуктовых стартапов, «Опора» генерирует выручку из 8 независимых источников. Ни один поток не превышает 40% выручки, что снижает риск катастрофического падения доходов при проблемах в отдельном канале.</p>
+
+    <table>
+        <tr><th>№</th><th>Поток</th><th>Описание</th><th>Доля (год 5)</th></tr>
+        <tr><td>1</td><td><strong>Кешбэк-комиссия</strong></td><td>2% от транзакций с кешбэком (из 7% кешбэка)</td><td>~40%</td></tr>
+        <tr><td>2</td><td><strong>Корпоративные тарифы</strong></td><td>Премиум-аналитика, AI-матчинг, white-label для крупных брендов</td><td>~20%</td></tr>
+        <tr><td>3</td><td><strong>B2B-комиссия</strong></td><td>1% от кооперационных сделок (аналог биржевой комиссии)</td><td>~15%</td></tr>
+        <tr><td>4</td><td><strong>Data Monetization</strong></td><td>Обезличенная аналитика спроса (с согласия граждан, 152-ФЗ)</td><td>~10%</td></tr>
+        <tr><td>5</td><td><strong>Комиссия креаторов</strong></td><td>7% для крупных агентств (0% для самозанятых)</td><td>~5%</td></tr>
+        <tr><td>6</td><td><strong>API-доходы</strong></td><td>Партнёрские интеграции, доступ к данным для банков</td><td>~5%</td></tr>
+        <tr><td>7</td><td><strong>Резервный фонд</strong></td><td>10–12% годовых от 2&nbsp;680 млн руб.</td><td>~3%</td></tr>
+        <tr><td>8</td><td><strong>Экспортные лицензии</strong></td><td>Лицензирование модели в ЕАЭС/БРИКС</td><td>~2%</td></tr>
+    </table>
+
+    <h2>5. Финансовые прогнозы</h2>
+    <h3>5.1. Прогнозный P&amp;L, млн руб.</h3>
+    <p>Первые четыре года проект генерирует операционный убыток — это нормально для инфраструктурного проекта с длинным циклом. Расходы на предзапуск и разработку (Фазы 0–1) опережают доходы, которые начинают расти с запуском пилота. К году 5 проект выходит на чистую прибыль.</p>
+
+    <table>
+        <tr><th>Статья</th><th style="text-align:right;">Год 1</th><th style="text-align:right;">Год 2</th><th style="text-align:right;">Год 3</th><th style="text-align:right;">Год 4</th><th style="text-align:right;">Год 5</th></tr>
+        <tr><td>Доходы (основные)</td><td style="text-align:right;">15</td><td style="text-align:right;">410</td><td style="text-align:right;">1&nbsp;100</td><td style="text-align:right;">2&nbsp;780</td><td style="text-align:right;">5&nbsp;270</td></tr>
+        <tr><td>Доп. доходы (API)</td><td style="text-align:right;">0</td><td style="text-align:right;">50</td><td style="text-align:right;">150</td><td style="text-align:right;">300</td><td style="text-align:right;">450</td></tr>
+        <tr><td>Доход от резерв. фонда</td><td style="text-align:right;">0</td><td style="text-align:right;">200</td><td style="text-align:right;">250</td><td style="text-align:right;">280</td><td style="text-align:right;">320</td></tr>
+        <tr><td><strong>Всего доходов</strong></td><td style="text-align:right;"><strong>15</strong></td><td style="text-align:right;"><strong>660</strong></td><td style="text-align:right;"><strong>1&nbsp;500</strong></td><td style="text-align:right;"><strong>3&nbsp;360</strong></td><td style="text-align:right;"><strong>6&nbsp;040</strong></td></tr>
+        <tr><td>Расходы</td><td style="text-align:right;">2&nbsp;200</td><td style="text-align:right;">2&nbsp;736</td><td style="text-align:right;">3&nbsp;384</td><td style="text-align:right;">3&nbsp;792</td><td style="text-align:right;">4&nbsp;200</td></tr>
+        <tr><td>EBITDA</td><td style="text-align:right;">−1&nbsp;953</td><td style="text-align:right;">−2&nbsp;076</td><td style="text-align:right;">−1&nbsp;884</td><td style="text-align:right;">−432</td><td style="text-align:right;">1&nbsp;840</td></tr>
+        <tr><td><strong>Чистая прибыль</strong></td><td style="text-align:right;"><strong>−2&nbsp;153</strong></td><td style="text-align:right;"><strong>−2&nbsp;276</strong></td><td style="text-align:right;"><strong>−2&nbsp;084</strong></td><td style="text-align:right;"><strong>−632</strong></td><td style="text-align:right;"><strong>1&nbsp;230</strong></td></tr>
+    </table>
+
+    <blockquote>
+        <strong>Почему убытки первых лет — это нормально.</strong> «Опора» — инфраструктурный проект, а не B2C-стартап. Аналоги: «Честный знак» вышел на операционную безубыточность через 4 года, СБП — через 3 года. При этом расходы включают резервный фонд 30%, который обеспечивает подушку безопасности и частично монетизируется (10–12% годовых). Накопительный cash flow достигает дна в году 4 (−6&nbsp;745 млн руб.) и начинает восстановление к году 5.
+    </blockquote>
+
+    <h3>5.2. Прогнозный Cash Flow, млн руб.</h3>
+    <table>
+        <tr><th>Статья</th><th style="text-align:right;">Год 1</th><th style="text-align:right;">Год 2</th><th style="text-align:right;">Год 3</th><th style="text-align:right;">Год 4</th><th style="text-align:right;">Год 5</th></tr>
+        <tr><td>Чистый денежный поток</td><td style="text-align:right;">−2&nbsp;053</td><td style="text-align:right;">−2&nbsp;176</td><td style="text-align:right;">−1&nbsp;984</td><td style="text-align:right;">−532</td><td style="text-align:right;">1&nbsp;330</td></tr>
+        <tr><td>Накопительный CF</td><td style="text-align:right;">−2&nbsp;053</td><td style="text-align:right;">−4&nbsp;229</td><td style="text-align:right;">−6&nbsp;213</td><td style="text-align:right;">−6&nbsp;745</td><td style="text-align:right;">−5&nbsp;415</td></tr>
+    </table>
+
+    <h3>5.3. Сценарный анализ (8 сценариев)</h3>
+    <p>Модель просчитана в 8 сценариях с присвоением вероятностей на основе исторических данных по аналогичным проектам и текущей макроэкономической ситуации. Каждый сценарий включает конкретные контрмеры.</p>
+
+    <table>
+        <tr><th>Сценарий</th><th>NPV</th><th>IRR</th><th>Окупаемость</th><th>P</th><th>Интерпретация</th></tr>
+        <tr><td><strong>A. Базовый</strong></td><td>4,5 млрд</td><td>32%</td><td>4,2 года</td><td>35%</td><td>Наиболее вероятный. Плановая господдержка, стабильный рынок.</td></tr>
+        <tr><td>B. Регуляторный ступор</td><td>1,8 млрд</td><td>18%</td><td>6,5 лет</td><td>20%</td><td>Задержка поправок в НК. Компенсируется: частный рынок лояльности без госпреференций.</td></tr>
+        <tr><td>C. Санкционный удар</td><td>0,8 млрд</td><td>14%</td><td>8,0 лет</td><td>15%</td><td>Ограничение технологий. Компенсируется: резерв +30%, Open Source, аренда GPU.</td></tr>
+        <tr><td>D. Прорывной</td><td>8,5 млрд</td><td>45%</td><td>3,0 года</td><td>8%</td><td>Быстрее рынка: госзаказ на верификацию, ранний выход в регионы.</td></tr>
+        <tr><td>E. Стагнация спроса</td><td>1,2 млрд</td><td>14%</td><td>7,0 лет</td><td>12%</td><td>Слабая потребительская активность. Компенсируется: B2B-фокус.</td></tr>
+        <tr><td>F. Кадровый коллапс</td><td>−0,5 млрд</td><td>8%</td><td>&gt;10 лет</td><td>5%</td><td>Острейший дефицит разработчиков. Компенсируется: опционы, аутсорс.</td></tr>
+        <tr><td>G. Кризисный</td><td>−1,2 млрд</td><td>&lt;5%</td><td>Не окуп.</td><td>3%</td><td>Все негативные факторы. Компенсируется: резервный фонд, статус нацинфраструктуры.</td></tr>
+        <tr><td><strong>H. Международный прорыв</strong></td><td><strong>15,0 млрд</strong></td><td><strong>60%+</strong></td><td><strong>2,0 года</strong></td><td>2%</td><td>БРИКС, ЕАЭС, BRICS Bridge. Оценка: 250+ млрд капитализация.</td></tr>
+    </table>
+
+    <blockquote>
+        <strong>Ключевой инсайт для инвестора:</strong> взвешенный по вероятности NPV = 3,12 млрд руб. — положителен. Совокупная вероятность сценариев с положительным NPV (A, B, C, D, E) = 90%. Даже в сценарии F (кадровый коллапс, 5%) убыток ограничен −0,5 млрд руб. Только сценарий G (3%) даёт значимый минус, но его вероятность минимальна.
+    </blockquote>
+
+    <h2>6. Анализ рисков и контрмеры</h2>
+    <p>Каждый риск оценён по двум осям: вероятность и влияние. Для каждого разработана конкретная контрмера с бюджетом.</p>
+
+    <table>
+        <tr><th>Риск</th><th style="text-align:center;">Вероятность</th><th style="text-align:center;">Влияние</th><th>Контрмера</th></tr>
+        <tr><td>Санкционный «железный занавес»</td><td style="text-align:center;">Средняя</td><td style="text-align:center;">Высокое</td><td>Резерв +30% к бюджету, аренда GPU в облаке, Open Source-стек</td></tr>
+        <tr><td>Кадровый голод</td><td style="text-align:center;">Высокая</td><td style="text-align:center;">Среднее</td><td>Опционы (5% УК, вестинг 2+3 года), sign-on бонусы (1–3 оклада), партнёрства с вузами</td></tr>
+        <tr><td>Регуляторный «каток»</td><td style="text-align:center;">Средняя</td><td style="text-align:center;">Высокое</td><td>Бюджет на GR, участие в рабочих группах при АСИ, ЭПР 2027–2032</td></tr>
+        <tr><td>Стагфляция ИТ-рынка</td><td style="text-align:center;">Средняя</td><td style="text-align:center;">Среднее</td><td>Фиксация цен в контрактах, приоритет Open Source-решений</td></tr>
+        <tr><td>Блокировка платежей</td><td style="text-align:center;">Низкая</td><td style="text-align:center;">Высокое</td><td>Цифровой рубль, BRICS Bridge, мультивалютные расчёты</td></tr>
+        <tr><td>Конкуренты (Сбер, Ozon)</td><td style="text-align:center;">Высокая</td><td style="text-align:center;">Среднее</td><td>Госстатус, верификация, 20 сервисов vs. 1–2, открытая архитектура</td></tr>
+    </table>
+
+    <h2>7. Структура собственности и управление</h2>
+    <h3>7.1. Распределение долей</h3>
+    <p>Структура собственности спроектирована так, чтобы сбалансировать интересы государства (контроль через «золотую акцию»), частных инвесторов (20% УК с местом в Наблюдательном совете) и основателя (sweat equity 5% с вестингом).</p>
+
+    <table>
+        <tr><th>Участник</th><th>Доля</th><th>Форма взноса</th></tr>
+        <tr><td>Российская Федерация</td><td>25% + 1 акция</td><td>Денежные средства + нормативная рамка</td></tr>
+        <tr><td>Институты развития</td><td>20%</td><td>Денежные средства (транш 1)</td></tr>
+        <tr><td>Корпорация МСП</td><td>15%</td><td>Зонтичные поручительства</td></tr>
+        <tr><td>Частные инвесторы</td><td>20%</td><td>Денежные средства (транши 2–3)</td></tr>
+        <tr><td>Стратегические партнёры</td><td>15%</td><td>Денежные средства + доступ к аудитории</td></tr>
+        <tr><td>Основатель и команда</td><td>5%</td><td>Интеллектуальная собственность (sweat equity, вестинг 4 года)</td></tr>
+    </table>
+
+    <h3>7.2. Корпоративное управление</h3>
+    <ul>
+        <li><strong>«Золотая акция»</strong> государства — право вето по смене контроля, ликвидации, реорганизации</li>
+        <li><strong>Наблюдательный совет</strong> — стратегический надзор, утверждение бюджета, KPI. Место для частного инвестора.</li>
+        <li><strong>Стратегический комитет</strong> — операционное управление, ежеквартальная отчётность</li>
+        <li><strong>Независимый аудит</strong> — ежегодный, из числа компаний «большой четвёрки» или эквивалента</li>
+    </ul>
+
+    <h2>8. Источники финансирования</h2>
+    <p>Финансирование диверсифицировано по 7 источникам, что снижает зависимость от любого одного канала. Господдержка составляет 50%, подтверждая статус национальной инфраструктуры. Частные инвестиции (15–16%) — целевой объём для данного меморандума.</p>
+
+    <table>
+        <tr><th>Источник</th><th style="text-align:center;">Сумма (млрд руб.)</th></tr>
+        <tr><td>Федеральный бюджет (нацпроекты)</td><td style="text-align:center;">2,5–3,5</td></tr>
+        <tr><td>Субсидии Минпромторга/Минцифры</td><td style="text-align:center;">1,2–1,8</td></tr>
+        <tr><td>Институты развития (Сколково, ВЭБ.РФ)</td><td style="text-align:center;">0,8–1,2</td></tr>
+        <tr><td>Корпорация МСП (зонтичные поручительства)</td><td style="text-align:center;">1,5–2,0</td></tr>
+        <tr><td>Частные инвестиции</td><td style="text-align:center;">1,5–2,0</td></tr>
+        <tr><td>Грантовые программы</td><td style="text-align:center;">0,3–0,5</td></tr>
+        <tr><td>Собственные средства</td><td style="text-align:center;">0,5–0,7</td></tr>
+        <tr><td><strong>Итого</strong></td><td style="text-align:center;"><strong>10–12,5</strong></td></tr>
+    </table>
+
+    <h2>9. Предложение инвестору</h2>
+    <p><strong>Привлекается:</strong> 1,5–2,0 млрд руб. частных инвестиций (транши 2–3, 2027–2030).</p>
+    <p><strong>Инструменты:</strong></p>
+    <ul>
+        <li>Конвертируемый заём (институты развития) — с коэффициентом конверсии, привязанным к KPI</li>
+        <li>Долевое участие (частные инвесторы, 20% УК) — с местом в Наблюдательном совете</li>
+        <li>Стратегическое партнёрство (банки, маркетплейсы, ритейлеры, 15% УК) — с правом pro-rata</li>
+    </ul>
+
+    <p><strong>Стратегия выхода (3 опции):</strong></p>
+
+    <table>
+        <tr><th>Опция</th><th>Механика</th><th>Оценка доли инвестора (20%)</th></tr>
+        <tr><td><strong>M&A (основная)</strong></td><td>Стратегическая продажа: P/E = 20× от прибыли года 5</td><td>4,9 млрд руб. (ROI: 2,1–3,0×)</td></tr>
+        <tr><td><strong>Обратный выкуп</strong></td><td>С IRR не ниже 20%</td><td>~2,5 млрд руб. (ROI: 1,3–1,7×)</td></tr>
+        <tr><td><strong>IPO (перспективная)</strong></td><td>Московская биржа, оценка 50–250+ млрд руб.</td><td>10–50 млрд руб. (ROI: 5–25×)</td></tr>
+    </table>
+
+    <hr>
+
+    <h2>10. Что это значит для инвестора — главные выводы</h2>
+    <ol>
+        <li><strong>Уникальная ниша.</strong> Открытая верифицирующая инфраструктура — такого нет ни в России, ни в мире. 319 независимых идей СИНВ-2026 подтверждают спрос, но ни одна не предлагает экосистемного решения. «Опора» — инфраструктурный слой, а не точечный продукт.</li>
+        <li><strong>Защита downside.</strong> Госстатус (50% финансирования), диверсификация по 8 потокам дохода, резервный фонд 2&nbsp;680 млн руб., 8 сценариев с контрмерами. Взвешенный NPV 3,12 млрд руб. — положителен. Вероятность убытка — 8% (сценарии F+G).</li>
+        <li><strong>Асимметричный upside.</strong> При базовом сценарии (35%) — капитализация 50 млрд руб. к 2031. При международном прорыве (2%) — 250+ млрд руб. Это классический профиль «ограниченный downside × кратный upside».</li>
+        <li><strong>Макро-ветер в спину.</strong> ФЗ-289 «О платформенной экономике», концепция ЦФА ЦБ РФ, цифровой рубль с 01.09.2026, рекордный рост МСП (+100&nbsp;000 за квартал) — все тренды работают на модель «Опоры».</li>
+    </ol>
+
+    <hr>
+
+    <h2>Next Steps</h2>
+    <p><strong>1.</strong> Запросить финансовую модель v4.1 с детализацией по 8 сценариям.<br>
+    <strong>2.</strong> Подписать NDA для доступа к полному data room (спецификации, архитектура, road show).<br>
+    <strong>3.</strong> Назначить встречу для обсуждения условий входа и due diligence.</p>
+
+    <p><strong>Александр Нарбаев</strong> — лидер проекта<br>
+    АО «НП «Опора» | Москва, 2026<br>
+    +7 999 452-33-98 | <a href="mailto:alexander.narbayev@yandex.ru">alexander.narbayev@yandex.ru</a></p>
+
+    <hr>
+    <p><em>Настоящий документ содержит конфиденциальную информацию. Распространение без письменного согласия АО «НП «Опора» запрещено. Не является публичной офертой. Все прогнозные показатели основаны на текущих рыночных данных и могут отличаться от фактических результатов.</em></p>
+
     <div class="footer-note">
-        АО «НП «Опора» • Москва, 2026 • opora.ru • Строго конфиденциально
+        АО «НП «Опора» • Москва, 2026 • opora.ru • Строго конфиденциально • Инвестиционный меморандум v5.0
     </div>
 </body>
 </html>

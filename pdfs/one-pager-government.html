@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>One-Pager: Государство — Опора</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm 2.5cm;
+            @bottom-center {
+                content: "АО «НП «Опора» — " counter(page) " / " counter(pages);
+                font-size: 9px;
+                color: #999;
+                font-family: 'Inter', 'Segoe UI', sans-serif;
+            }
+        }
+        body {
+            font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 10.5pt;
+            line-height: 1.6;
+            color: #1a1a2e;
+            max-width: 100%;
+        }
+        h1 {
+            font-size: 20pt;
+            font-weight: 800;
+            color: #233370;
+            border-bottom: 3px solid #2EC4B6;
+            padding-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 14pt;
+            font-weight: 700;
+            color: #233370;
+            margin-top: 24px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #e8eaed;
+            padding-bottom: 4px;
+        }
+        h3 {
+            font-size: 11.5pt;
+            font-weight: 700;
+            color: #2d4290;
+            margin-top: 18px;
+            margin-bottom: 6px;
+        }
+        p {
+            margin: 0 0 10px;
+        }
+        strong {
+            color: #233370;
+        }
+        a {
+            color: #2EC4B6;
+            text-decoration: none;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            font-size: 9.5pt;
+        }
+        th {
+            background: #233370;
+            color: white;
+            padding: 8px 10px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 9pt;
+        }
+        td {
+            padding: 7px 10px;
+            border-bottom: 1px solid #e8eaed;
+            vertical-align: top;
+        }
+        tr:nth-child(even) td {
+            background: #f4f5f7;
+        }
+        ul, ol {
+            margin: 6px 0 12px 22px;
+        }
+        li {
+            margin-bottom: 3px;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #e8eaed;
+            margin: 20px 0;
+        }
+        blockquote {
+            border-left: 4px solid #2EC4B6;
+            padding: 10px 16px;
+            margin: 14px 0;
+            background: rgba(46, 196, 182, 0.05);
+            border-radius: 0 8px 8px 0;
+            font-size: 10pt;
+        }
+        .header-bar {
+            background: linear-gradient(135deg, #4CAF76, #2d4290);
+            color: white;
+            padding: 14px 24px;
+            margin: -2cm -2.5cm 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-bar__logo {
+            font-size: 13pt;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+        }
+        .header-bar__tag {
+            font-size: 8.5pt;
+            opacity: 0.8;
+        }
+        .role-badge {
+            display: inline-block;
+            background: #2d4290;
+            color: white;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 9pt;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .intro-box {
+            background: rgba(46, 196, 182, 0.06);
+            border-left: 4px solid #2EC4B6;
+            padding: 12px 16px;
+            margin: 14px 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 10pt;
+        }
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin: 14px 0;
+        }
+        .metric-item {
+            background: linear-gradient(135deg, #4CAF76, #2d4290);
+            color: white;
+            border-radius: 8px;
+            padding: 12px 10px;
+            text-align: center;
+        }
+        .metric-item__value {
+            font-size: 16pt;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        .metric-item__label {
+            font-size: 7.5pt;
+            opacity: 0.8;
+            margin-top: 2px;
+        }
+        .cta-box {
+            background: #2d4290;
+            color: white;
+            padding: 16px 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .cta-box h2 {
+            color: white;
+            border-bottom-color: rgba(255,255,255,0.2);
+            margin-top: 0;
+        }
+        .cta-box a {
+            color: #2EC4B6;
+        }
+        .footer-note {
+            margin-top: 36px;
+            padding-top: 14px;
+            border-top: 1px solid #e8eaed;
+            font-size: 8.5pt;
+            color: #999;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-bar">
+        <span class="header-bar__logo">◆ ОПОРА</span>
+        <span class="header-bar__tag">Национальная цифровая экосистема • Июль 2026</span>
+    </div>
+
+    <div class="role-badge">▸ Документ для государственных органов</div>
+
+    <h1>«ОПОРА» — Стратегическая инфраструктура для МСП России</h1>
+
+    <div class="intro-box">
+        <strong>Для кого этот документ:</strong> Минэкономразвития, Минцифры, Минпромторг, ЦБ РФ, ФНС, Корпорация МСП, институты развития, руководство субъектов РФ.<br>
+        <strong>Зачем читать:</strong> чтобы оценить бюджетный мультипликатор 1,7×, ожидаемый рост доли отечественных брендов с 35% до 55%, создание 200&nbsp;000 рабочих мест и возврат госинвестиций в объёме 8,5–10,2 млрд руб.<br>
+        <strong>На основе:</strong> финансовая модель v4.0 (8 сценариев A–H), поправки в НК РФ (ст. 149), проект ЭПР 2027–2032, анализ 17&nbsp;845 идей СИНВ-2026.
+    </div>
+
+    <h2>1. Стратегическая значимость</h2>
+    <p>Сектор МСП в России — это <strong>6,8 млн предприятий и 30 млн занятых</strong> (40% рабочей силы). При этом доля МСП в ВВП не превышает 22%, а в розничной торговле — 35%. Теневой оборот в секторе оценивается в <strong>15–20%</strong>, что означает недополучение бюджетом сотен миллиардов рублей ежегодно.</p>
+    <p>«Опора» создаёт инфраструктуру, которая решает эти проблемы системно: верификация брендов снижает гринвошинг, обеление самозанятых через интеграцию с «Мой налог» расширяет налоговую базу, а кооперационная платформа повышает эффективность использования производственных мощностей (сейчас 30% простаивает).</p>
+
+    <h2>2. Бюджетный мультипликатор: 1,7×</h2>
+    <p>Каждый рубль государственных инвестиций в «Опору» генерирует <strong>1,7 рубля экономического эффекта</strong> — это выше среднего по отрасли (1,2–1,4× для ИТ-инфраструктурных проектов). Расчёт основан на мультипликативном эффекте от роста МСП, увеличения налоговых поступлений и снижения теневого оборота.</p>
+
+    <table>
+        <tr><th>Канал эффекта</th><th>Механизм</th><th>Оценка эффекта</th></tr>
+        <tr><td>Рост МСП-сектора</td><td>Доля отечественных брендов: 35% → 55%</td><td>+0,8–1,2% ВВП</td></tr>
+        <tr><td>Налоговые поступления</td><td>Обеление 16,4 млн самозанятых</td><td>+60–80 млрд руб./год</td></tr>
+        <tr><td>Снижение теневого оборота</td><td>Блокчейн-прослеживаемость + верификация</td><td>−15% теневого сектора</td></tr>
+        <tr><td>Рабочие места</td><td>Прямые + косвенные (кооперация, экспорт)</td><td>200 000 новых рабочих мест</td></tr>
+        <tr><td>Импортозамещение</td><td>B2B-кооперация: поиск поставщиков за 14 дней вместо 6–8 мес.</td><td>Снижение импорта на 5–7%</td></tr>
+    </table>
+
+    <blockquote>
+        <strong>Возврат госинвестиций:</strong> при вложениях 4,75–6,0 млрд руб. совокупный возврат в экономику оценивается в 8,5–10,2 млрд руб. ROI для государства — <strong>1:3–1:5</strong> с учётом косвенных эффектов (рост налогов, новые рабочие места, снижение безработицы в моногородах).
+    </blockquote>
+
+    <h2>3. KPI для государства</h2>
+    <p>Проект предполагает траншевое финансирование под достижение измеримых показателей. Каждый транш привязан к конкретным KPI, что исключает нецелевое расходование.</p>
+
+    <div class="metric-grid">
+        <div class="metric-item">
+            <div class="metric-item__value">200 000+</div>
+            <div class="metric-item__label">Брендов к 2031</div>
+        </div>
+        <div class="metric-item">
+            <div class="metric-item__value">200 000</div>
+            <div class="metric-item__label">Новых рабочих мест</div>
+        </div>
+        <div class="metric-item">
+            <div class="metric-item__value">35% → 55%</div>
+            <div class="metric-item__label">Доля отечественных</div>
+        </div>
+        <div class="metric-item">
+            <div class="metric-item__value">−15%</div>
+            <div class="metric-item__label">Теневой оборот</div>
+        </div>
+    </div>
+
+    <table>
+        <tr><th>Фаза</th><th>Срок</th><th>Бюджет</th><th>KPI</th></tr>
+        <tr><td>Предзапуск</td><td>2026–2027</td><td>2,2 млрд руб.</td><td>Регистрация АО, поручение Правительства, поправки в ГД</td></tr>
+        <tr><td>Пилот (Москва + Зеленоград)</td><td>2027–2028</td><td>1,0 млрд руб.</td><td>≥100 брендов, ≥50K пользователей, SLA ≥99,5%</td></tr>
+        <tr><td>Масштабирование</td><td>2028–2030</td><td>2,2 млрд руб.</td><td>≥200K брендов, ≥8M пользователей</td></tr>
+        <tr><td>Международное</td><td>2031+</td><td>800 млн руб.</td><td>10K брендов за рубежом, 5 стран ЕАЭС/БРИКС</td></tr>
+    </table>
+
+    <h2>4. Интеграции с государственными системами</h2>
+    <p>«Опора» проектируется как элемент национальной цифровой инфраструктуры с глубокой интеграцией в существующие госсистемы. Это не «ещё одна платформа», а связующий слой между ведомственными сервисами и конечными пользователями — бизнесом и гражданами.</p>
+
+    <table>
+        <tr><th>Система</th><th>Протокол</th><th>Назначение</th></tr>
+        <tr><td>ЕСИА</td><td>OAuth 2.0 / OIDC</td><td>Аутентификация граждан и бизнеса</td></tr>
+        <tr><td>ГИСП</td><td>REST API</td><td>Верификация продукции и производственных цепочек</td></tr>
+        <tr><td>Честный знак</td><td>REST API</td><td>Проверка маркировки товаров</td></tr>
+        <tr><td>ОФД</td><td>REST / SOAP</td><td>Подтверждение покупок для начисления кешбэка</td></tr>
+        <tr><td>ФНС / Мой налог</td><td>API</td><td>Интеграция с самозанятыми, автоматическая уплата налога</td></tr>
+        <tr><td>ЦБ РФ (Цифровой рубль)</td><td>API платформы ЦБ</td><td>Маркированные платежи, смарт-контракты, спецсчёт лояльности</td></tr>
+    </table>
+    <p><em>Все интеграции предусмотрены действующей нормативной базой: ФЗ-289 «О платформенной экономике» (с 01.10.2026), концепция ЦБ по ЦФА и смарт-контрактам (2026), ЭПР 2027–2032.</em></p>
+
+    <h2>5. Международный аспект: «мягкая сила» через БРИКС</h2>
+    <p>Модель «Опоры» спроектирована как экспортируемая. При масштабировании в страны ЕАЭС и БРИКС платформа становится инструментом продвижения российских цифровых стандартов. 10 000 брендов за рубежом к 2031 — это не только экономический эффект, но и укрепление позиций России в международной цифровой повестке.</p>
+
+    <h2>6. Что это значит для государства</h2>
+    <ol>
+        <li><strong>Бюджетный мультипликатор 1,7×</strong> — каждый рубль госинвестиций возвращает 1,7 рубля в экономику. Для сравнения: средний мультипликатор ИТ-проектов — 1,2–1,4×. ROI для государства: 1:3–1:5 с косвенными эффектами.</li>
+        <li><strong>Системное решение, а не точечная мера.</strong> «Опора» не дублирует существующие программы поддержки (субсидии, гранты, льготное кредитование), а создаёт инфраструктуру, которая делает их эффективнее. 57% предприятий, не находящих поставщиков, получат работающий инструмент кооперации.</li>
+        <li><strong>Контроль через механизмы управления.</strong> «Золотая акция», Наблюдательный совет, Стратегический комитет, независимый аудит и траншевое финансирование под KPI исключают риски нецелевого расходования.</li>
+    </ol>
+
+    <div class="cta-box">
+        <h2>Next Steps</h2>
+        <p><strong>1.</strong> Запросить концепцию для МВР v2.0 и юридическую рамку проекта.<br>
+        <strong>2.</strong> Инициировать межведомственное совещание для обсуждения дорожной карты регуляторных изменений.<br>
+        <strong>3.</strong> Включить «Опору» в перечень проектов ЭПР (экспериментальный правовой режим) на 2027–2032.</p>
+        <p style="margin-top:10px;"><strong>Александр Нарбаев</strong> — лидер проекта<br>
+        АО «НП «Опора» | Москва, Россия<br>
+        +7 999 452-33-98 | <a href="mailto:alexander.narbayev@yandex.ru">alexander.narbayev@yandex.ru</a></p>
+    </div>
+
+    <div class="footer-note">
+        АО «НП «Опора» • Москва, 2026 • opora.ru • Строго конфиденциально • Не является публичной офертой
+    </div>
+</body>
+</html>

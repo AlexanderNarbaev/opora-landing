@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>One-Pager: Гражданин — Опора</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm 2.5cm;
+            @bottom-center {
+                content: "АО «НП «Опора» — " counter(page) " / " counter(pages);
+                font-size: 9px;
+                color: #999;
+                font-family: 'Inter', 'Segoe UI', sans-serif;
+            }
+        }
+        body {
+            font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 10.5pt;
+            line-height: 1.6;
+            color: #1a1a2e;
+            max-width: 100%;
+        }
+        h1 {
+            font-size: 20pt;
+            font-weight: 800;
+            color: #233370;
+            border-bottom: 3px solid #2EC4B6;
+            padding-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 14pt;
+            font-weight: 700;
+            color: #233370;
+            margin-top: 24px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #e8eaed;
+            padding-bottom: 4px;
+        }
+        h3 {
+            font-size: 11.5pt;
+            font-weight: 700;
+            color: #2d4290;
+            margin-top: 18px;
+            margin-bottom: 6px;
+        }
+        p {
+            margin: 0 0 10px;
+        }
+        strong {
+            color: #233370;
+        }
+        a {
+            color: #2EC4B6;
+            text-decoration: none;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            font-size: 9.5pt;
+        }
+        th {
+            background: #233370;
+            color: white;
+            padding: 8px 10px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 9pt;
+        }
+        td {
+            padding: 7px 10px;
+            border-bottom: 1px solid #e8eaed;
+            vertical-align: top;
+        }
+        tr:nth-child(even) td {
+            background: #f4f5f7;
+        }
+        ul, ol {
+            margin: 6px 0 12px 22px;
+        }
+        li {
+            margin-bottom: 3px;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #e8eaed;
+            margin: 20px 0;
+        }
+        blockquote {
+            border-left: 4px solid #2EC4B6;
+            padding: 10px 16px;
+            margin: 14px 0;
+            background: rgba(46, 196, 182, 0.05);
+            border-radius: 0 8px 8px 0;
+            font-size: 10pt;
+        }
+        .header-bar {
+            background: linear-gradient(135deg, #7c3aed, #a855f7);
+            color: white;
+            padding: 14px 24px;
+            margin: -2cm -2.5cm 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-bar__logo {
+            font-size: 13pt;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+        }
+        .header-bar__tag {
+            font-size: 8.5pt;
+            opacity: 0.9;
+        }
+        .role-badge {
+            display: inline-block;
+            background: #7c3aed;
+            color: white;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 9pt;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .intro-box {
+            background: rgba(46, 196, 182, 0.06);
+            border-left: 4px solid #2EC4B6;
+            padding: 12px 16px;
+            margin: 14px 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 10pt;
+        }
+        .benefit-card {
+            display: flex;
+            gap: 10px;
+            margin: 12px 0;
+            padding: 12px 14px;
+            background: #f4f5f7;
+            border-radius: 8px;
+            border-left: 4px solid #2EC4B6;
+        }
+        .benefit-card__icon {
+            font-size: 22pt;
+            flex-shrink: 0;
+            width: 40px;
+            text-align: center;
+        }
+        .benefit-card__text {
+            flex: 1;
+        }
+        .cashback-box {
+            background: linear-gradient(135deg, #2EC4B6, #4CAF76);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 16px 0;
+        }
+        .cashback-box__value {
+            font-size: 36pt;
+            font-weight: 800;
+            line-height: 1;
+        }
+        .cashback-box__label {
+            font-size: 14pt;
+            margin-top: 4px;
+        }
+        .cta-box {
+            background: #7c3aed;
+            color: white;
+            padding: 16px 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .cta-box h2 {
+            color: white;
+            border-bottom-color: rgba(255,255,255,0.2);
+            margin-top: 0;
+        }
+        .cta-box a {
+            color: #2EC4B6;
+            font-weight: 700;
+        }
+        .footer-note {
+            margin-top: 36px;
+            padding-top: 14px;
+            border-top: 1px solid #e8eaed;
+            font-size: 8.5pt;
+            color: #999;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-bar">
+        <span class="header-bar__logo">◆ ОПОРА</span>
+        <span class="header-bar__tag">Национальная цифровая экосистема • Июль 2026</span>
+    </div>
+
+    <div class="role-badge">▸ Документ для покупателей и граждан</div>
+
+    <h1>«ОПОРА» — Покупайте российское с выгодой и доверием</h1>
+
+    <div class="intro-box">
+        <strong>Для кого этот документ:</strong> покупатели, пользователи программ лояльности, все, кто хочет покупать качественные российские товары с кешбэком и уверенностью в их происхождении.<br>
+        <strong>Зачем читать:</strong> чтобы понять, как получать <strong>кешбэк до 7%</strong> за покупки российских товаров, как проверять подлинность брендов и почему это безопасно.<br>
+        <strong>На основе:</strong> программа лояльности «Опоры», политика обработки данных (152-ФЗ), интеграция с ЕСИА и ФНС.
+    </div>
+
+    <h2>1. Что такое «Опора» — простыми словами</h2>
+    <p>«Опора» — это национальная платформа, где собраны <strong>проверенные российские бренды</strong> со всей страны. Вы заходите, видите товары с пометкой «Золото» (80%+ российского производства), «Серебро» или «Бронза», выбираете, покупаете — и получаете <strong>кешбэк до 7%</strong> на свой счёт. Настоящий, не баллами с запутанными условиями — рубли, которые можно вывести или потратить.</p>
+    <p>Главное отличие от обычных маркетплейсов: вы <strong>точно знаете, что покупаете российское</strong>. Каждый бренд проходит верификацию через государственные системы (ГИСП, Честный знак). Никакого гринвошинга.</p>
+
+    <div class="cashback-box">
+        <div class="cashback-box__value">до 7%</div>
+        <div class="cashback-box__label">кешбэк реальными рублями</div>
+    </div>
+
+    <h2>2. Почему это выгодно именно вам</h2>
+
+    <div class="benefit-card">
+        <div class="benefit-card__icon">💰</div>
+        <div class="benefit-card__text">
+            <strong>Кешбэк до 7% за каждую покупку.</strong> При среднем чеке 2&nbsp;500 руб. и частоте покупок 1–2 раза в месяц вы получаете до 2&nbsp;100 руб./год кешбэка — это живыми деньгами, не баллами с ограничениями.
+        </div>
+    </div>
+
+    <div class="benefit-card">
+        <div class="benefit-card__icon">🛡️</div>
+        <div class="benefit-card__text">
+            <strong>Уверенность в происхождении товара.</strong> Грейдирование «Золото/Серебро/Бронза» показывает реальную степень локализации. «Золото» — не менее 80% добавленной стоимости создано в России. Вы видите, за что платите.
+        </div>
+    </div>
+
+    <div class="benefit-card">
+        <div class="benefit-card__icon">🔍</div>
+        <div class="benefit-card__text">
+            <strong>Проверка подлинности.</strong> Интеграция с «Честным знаком» и ГИСП гарантирует, что товар — не подделка. Блокчейн-прослеживаемость показывает весь путь продукта от производителя к вам.
+        </div>
+    </div>
+
+    <div class="benefit-card">
+        <div class="benefit-card__icon">🆓</div>
+        <div class="benefit-card__text">
+            <strong>Бесплатно для покупателей.</strong> Вы не платите за доступ к платформе. Кешбэк начисляется платформой, а не продавцом — цена товара для вас не увеличивается.
+        </div>
+    </div>
+
+    <h2>3. Как это работает: пошагово</h2>
+    <table>
+        <tr><th>Шаг</th><th>Что делать</th><th>Сколько времени</th></tr>
+        <tr><td>1. Регистрация</td><td>Войти через Госуслуги (ЕСИА) — ваш аккаунт уже есть</td><td>1 минута</td></tr>
+        <tr><td>2. Выбор товара</td><td>Открыть каталог, выбрать категорию, увидеть грейд бренда</td><td>Как в обычном интернет-магазине</td></tr>
+        <tr><td>3. Покупка</td><td>Оплатить картой, СБП или цифровым рублём. Чек — через ОФД</td><td>Стандартная оплата</td></tr>
+        <tr><td>4. Кешбэк</td><td>До 7% от суммы покупки зачисляется на ваш счёт в «Опоре»</td><td>Автоматически после подтверждения чека</td></tr>
+        <tr><td>5. Использование</td><td>Вывести на карту или потратить на следующие покупки</td><td>Без ограничений по времени</td></tr>
+    </table>
+
+    <h2>4. Безопасность ваших данных</h2>
+    <p>Платформа «Опора» проектируется по <strong>классу защищённости К2</strong> (ФСТЭК № 117) — это тот же уровень, что у банковских систем и Госуслуг. Ваши данные защищены:</p>
+    <ul>
+        <li><strong>Федеративная аутентификация через ЕСИА</strong> — платформа не хранит ваш пароль, вы авторизуетесь через Госуслуги</li>
+        <li><strong>ГОСТ-криптография (КриптоПро CSP 5.0)</strong> — российские стандарты шифрования</li>
+        <li><strong>152-ФЗ «О персональных данных»</strong> — все данные обрабатываются на серверах в РФ</li>
+        <li><strong>Обязательный пентест</strong> перед запуском — независимая проверка безопасности</li>
+    </ul>
+
+    <blockquote>
+        <strong>Ваши данные не продаются.</strong> Обезличенная аналитика используется только для улучшения сервиса и с вашего явного согласия.
+    </blockquote>
+
+    <h2>5. Что это значит для вас</h2>
+    <ol>
+        <li><strong>Вы получаете реальный кешбэк.</strong> До 7% от каждой покупки российских товаров. Это не баллы с запутанными условиями, а рубли, которые можно вывести. При активном использовании — до нескольких тысяч рублей в год.</li>
+        <li><strong>Вы покупаете с уверенностью.</strong> Верификация через госсистемы и грейдирование (Золото/Серебро/Бронза) означают, что вы точно знаете происхождение товара. Больше никакого гринвошинга.</li>
+        <li><strong>Ваши данные защищены.</strong> Уровень безопасности К2, авторизация через Госуслуги, ГОСТ-криптография. Такой же уровень защиты, как в банковских приложениях.</li>
+    </ol>
+
+    <div class="cta-box">
+        <h2>Next Steps</h2>
+        <p><strong>1.</strong> Скачать брошюру «Опора простыми словами» — ответы на частые вопросы.<br>
+        <strong>2.</strong> Оставить email для уведомления о запуске пилота (Москва + Зеленоград, июль 2027).<br>
+        <strong>3.</strong> Рассказать друзьям — чем больше покупателей, тем выгоднее кешбэк для всех.</p>
+        <p style="margin-top:10px;"><strong>Александр Нарбаев</strong> — лидер проекта<br>
+        АО «НП «Опора» | Москва, Россия<br>
+        +7 999 452-33-98 | <a href="mailto:alexander.narbayev@yandex.ru">alexander.narbayev@yandex.ru</a></p>
+    </div>
+
+    <div class="footer-note">
+        АО «НП «Опора» • Москва, 2026 • opora.ru • Строго конфиденциально • Не является публичной офертой
+    </div>
+</body>
+</html>

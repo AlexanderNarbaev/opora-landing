@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>One-Pager: Инвестор — Опора</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm 2.5cm;
+            @bottom-center {
+                content: "АО «НП «Опора» — " counter(page) " / " counter(pages);
+                font-size: 9px;
+                color: #999;
+                font-family: 'Inter', 'Segoe UI', sans-serif;
+            }
+        }
+        body {
+            font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 10.5pt;
+            line-height: 1.6;
+            color: #1a1a2e;
+            max-width: 100%;
+        }
+        h1 {
+            font-size: 20pt;
+            font-weight: 800;
+            color: #233370;
+            border-bottom: 3px solid #2EC4B6;
+            padding-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 14pt;
+            font-weight: 700;
+            color: #233370;
+            margin-top: 24px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #e8eaed;
+            padding-bottom: 4px;
+        }
+        h3 {
+            font-size: 11.5pt;
+            font-weight: 700;
+            color: #2d4290;
+            margin-top: 18px;
+            margin-bottom: 6px;
+        }
+        p {
+            margin: 0 0 10px;
+        }
+        strong {
+            color: #233370;
+        }
+        a {
+            color: #2EC4B6;
+            text-decoration: none;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            font-size: 9.5pt;
+        }
+        th {
+            background: #233370;
+            color: white;
+            padding: 8px 10px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 9pt;
+        }
+        td {
+            padding: 7px 10px;
+            border-bottom: 1px solid #e8eaed;
+            vertical-align: top;
+        }
+        tr:nth-child(even) td {
+            background: #f4f5f7;
+        }
+        ul, ol {
+            margin: 6px 0 12px 22px;
+        }
+        li {
+            margin-bottom: 3px;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #e8eaed;
+            margin: 20px 0;
+        }
+        blockquote {
+            border-left: 4px solid #2EC4B6;
+            padding: 10px 16px;
+            margin: 14px 0;
+            background: rgba(46, 196, 182, 0.05);
+            border-radius: 0 8px 8px 0;
+            font-size: 10pt;
+        }
+        .header-bar {
+            background: linear-gradient(135deg, #233370, #2d4290);
+            color: white;
+            padding: 14px 24px;
+            margin: -2cm -2.5cm 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-bar__logo {
+            font-size: 13pt;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+        }
+        .header-bar__tag {
+            font-size: 8.5pt;
+            opacity: 0.8;
+        }
+        .role-badge {
+            display: inline-block;
+            background: #2EC4B6;
+            color: white;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 9pt;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .intro-box {
+            background: rgba(46, 196, 182, 0.06);
+            border-left: 4px solid #2EC4B6;
+            padding: 12px 16px;
+            margin: 14px 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 10pt;
+        }
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin: 14px 0;
+        }
+        .metric-item {
+            background: linear-gradient(135deg, #233370, #2d4290);
+            color: white;
+            border-radius: 8px;
+            padding: 12px 10px;
+            text-align: center;
+        }
+        .metric-item__value {
+            font-size: 16pt;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        .metric-item__label {
+            font-size: 7.5pt;
+            opacity: 0.8;
+            margin-top: 2px;
+        }
+        .cta-box {
+            background: #233370;
+            color: white;
+            padding: 16px 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .cta-box h2 {
+            color: white;
+            border-bottom-color: rgba(255,255,255,0.2);
+            margin-top: 0;
+        }
+        .cta-box a {
+            color: #2EC4B6;
+        }
+        .footer-note {
+            margin-top: 36px;
+            padding-top: 14px;
+            border-top: 1px solid #e8eaed;
+            font-size: 8.5pt;
+            color: #999;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-bar">
+        <span class="header-bar__logo">◆ ОПОРА</span>
+        <span class="header-bar__tag">Национальная цифровая экосистема • Июль 2026</span>
+    </div>
+
+    <div class="role-badge">▸ Документ для инвестора</div>
+
+    <h1>«ОПОРА» — Инвестиционная возможность национального масштаба</h1>
+
+    <div class="intro-box">
+        <strong>Для кого этот документ:</strong> частные инвесторы, венчурные фонды, институты развития, бизнес-ангелы, стратегические партнёры.<br>
+        <strong>Зачем читать:</strong> чтобы принять решение об участии в проекте с IRR 32%, защищённом государственным статусом и диверсификацией по 8 потокам дохода.<br>
+        <strong>На основе:</strong> финансовая модель v4.0 (8 сценариев A–H), анализ 17&nbsp;845 идей форума СИНВ-2026, White Paper v3, действующая нормативная база РФ.
+    </div>
+
+    <h2>1. Что такое «Опора»</h2>
+    <p>«Опора» — национальная цифровая экосистема из <strong>20 сервисов</strong> (13 бизнес + 7 инфраструктурных), объединяющая верифицированный каталог российских брендов, AI-кооперацию МСП, программу лояльности с кешбэком до 7%, краудфандинг с токенизацией и экспортное «единое окно» в ЕАЭС/БРИКС.</p>
+    <p>Это не маркетплейс и не программа лояльности — это <strong>инфраструктурный слой</strong>, делающий существующие меры поддержки МСП эффективнее. Аналогов в России и мире нет.</p>
+
+    <h2>2. Почему сейчас: рыночная возможность</h2>
+    <p>Российский рынок программ лояльности — <strong>450 млрд руб./год</strong> (Frank RG), при этом лишь 15% приходится на МСП. Рынок ЦФА прогнозируется ЦБ РФ на уровне <strong>1,4–1,5 трлн руб.</strong> к концу 2026. Сектор МСП — это 6,8 млн предприятий и 30 млн занятых, но 57% промышленных предприятий не могут найти поставщиков внутри страны.</p>
+    <p>Ниша открытой верифицирующей инфраструктуры, объединяющей лояльность, кооперацию и экспорт в единой архитектуре, <strong>свободна</strong>. Это подтверждено анализом 17&nbsp;845 идей форума СИНВ-2026 — ни одна не описывает экосистемную платформу такого масштаба.</p>
+
+    <table>
+        <tr><th>Сегмент рынка</th><th>Объём</th><th>Доля «Опоры» (год 5)</th></tr>
+        <tr><td>Программы лояльности РФ</td><td>450 млрд руб.</td><td>~1,3% (6,04 млрд руб.)</td></tr>
+        <tr><td>ЦФА (прогноз 2026)</td><td>1,4–1,5 трлн руб.</td><td>Инфраструктурный оператор</td></tr>
+        <tr><td>B2B-кооперация МСП</td><td>~350 млрд руб. (потенциал)</td><td>~0,9% к году 5</td></tr>
+    </table>
+    <p><em>Даже при консервативном захвате долей рынка, выручка года 5 составляет 6,04 млрд руб. при 8 диверсифицированных потоках дохода.</em></p>
+
+    <h2>3. Ключевые инвестиционные метрики</h2>
+
+    <div class="metric-grid">
+        <div class="metric-item">
+            <div class="metric-item__value">32% / 60%+</div>
+            <div class="metric-item__label">IRR базовый / оптим.</div>
+        </div>
+        <div class="metric-item">
+            <div class="metric-item__value">4,5 / 15,0</div>
+            <div class="metric-item__label">NPV, млрд руб.</div>
+        </div>
+        <div class="metric-item">
+            <div class="metric-item__value">21,2×</div>
+            <div class="metric-item__label">LTV / CAC</div>
+        </div>
+        <div class="metric-item">
+            <div class="metric-item__value">4,2 года</div>
+            <div class="metric-item__label">Окупаемость</div>
+        </div>
+    </div>
+
+    <table>
+        <tr><th>Показатель</th><th>Значение</th><th>Комментарий</th></tr>
+        <tr><td>Общий бюджет (5 лет)</td><td>10–12,5 млрд руб.</td><td>Фазы 0–3 с резервом 30%</td></tr>
+        <tr><td>Господдержка (доля)</td><td>50% (4,75–6,0 млрд руб.)</td><td>Снижает риск частного инвестора</td></tr>
+        <tr><td>Частные инвестиции</td><td>1,5–2,0 млрд руб.</td><td>До 20% УК</td></tr>
+        <tr><td>Выручка (год 5)</td><td>6,04 млрд руб.</td><td>8 потоков дохода</td></tr>
+        <tr><td>Чистая прибыль (год 5)</td><td>1,23 млрд руб.</td><td>Первый прибыльный год</td></tr>
+        <tr><td>WACC</td><td>18%</td><td>Средневзвешенная стоимость капитала</td></tr>
+        <tr><td>Взвешенный NPV</td><td>3,12 млрд руб.</td><td>По 8 сценариям с вероятностями</td></tr>
+        <tr><td>Пользователи к 2031</td><td>4,38 млн</td><td>~14% экономически активного населения</td></tr>
+    </table>
+
+    <blockquote>
+        <strong>LTV/CAC = 21,2×</strong> — один из лучших показателей среди платформенных бизнесов. Для сравнения: средний показатель B2C-платформ — 5–10×, у маркетплейсов — 3–7×. Высокое значение достигается за счёт низкого CAC (~7&nbsp;650 руб.) благодаря встроенной программе лояльности и кешбэку, а также длительного срока жизни пользователя (36 мес.) за счёт удержания через экосистему из 20 сервисов.
+    </blockquote>
+
+    <h2>4. 8 потоков дохода — диверсификация как защита</h2>
+    <p>В отличие от монопродуктовых стартапов, «Опора» генерирует выручку из 8 независимых источников. Это снижает зависимость от любого одного канала и повышает устойчивость модели.</p>
+
+    <table>
+        <tr><th>Поток</th><th>Доля в выручке (год 5)</th><th>Механика</th></tr>
+        <tr><td>Кешбэк-комиссия</td><td>~40%</td><td>2% от транзакций с кешбэком (из 7% кешбэка)</td></tr>
+        <tr><td>Корпоративные тарифы</td><td>~20%</td><td>Премиум-аналитика, AI-матчинг, white-label</td></tr>
+        <tr><td>B2B-комиссия</td><td>~15%</td><td>1% от кооперационных сделок</td></tr>
+        <tr><td>Data Monetization</td><td>~10%</td><td>Обезличенная аналитика спроса</td></tr>
+        <tr><td>Комиссия креаторов</td><td>~5%</td><td>7% для крупных агентств (0% для самозанятых)</td></tr>
+        <tr><td>API-доходы</td><td>~5%</td><td>Партнёрские интеграции</td></tr>
+        <tr><td>Резервный фонд</td><td>~3%</td><td>10–12% годовых от 2&nbsp;680 млн руб.</td></tr>
+        <tr><td>Экспортные лицензии</td><td>~2%</td><td>Лицензирование модели в ЕАЭС/БРИКС</td></tr>
+    </table>
+
+    <h2>5. Сценарный анализ: защита downside</h2>
+    <p>Модель просчитана в 8 сценариях — от кризисного до международного прорыва. <strong>Взвешенный по вероятности NPV — 3,12 млрд руб.</strong> — положителен даже при учёте всех негативных сценариев.</p>
+
+    <table>
+        <tr><th>Сценарий</th><th>NPV</th><th>IRR</th><th>Окупаемость</th><th>Вероятность</th></tr>
+        <tr><td><strong>A. Базовый</strong></td><td>4,5 млрд</td><td>32%</td><td>4,2 года</td><td>35%</td></tr>
+        <tr><td>B. Регуляторный ступор</td><td>1,8 млрд</td><td>18%</td><td>6,5 лет</td><td>20%</td></tr>
+        <tr><td>C. Санкционный удар</td><td>0,8 млрд</td><td>14%</td><td>8,0 лет</td><td>15%</td></tr>
+        <tr><td>D. Прорывной</td><td>8,5 млрд</td><td>45%</td><td>3,0 года</td><td>8%</td></tr>
+        <tr><td><strong>H. Международный прорыв</strong></td><td><strong>15,0 млрд</strong></td><td><strong>60%+</strong></td><td><strong>2,0 года</strong></td><td>2%</td></tr>
+    </table>
+    <p><em>Даже в худшем сценарии G (все негативные факторы одновременно, вероятность 3%) проект генерирует отрицательный NPV −1,2 млрд руб. — но вероятность этого сценария минимальна, а резервный фонд +30% к бюджету обеспечивает подушку безопасности.</em></p>
+
+    <h2>6. Что это значит для инвестора</h2>
+    <ol>
+        <li><strong>Вход: 1,5–2,0 млрд руб. за 20% УК.</strong> Pre-money оценка 10–12 млрд руб. соответствует стадии проекта — архитектура из 20 сервисов спроектирована, 626+ Java-файлов написано, рынок валидирован.</li>
+        <li><strong>Выход: капитализация 50 млрд руб. к 2031 (25× на вложенный капитал).</strong> При международном прорыве (сценарий H) — 250+ млрд руб. Стратегия: M&A (P/E 20× от прибыли года 5 = 24,6 млрд руб.), резервный — обратный выкуп с IRR ≥20%.</li>
+        <li><strong>Защита downside:</strong> госстатус (национальная инфраструктура), диверсификация по 8 потокам дохода, резервный фонд 2&nbsp;680 млн руб., 8 сценариев с контрмерами.</li>
+    </ol>
+
+    <div class="cta-box">
+        <h2>Next Steps</h2>
+        <p><strong>1.</strong> Запросить полный инвестиционный меморандум v5.0 и финансовую модель v4.1.<br>
+        <strong>2.</strong> Назначить встречу для обсуждения условий участия.<br>
+        <strong>3.</strong> Подписать NDA для доступа к детальным сценариям и road show.</p>
+        <p style="margin-top:10px;"><strong>Александр Нарбаев</strong> — лидер проекта<br>
+        АО «НП «Опора» | Москва, Россия<br>
+        +7 999 452-33-98 | <a href="mailto:alexander.narbayev@yandex.ru">alexander.narbayev@yandex.ru</a></p>
+    </div>
+
+    <div class="footer-note">
+        АО «НП «Опора» • Москва, 2026 • opora.ru • Строго конфиденциально • Не является публичной офертой
+    </div>
+</body>
+</html>

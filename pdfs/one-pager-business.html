@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>One-Pager: Бизнес — Опора</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm 2.5cm;
+            @bottom-center {
+                content: "АО «НП «Опора» — " counter(page) " / " counter(pages);
+                font-size: 9px;
+                color: #999;
+                font-family: 'Inter', 'Segoe UI', sans-serif;
+            }
+        }
+        body {
+            font-family: 'Inter', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            font-size: 10.5pt;
+            line-height: 1.6;
+            color: #1a1a2e;
+            max-width: 100%;
+        }
+        h1 {
+            font-size: 20pt;
+            font-weight: 800;
+            color: #233370;
+            border-bottom: 3px solid #2EC4B6;
+            padding-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 14pt;
+            font-weight: 700;
+            color: #233370;
+            margin-top: 24px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #e8eaed;
+            padding-bottom: 4px;
+        }
+        h3 {
+            font-size: 11.5pt;
+            font-weight: 700;
+            color: #2d4290;
+            margin-top: 18px;
+            margin-bottom: 6px;
+        }
+        p {
+            margin: 0 0 10px;
+        }
+        strong {
+            color: #233370;
+        }
+        a {
+            color: #2EC4B6;
+            text-decoration: none;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            font-size: 9.5pt;
+        }
+        th {
+            background: #233370;
+            color: white;
+            padding: 8px 10px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 9pt;
+        }
+        td {
+            padding: 7px 10px;
+            border-bottom: 1px solid #e8eaed;
+            vertical-align: top;
+        }
+        tr:nth-child(even) td {
+            background: #f4f5f7;
+        }
+        ul, ol {
+            margin: 6px 0 12px 22px;
+        }
+        li {
+            margin-bottom: 3px;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #e8eaed;
+            margin: 20px 0;
+        }
+        blockquote {
+            border-left: 4px solid #2EC4B6;
+            padding: 10px 16px;
+            margin: 14px 0;
+            background: rgba(46, 196, 182, 0.05);
+            border-radius: 0 8px 8px 0;
+            font-size: 10pt;
+        }
+        .header-bar {
+            background: linear-gradient(135deg, #F5A623, #e67e22);
+            color: white;
+            padding: 14px 24px;
+            margin: -2cm -2.5cm 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header-bar__logo {
+            font-size: 13pt;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+        }
+        .header-bar__tag {
+            font-size: 8.5pt;
+            opacity: 0.9;
+        }
+        .role-badge {
+            display: inline-block;
+            background: #F5A623;
+            color: white;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 9pt;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .intro-box {
+            background: rgba(46, 196, 182, 0.06);
+            border-left: 4px solid #2EC4B6;
+            padding: 12px 16px;
+            margin: 14px 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 10pt;
+        }
+        .module-card {
+            border: 1px solid #e8eaed;
+            border-radius: 8px;
+            padding: 12px 14px;
+            margin: 10px 0;
+            background: #fafafa;
+        }
+        .module-card h3 {
+            margin-top: 0;
+            color: #233370;
+        }
+        .cta-box {
+            background: #F5A623;
+            color: white;
+            padding: 16px 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .cta-box h2 {
+            color: white;
+            border-bottom-color: rgba(255,255,255,0.2);
+            margin-top: 0;
+        }
+        .cta-box a {
+            color: #233370;
+            font-weight: 700;
+        }
+        .footer-note {
+            margin-top: 36px;
+            padding-top: 14px;
+            border-top: 1px solid #e8eaed;
+            font-size: 8.5pt;
+            color: #999;
+            text-align: center;
+        }
+        .highlight-num {
+            font-size: 18pt;
+            font-weight: 800;
+            color: #2EC4B6;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-bar">
+        <span class="header-bar__logo">◆ ОПОРА</span>
+        <span class="header-bar__tag">Национальная цифровая экосистема • Июль 2026</span>
+    </div>
+
+    <div class="role-badge">▸ Документ для предпринимателей и МСП</div>
+
+    <h1>«ОПОРА» — Ваш бизнес становится видимым</h1>
+
+    <div class="intro-box">
+        <strong>Для кого этот документ:</strong> производители, владельцы брендов, самозанятые, креаторы, поставщики услуг для МСП.<br>
+        <strong>Зачем читать:</strong> чтобы понять, как 20 сервисов «Опоры» помогут вашему бизнесу найти клиентов, партнёров и выйти на экспорт — с комиссией <strong>0% для самозанятых</strong> и <strong>0,8% для брендов</strong>.<br>
+        <strong>На основе:</strong> анализ потребностей 17&nbsp;845 предпринимателей (СИНВ-2026), White Paper v3, руководство по модулям.
+    </div>
+
+    <h2>1. Проблема, которую мы решаем для вас</h2>
+    <p>Вы производите качественный товар в Зеленограде, Карелии или Новосибирске. Но вас не видят. <strong>85% малых брендов не имеют доступа к каналам сбыта.</strong> Крупные маркетплейсы диктуют условия: комиссия 15–25%, сложная логистика, отсутствие инструментов для выделения действительно российского продукта. Поиск поставщика занимает 6–8 месяцев, 30% производственных мощностей простаивает.</p>
+    <p>«Опора» меняет правила игры. Мы создаём инфраструктуру, где <strong>ваш бренд — на первом месте</strong>, а платформа работает на вас, а не наоборот.</p>
+
+    <h2>2. Что вы получаете: 20 сервисов для роста</h2>
+    <p>Все сервисы «Опоры» спроектированы вокруг реальных потребностей МСП, выявленных в ходе анализа 17&nbsp;845 предпринимательских идей форума СИНВ-2026. Вот ключевые модули, релевантные для бизнеса:</p>
+
+    <div class="module-card">
+        <h3>Опора.Витрина — ваш товар видят миллионы</h3>
+        <p>Верифицированный каталог с трёхуровневым грейдированием (Золото/Серебро/Бронза). Покупатели видят реальную степень локализации вашего продукта. Комиссия платформы — <strong>всего 0,8%</strong> (против 15–25% на маркетплейсах).</p>
+    </div>
+
+    <div class="module-card">
+        <h3>Опора.Кооперация — AI найдёт партнёров за вас</h3>
+        <p>AI-подбор партнёров по 50+ параметрам, B2B-тендеры, артельные кластеры. То, на что уходило 6–8 месяцев ручного поиска, решается <strong>за 14 дней</strong>. Пример: завод металлоизделий из Зеленограда находит поставщика крепежа за 2 недели вместо полугода.</p>
+    </div>
+
+    <div class="module-card">
+        <h3>Опора.Песочница — 0% комиссия для самозанятых</h3>
+        <p>Если вы самозанятый — платформа для вас <strong>бесплатна</strong>. Интеграция с «Мой налог» — налоги платятся автоматически. Вы получаете доступ к заказам от крупных брендов без комиссии.</p>
+    </div>
+
+    <div class="module-card">
+        <h3>Опора.Экспорт — выход на ЕАЭС и БРИКС</h3>
+        <p>«Единое окно» для экспорта: документооборот, логистика, сертификация. Ваш продукт увидят в 5 странах. 10&nbsp;000 российских брендов за рубежом к 2031 — и ваш может быть среди них.</p>
+    </div>
+
+    <table>
+        <tr><th>Модуль</th><th>Для кого</th><th>Ключевое преимущество</th></tr>
+        <tr><td>Витрина</td><td>Производители товаров</td><td>Комиссия 0,8%, грейдирование «Золото/Серебро/Бронза»</td></tr>
+        <tr><td>Кооперация</td><td>B2B-производители</td><td>AI-поиск партнёров за 14 дней</td></tr>
+        <tr><td>Песочница</td><td>Самозанятые</td><td>0% комиссия, автоуплата налогов</td></tr>
+        <tr><td>Креаторы</td><td>Дизайнеры, копирайтеры</td><td>0% комиссия для самозанятых креаторов</td></tr>
+        <tr><td>Аналитика</td><td>Все бренды</td><td>Прогноз спроса, CRM/CDP, данные о рынке</td></tr>
+        <tr><td>Цепочки</td><td>Производители</td><td>Блокчейн-прослеживаемость от сырья до прилавка</td></tr>
+        <tr><td>Финансы</td><td>Растущие бренды</td><td>Краудфандинг 2.0, токены участия, ЦФА</td></tr>
+        <tr><td>Экспорт</td><td>Экспортёры</td><td>«Единое окно» в ЕАЭС/БРИКС</td></tr>
+    </table>
+    <p><em>Полный перечень из 20 сервисов — в «Руководстве по модулям». Для большинства МСП релевантны 3–5 модулей из таблицы выше.</em></p>
+
+    <h2>3. Экономика для вашего бизнеса</h2>
+    <p>В отличие от маркетплейсов, которые зарабатывают на комиссии с продавца, «Опора» зарабатывает на экосистемных сервисах. Поэтому базовая комиссия минимальна.</p>
+
+    <table>
+        <tr><th>Параметр</th><th>«Опора»</th><th>Типичный маркетплейс</th></tr>
+        <tr><td>Комиссия с продажи</td><td><strong>0,8%</strong></td><td>15–25%</td></tr>
+        <tr><td>Для самозанятых</td><td><strong>0%</strong></td><td>10–20%</td></tr>
+        <tr><td>Кешбэк покупателю</td><td>до 7% (за счёт платформы)</td><td>1–3% (за счёт продавца)</td></tr>
+        <tr><td>Инструменты продвижения</td><td>Включены в подписку</td><td>Отдельная оплата</td></tr>
+        <tr><td>Аналитика продаж</td><td>Бесплатно (базовая)</td><td>Отдельная оплата</td></tr>
+        <tr><td>Верификация «отечественности»</td><td>Встроена (ГИСП + Честный знак)</td><td>Отсутствует</td></tr>
+    </table>
+
+    <blockquote>
+        <strong>Что это значит в деньгах:</strong> при обороте бренда 10 млн руб./мес. экономия на комиссии составляет 1,4–2,4 млн руб./мес. по сравнению с крупными маркетплейсами. Это средства, которые остаются в вашем бизнесе.
+    </blockquote>
+
+    <h2>4. Как стать брендом на «Опоре»</h2>
+    <ol>
+        <li><strong>Регистрация.</strong> Авторизация через ЕСИА (учётная запись юрлица или ИП) или «Мой налог» (для самозанятых). Занимает 5 минут.</li>
+        <li><strong>Верификация.</strong> Платформа автоматически проверяет ваш бренд через ГИСП и Честный знак. Вы получаете грейд: Золото/Серебро/Бронза.</li>
+        <li><strong>Публикация.</strong> Загружаете карточки товаров — они сразу видны в каталоге. Покупатели с кешбэком до 7% начинают покупать.</li>
+        <li><strong>Рост.</strong> Подключаете модули по мере необходимости: Аналитика для прогноза спроса, Кооперация для поиска партнёров, Экспорт для выхода за рубеж.</li>
+    </ol>
+
+    <h2>5. Что это значит для вашего бизнеса</h2>
+    <ol>
+        <li><strong>Вы становитесь видимым.</strong> Ваш бренд попадает в национальный каталог верифицированных российских производителей, который видят миллионы покупателей, мотивированных кешбэком до 7%.</li>
+        <li><strong>Вы экономите на комиссии.</strong> 0% для самозанятых, 0,8% для брендов — в 20–30 раз ниже, чем на маркетплейсах. Эти деньги остаются у вас.</li>
+        <li><strong>Вы находите партнёров за дни, а не за месяцы.</strong> AI-матчинг по 50+ параметрам, B2B-тендеры, артельные кластеры. 57% предприятий, которые не могли найти поставщиков, получают работающий инструмент.</li>
+    </ol>
+
+    <div class="cta-box">
+        <h2>Next Steps</h2>
+        <p><strong>1.</strong> Скачать «Руководство по модулям» — полный обзор всех 20 сервисов с кейсами использования.<br>
+        <strong>2.</strong> Оставить заявку на ранний доступ к пилоту (Москва + Зеленоград, июль 2027).<br>
+        <strong>3.</strong> Подписаться на обновления — мы сообщим о запуске.</p>
+        <p style="margin-top:10px;"><strong>Александр Нарбаев</strong> — лидер проекта<br>
+        АО «НП «Опора» | Москва, Россия<br>
+        +7 999 452-33-98 | <a href="mailto:alexander.narbayev@yandex.ru">alexander.narbayev@yandex.ru</a></p>
+    </div>
+
+    <div class="footer-note">
+        АО «НП «Опора» • Москва, 2026 • opora.ru • Строго конфиденциально • Не является публичной офертой
+    </div>
+</body>
+</html>
