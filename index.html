@@ -1640,93 +1640,46 @@
     <div class="container">
         <div class="section-header">
             <span class="section-tag">Прототип</span>
-            <h2 class="section-title">Не презентация — работающий продукт</h2>
-            <p class="section-desc">20 сервисов компилируются, запускаются в Docker и готовы к демонстрации. Личный кабинет уже можно показать.</p>
+            <h2 class="section-title">Попробуйте сами</h2>
+            <p class="section-desc">Кликабельный прототип личного кабинета. Выберите роль — и смотрите, как платформа выглядит для вас. Каждый шаг — скриншот реального интерфейса.</p>
         </div>
         <div class="prototype__inner">
-            <div class="prototype__video">
-                <video controls autoplay muted loop width="100%" style="border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
-                    <source src="assets/opora-demo.webm" type="video/webm">
-                    <source src="assets/opora-prototype.mp4" type="video/mp4">
-                    Ваш браузер не поддерживает видео.
-                </video>
-                <p style="text-align: center; margin-top: 12px; color: var(--text-muted); font-size: 0.9rem;">Демонстрация прототипа: вход (demo@opora.test), дашборд, каталог брендов, кооперация, финансы — все страницы кликабельны</p>
-            </div>
-            <div class="prototype__preview">
-                <div class="prototype__browser">
-                    <div class="prototype__browser-bar">
-                        <span class="prototype__browser-dot"></span>
-                        <span class="prototype__browser-dot"></span>
-                        <span class="prototype__browser-dot"></span>
-                        <span class="prototype__browser-url">lk.opora.digital</span>
+            <div class="prototype__demo" id="demoTour" aria-label="Интерактивный тур по прототипу" role="region">
+                <div class="demo-frame">
+                    <div class="demo-frame__chrome">
+                        <span class="demo-frame__dot demo-frame__dot--red"></span>
+                        <span class="demo-frame__dot demo-frame__dot--yellow"></span>
+                        <span class="demo-frame__dot demo-frame__dot--green"></span>
+                        <span class="demo-frame__url">lk.opora.digital</span>
                     </div>
-                    <div class="prototype__browser-body">
-                        <div class="prototype__mock-sidebar">
-                            <div class="prototype__mock-logo">ОПОРА</div>
-                            <div class="prototype__mock-nav-item prototype__mock-nav-item--active"></div>
-                            <div class="prototype__mock-nav-item"></div>
-                            <div class="prototype__mock-nav-item"></div>
-                            <div class="prototype__mock-nav-item"></div>
-                            <div class="prototype__mock-nav-item"></div>
-                        </div>
-                        <div class="prototype__mock-content">
-                            <div class="prototype__mock-header"></div>
-                            <div class="prototype__mock-cards">
-                                <div class="prototype__mock-card"></div>
-                                <div class="prototype__mock-card"></div>
-                                <div class="prototype__mock-card"></div>
-                            </div>
-                            <div class="prototype__mock-chart"></div>
-                        </div>
+                    <div class="demo-frame__screen">
+                        <img class="demo-frame__image" src="assets/screenshots/investor-1.png" alt="Дашборд платформы Опора" id="demoImage">
+                        <div class="demo-frame__cursor" id="demoCursor"></div>
+                        <div class="demo-frame__hotspot" id="demoHotspot"></div>
                     </div>
+                </div>
+                <div class="demo-tooltip" id="demoCaption">1/5 · Дашборд: NPV 4.5 млрд, IRR 32%</div>
+                <div class="demo-controls">
+                    <button class="demo-controls__btn" id="demoPrev" aria-label="Предыдущий шаг">&lt;</button>
+                    <div class="demo-controls__dots" id="demoDots"></div>
+                    <button class="demo-controls__btn" id="demoNext" aria-label="Следующий шаг">&gt;</button>
+                    <button class="demo-controls__play" id="demoPlay" aria-label="Автоплей">&#9654;</button>
                 </div>
             </div>
             <div class="prototype__info">
                 <h3 class="prototype__info-title">Что уже сделано</h3>
                 <ul class="prototype__features">
-                    <li class="prototype__feature">
-                        <span class="prototype__feature-icon">&#10003;</span>
-                        <div>
-                            <strong>20 микросервисов в коде</strong>
-                            <span>626+ Java-файлов. Все компилируются, все запускаются</span>
-                        </div>
-                    </li>
-                    <li class="prototype__feature">
-                        <span class="prototype__feature-icon">&#10003;</span>
-                        <div>
-                            <strong>Личный кабинет на React</strong>
-                            <span>Современный интерфейс для покупателей и брендов</span>
-                        </div>
-                    </li>
-                    <li class="prototype__feature">
-                        <span class="prototype__feature-icon">&#10003;</span>
-                        <div>
-                            <strong>Авторизация через Госуслуги</strong>
-                            <span>Безопасный вход. Защита класса К2</span>
-                        </div>
-                    </li>
-                    <li class="prototype__feature">
-                        <span class="prototype__feature-icon">&#10003;</span>
-                        <div>
-                            <strong>Эмуляторы госсистем</strong>
-                            <span>8 заглушек — ФНС, ОФД, СБП и другие. Можно тестировать полный цикл</span>
-                        </div>
-                    </li>
-                    <li class="prototype__feature">
-                        <span class="prototype__feature-icon">&#10003;</span>
-                        <div>
-                            <strong>Docker Compose + Kubernetes</strong>
-                            <span>Вся инфраструктура описана и готова к развёртыванию</span>
-                        </div>
-                    </li>
-                    <li class="prototype__feature">
-                        <span class="prototype__feature-icon">&#10003;</span>
-                        <div>
-                            <strong>API Gateway</strong>
-                            <span>Единый вход для всех сервисов. Защита, ограничение нагрузки, мониторинг</span>
-                        </div>
-                    </li>
+                    <li class="prototype__feature"><span class="prototype__feature-icon">&#10003;</span><span><strong>493 unit-теста</strong>React Testing Library + Vitest</span></li>
+                    <li class="prototype__feature"><span class="prototype__feature-icon">&#10003;</span><span><strong>55 тест-файлов</strong>Компоненты, хуки, роутинг</span></li>
+                    <li class="prototype__feature"><span class="prototype__feature-icon">&#10003;</span><span><strong>8 E2E-тестов</strong>Playwright на лендинг</span></li>
+                    <li class="prototype__feature"><span class="prototype__feature-icon">&#10003;</span><span><strong>20 сервисов</strong>13 бизнес + 7 инфраструктурных</span></li>
+                    <li class="prototype__feature"><span class="prototype__feature-icon">&#10003;</span><span><strong>4 роли</strong>Инвестор, государство, бизнес, гражданин</span></li>
+                    <li class="prototype__feature"><span class="prototype__feature-icon">&#10003;</span><span><strong>626+ Java-файлов</strong>Clean Architecture, DDD</span></li>
                 </ul>
+                <div class="prototype__actions">
+                    <a href="https://github.com/AlexanderNarbaev/opora" class="btn btn--primary" target="_blank" rel="noopener">Открыть код (GitHub)</a>
+                    <a href="https://gitverse.ru/AlexandrNarbaev/opora" class="btn btn--outline" target="_blank" rel="noopener">Зеркало (GitVerse)</a>
+                </div>
             </div>
         </div>
     </div>
