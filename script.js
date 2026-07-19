@@ -343,4 +343,176 @@
         });
     }
 
+    /* ---- Screenshot Tour ---- */
+    var demoImage = document.getElementById('demoImage');
+    var demoCursor = document.getElementById('demoCursor');
+    var demoHotspot = document.getElementById('demoHotspot');
+    var demoCaption = document.getElementById('demoCaption');
+    var demoDots = document.getElementById('demoDots');
+    var demoPrev = document.getElementById('demoPrev');
+    var demoNext = document.getElementById('demoNext');
+    var demoPlay = document.getElementById('demoPlay');
+
+    if (demoImage && demoDots) {
+        var TOUR_DATA = {
+            investor: [
+                { src: 'assets/screenshots/investor-1.png', caption: '1/5 · Дашборд: NPV 4.5 млрд, IRR 32%', hotspot: [70, 15] },
+                { src: 'assets/screenshots/investor-2.png', caption: '2/5 · Краудфандинг 2.0: токены участия', hotspot: [60, 40] },
+                { src: 'assets/screenshots/investor-3.png', caption: '3/5 · Инвестиции: ЦФА, доходность', hotspot: [80, 50] },
+                { src: 'assets/screenshots/investor-4.png', caption: '4/5 · Смарт-контракты: NDA + подписание', hotspot: [70, 60] },
+                { src: 'assets/screenshots/investor-5.png', caption: '5/5 · Сводка: 20 сервисов, окупаемость 4.2 года', hotspot: [30, 80] }
+            ],
+            government: [
+                { src: 'assets/screenshots/government-1.png', caption: '1/4 · Дашборд: 20 сервисов, 200K+ брендов', hotspot: [50, 20] },
+                { src: 'assets/screenshots/government-2.png', caption: '2/4 · Прослеживаемость: блокчейн-аудит', hotspot: [40, 50] },
+                { src: 'assets/screenshots/government-3.png', caption: '3/4 · Верификация брендов через ГИСП', hotspot: [70, 30] },
+                { src: 'assets/screenshots/government-4.png', caption: '4/4 · Интеграция: ЕСИА, ФНС, Мой налог', hotspot: [60, 40] }
+            ],
+            business: [
+                { src: 'assets/screenshots/business-1.png', caption: '1/5 · Разместите товар бесплатно', hotspot: [60, 40] },
+                { src: 'assets/screenshots/business-2.png', caption: '2/5 · AI-матчинг: партнёр за 14 дней', hotspot: [50, 30] },
+                { src: 'assets/screenshots/business-3.png', caption: '3/5 · Смарт-контракты: NDA + подписание', hotspot: [70, 60] },
+                { src: 'assets/screenshots/business-4.png', caption: '4/5 · Креаторы: 0% комиссия', hotspot: [50, 50] },
+                { src: 'assets/screenshots/business-5.png', caption: '5/5 · Доходы: аналитика и отчёты', hotspot: [80, 30] }
+            ],
+            citizen: [
+                { src: 'assets/screenshots/citizen-1.png', caption: '1/4 · Каталог: верифицированные бренды', hotspot: [70, 50] },
+                { src: 'assets/screenshots/citizen-2.png', caption: '2/4 · Кешбэк до 7% за покупки', hotspot: [40, 30] },
+                { src: 'assets/screenshots/citizen-3.png', caption: '3/4 · Загрузите чек — получите баллы', hotspot: [50, 50] },
+                { src: 'assets/screenshots/citizen-4.png', caption: '4/4 · Обменяйте баллы на скидки', hotspot: [80, 60] }
+            ]
+        };
+
+        var currentTrackTour = TOUR_DATA[currentTrack];
+        var currentStep = 0;
+        var autoplayTimer = null;
+        var isPlaying = true;
+        var autoplayDelay = 5000;
+
+        function buildDots() {
+            demoDots.innerHTML = '';
+            currentTrackTour.forEach(function (_, i) {
+                var dot = document.createElement('button');
+                dot.className = 'demo-controls__dot' + (i === currentStep ? ' demo-controls__dot--active' : '');
+                dot.setAttribute('aria-label', 'Шаг ' + (i + 1));
+                dot.addEventListener('click', function () { goToStep(i); });
+                demoDots.appendChild(dot);
+            });
+        }
+
+        function showStep(step) {
+            currentStep = step;
+            var data = currentTrackTour[step];
+
+            demoImage.classList.add('demo-frame__image--fade');
+            setTimeout(function () {
+                demoImage.src = data.src;
+                demoImage.classList.remove('demo-frame__image--fade');
+            }, 200);
+
+            demoCaption.textContent = data.caption;
+
+            // Position hotspot
+            if (data.hotspot && demoHotspot) {
+                demoHotspot.style.left = data.hotspot[0] + '%';
+                demoHotspot.style.top = data.hotspot[1] + '%';
+                demoHotspot.classList.add('demo-frame__hotspot--visible');
+            } else if (demoHotspot) {
+                demoHotspot.classList.remove('demo-frame__hotspot--visible');
+            }
+
+            // Position cursor slightly above hotspot
+            if (data.hotspot && demoCursor) {
+                setTimeout(function () {
+                    demoCursor.style.left = (data.hotspot[0] - 1) + '%';
+                    demoCursor.style.top = (data.hotspot[1] - 3) + '%';
+                    demoCursor.classList.add('demo-frame__cursor--visible');
+                    // Click animation
+                    setTimeout(function () {
+                        demoCursor.classList.add('demo-frame__cursor--click');
+                        setTimeout(function () {
+                            demoCursor.classList.remove('demo-frame__cursor--click');
+                            demoCursor.classList.remove('demo-frame__cursor--visible');
+                        }, 400);
+                    }, 800);
+                }, 400);
+            }
+
+            buildDots();
+        }
+
+        function goToStep(step) {
+            showStep(step);
+            resetAutoplay();
+        }
+
+        function nextStep() {
+            var next = (currentStep + 1) % currentTrackTour.length;
+            showStep(next);
+            resetAutoplay();
+        }
+
+        function prevStep() {
+            var prev = (currentStep - 1 + currentTrackTour.length) % currentTrackTour.length;
+            showStep(prev);
+            resetAutoplay();
+        }
+
+        function resetAutoplay() {
+            if (autoplayTimer) clearTimeout(autoplayTimer);
+            if (isPlaying) {
+                autoplayTimer = setTimeout(nextStep, autoplayDelay);
+            }
+        }
+
+        function togglePlay() {
+            isPlaying = !isPlaying;
+            if (isPlaying) {
+                demoPlay.classList.remove('demo-controls__play--paused');
+                demoPlay.innerHTML = '&#9654;';
+                resetAutoplay();
+            } else {
+                demoPlay.classList.add('demo-controls__play--paused');
+                demoPlay.innerHTML = '&#10074;&#10074;';
+                if (autoplayTimer) clearTimeout(autoplayTimer);
+            }
+        }
+
+        function switchTrack(track) {
+            currentTrackTour = TOUR_DATA[track];
+            currentStep = 0;
+            showStep(0);
+            resetAutoplay();
+        }
+
+        // Event listeners
+        demoPrev.addEventListener('click', prevStep);
+        demoNext.addEventListener('click', nextStep);
+        demoPlay.addEventListener('click', togglePlay);
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'ArrowLeft') { e.preventDefault(); prevStep(); }
+            if (e.key === 'ArrowRight') { e.preventDefault(); nextStep(); }
+        });
+
+        // Hook into existing track bar clicks
+        var trackBarBtns = document.querySelectorAll('.track-bar__btn');
+        if (trackBarBtns.length) {
+            trackBarBtns.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var track = btn.dataset.track;
+                    if (TOUR_DATA[track]) {
+                        setTimeout(function () { switchTrack(track); }, 100);
+                    }
+                });
+            });
+        }
+
+        // Init
+        buildDots();
+        showStep(0);
+        autoplayTimer = setTimeout(nextStep, autoplayDelay);
+    }
+
 })();
