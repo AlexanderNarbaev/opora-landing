@@ -1998,88 +1998,107 @@
     <div class="container">
         <div class="section-header">
             <span class="section-tag">Документы</span>
-            <h2 class="section-title">Скачайте материалы</h2>
-            <p class="section-desc">Всё, что нужно для глубокого погружения — для инвесторов, технарей и партнёров</p>
+            <h2 class="section-title">Всё для due diligence</h2>
+            <p class="section-desc">Не презентации, а рабочие документы — с цифрами, источниками и обоснованиями. Для инвесторов, государства, технарей и партнёров.</p>
         </div>
         <div class="docs__grid">
-            <a href="pdfs/one-pager.html" class="doc-card" aria-label="One-Pager">
+            <!-- One-Pager -->
+            <div class="doc-card">
                 <div class="doc-card__badges">
-                    <span class="doc-card__type" style="background: var(--teal);">HTML</span>
+                    <a href="pdfs/one-pager.html" class="doc-card__type" style="background: var(--teal);">HTML</a>
                     <a href="pdfs/pdf/one-pager.pdf" class="doc-card__type" style="background: var(--orange);" download>PDF</a>
                 </div>
                 <h3 class="doc-card__title">One-Pager</h3>
-                <p class="doc-card__desc">Одна страница. Вся суть. Миссия, проблема, решение, метрики, контакты.</p>
-                <span class="doc-card__audience">Для всех</span>
-            </a>
-            <a href="pdfs/investor-memo.html" class="doc-card" aria-label="Инвестмеморандум">
+                <p class="doc-card__desc">Суть проекта на одной странице: какая проблема решается, для кого, сколько стоит и когда окупится. На основе White Paper и финмодели v4.0.</p>
+                <span class="doc-card__audience">Для первого касания</span>
+            </div>
+            <!-- Инвестмеморандум -->
+            <div class="doc-card">
                 <div class="doc-card__badges">
-                    <span class="doc-card__type" style="background: var(--orange);">HTML</span>
+                    <a href="pdfs/investor-memo.html" class="doc-card__type" style="background: var(--orange);">HTML</a>
                     <a href="pdfs/pdf/investor-memo.pdf" class="doc-card__type" style="background: var(--orange);" download>PDF</a>
                 </div>
                 <h3 class="doc-card__title">Инвестиционный меморандум</h3>
-                <p class="doc-card__desc">Финмодель v4.0, 8 сценариев A–H, структура сделки, анализ рынка.</p>
-                <span class="doc-card__audience">Для инвесторов</span>
-            </a>
-            <a href="pdfs/technical-overview.html" class="doc-card" aria-label="Технический обзор">
+                <p class="doc-card__desc">Полная инвест-картина: юнит-экономика, 8 сценариев A–H, структура сделки, источники финансирования (5 траншей), анализ рынка МСП. Основан на финмодели v4.0 и данных Минэкономразвития.</p>
+                <span class="doc-card__audience">Для институциональных инвесторов</span>
+            </div>
+            <!-- Финансовая модель -->
+            <div class="doc-card">
                 <div class="doc-card__badges">
-                    <span class="doc-card__type" style="background: var(--blue);">HTML</span>
+                    <a href="pdfs/financial-model.html" class="doc-card__type" style="background: var(--orange);">HTML</a>
+                    <a href="pdfs/pdf/financial-model.pdf" class="doc-card__type" style="background: var(--orange);" download>PDF</a>
+                </div>
+                <h3 class="doc-card__title">Финансовая модель v4.0</h3>
+                <p class="doc-card__desc">LTV/CAC 21.2×, IRR 32%/60%+, NPV 4.5/15.0 млрд руб. Детальные таблицы: P&L, cash flow, юнит-экономика, 5 волн найма, бюджетная эффективность. Почему 0.8% комиссии, а не 15% как у маркетплейсов.</p>
+                <span class="doc-card__audience">Для финансового due diligence</span>
+            </div>
+            <!-- Технический обзор -->
+            <div class="doc-card">
+                <div class="doc-card__badges">
+                    <a href="pdfs/technical-overview.html" class="doc-card__type" style="background: var(--blue);">HTML</a>
                     <a href="pdfs/pdf/technical-overview.pdf" class="doc-card__type" style="background: var(--orange);" download>PDF</a>
                 </div>
                 <h3 class="doc-card__title">Технический обзор</h3>
-                <p class="doc-card__desc">Архитектура, стек технологий, 20 сервисов, безопасность класса К2.</p>
-                <span class="doc-card__audience">Для CTO и разработчиков</span>
-            </a>
-            <a href="pdfs/modules-guide.html" class="doc-card" aria-label="Руководство по модулям">
+                <p class="doc-card__desc">Архитектура C4: 20 микросервисов (Quarkus + Wicket + React), 626+ Java-файлов. Стек: PostgreSQL, MongoDB, Redis, Kafka, gRPC, Keycloak. Безопасность: класс К2, ГОСТ-криптография, КриптоПро. Почему Java 25, а не Python.</p>
+                <span class="doc-card__audience">Для технического due diligence</span>
+            </div>
+            <!-- Руководство по модулям -->
+            <div class="doc-card">
                 <div class="doc-card__badges">
-                    <span class="doc-card__type" style="background: var(--green);">HTML</span>
+                    <a href="pdfs/modules-guide.html" class="doc-card__type" style="background: var(--green);">HTML</a>
                     <a href="pdfs/pdf/modules-guide.pdf" class="doc-card__type" style="background: var(--orange);" download>PDF</a>
                 </div>
                 <h3 class="doc-card__title">Руководство по модулям</h3>
-                <p class="doc-card__desc">Все 20 сервисов: что делают, как взаимодействуют, статус.</p>
+                <p class="doc-card__desc">20 сервисов: статус, API, точки интеграции с госсистемами (ЕСИА, ГИСП, ФНС, Честный знак). Схемы взаимодействия, доменные модели, очереди сообщений. На основе реального кода (build проходит).</p>
                 <span class="doc-card__audience">Для архитекторов и интеграторов</span>
-            </a>
-            <a href="pdfs/concept-mvr.html" class="doc-card" aria-label="Концепция для МВР">
+            </div>
+            <!-- Концепция для МВР -->
+            <div class="doc-card">
                 <div class="doc-card__badges">
-                    <span class="doc-card__type" style="background: var(--blue);">HTML</span>
+                    <a href="pdfs/concept-mvr.html" class="doc-card__type" style="background: var(--blue);">HTML</a>
                     <a href="pdfs/pdf/concept-mvr.pdf" class="doc-card__type" style="background: var(--orange);" download>PDF</a>
                 </div>
                 <h3 class="doc-card__title">Концепция для МВР</h3>
-                <p class="doc-card__desc">Бюджетный мультипликатор 1.7×, интеграции с госсистемами, дорожная карта.</p>
-                <span class="doc-card__audience">Для государства</span>
-            </a>
-            <a href="pdfs/concept.html" class="doc-card" aria-label="Концепция проекта">
+                <p class="doc-card__desc">Почему это выгодно государству: бюджетный мультипликатор 1.7×, рост МСП-оборота на 45%, 200K рабочих мест. План интеграции: ЕСИА, ГИСП, ФНС, Мой налог, Честный знак. Дорожная карта с KPI по годам. На основе методологии Минэкономразвития.</p>
+                <span class="doc-card__audience">Для министерств и ведомств</span>
+            </div>
+            <!-- Концепция проекта -->
+            <div class="doc-card">
                 <div class="doc-card__badges">
-                    <span class="doc-card__type" style="background: var(--navy);">HTML</span>
+                    <a href="pdfs/concept.html" class="doc-card__type" style="background: var(--teal);">HTML</a>
                     <a href="pdfs/pdf/concept.pdf" class="doc-card__type" style="background: var(--orange);" download>PDF</a>
                 </div>
                 <h3 class="doc-card__title">Концепция проекта</h3>
-                <p class="doc-card__desc">Видение, миссия, архитектура из 20 сервисов, принципы, дорожная карта.</p>
-                <span class="doc-card__audience">Для всех</span>
-            </a>
-            <a href="pdfs/financial-model.html" class="doc-card" aria-label="Финансовая модель">
+                <p class="doc-card__desc">Зачем нужна Опора: 6.3 млн МСП, три общие проблемы, одно решение. Видение, миссия, принципы. Почему не маркетплейс, а инфраструктура доверия. На основе White Paper v3, финмодели v4.0 и 365+ проектных документов.</p>
+                <span class="doc-card__audience">Для стратегических партнёров</span>
+            </div>
+            <!-- Юридический пакет -->
+            <div class="doc-card">
                 <div class="doc-card__badges">
-                    <span class="doc-card__type" style="background: var(--orange);">HTML</span>
-                    <a href="pdfs/pdf/financial-model.pdf" class="doc-card__type" style="background: var(--orange);" download>PDF</a>
-                </div>
-                <h3 class="doc-card__title">Финансовая модель</h3>
-                <p class="doc-card__desc">LTV/CAC 21.2×, IRR 32%/60%+, NPV 4.5/15.0, 8 сценариев A–H, юнит-экономика.</p>
-                <span class="doc-card__audience">Для инвесторов</span>
-            </a>
-            <a href="pdfs/legal-package.html" class="doc-card" aria-label="Юридический пакет">
-                <div class="doc-card__badges">
-                    <span class="doc-card__type" style="background: var(--blue);">HTML</span>
+                    <a href="pdfs/legal-package.html" class="doc-card__type" style="background: var(--blue);">HTML</a>
                     <a href="pdfs/pdf/legal-package.pdf" class="doc-card__type" style="background: var(--orange);" download>PDF</a>
                 </div>
                 <h3 class="doc-card__title">Юридический пакет</h3>
-                <p class="doc-card__desc">Оргформа АО, поправки в ст. 149 НК РФ, ЭПР, К2, интеграции с госсистемами.</p>
-                <span class="doc-card__audience">Для юристов и GR</span>
-            </a>
-            <a href="documents.html" class="doc-card" aria-label="Все документы">
-                <div class="doc-card__type">ВСЕ</div>
-                <h3 class="doc-card__title">Все документы &rarr;</h3>
-                <p class="doc-card__desc">Полный каталог: 365+ документов в HTML и PDF.</p>
+                <p class="doc-card__desc">Правовая рамка: оргформа АО с миноритарным госучастием + золотая акция. Поправки в ст. 149 НК РФ (баллы лояльности без НДС). ЭПР 2027–2032. НПА ЦБ РФ. Политика ИБ класса К2. Корпоративный договор, устав, KPI-соглашения.</p>
+                <span class="doc-card__audience">Для юристов и GR-специалистов</span>
+            </div>
+            <!-- Все документы -->
+            <div class="doc-card">
+                <a href="documents.html" class="doc-card__type">ВСЕ 365+</a>
+                <h3 class="doc-card__title">Полный каталог</h3>
+                <p class="doc-card__desc">Все проектные документы (365+) в HTML и PDF: 16 фаз, White Paper, спецификации 20 сервисов, аналитика СИНВ, письма, шаблоны, финмодели.</p>
                 <span class="doc-card__audience">Для глубокого изучения</span>
-            </a>
+            </div>
+            <!-- СИНВ-анализ -->
+            <div class="doc-card">
+                <div class="doc-card__badges">
+                    <a href="pdfs/sinv-analysis.html" class="doc-card__type" style="background: var(--green);">HTML</a>
+                    <a href="pdfs/pdf/sinv-analysis.pdf" class="doc-card__type" style="background: var(--orange);" download>PDF</a>
+                </div>
+                <h3 class="doc-card__title">Анализ СИНВ-2026</h3>
+                <p class="doc-card__desc">35 идей-партнёров с высоким потенциалом: кросс-валидация по 4 базам данных, 200 экспертных оценок, 534 экспертизы. Топ-10 с готовностью к пилоту. Кого из партнёров подключать первыми и почему.</p>
+                <span class="doc-card__audience">Для стратегов и BD</span>
+            </div>
         </div>
     </div>
 </section>
@@ -2149,12 +2168,20 @@
                         <a href="mailto:alexander.narbayev@yandex.ru" class="contact__channel-value">alexander.narbayev@yandex.ru</a>
                     </div>
                     <div class="contact__channel-item">
+                        <span class="contact__channel-name">Telegram</span>
+                        <a href="https://t.me/Alex_Narbaev" target="_blank" rel="noopener noreferrer" class="contact__channel-value">@Alex_Narbaev</a>
+                    </div>
+                    <div class="contact__channel-item">
                         <span class="contact__channel-name">VK</span>
-                        <a href="https://vk.com/alexander.narbaev" target="_blank" rel="noopener noreferrer" class="contact__channel-value">vk.com/alexander.narbaev</a>
+                        <a href="https://vk.ru/alex_narbaev" target="_blank" rel="noopener noreferrer" class="contact__channel-value">vk.ru/alex_narbaev</a>
+                    </div>
+                    <div class="contact__channel-item">
+                        <span class="contact__channel-name">LinkedIn</span>
+                        <a href="https://www.linkedin.com/in/alexandrnarbaev/" target="_blank" rel="noopener noreferrer" class="contact__channel-value">linkedin.com/in/alexandrnarbaev</a>
                     </div>
                     <div class="contact__channel-item">
                         <span class="contact__channel-name">MAX</span>
-                        <a href="https://max.ru/alexander.narbaev" target="_blank" rel="noopener noreferrer" class="contact__channel-value">max.ru/alexander.narbaev</a>
+                        <a href="https://web.max.ru/alexandr.narbayev" target="_blank" rel="noopener noreferrer" class="contact__channel-value">web.max.ru (личные сообщения)</a>
                     </div>
                     <div class="contact__channel-item">
                         <span class="contact__channel-name">Ответ</span>
