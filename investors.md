@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Инвесторам
-description: Инвестиционное предложение платформы «Опора» — национальной цифровой экосистемы. NPV 4,5 млрд руб., IRR 32%, 17 модулей, 8 сценариев, интеллектуальный вклад основателя 500+ млн руб.
+description: Инвестиционное предложение платформы «Опора» — национальной цифровой экосистемы. NPV 2,8 млрд руб., IRR 28%, 20 модулей, 8 сценариев, интеллектуальный вклад основателя 500+ млн руб.
 ---
 
 <h1 class="section-title">Инвестиционное предложение</h1>
@@ -23,19 +23,19 @@ description: Инвестиционное предложение платфор�
       </thead>
       <tbody>
         <tr>
-          <td class="dual-table__yes">Полный комплект документации: 116+ документов, 16 фаз</td>
+          <td class="dual-table__yes">Полный комплект документации: 460+ документов, 16 фаз</td>
           <td class="dual-table__no">Собственных денежных средств — 0 руб.</td>
         </tr>
         <tr>
-          <td class="dual-table__yes">Архитектура 17 модулей (11+6): C4-диаграммы, API-контракты OpenAPI 3.0</td>
+          <td class="dual-table__yes">Архитектура 20 модулей (13+7): C4-диаграммы, API-контракты OpenAPI 3.0</td>
           <td class="dual-table__no">Зарегистрированного юрлица (АО — на стадии учреждения)</td>
         </tr>
         <tr>
-          <td class="dual-table__yes">Прототипы кода: Java 25, Quarkus 3.36, 11 сервисов (205 Java-файлов)</td>
+          <td class="dual-table__yes">Прототипы кода: Java 25, Quarkus 3.36, 20 сервисов (648 Java-файлов)</td>
           <td class="dual-table__no">Действующих договорённостей с ФОИВами</td>
         </tr>
         <tr>
-          <td class="dual-table__yes">Финансовая модель v4.1: 8 сценариев, взвешенный NPV 3,12 млрд руб.</td>
+          <td class="dual-table__yes">Финансовая модель v4.5: 8 сценариев, взвешенный NPV 3,12 млрд руб.</td>
           <td class="dual-table__no">Подтверждённого бюджетного финансирования</td>
         </tr>
         <tr>
@@ -102,15 +102,15 @@ description: Инвестиционное предложение платфор�
 
 <div class="financials-grid">
       <div class="financial-card">
-        <div class="fin-value">4,5 млрд ₽</div>
-        <div class="fin-label">NPV (WACC 18%)</div>
+        <div class="fin-value">2,8 млрд ₽</div>
+        <div class="fin-label">NPV (WACC 20%)</div>
       </div>
       <div class="financial-card">
-        <div class="fin-value">32%</div>
+        <div class="fin-value">28%</div>
         <div class="fin-label">IRR</div>
       </div>
       <div class="financial-card">
-        <div class="fin-value">4,2 года</div>
+        <div class="fin-value">5,0 лет</div>
         <div class="fin-label">Окупаемость (простая)</div>
       </div>
       <div class="financial-card">
@@ -146,14 +146,14 @@ description: Инвестиционное предложение платфор�
           <tr><th>#</th><th>Сценарий</th><th>NPV</th><th>IRR</th><th>Окуп.</th><th>Вер.</th></tr>
         </thead>
         <tbody>
-          <tr><td>A</td><td>Базовый</td><td>4,5 млрд</td><td>32%</td><td>4,2 г.</td><td>35%</td></tr>
-          <tr><td>B</td><td>Регуляторный ступор</td><td>1,8 млрд</td><td>18%</td><td>6,5 л.</td><td>20%</td></tr>
-          <tr><td>C</td><td>Пессимистичный</td><td>0,5 млрд</td><td>10%</td><td>7,5 л.</td><td>15%</td></tr>
-          <tr><td>D</td><td>Прорывной</td><td>8,5 млрд</td><td>45%</td><td>3,0 г.</td><td>8%</td></tr>
-          <tr><td>E</td><td>Стагнация спроса</td><td>1,2 млрд</td><td>14%</td><td>7,0 л.</td><td>12%</td></tr>
-          <tr><td>F</td><td>Кадровый коллапс</td><td>−0,5</td><td>8%</td><td>&gt;10 л.</td><td>5%</td></tr>
-          <tr><td>G</td><td>Кризисный</td><td>−1,2</td><td>&lt;5%</td><td>—</td><td>3%</td></tr>
-          <tr><td>H</td><td>Международный прорыв</td><td>15,0 млрд</td><td>60%+</td><td>2,0 г.</td><td>2%</td></tr>
+          <tr><td>A</td><td>Базовый</td><td>2,8 млрд</td><td>28%</td><td>5,0 л.</td><td>35%</td></tr>
+          <tr><td>B</td><td>Регуляторный ступор</td><td>—</td><td>—</td><td>—</td><td>20%</td></tr>
+          <tr><td>C</td><td>Пессимистичный</td><td>—</td><td>—</td><td>—</td><td>15%</td></tr>
+          <tr><td>D</td><td>Прорывной</td><td>—</td><td>—</td><td>—</td><td>8%</td></tr>
+          <tr><td>E</td><td>Стагнация спроса</td><td>—</td><td>—</td><td>—</td><td>12%</td></tr>
+          <tr><td>F</td><td>Кадровый коллапс</td><td>—</td><td>—</td><td>—</td><td>5%</td></tr>
+          <tr><td>G</td><td>Кризисный</td><td>—</td><td>—</td><td>—</td><td>3%</td></tr>
+          <tr><td>H</td><td>Международный прорыв</td><td>—</td><td>—</td><td>—</td><td>2%</td></tr>
         </tbody>
       </table>
 </div>
@@ -283,9 +283,9 @@ description: Инвестиционное предложение платфор�
 </div>
 
 <div class="highlight-block">
-<p><strong>Что получает инвестор:</strong> Долю до 20% в АО с NPV 4,5 млрд руб., место в Набсовете, три механизма выхода.</p>
+<p><strong>Что получает инвестор:</strong> Долю до 20% в АО с NPV 2,8 млрд руб., место в Набсовете, три механизма выхода.</p>
 <p style="margin-bottom:0;">
-Александр Нарбаев, основатель проекта «Опора»<br>
+CEO & CTO, проект «Опора»<br>
 alexander.narbayev@yandex.ru · +7 999 452-33-98 · Москва, Зеленоград
 </p>
 </div>
@@ -301,7 +301,7 @@ alexander.narbayev@yandex.ru · +7 999 452-33-98 · Москва, Зеленог
 <div class="cta-card">
 <span class="cta-card__icon">💻</span>
 <h3 class="cta-card__title">GitHub</h3>
-<p class="cta-card__desc">Исходный код 11 сервисов, документация, CI/CD. Открытый репозиторий для технического due diligence.</p>
+<p class="cta-card__desc">Исходный код 20 сервисов, документация, CI/CD. Открытый репозиторий для технического due diligence.</p>
 <a href="https://github.com/AlexanderNarbaev/opora" target="_blank" rel="noopener" class="btn btn-outline">Перейти в репозиторий</a>
 </div>
 </div>

@@ -1,11 +1,11 @@
-# _data/modules.yml — 17 модулей платформы «Опора»
+# _data/modules.yml — 20 модулей платформы «Опора»
 
 - id: vitrina
   name: Опора.Витрина
   icon: shield
   color: "#233370"
   color_class: module-vitrina
-  status: STUB
+  status: BUILD
   description: >
     Каталог верифицированных российских брендов с трёхуровневым грейдированием
     «Золото / Серебро / Бронза», кешбэком до 7%, социальным треком и инструментами
@@ -21,7 +21,7 @@
   icon: gears
   color: "#2EC4B6"
   color_class: module-cooperation
-  status: STUB
+  status: BUILD
   description: >
     AI-подбор производственных партнёров по 50+ параметрам, артельные кластеры
     для выполнения крупных заказов, B2B-тендеры и смарт-контракты.
@@ -36,7 +36,7 @@
   icon: brush
   color: "#4CAF76"
   color_class: module-creators
-  status: STUB
+  status: BUILD
   description: >
     Маркетплейс для самозанятых: дизайнеры, копирайтеры, маркетологи, видеографы.
     Нулевая комиссия на старте, интеграция с «Мой налог».
@@ -51,7 +51,7 @@
   icon: chart
   color: "#667085"
   color_class: module-analytics
-  status: STUB
+  status: BUILD
   description: >
     Встроенная CRM/CDP-система: портрет покупателя, прогноз спроса, сегментация.
     Data Monetization — пассивный доход гражданам за обезличенные данные.
@@ -66,7 +66,7 @@
   icon: scales
   color: "#C62828"
   color_class: module-legal
-  status: STUB
+  status: BUILD
   description: >
     Арбитраж, патентный маркетплейс, типовые смарт-контракты с NDA.
     Франчайзинг-маркетплейс со стандартным мораторием на конкуренцию.
@@ -96,7 +96,7 @@
   icon: sprout
   color: "#D7CCC8"
   color_class: module-sandbox
-  status: STUB
+  status: BUILD
   description: >
     Среда для самозанятых и микробизнеса: нулевая комиссия,
     прямая интеграция с «Мой налог», автоматические чеки и налоги.
@@ -165,3 +165,138 @@
     - Мультивалютные аккредитивы
     - Интеграция с BRICS Bridge
     - White-label для стран-партнёров
+
+- id: loyalty
+  name: Опора.Лояльность
+  icon: star
+  color: "#E91E63"
+  color_class: module-loyalty
+  status: BUILD
+  description: >
+    Программа лояльности с балльной системой без НДС: кешбэк до 7%,
+    социальный трек (образование, медицина, спорт), многоуровневые привилегии.
+  features:
+    - Кешбэк до 7% баллами за покупки
+    - Баллы без НДС (поправки в ст. 149 НК РФ)
+    - Социальный трек: образование, медицина, спорт
+    - Многоуровневая программа с привилегиями
+
+- id: payments
+  name: Опора.Платежи
+  icon: card
+  color: "#00897B"
+  color_class: module-payments
+  status: BUILD
+  description: >
+    Платёжная инфраструктура: приём платежей через СБП и цифровой рубль,
+    маркированные платежи ЦБ РФ, мгновенные расчёты с производителями.
+  features:
+    - Приём платежей через СБП и цифровой рубль
+    - Маркированные платежи ЦБ РФ
+    - Мгновенные расчёты B2B и B2C
+    - Эскроу-счета для безопасных сделок
+
+- id: auth
+  name: Auth Service
+  icon: lock
+  color: "#5C6BC0"
+  color_class: module-auth
+  status: BUILD
+  description: >
+    Единая система аутентификации с перспективой подключения ЕСИА (Госуслуги).
+    Keycloak 24, OAuth 2.0/OIDC, защита класса К2 (ФСТЭК №117).
+  features:
+    - Вход через ЕСИА (Госуслуги) — OAuth 2.0/OIDC
+    - Keycloak 24 в роли Identity Provider
+    - Класс защиты К2 (ФСТЭК №117)
+    - ГОСТ-криптография (КриптоПро CSP 5.0)
+
+- id: gateway
+  name: Gateway Service
+  icon: door
+  color: "#546E7A"
+  color_class: module-gateway
+  status: BUILD
+  description: >
+    API Gateway — единая точка входа для всех сервисов: rate limiting,
+    проверка JWT-токенов, маршрутизация запросов, BFF-интерфейсы.
+  features:
+    - Rate limiting на уровне шлюза
+    - Проверка JWT-токенов (Keycloak)
+    - Маршрутизация на 20 микросервисов
+    - Открытый партнёрский API
+
+- id: mock
+  name: Mock Service
+  icon: flask
+  color: "#8D6E63"
+  color_class: module-mock
+  status: BUILD
+  description: >
+    8 моков внешних сервисов для разработки и тестирования:
+    ЕСИА, ГИСП, «Честный знак», ФНС, ОФД, СБП, ЦФА, BRICS Bridge.
+  features:
+    - Мок ЕСИА — аутентификация
+    - Мок ГИСП — верификация продукции
+    - Мок ФНС — «Мой налог»
+    - 8 мок-сервисов для изолированной разработки
+
+- id: lk
+  name: LK Service
+  icon: home
+  color: "#43A047"
+  color_class: module-lk
+  status: BUILD
+  description: >
+    Личный кабинет (React SPA): дашборд, аналитика продаж, управление заказами,
+    финансы, настройки. Адаптивный дизайн, WCAG AA.
+  features:
+    - Дашборд с аналитикой в реальном времени
+    - Управление заказами и товарами
+    - Финансовая аналитика и отчёты
+    - Мобильная версия (адаптивный дизайн)
+
+- id: bff
+  name: BFF Service
+  icon: monitor
+  color: "#00ACC1"
+  color_class: module-bff
+  status: BUILD
+  description: >
+    Backend-for-Frontend — агрегация API-запросов, кеширование ответов (Redis),
+    оптимизация данных под клиент, Server-Sent Events для realtime.
+  features:
+    - Агрегация API-запросов от микросервисов
+    - Кеширование ответов (Redis)
+    - Оптимизация под клиент (&lt;50ms latency)
+    - Server-Sent Events для realtime-обновлений
+
+- id: admin
+  name: Admin Service
+  icon: gear
+  color: "#6D4C41"
+  color_class: module-admin
+  status: BUILD
+  description: >
+    Панель администрирования платформы: модерация брендов, контента и транзакций,
+    аудит-лог, управление доступом (RBAC).
+  features:
+    - Модерация брендов и контента
+    - Контроль транзакций
+    - Аудит-лог всех действий
+    - Role-Based Access Control (RBAC)
+
+- id: ai
+  name: AI Service
+  icon: brain
+  color: "#AB47BC"
+  color_class: module-ai
+  status: BUILD
+  description: >
+    Центральный AI-узел платформы: рекомендации (CatBoost), прогноз спроса (TFT),
+    модерация контента (RuBERT), антифрод (Isolation Forest + XGBoost).
+  features:
+    - Рекомендации товаров и партнёров (CatBoost)
+    - Прогноз спроса (Temporal Fusion Transformer)
+    - Модерация контента (RuBERT)
+    - Антифрод (Isolation Forest + XGBoost)

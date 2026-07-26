@@ -45,7 +45,7 @@ description: «Опора» — национальная цифровая эко
         <div class="stat-label">брендов в первый год (SOM)</div>
       </div>
       <div class="hero-stat">
-        <div class="stat-value">7,2×</div>
+         <div class="stat-value">9×</div>
         <div class="stat-label">LTV/CAC</div>
       </div>
       <div class="hero-stat">
@@ -148,15 +148,15 @@ description: «Опора» — национальная цифровая эко
 
       <div class="financials-grid">
         <div class="financial-card">
-          <div class="fin-value">4,5 млрд ₽</div>
+          <div class="fin-value">2,8 млрд ₽</div>
           <div class="fin-label">NPV (базовый)</div>
         </div>
         <div class="financial-card">
-          <div class="fin-value">32%</div>
+          <div class="fin-value">28%</div>
           <div class="fin-label">IRR</div>
         </div>
         <div class="financial-card">
-          <div class="fin-value">7,2×</div>
+          <div class="fin-value">9×</div>
           <div class="fin-label">LTV/CAC</div>
         </div>
         <div class="financial-card">
@@ -217,19 +217,19 @@ description: «Опора» — национальная цифровая эко
               <tr>
                 <td>NPV</td>
                 <td>0,5 млрд ₽</td>
-                <td>4,5 млрд ₽</td>
+                <td>2,8 млрд ₽</td>
                 <td>12,8 млрд ₽</td>
               </tr>
               <tr>
                 <td>IRR</td>
                 <td>10%</td>
-                <td>32%</td>
+                <td>28%</td>
                 <td>52%</td>
               </tr>
               <tr>
                 <td>Срок окупаемости</td>
                 <td>7,5 лет</td>
-                <td>4,2 года</td>
+                <td>5,0 лет</td>
                 <td>2,8 года</td>
               </tr>
               <tr>
@@ -638,21 +638,21 @@ description: «Опора» — национальная цифровая эко
   <div class="container">
     <h2 class="section-title">Финансовая модель</h2>
     <p class="section-subtitle">
-      Unit-экономика: LTV/CAC = 7,2×. Безубыточность к году 4.
+      Unit-экономика: LTV/CAC = 9×. Безубыточность к году 4.
       3 сценария стресс-тестирования.
     </p>
 
     <div class="financials-grid">
       <div class="financial-card">
-        <div class="fin-value">7,2×</div>
+        <div class="fin-value">9×</div>
         <div class="fin-label">LTV/CAC</div>
       </div>
       <div class="financial-card">
-        <div class="fin-value">4,5 млрд ₽</div>
+        <div class="fin-value">2,8 млрд ₽</div>
         <div class="fin-label">NPV (базовый сценарий)</div>
       </div>
       <div class="financial-card">
-        <div class="fin-value">32%</div>
+        <div class="fin-value">28%</div>
         <div class="fin-label">IRR</div>
       </div>
       <div class="financial-card">
@@ -677,19 +677,19 @@ description: «Опора» — национальная цифровая эко
             <tr>
               <td>NPV</td>
               <td>0,5 млрд ₽</td>
-              <td>4,5 млрд ₽</td>
+              <td>2,8 млрд ₽</td>
               <td>12,8 млрд ₽</td>
             </tr>
             <tr>
               <td>IRR</td>
               <td>10%</td>
-              <td>32%</td>
+              <td>28%</td>
               <td>52%</td>
             </tr>
             <tr>
               <td>Срок окупаемости</td>
               <td>7,5 лет</td>
-              <td>4,2 года</td>
+              <td>5,0 лет</td>
               <td>2,8 года</td>
             </tr>
             <tr>
@@ -778,9 +778,9 @@ description: «Опора» — национальная цифровая эко
         </div>
         <div class="faq-answer">
           <p>
-            <strong>LTV/CAC = 7,2×</strong>. Безубыточность к году 4.
+            <strong>LTV/CAC = 9×</strong>. Безубыточность к году 4.
             Комиссия 0,8% с транзакции. ARPU 72 руб./мес.
-            NPV 4,5 млрд руб. (базовый сценарий). IRR 32%.
+            NPV 2,8 млрд руб. (базовый сценарий). IRR 28%.
             Бюджетный мультипликатор 1,7×.
           </p>
         </div>
@@ -886,7 +886,7 @@ description: «Опора» — национальная цифровая эко
         <div class="cta-card__icon">📈</div>
         <h3 class="cta-card__title">Инвесторам</h3>
         <p class="cta-card__desc">
-          Unit-экономика LTV/CAC = 7,2×. NPV 4,5 млрд руб. IRR 32%.
+          Unit-экономика LTV/CAC = 9×. NPV 2,8 млрд руб. IRR 28%.
           Time-to-MVP 6 месяцев. Гарантии: Набсовет, buyback, SPO.
         </p>
         <a href="{{ '/investors/' | relative_url }}" class="btn btn-teal">Инвесторам →</a>
