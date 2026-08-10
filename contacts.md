@@ -20,7 +20,7 @@ description: Свяжитесь с командой проекта «Опора�
           </div>
           <div>
             <h4>Email</h4>
-            <a href="mailto:alexander.narbayev@yandex.ru">alexander.narbayev@yandex.ru</a>
+            <a href="mailto:alexander.narbaev@yandex.ru">alexander.narbaev@yandex.ru</a>
           </div>
         </div>
 
@@ -31,6 +31,16 @@ description: Свяжитесь с командой проекта «Опора�
           <div>
             <h4>Телефон</h4>
             <a href="tel:+79994523398">+7 999 452-33-98</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </div>
+          <div>
+            <h4>Мессенджеры</h4>
+            <p>Telegram, MAX, WhatsApp: +7 999 452-33-98</p>
           </div>
         </div>
 
