@@ -277,7 +277,7 @@ description: «Опора» — национальная цифровая эко
       </div>
 
       <div style="text-align: center; margin-top: 2rem;">
-        <a href="{{ '/docs/investment-summary.pdf' | relative_url }}" class="btn btn-teal btn-lg">
+        <a href="{{ '/pdfs/pdf/investor-memo.pdf' | relative_url }}" class="btn btn-teal btn-lg">
           Скачать Investment Summary →
         </a>
       </div>
@@ -402,7 +402,7 @@ description: «Опора» — национальная цифровая эко
       </div>
 
       <div style="text-align: center; margin-top: 2rem;">
-        <a href="{{ '/docs/gr-strategy.pdf' | relative_url }}" class="btn btn-teal btn-lg">
+        <a href="{{ '/gr-strategy/' | relative_url }}" class="btn btn-teal btn-lg">
           Скачать GR-стратегию →
         </a>
       </div>
@@ -847,7 +847,7 @@ description: «Опора» — национальная цифровая эко
         <p class="text-secondary">
           Краткое описание проекта на одной странице. Идеально для первого знакомства.
         </p>
-        <a href="{{ '/docs/one-pager.pdf' | relative_url }}" class="btn btn-outline" style="margin-top: 1rem;">
+        <a href="{{ '/pdfs/pdf/one-pager.pdf' | relative_url }}" class="btn btn-outline" style="margin-top: 1rem;">
           Скачать PDF →
         </a>
       </div>
@@ -856,7 +856,7 @@ description: «Опора» — национальная цифровая эко
         <p class="text-secondary">
           Финансовая модель, сценарии, NPV/IRR, структура инвестиций и гарантии.
         </p>
-        <a href="{{ '/docs/investment-summary.pdf' | relative_url }}" class="btn btn-outline" style="margin-top: 1rem;">
+        <a href="{{ '/pdfs/pdf/investor-memo.pdf' | relative_url }}" class="btn btn-outline" style="margin-top: 1rem;">
           Скачать PDF →
         </a>
       </div>
@@ -865,7 +865,7 @@ description: «Опора» — национальная цифровая эко
         <p class="text-secondary">
           Стратегия взаимодействия с государством, регуляторная рамка, бюджетный мультипликатор.
         </p>
-        <a href="{{ '/docs/gr-strategy.pdf' | relative_url }}" class="btn btn-outline" style="margin-top: 1rem;">
+        <a href="{{ '/gr-strategy/' | relative_url }}" class="btn btn-outline" style="margin-top: 1rem;">
           Скачать PDF →
         </a>
       </div>
