@@ -1,36 +1,13 @@
-# Mission: [Project Name]
-> **Start:** [date] | **Goal:** [one-line summary]
+# Mission: Каноничные контакты лендинга «Опора»
+> **Start:** 2026-08-10 | **Goal:** Все контакты приведены к каноничному формату.
+> **Status: COMPLETED** ✅
 
----
-
-## M1: [Milestone Name] | status: pending
-> **Description:** [what this milestone achieves]
-> **Depends on:** [M0 or none]
-
-### T1.1: [Task Name] | agent:Worker | est:1d
-- [ ] S1.1.1: [Subtask description] | size:S | finding:[ref]
-- [ ] S1.1.2: [Subtask description] | size:M | depends:S1.1.1
-- [ ] S1.1.3: [Subtask description] | size:S
-
-### T1.2: [Task Name] | agent:Worker | est:2d
-- [ ] S1.2.1: [Subtask description] | size:M | finding:[ref]
-
----
-
-## M2: [Next Milestone] | status: pending | depends:M1
-
-### T2.1: [Task Name] | agent:Worker | est:1d
-- [ ] S2.1.1: [Subtask description] | size:S
-
----
-
-## Legend
-- **[P]** = Parallel-safe (no shared state)
-- **M** = Milestone
-- **T** = Task (one per file/concern)
-- **S** = Subtask (atomic unit of work)
-- `size:` XS (<1h), S (1-4h), M (4-12h), L (1-3d), XL (3d+)
-- `finding:` cross-reference to audit gap-matrix ID
+## M1: Каноничные контакты | status: completed
+- [x] S1.1.1: Телефон +7 999 452-33-98 во всех страницах | size:S
+- [x] S1.1.2: Мессенджеры Telegram, MAX, WhatsApp в футере | size:S
+- [x] S1.1.3: Почта alexander.narbaev@yandex.ru | size:S
+- [x] S1.2.1: Удаление старых контактов | size:S
 
 ## Progress
-- Total: [N] subtasks | Done: [N] | Remaining: [N]
+- Total: 4 subtasks | Done: 4 | Remaining: 0
+- **Миссия завершена** ✅
