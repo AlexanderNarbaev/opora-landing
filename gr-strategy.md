@@ -170,6 +170,6 @@ description: Регуляторная дорожная карта, стейкх�
 <h3 class="cta-card__title">Связаться</h3>
 <p class="cta-card__desc">Для представителей ведомств, институтов развития и государственных корпораций.</p>
 <p style="font-size: 0.875rem; margin: 0.5rem 0; color: #555;"><strong>Тел.:</strong> +7 999 452-33-98<br><strong>Мессенджеры:</strong> Telegram, MAX, WhatsApp</p>
-<a href="mailto:alexander.narbaev@yandex.ru" class="btn btn-outline">Написать основателю</a>
+<a href="mailto:alexander.narbayev@yandex.ru" class="btn btn-outline">Написать основателю</a>
 </div>
 </div>

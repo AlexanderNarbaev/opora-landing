@@ -5,7 +5,7 @@
 ## M1: Каноничные контакты | status: completed
 - [x] S1.1.1: Телефон +7 999 452-33-98 во всех страницах | size:S
 - [x] S1.1.2: Мессенджеры Telegram, MAX, WhatsApp в футере | size:S
-- [x] S1.1.3: Почта alexander.narbaev@yandex.ru | size:S
+- [x] S1.1.3: Почта alexander.narbayev@yandex.ru | size:S
 - [x] S1.2.1: Удаление старых контактов | size:S
 
 ## Progress

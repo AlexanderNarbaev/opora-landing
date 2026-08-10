@@ -286,7 +286,7 @@ description: Инвестиционное предложение платфор�
 <p><strong>Что получает инвестор:</strong> Долю до 20% в АО с NPV 2,8 млрд руб., место в Набсовете, три механизма выхода.</p>
 <p style="margin-bottom:0;">
 CEO & CTO, проект «Опора»<br>
-alexander.narbaev@yandex.ru · +7 999 452-33-98 · Telegram, MAX, WhatsApp · Москва, Зеленоград
+alexander.narbayev@yandex.ru · +7 999 452-33-98 · Telegram, MAX, WhatsApp · Москва, Зеленоград
 </p>
 </div>
 
@@ -296,7 +296,7 @@ alexander.narbaev@yandex.ru · +7 999 452-33-98 · Telegram, MAX, WhatsApp · М
 <span class="cta-card__icon">📧</span>
 <h3 class="cta-card__title">Связаться</h3>
 <p class="cta-card__desc">Обсудить инвестиционное предложение, условия входа и due diligence. Персональная встреча в Москве или онлайн.</p>
-<a href="mailto:alexander.narbaev@yandex.ru" class="btn btn-teal">Написать основателю</a>
+<a href="mailto:alexander.narbayev@yandex.ru" class="btn btn-teal">Написать основателю</a>
 </div>
 <div class="cta-card">
 <span class="cta-card__icon">💻</span>

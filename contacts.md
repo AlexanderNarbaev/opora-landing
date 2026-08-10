@@ -20,7 +20,7 @@ description: Свяжитесь с командой проекта «Опора�
           </div>
           <div>
             <h4>Email</h4>
-            <a href="mailto:alexander.narbaev@yandex.ru">alexander.narbaev@yandex.ru</a>
+            <a href="mailto:alexander.narbayev@yandex.ru">alexander.narbayev@yandex.ru</a>
           </div>
         </div>
 
