@@ -1,0 +1,496 @@
+// _prototype.scss — Interactive MVP prototype (verification + loyalty points)
+
+$proto-spent: #E54D4D; // Decrement / spend accent
+
+// ── Section scaffolding ──────────────────────────────────
+.proto-tabs {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin: 2rem 0 1.5rem;
+  flex-wrap: wrap;
+}
+
+.proto-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid $color-warm-gray;
+  border-radius: 999px;
+  background: $color-white;
+  color: $color-text-secondary;
+  font-size: $fs-body;
+  font-weight: $fw-semibold;
+  cursor: pointer;
+  transition: $btn-transition;
+
+  &:hover {
+    border-color: $color-teal;
+    color: $color-deep-blue;
+  }
+
+  &--active {
+    background: $color-deep-blue;
+    border-color: $color-deep-blue;
+    color: $color-white;
+
+    .proto-tab__icon {
+      color: $color-teal;
+    }
+  }
+}
+
+.proto-tab__icon {
+  font-size: 1rem;
+  line-height: 1;
+  color: $color-teal;
+}
+
+// ── Panels ───────────────────────────────────────────────
+.proto-panel {
+  display: none;
+
+  &--active {
+    display: block;
+  }
+}
+
+.proto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+
+  @media (max-width: $bp-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.proto-panel__title {
+  margin: 0 0 0.5rem;
+  font-size: $fs-h3;
+  font-weight: $fw-bold;
+  color: $color-deep-blue;
+}
+
+.proto-panel__hint {
+  margin: 0 0 1.25rem;
+  font-size: $fs-caption;
+  color: $color-text-secondary;
+  line-height: $lh-body;
+}
+
+// ── Verification form ────────────────────────────────────
+.proto-form {
+  display: flex;
+  gap: 0.75rem;
+
+  @media (max-width: $bp-sm) {
+    flex-direction: column;
+  }
+}
+
+.proto-input__field {
+  flex: 1;
+  height: $btn-height;
+  padding: 0 1rem;
+  border: 1px solid $color-warm-gray;
+  border-radius: $btn-radius;
+  font-size: $fs-body;
+  font-family: inherit;
+  color: $color-text-primary;
+  background: $color-white;
+
+  &:focus {
+    outline: none;
+    border-color: $color-teal;
+    box-shadow: 0 0 0 3px rgba($color-teal, 0.15);
+  }
+}
+
+.proto-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: $btn-height;
+  padding: 0 1.5rem;
+  border: none;
+  border-radius: $btn-radius;
+  font-size: $fs-body;
+  font-weight: $fw-semibold;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: $btn-transition;
+
+  &--primary {
+    background: $color-teal;
+    color: $color-white;
+
+    &:hover {
+      background: darken($color-teal, 6%);
+    }
+  }
+
+  &--secondary {
+    background: $color-card-bg;
+    color: $color-deep-blue;
+
+    &:hover {
+      background: $color-warm-gray;
+    }
+  }
+}
+
+.proto-examples {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.proto-examples__label {
+  font-size: $fs-caption;
+  color: $color-text-secondary;
+}
+
+.proto-chip {
+  padding: 0.35rem 0.85rem;
+  border: 1px solid $color-warm-gray;
+  border-radius: 999px;
+  background: $color-white;
+  color: $color-deep-blue;
+  font-size: $fs-caption;
+  font-weight: $fw-medium;
+  cursor: pointer;
+  transition: $btn-transition;
+
+  &:hover {
+    border-color: $color-teal;
+    color: $color-teal;
+  }
+}
+
+// ── Result ───────────────────────────────────────────────
+.proto-result {
+  min-height: 12rem;
+  display: flex;
+  align-items: stretch;
+}
+
+.proto-placeholder {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  border: 2px dashed $color-warm-gray;
+  border-radius: $card-radius;
+  color: $color-text-secondary;
+  font-size: $fs-caption;
+  text-align: center;
+}
+
+.proto-placeholder__icon {
+  font-size: 2rem;
+  color: $color-warm-gray;
+}
+
+// ── Grade card (verification result) ─────────────────────
+.proto-grade-card {
+  width: 100%;
+  background: $color-white;
+  border: 1px solid $color-warm-gray;
+  border-radius: $card-radius;
+  box-shadow: $card-shadow;
+  padding: 1.25rem;
+}
+
+.proto-grade-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.proto-grade-card__brand {
+  font-size: 1.125rem;
+  font-weight: $fw-bold;
+  color: $color-deep-blue;
+}
+
+.proto-grade-card__inn {
+  font-size: $fs-caption;
+  color: $color-text-secondary;
+  margin-top: 0.15rem;
+}
+
+.proto-grade-card__badge {
+  flex-shrink: 0;
+  padding: 0.3rem 0.75rem;
+  border-radius: 999px;
+  font-size: $fs-caption;
+  font-weight: $fw-bold;
+  color: $color-white;
+
+  &--gold { background: #EAB308; }
+  &--silver { background: #94A3B8; }
+  &--bronze { background: #B8743E; }
+}
+
+.proto-grade-card__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba($color-warm-gray, 0.5);
+  font-size: $fs-caption;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.proto-grade-card__label {
+  color: $color-text-secondary;
+}
+
+.proto-grade-card__value {
+  color: $color-text-primary;
+  font-weight: $fw-medium;
+  text-align: right;
+
+  &--ok {
+    color: $color-green;
+  }
+}
+
+// ── Verification steps ───────────────────────────────────
+.proto-steps {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.proto-step {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.85rem;
+  border-radius: $card-radius-m;
+  background: $color-card-bg;
+  font-size: $fs-caption;
+  color: $color-text-secondary;
+  transition: $btn-transition;
+
+  &--active {
+    background: rgba($color-teal, 0.12);
+    color: $color-deep-blue;
+  }
+
+  &--done {
+    background: rgba($color-green, 0.12);
+
+    .proto-step__icon {
+      background: $color-green;
+      color: $color-white;
+    }
+
+    .proto-step__status {
+      color: $color-green;
+    }
+  }
+}
+
+.proto-step__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: $color-warm-gray;
+  color: $color-white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: $fw-bold;
+  flex-shrink: 0;
+}
+
+.proto-step__label {
+  flex: 1;
+}
+
+.proto-step__status {
+  font-weight: $fw-semibold;
+  white-space: nowrap;
+}
+
+// ── Wallet (loyalty) ─────────────────────────────────────
+.proto-wallet {
+  display: flex;
+  flex-direction: column;
+}
+
+.proto-balance {
+  text-align: center;
+  padding: 1.75rem;
+  border-radius: $card-radius;
+  background: $gradient-brand;
+  color: $color-white;
+  margin-bottom: 1.25rem;
+}
+
+.proto-balance__label {
+  font-size: $fs-caption;
+  opacity: 0.85;
+}
+
+.proto-balance__value {
+  font-size: 3rem;
+  font-weight: $fw-bold;
+  line-height: 1.1;
+  margin: 0.25rem 0;
+
+  &--bump {
+    animation: protoBump 0.3s ease;
+  }
+}
+
+.proto-balance__unit {
+  font-size: $fs-caption;
+  opacity: 0.85;
+}
+
+@keyframes protoBump {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.proto-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+
+  @media (max-width: $bp-sm) {
+    flex-direction: column;
+  }
+}
+
+.proto-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.proto-stat {
+  text-align: center;
+  padding: 0.85rem;
+  border-radius: $card-radius-m;
+  background: $color-card-bg;
+
+  &__value {
+    font-size: 1.375rem;
+    font-weight: $fw-bold;
+    color: $color-deep-blue;
+  }
+
+  &__label {
+    font-size: $fs-caption;
+    color: $color-text-secondary;
+    margin-top: 0.25rem;
+  }
+}
+
+// ── Feed (loyalty) ───────────────────────────────────────
+.proto-feed__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-height: 16rem;
+  overflow-y: auto;
+}
+
+.proto-feed__item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: $card-radius-m;
+  background: $color-white;
+  border: 1px solid $color-warm-gray;
+
+  &--empty {
+    justify-content: center;
+    color: $color-text-secondary;
+    font-size: $fs-caption;
+    background: transparent;
+    border-style: dashed;
+  }
+
+  &--spent {
+    .proto-feed__icon {
+      background: rgba($proto-spent, 0.15);
+      color: $proto-spent;
+    }
+
+    .proto-feed__amount {
+      color: $proto-spent;
+    }
+  }
+}
+
+.proto-feed__icon {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: rgba($color-green, 0.15);
+  color: $color-green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: $fw-bold;
+  flex-shrink: 0;
+}
+
+.proto-feed__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.proto-feed__title {
+  font-size: $fs-caption;
+  font-weight: $fw-semibold;
+  color: $color-text-primary;
+}
+
+.proto-feed__meta {
+  font-size: 0.75rem;
+  color: $color-text-secondary;
+  margin-top: 0.1rem;
+}
+
+.proto-feed__amount {
+  font-size: $fs-caption;
+  font-weight: $fw-bold;
+  color: $color-green;
+  white-space: nowrap;
+}
+
+// ── MVP focus note ───────────────────────────────────────
+.mvp-focus {
+  margin: 0.5rem 0 1rem;
+  padding: 0.75rem 1rem;
+  border-left: 4px solid $color-teal;
+  background: rgba($color-teal, 0.08);
+  border-radius: 0 $card-radius-m $card-radius-m 0;
+  font-size: $fs-caption;
+  color: $color-text-primary;
+  line-height: $lh-body;
+}

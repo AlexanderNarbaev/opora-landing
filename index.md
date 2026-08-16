@@ -1,18 +1,18 @@
 ---
 layout: default
 title: Главная
-description: «Опора» — национальная цифровая экосистема верификации и B2B-кооперации российских брендов. Верификация через ГИСП/Честный знак/ФНС, AI-подбор поставщиков, кешбэк до 7%.
+description: «Опора» — национальная платформа верификации и&nbsp;лояльности для&nbsp;российских брендов. Проверка через ГИСП/«Честный знак»/ФНС, кешбэк до 7% баллами.
 ---
 
 <!-- ── HERO ── -->
 <section class="hero">
   <div class="container">
     <div class="hero-content">
-      <h1>Национальная платформа верификации и B2B-кооперации российских брендов</h1>
+      <h1>Национальная платформа верификации и&nbsp;лояльности для&nbsp;российских брендов</h1>
       <p class="hero-subtitle">
-        «Опора» — это <strong>3 ядра ценности</strong>: верификация отечественности,
-        AI-кооперация поставщиков и программа лояльности.
-        Не маркетплейс — инфраструктура доверия для 6,8 млн МСП и 146 млн граждан.
+        «Опора» — это <strong>2 ядра MVP для запуска</strong>: верификация отечественности
+        и&nbsp;программа лояльности с&nbsp;баллами. Кооперация — в&nbsp;roadmap.
+        Не маркетплейс — инфраструктура доверия для 6,9 млн МСП и 146 млн граждан.
       </p>
       <div class="hero-highlight">
         <div class="hero-highlight-item">
@@ -47,10 +47,6 @@ description: «Опора» — национальная цифровая эко
       <div class="hero-stat">
          <div class="stat-value">9×</div>
         <div class="stat-label">LTV/CAC</div>
-      </div>
-      <div class="hero-stat">
-        <div class="stat-value">6 мес</div>
-        <div class="stat-label">Time-to-MVP</div>
       </div>
     </div>
 
@@ -100,7 +96,7 @@ description: «Опора» — национальная цифровая эко
       </div>
 
       <div>
-        <h3>Решение: 3 ядра ценности</h3>
+         <h3>Решение: 2&nbsp;ядра MVP для&nbsp;запуска</h3>
         <ul class="solution-list">
           <li>
             <strong>1. Верификация</strong> — проверка через ГИСП, «Честный знак» и ФНС.
@@ -117,8 +113,9 @@ description: «Опора» — национальная цифровая эко
             интеграция с госсервисами через открытое API.
           </li>
         </ul>
+        <p class="mvp-focus"><strong>MVP — ядра 1 и 3:</strong> верификация и лояльность. Кооперация — следующий этап.</p>
         <div class="roadmap-note">
-          <strong>De-risked execution:</strong> Time-to-MVP 6 месяцев. Архитектурный и GR-ландшафт готов.
+          <strong>De-risked execution:</strong> Архитектурный и GR-ландшафт готов.
         </div>
       </div>
     </div>
@@ -142,8 +139,8 @@ description: «Опора» — национальная цифровая эко
     <!-- ── ИНВЕСТОРАМ ── -->
     <div class="segment-panel active" id="segment-investors">
       <div class="segment-hero">
-        <h3>Национальная B2B/B2C инфраструктура с LTV/CAC = 7.2×</h3>
-        <p>Де-рискинг через подготовленную архитектуру и GR-ландшафт. Time-to-MVP 6 месяцев.</p>
+        <h3>Национальная B2B/B2C инфраструктура с LTV/CAC = 9×</h3>
+        <p>Де-рискинг через подготовленную архитектуру и GR-ландшафт.</p>
       </div>
 
       <div class="financials-grid">
@@ -158,10 +155,6 @@ description: «Опора» — национальная цифровая эко
         <div class="financial-card">
           <div class="fin-value">9×</div>
           <div class="fin-label">LTV/CAC</div>
-        </div>
-        <div class="financial-card">
-          <div class="fin-value">6 мес</div>
-          <div class="fin-label">Time-to-MVP</div>
         </div>
       </div>
 
@@ -377,7 +370,7 @@ description: «Опора» — национальная цифровая эко
             <div class="roadmap-content">
               <span class="roadmap-phase">Фаза 1. Пилот</span>
               <div class="roadmap-year">Июль 2027 – Июнь 2028 · 1 000 млн руб.</div>
-              <p>Москва + Зеленоград. Запуск 3 ядер: верификация, кооперация, лояльность.</p>
+              <p>Москва + Зеленоград. Запуск MVP: верификация + лояльность. Кооперация — следующая фаза.</p>
               <div style="margin-top: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.5rem;">
                 <span class="badge badge-silver">≥100 брендов</span>
                 <span class="badge badge-silver">≥50K пользователей</span>
@@ -587,12 +580,135 @@ description: «Опора» — национальная цифровая эко
   </div>
 </section>
 
+<!-- ── КЛИКАБЕЛЬНЫЙ ПРОТОТИП MVP: ВЕРИФИКАЦИЯ + БАЛЛЫ ── -->
+<section class="section section-gray" id="prototype">
+  <div class="container">
+    <h2 class="section-title">Попробуйте MVP прямо сейчас</h2>
+    <p class="section-subtitle">
+      Два ключевых сценария, на которых строится запуск:
+      <strong>верификация бренда</strong> и
+      <strong>баллы лояльности</strong>.
+      Кликните, чтобы увидеть, как это работает.
+    </p>
+
+    <div class="proto-tabs" role="tablist">
+      <button class="proto-tab proto-tab--active" data-tab="verify" role="tab" aria-selected="true">
+        <span class="proto-tab__icon" aria-hidden="true">✓</span>
+        Верификация бренда
+      </button>
+      <button class="proto-tab" data-tab="points" role="tab" aria-selected="false">
+        <span class="proto-tab__icon" aria-hidden="true">★</span>
+        Баллы лояльности
+      </button>
+    </div>
+
+    <!-- ── Сценарий 1: Верификация ── -->
+    <div class="proto-panel proto-panel--active" id="proto-verify" role="tabpanel">
+      <div class="proto-grid">
+        <div class="proto-input">
+          <h3 class="proto-panel__title">Проверьте бренд</h3>
+          <p class="proto-panel__hint">Введите ИНН или название производителя. Платформа проверит его по государственным реестрам.</p>
+          <div class="proto-form">
+            <input type="text" class="proto-input__field" id="verifyInput" placeholder="Например: 7707083893 или Опора" />
+            <button class="proto-btn proto-btn--primary" id="verifyBtn">Проверить</button>
+          </div>
+          <div class="proto-examples">
+            <span class="proto-examples__label">Примеры:</span>
+            <button class="proto-chip" data-inn="7707083893" data-name="Сбер">Сбер</button>
+            <button class="proto-chip" data-inn="7728168971" data-name="Вкусно — и точка">Вкусно — и точка</button>
+            <button class="proto-chip" data-inn="7725715914" data-name="Опора (демо)">Опора</button>
+          </div>
+        </div>
+
+        <div class="proto-result" id="verifyResult">
+          <div class="proto-placeholder">
+            <div class="proto-placeholder__icon">⌕</div>
+            <p>Результат проверки появится здесь</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="proto-steps" id="verifySteps" hidden>
+        <div class="proto-step" data-step="gis">
+          <span class="proto-step__icon">1</span>
+          <span class="proto-step__label">ГИСП — реестр производственных площадок</span>
+          <span class="proto-step__status">Ожидание</span>
+        </div>
+        <div class="proto-step" data-step="fns">
+          <span class="proto-step__icon">2</span>
+          <span class="proto-step__label">ФНС — проверка ИНН и статуса юрлица</span>
+          <span class="proto-step__status">Ожидание</span>
+        </div>
+        <div class="proto-step" data-step="mark">
+          <span class="proto-step__icon">3</span>
+          <span class="proto-step__label">Честный знак — система маркировки</span>
+          <span class="proto-step__status">Ожидание</span>
+        </div>
+        <div class="proto-step" data-step="grade">
+          <span class="proto-step__icon">★</span>
+          <span class="proto-step__label">Грейдирование — расчёт доверия</span>
+          <span class="proto-step__status">Ожидание</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Сценарий 2: Баллы лояльности ── -->
+    <div class="proto-panel" id="proto-points" role="tabpanel" hidden>
+      <div class="proto-grid">
+        <div class="proto-wallet">
+          <h3 class="proto-panel__title">Кошелёк покупателя</h3>
+          <p class="proto-panel__hint">Купите товар российского бренда — получите кешбэк баллами. Потратьте баллы у партнёров.</p>
+
+          <div class="proto-balance">
+            <div class="proto-balance__label">Ваш баланс</div>
+            <div class="proto-balance__value" id="pointsBalance">0</div>
+            <div class="proto-balance__unit">баллов</div>
+          </div>
+
+          <div class="proto-actions">
+            <button class="proto-btn proto-btn--primary" id="pointsEarn">
+              + Купить товар (1500 ₽)
+            </button>
+            <button class="proto-btn proto-btn--secondary" id="pointsSpend">
+              − Потратить 100 баллов
+            </button>
+          </div>
+
+          <div class="proto-stats">
+            <div class="proto-stat">
+              <div class="proto-stat__value" id="statEarned">0</div>
+              <div class="proto-stat__label">Заработано</div>
+            </div>
+            <div class="proto-stat">
+              <div class="proto-stat__value" id="statSpent">0</div>
+              <div class="proto-stat__label">Потрачено</div>
+            </div>
+            <div class="proto-stat">
+              <div class="proto-stat__value" id="statCashback">0 ₽</div>
+              <div class="proto-stat__label">Кешбэк</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="proto-feed">
+          <h3 class="proto-panel__title">Лента операций</h3>
+          <div class="proto-feed__list" id="pointsFeed">
+            <div class="proto-feed__item proto-feed__item--empty">
+              Здесь появятся ваши начисления и списания
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ── ИНТЕЛЛЕКТУАЛЬНЫЙ ВКЛАД ── -->
 <section class="section" id="ip">
   <div class="container">
     <h2 class="section-title">De-risked execution</h2>
     <p class="section-subtitle">
-      Time-to-MVP 6 месяцев. Архитектурный и GR-ландшафт готов.
+      Архитектурный и GR-ландшафт готов.
       Точки интеграции с госсистемами найдены.
     </p>
 
@@ -600,12 +716,12 @@ description: «Опора» — национальная цифровая эко
       <div class="ip-block__header">
         <div class="ip-block__icon">🚀</div>
         <div>
-          <div class="ip-block__number">Time-to-MVP: 6 месяцев</div>
+          <div class="ip-block__number">Готов к внедрению</div>
           <div class="ip-block__subtitle">де-рискинг через подготовленную архитектуру</div>
         </div>
       </div>
       <div class="ip-block__body">
-        3 года проработки: архитектура модулей, OpenAPI-спецификации,
+        Проработка: архитектура модулей, OpenAPI-спецификации,
         C4-диаграммы, финансовая модель (8 сценариев), юридический пакет (поправки в НК РФ, ЭПР, Устав АО).
         Проект прошёл 5 независимых экспертиз.
         GR-ландшафт готов: точки интеграции с ЕСИА, ГИСП, «Честным знаком», ФНС, ОФД определены.
@@ -623,10 +739,6 @@ description: «Опора» — национальная цифровая эко
         <div class="ip-block__stat">
           <div class="ip-block__stat-value">6</div>
           <div class="ip-block__stat-label">интеграций с госсистемами</div>
-        </div>
-        <div class="ip-block__stat">
-          <div class="ip-block__stat-value">6 мес</div>
-          <div class="ip-block__stat-label">Time-to-MVP</div>
         </div>
       </div>
     </div>
@@ -887,7 +999,7 @@ description: «Опора» — национальная цифровая эко
         <h3 class="cta-card__title">Инвесторам</h3>
         <p class="cta-card__desc">
           Unit-экономика LTV/CAC = 9×. NPV 2,8 млрд руб. IRR 28%.
-          Time-to-MVP 6 месяцев. Гарантии: Набсовет, buyback, SPO.
+          Гарантии: Набсовет, buyback, SPO.
         </p>
         <a href="{{ '/investors/' | relative_url }}" class="btn btn-teal">Инвесторам →</a>
       </div>
