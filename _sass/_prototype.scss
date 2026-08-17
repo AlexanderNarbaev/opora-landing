@@ -494,3 +494,214 @@ $proto-spent: #E54D4D; // Decrement / spend accent
   color: $color-text-primary;
   line-height: $lh-body;
 }
+
+// ── Appended 2026-08-17: расширения для MVP ─────────────────
+.proto-suggest {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid var(--gray-mid);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(35, 51, 112, 0.1);
+  margin-top: 4px;
+  z-index: 100;
+  max-height: 240px;
+  overflow-y: auto;
+}
+.proto-suggest {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 8px 12px;
+  border: none;
+  border-bottom: 1px solid var(--gray-light);
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.85rem;
+  color: var(--blue);
+  transition: background 0.15s;
+}
+.proto-suggest:hover,
+.proto-suggest:focus {
+  background: var(--gray-light);
+  outline: none;
+}
+.proto-suggest:last-child {
+  border-bottom: none;
+}
+
+// Catalog — search & filter
+.catalog-search {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid var(--gray-mid);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  margin-bottom: 16px;
+  transition: border-color 0.2s;
+  background: #fff;
+  color: var(--text-primary, #1a1a2e);
+}
+.catalog-search:focus {
+  border-color: var(--teal);
+}
+.catalog-search::placeholder {
+  color: var(--gray-warm, #808299);
+}
+
+.proto-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 14px;
+  background: var(--gray-light);
+  border: 1px solid var(--gray-mid);
+  border-radius: 16px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary, #555770);
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+.proto-filter:hover {
+  border-color: var(--teal);
+}
+.proto-filter--active {
+  background: var(--blue);
+  color: #fff;
+  border-color: var(--blue);
+}
+
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.catalog-card {
+  background: var(--gray-light);
+  border-radius: 8px;
+  padding: 14px 16px;
+  border: 1px solid var(--gray-mid);
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+  display: block;
+  width: 100%;
+}
+.catalog-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(35, 51, 112, 0.12);
+  border-color: var(--teal);
+}
+.catalog-card__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.catalog-card__name {
+  font-weight: 700;
+  color: var(--blue);
+  font-size: 0.95rem;
+  line-height: 1.2;
+}
+.catalog-card__badge {
+  font-size: 0.7rem;
+  padding: 3px 10px;
+  flex-shrink: 0;
+}
+.catalog-card__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.catalog-card__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  color: var(--text-secondary, #555770);
+}
+.catalog-card__row span:first-child {
+  color: var(--text-secondary, #555770);
+  opacity: 0.7;
+}
+.catalog-card__row span:last-child {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.catalog-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 32px;
+  color: var(--text-secondary, #555770);
+  font-style: italic;
+}
+
+// Balance shake (недостаточно баллов)
+.balance-shake {
+  animation: balanceShake 0.6s ease;
+}
+@keyframes balanceShake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-8px); }
+  20%, 40%, 60%, 80% { transform: translateX(8px); }
+}
+
+// Generic badge (если не определён)
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+}
+.badge-gold { background: linear-gradient(135deg, #F5A623, #E89E1A); color: #fff; }
+.badge-silver { background: linear-gradient(135deg, #888, #666); color: #fff; }
+.badge-bronze { background: linear-gradient(135deg, #CD7F32, #A05A1F); color: #fff; }
+
+// Brand card row warn modifier
+.brand-card__row--warn {
+  background: rgba(245, 166, 35, 0.06);
+  border-left: 3px solid var(--orange);
+  padding-left: 8px;
+  margin: 8px -8px;
+}
+
+// Feed item subsidies & spent
+.proto-feed__item--subsidy {
+  border-left-color: var(--teal);
+  background: rgba(46, 196, 182, 0.05);
+}
+.proto-feed__amount--spent { color: var(--orange); }
+.proto-feed__amount--subsidy { color: var(--teal); }
+
+// Placeholder loading
+.proto-placeholder--loading {
+  color: var(--teal);
+}
+.proto-placeholder--loading .proto-placeholder__icon {
+  animation: pulse 1s ease-in-out infinite;
+}
+
+// Filter bar wrapper (если ещё нет)
+.proto-filterbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+  justify-content: center;
+}

@@ -1623,15 +1623,18 @@
         <div class="proto-input">
           <h3 class="proto-panel__title">Проверьте бренд</h3>
           <p class="proto-panel__hint">Введите ИНН или название производителя. Платформа проверит его по государственным реестрам.</p>
-          <div class="proto-form">
-            <input type="text" class="proto-input__field" id="verifyInput" placeholder="Например: 7707083893 или Опора" />
+          <div class="proto-form" style="position: relative;">
+            <input type="text" class="proto-input__field" id="verifyInput" placeholder="Например: 7707083893 или Сбер" autocomplete="off" />
             <button class="proto-btn proto-btn--primary" id="verifyBtn">Проверить</button>
+            <div class="proto-suggest" id="verifySuggest" hidden></div>
           </div>
           <div class="proto-examples">
             <span class="proto-examples__label">Примеры:</span>
-            <button class="proto-chip" data-inn="7707083893" data-name="Сбер">Сбер</button>
-            <button class="proto-chip" data-inn="7728168971" data-name="Вкусно — и точка">Вкусно — и точка</button>
-            <button class="proto-chip" data-inn="7725715914" data-name="Опора (демо)">Опора</button>
+            <button class="proto-chip" data-inn="7707083893" data-name="Сбер">Сбер (GOLD)</button>
+            <button class="proto-chip" data-inn="7728168971" data-name="Вкусно — и точка">Вкусно — и точка (GOLD)</button>
+            <button class="proto-chip" data-inn="9999000007" data-name="Ивантеевская">Ивантеевская (BRONZE ⚠️)</button>
+            <button class="proto-chip" data-inn="9999000004" data-name="Павлово-Посадский">Павлово-Посадский (SILVER)</button>
+            <button class="proto-chip" data-inn="9999100004" data-name="Тульский">Тульский пряник (GOLD)</button>
           </div>
         </div>
 
@@ -1719,7 +1722,14 @@
       <div class="proto-panel" id="proto-catalog" role="tabpanel" hidden>
         <div class="catalog-block">
           <h3 class="proto-panel__title">Каталог верифицированных брендов</h3>
-          <p class="proto-panel__hint">10 брендов с грейдированием Золото/Серебро/Бронза. Реальные публичные данные (Сбер, Вкусно — и точка) + 8 демо-брендов с вымышленными ИНН.</p>
+          <p class="proto-panel__hint">50+ брендов (2 реальных + 48 демо) с грейдированием Золото/Серебро/Бронза. Реальные публичные данные (Сбер, Вкусно — и точка) + 48 демо-брендов с вымышленными ИНН в формате 9999xxxxxxxx.</p>
+          <input type="search" id="catalogSearch" class="catalog-search" placeholder="Поиск: название, ИНН, отрасль, регион…" autocomplete="off" />
+          <div class="proto-filterbar" id="catalogFilter">
+            <button class="proto-filter proto-filter--active" data-grade-filter="all">Все</button>
+            <button class="proto-filter" data-grade-filter="gold">Золото</button>
+            <button class="proto-filter" data-grade-filter="silver">Серебро</button>
+            <button class="proto-filter" data-grade-filter="bronze">Бронза</button>
+          </div>
           <div class="catalog-grid" id="catalogGrid">Загрузка…</div>
         </div>
       </div>
