@@ -1592,50 +1592,175 @@
 </section>
 
 <!-- ====== PROTOTYPE ====== -->
-<section class="prototype" id="prototype">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-tag">Прототип</span>
-            <h2 class="section-title">Попробуйте сами</h2>
-            <p class="section-desc">Кликабельный прототип личного кабинета. Выберите роль — и смотрите, как платформа выглядит для вас. Каждый шаг — скриншот реального интерфейса.</p>
-        </div>
-        <div class="prototype__inner">
-            <div class="prototype__demo" id="demoTour" aria-label="Интерактивный тур по прототипу" role="region">
-                <div class="demo-frame">
-                    <div class="demo-frame__chrome">
-                        <span class="demo-frame__dot demo-frame__dot--red"></span>
-                        <span class="demo-frame__dot demo-frame__dot--yellow"></span>
-                        <span class="demo-frame__dot demo-frame__dot--green"></span>
-                        <span class="demo-frame__url">lk.opora.digital</span>
-                    </div>
-                    <div class="demo-frame__screen">
-                        <img class="demo-frame__image" src="assets/screenshots/investor-1.png" alt="Дашборд платформы Опора" id="demoImage">
-                        <div class="demo-frame__cursor" id="demoCursor"></div>
-                        <div class="demo-frame__hotspot" id="demoHotspot"></div>
-                    </div>
-                </div>
-                <div class="demo-tooltip" id="demoCaption">1/5 · Дашборд: NPV 2,8 млрд, IRR 28%</div>
-                <div class="demo-controls">
-                    <button class="demo-controls__btn" id="demoPrev" aria-label="Предыдущий шаг">&lt;</button>
-                    <div class="demo-controls__dots" id="demoDots"></div>
-                    <button class="demo-controls__btn" id="demoNext" aria-label="Следующий шаг">&gt;</button>
-                    <button class="demo-controls__play" id="demoPlay" aria-label="Автоплей">&#9654;</button>
-                </div>
-            </div>
-            <div class="prototype__info">
-                <h3 class="prototype__info-title">Что уже сделано</h3>
-                <ul class="prototype__features">
-                    <li class="prototype__feature"><span class="prototype__feature-icon">&#10003;</span><span><strong>493 unit-теста</strong>React Testing Library + Vitest</span></li>
-                    <li class="prototype__feature"><span class="prototype__feature-icon">&#10003;</span><span><strong>55 тест-файлов</strong>Компоненты, хуки, роутинг</span></li>
-                    <li class="prototype__feature"><span class="prototype__feature-icon">&#10003;</span><span><strong>8 E2E-тестов</strong>Playwright на лендинг</span></li>
-                    <li class="prototype__feature"><span class="prototype__feature-icon">&#10003;</span><span><strong>модули платформы</strong></span></li>
-                    <li class="prototype__feature"><span class="prototype__feature-icon">&#10003;</span><span><strong>4 роли</strong>Инвестор, государство, бизнес, гражданин</span></li>
-                </ul>
+<section class="section section-gray" id="prototype">
+  <div class="container">
+    <h2 class="section-title">Попробуйте MVP прямо сейчас</h2>
+    <p class="section-subtitle">
+      Два ключевых сценария, на которых строится запуск:
+      <strong>верификация бренда</strong> и
+      <strong>баллы лояльности</strong>.
+      Кликните, чтобы увидеть, как это работает.
+    </p>
 
-            </div>
-        </div>
+    <div class="proto-tabs" role="tablist">
+      <button class="proto-tab proto-tab--active" data-tab="verify" role="tab" aria-selected="true">
+        <span class="proto-tab__icon" aria-hidden="true">✓</span>
+        Верификация бренда
+      </button>
+      <button class="proto-tab" data-tab="points" role="tab" aria-selected="false">
+        <span class="proto-tab__icon" aria-hidden="true">★</span>
+        Баллы лояльности
+      </button>
+      <button class="proto-tab" data-tab="catalog" role="tab" aria-selected="false">
+        <span class="proto-tab__icon" aria-hidden="true">▤</span>
+        Каталог
+      </button>
     </div>
+
+    <!-- ── Сценарий 1: Верификация ── -->
+    <div class="proto-panel proto-panel--active" id="proto-verify" role="tabpanel">
+      <div class="proto-grid">
+        <div class="proto-input">
+          <h3 class="proto-panel__title">Проверьте бренд</h3>
+          <p class="proto-panel__hint">Введите ИНН или название производителя. Платформа проверит его по государственным реестрам.</p>
+          <div class="proto-form">
+            <input type="text" class="proto-input__field" id="verifyInput" placeholder="Например: 7707083893 или Опора" />
+            <button class="proto-btn proto-btn--primary" id="verifyBtn">Проверить</button>
+          </div>
+          <div class="proto-examples">
+            <span class="proto-examples__label">Примеры:</span>
+            <button class="proto-chip" data-inn="7707083893" data-name="Сбер">Сбер</button>
+            <button class="proto-chip" data-inn="7728168971" data-name="Вкусно — и точка">Вкусно — и точка</button>
+            <button class="proto-chip" data-inn="7725715914" data-name="Опора (демо)">Опора</button>
+          </div>
+        </div>
+
+        <div class="proto-result" id="verifyResult">
+          <div class="proto-placeholder">
+            <div class="proto-placeholder__icon">⌕</div>
+            <p>Результат проверки появится здесь</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="proto-steps" id="verifySteps" hidden>
+        <div class="proto-step" data-step="gis">
+          <span class="proto-step__icon">1</span>
+          <span class="proto-step__label">ГИСП — реестр производственных площадок</span>
+          <span class="proto-step__status">Ожидание</span>
+        </div>
+        <div class="proto-step" data-step="fns">
+          <span class="proto-step__icon">2</span>
+          <span class="proto-step__label">ФНС — проверка ИНН и статуса юрлица</span>
+          <span class="proto-step__status">Ожидание</span>
+        </div>
+        <div class="proto-step" data-step="mark">
+          <span class="proto-step__icon">3</span>
+          <span class="proto-step__label">Честный знак — система маркировки</span>
+          <span class="proto-step__status">Ожидание</span>
+        </div>
+        <div class="proto-step" data-step="grade">
+          <span class="proto-step__icon">★</span>
+          <span class="proto-step__label">Грейдирование — расчёт доверия</span>
+          <span class="proto-step__status">Ожидание</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Сценарий 2: Баллы лояльности ── -->
+    <div class="proto-panel" id="proto-points" role="tabpanel" hidden>
+      <div class="proto-grid">
+        <div class="proto-wallet">
+          <h3 class="proto-panel__title">Кошелёк покупателя</h3>
+          <p class="proto-panel__hint">Купите товар российского бренда — получите кешбэк баллами. Потратьте баллы у партнёров.</p>
+
+          <div class="proto-balance">
+            <div class="proto-balance__label">Ваш баланс</div>
+            <div class="proto-balance__value" id="pointsBalance">0</div>
+            <div class="proto-balance__unit">баллов</div>
+          </div>
+
+          <div class="proto-actions">
+            <button class="proto-btn proto-btn--primary" id="pointsEarn">
+              + Купить товар (1500 ₽)
+            </button>
+            <button class="proto-btn proto-btn--secondary" id="pointsSpend">
+              − Потратить 100 баллов
+            </button>
+          </div>
+
+          <div class="proto-stats">
+            <div class="proto-stat">
+              <div class="proto-stat__value" id="statEarned">0</div>
+              <div class="proto-stat__label">Заработано</div>
+            </div>
+            <div class="proto-stat">
+              <div class="proto-stat__value" id="statSpent">0</div>
+              <div class="proto-stat__label">Потрачено</div>
+            </div>
+            <div class="proto-stat">
+              <div class="proto-stat__value" id="statCashback">0 ₽</div>
+              <div class="proto-stat__label">Кешбэк</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="proto-feed">
+          <h3 class="proto-panel__title">Лента операций</h3>
+          <div class="proto-feed__list" id="pointsFeed">
+            <div class="proto-feed__item proto-feed__item--empty">
+              Здесь появятся ваши начисления и списания
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Сценарий 3: Каталог ── -->
+      <div class="proto-panel" id="proto-catalog" role="tabpanel" hidden>
+        <div class="catalog-block">
+          <h3 class="proto-panel__title">Каталог верифицированных брендов</h3>
+          <p class="proto-panel__hint">10 брендов с грейдированием Золото/Серебро/Бронза. Реальные публичные данные (Сбер, Вкусно — и точка) + 8 демо-брендов с вымышленными ИНН.</p>
+          <div class="catalog-grid" id="catalogGrid">Загрузка…</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
+
+<!-- ── ИНТЕЛЛЕКТУАЛЬНЫЙ ВКЛАД ── -->
+<section class="section" id="ip">
+  <div class="container">
+    <h2 class="section-title">De-risked execution</h2>
+    <p class="section-subtitle">
+      Архитектурный и GR-ландшафт готов.
+      Точки интеграции с госсистемами найдены.
+    </p>
+
+    <div class="ip-block">
+      <div class="ip-block__header">
+        <div class="ip-block__icon">🚀</div>
+        <div>
+          <div class="ip-block__number">Готов к внедрению</div>
+          <div class="ip-block__subtitle">де-рискинг через подготовленную архитектуру</div>
+        </div>
+      </div>
+      <div class="ip-block__body">
+        Проработка: архитектура модулей, OpenAPI-спецификации,
+        C4-диаграммы, финансовая модель (8 сценариев), юридический пакет (поправки в НК РФ, ЭПР, Устав АО).
+        Проект прошёл 5 независимых экспертиз.
+        GR-ландшафт готов: точки интеграции с ЕСИА, ГИСП, «Честным знаком», ФНС, ОФД определены.
+        Весь IP передаётся в АО «НП Опора» безвозмездно как вклад основателя.
+      </div>
+      <div class="ip-block__grid">
+        <div class="ip-block__stat">
+          <div class="ip-block__stat-value">8</div>
+          <div class="ip-block__stat-label">сценариев финмодели</div>
+        </div>
+        <div class="ip-block__stat">
+          <div class="ip-block__stat-value">5</div>
+          <div class="ip-block__stat-label">независимых экспертиз</div>
+        </div>
 
 <!-- ====== ECONOMICS ====== -->
 <section class="economics" id="economics">
@@ -2275,8 +2400,11 @@
     </div>
 </footer>
 
+<!-- Интерактивный прототип MVP (верификация + баллы лояльности) -->
+<script src="/assets/js/prototype.js" defer></script>
+
 </main>
 
-<script src="script.js"></script>
+<script src="/assets/js/prototype.js" defer></script>
 </body>
 </html>
